@@ -398,8 +398,10 @@
         <button class="dropdown-item" onclick="downloadJPG();closeDropdown()">🖼 Descargar JPG</button>
         <button class="dropdown-item" onclick="exportJSON();closeDropdown()">💾 Exportar JSON (todos los meses)</button>
         <button class="dropdown-item" onclick="exportJSONMes();closeDropdown()">📋 Exportar JSON (este mes)</button>
+        <button class="dropdown-item" onclick="exportJSONSync();closeDropdown()">☁ Exportar JSON para GitHub Sync</button>
         <hr class="dropdown-sep">
         <button class="dropdown-item" onclick="triggerImport();closeDropdown()">📂 Importar JSON</button>
+        <button class="dropdown-item" onclick="loadFromGitHubRepo();closeDropdown()">☁ Actualizar desde GitHub</button>
         <hr class="dropdown-sep">
         <button class="dropdown-item" onclick="openCopyModal();closeDropdown()">➡ Copiar a otro mes</button>
         <hr class="dropdown-sep">
@@ -3244,6 +3246,14 @@ function downloadAllCharts() {
 // ══════════════════════════════════════════════════════════════
 const STORAGE_INDEX = 'vc_congregaciones_index';
 let currentCongKey = null;   // e.g. "cong_VillaCelina_2025"
+const GITHUB_SYNC = {
+  enabled: true,
+  owner: 'mayorudamian-hue',
+  repo: 'informes-congregacion',
+  branch: 'main',
+  basePath: 'data',
+  autoOnOpen: true
+};
 
 function normalizeCongName(n) { return n.trim().replace(/\s+/g,' '); }
 function congStorageKey(key) { return 'vc_cong_' + key; }
@@ -3460,6 +3470,9 @@ function openCong(key) {
   document.getElementById('btn-next').style.display = '';
   document.getElementById('content').style.display = '';
   render();
+  if (GITHUB_SYNC.autoOnOpen) {
+    loadFromGitHubRepo({ silent: true });
+  }
 }
 
 function deleteCong(e, key) {
@@ -3667,6 +3680,17 @@ function exportJSON() {
   toast('JSON exportado ✓');
 }
 
+function exportJSONSync() {
+  const filename = (currentCongKey || 'congregacion') + '.json';
+  const blob = new Blob([JSON.stringify(DATA, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('JSON listo para subir a GitHub ✓');
+}
+
 function exportJSONMes() {
   if (currentIdx === MONTHS.length) { alert('Seleccioná un mes para exportar su JSON.'); return; }
   const key = MONTHS[currentIdx];
@@ -3683,6 +3707,116 @@ function exportJSONMes() {
 function triggerImport() {
   document.getElementById('json-import-input').value = '';
   document.getElementById('json-import-input').click();
+}
+
+function persistQuiet() {
+  if (!currentCongKey) return;
+  try { localStorage.setItem(congStorageKey(currentCongKey), JSON.stringify(DATA)); } catch(e){}
+}
+
+function _ghEncodePath(path) {
+  return String(path || '').split('/').map(p => encodeURIComponent(p)).join('/');
+}
+
+function getGitHubSyncCandidates() {
+  const list = [];
+  const base = (GITHUB_SYNC.basePath || '').replace(/^\/+|\/+$/g, '');
+  if (currentCongKey) {
+    if (base) list.push(`${base}/${currentCongKey}.json`);
+    list.push(`${currentCongKey}.json`);
+  }
+  if (base) {
+    list.push(`${base}/informes.json`);
+    list.push(`${base}/data.json`);
+  }
+  list.push('informes.json');
+  list.push('data.json');
+  // unique, preserve order
+  return [...new Set(list)];
+}
+
+function mergeRemoteData(remote) {
+  if (!remote || typeof remote !== 'object') return 0;
+  let touched = 0;
+
+  MONTHS.forEach(mk => {
+    const rm = remote[mk];
+    if (!rm || typeof rm !== 'object') return;
+    if (!Array.isArray(rm.publicadores) || !Array.isArray(rm.precAux) || !Array.isArray(rm.precReg)) return;
+    const label = rm.label || DATA[mk]?.label || mk;
+    const date = rm.date || DATA[mk]?.date || mk;
+    DATA[mk] = {
+      ...rm,
+      label,
+      date,
+      notas: Array.isArray(rm.notas) ? rm.notas : [],
+      publicadores: Array.isArray(rm.publicadores) ? rm.publicadores : [],
+      precAux: Array.isArray(rm.precAux) ? rm.precAux : [],
+      precReg: Array.isArray(rm.precReg) ? rm.precReg : [],
+      inactivos: Array.isArray(rm.inactivos) ? rm.inactivos : []
+    };
+    touched++;
+  });
+
+  const extraKeys = ['_s21', 'asistencia', '_padron', '_gruposMeta', '_precCreditos'];
+  extraKeys.forEach(k => {
+    if (remote[k] && typeof remote[k] === 'object') {
+      DATA[k] = remote[k];
+      touched++;
+    }
+  });
+
+  return touched;
+}
+
+async function loadFromGitHubRepo(opts = {}) {
+  const silent = !!opts.silent;
+  if (!GITHUB_SYNC.enabled) return false;
+
+  const { owner, repo, branch } = GITHUB_SYNC;
+  if (!owner || !repo || !branch) {
+    if (!silent) alert('Configuración de GitHub Sync incompleta.');
+    return false;
+  }
+
+  const candidates = getGitHubSyncCandidates();
+  let loadedPath = null;
+  let parsed = null;
+
+  for (const p of candidates) {
+    const url = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${_ghEncodePath(p)}?t=${Date.now()}`;
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) continue;
+      parsed = await res.json();
+      loadedPath = p;
+      break;
+    } catch (e) {
+      // try next candidate
+    }
+  }
+
+  if (!parsed) {
+    if (!silent) alert('No encontré JSON en el repositorio. Subí primero el archivo de sync.');
+    return false;
+  }
+
+  const touched = mergeRemoteData(parsed);
+  if (!touched) {
+    if (!silent) alert('El JSON del repositorio no tiene formato compatible.');
+    return false;
+  }
+
+  persistQuiet();
+
+  if (chartView) renderCharts();
+  else if (precView) renderPrecView();
+  else if (asistenciaView) renderAsistencia();
+  else if (gruposView) renderGruposView();
+  else render();
+
+  if (!silent) toast(`Datos actualizados desde GitHub (${loadedPath}) ✓`);
+  return true;
 }
 
 function importJSON(event) {
