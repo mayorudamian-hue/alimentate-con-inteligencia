@@ -1,0 +1,991 @@
+======================================================================
+HISTORIAS VIRTUALES — TEXTO COMPLETO DEL JUEGO
+======================================================================
+
+======================================================================
+ESCENAS (54 en total)
+======================================================================
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_inicio
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová usó polvo del suelo para crear al primer hombre, Adán, y lo puso junto a su esposa, Eva, en un hermoso jardín llamado Edén. Les dio una gran variedad de árboles hermosos y alimentos muy ricos. Les permitió cuidar a los animales y les prometió que podrían vivir para siempre en el paraíso y ser amigos de Dios. Pero también les puso una norma importante...
+
+[Jehová Dios]
+"De todo árbol del jardín puedes comer libremente. Pero del árbol del conocimiento de lo bueno y lo malo no debes comer, porque el día que comas de él, sin falta morirás."
+
+[DECISIONES]
+  1. Aceptar la norma con gratitud: Jehová nos ha dado todo, confiaremos en Él. [Requiere: hum] +FE +Sabiduría
+  2. Sentir curiosidad por ese árbol en particular. ¿Por qué ese y no los demás? [Requiere: sab] -Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_curiosidad
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Eva se acerca al árbol, observando su fruto. Es hermoso, brillante. En ese momento, algo entre las ramas se mueve...
+
+[Adán]
+"Eva, recuerda lo que Dios nos dijo. Hay miles de árboles maravillosos en todo el jardín. No necesitamos ese."
+
+[DECISIONES]
+  1. Alejarse del árbol y explorar el resto del jardín con Adán. [Requiere: fe] +FE +Sabiduría
+  2. Quedarse un poco más, solo mirando... no hay daño en mirar. -FE -Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_paseo
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+El jardín es un paraíso perfecto. Elefantes beben en el río, gacelas saltan entre la hierba, pájaros de colores llenan el aire de música. Adán y Eva caminan en paz, agradecidos. Pero un día, Eva está sola cerca del árbol prohibido...
+
+[Narrador]
+La tranquilidad del Edén se rompe con una voz inesperada, suave como el susurro del viento entre las hojas.
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_serpiente
+Zona: arbol
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Satanás usó una serpiente para hablarle a Eva. La criatura se enreda entre las ramas del árbol prohibido y habla con voz suave y convincente.
+
+[La Serpiente (Satanás)]
+"¿Conque Dios les ha dicho que no coman de ningún árbol del jardín?" La serpiente sabe exactamente qué decir para despertar la duda.
+
+[DECISIONES]
+  1. Eva responde con firmeza: "Solo de ese árbol no podemos comer, o moriremos." [Requiere: fe] +FE
+  2. Eva responde con incertidumbre: "No sé bien... Dios dijo algo así..." -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_serpiente2
+Zona: arbol
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+La serpiente no se rinde. Sonríe con una mentira preparada.
+
+[La Serpiente]
+"¡Ustedes NO morirán! Dios sabe que el día que coman de ese árbol, sus ojos se abrirán y serán igual que Dios, conociendo lo bueno y lo malo."
+
+[DECISIONES]
+  1. Alejarse inmediatamente. Esto es una mentira. Jehová nunca nos engañaría. [Requiere: fe] +FE +Sabiduría
+  2. Dudar. ¿Y si la serpiente tiene razón? La fruta se ve tan hermosa... -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_serpiente2_duda
+Zona: arbol
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+La serpiente ve tu vacilación y aprovecha cada centímetro de duda.
+
+[La Serpiente]
+"¿Lo ves? Ni siquiera recuerdas bien lo que dijo. Eso es porque Dios no quiere que sean libres. Si prueban la fruta, SERÁN IGUAL QUE DIOS."
+
+[DECISIONES]
+  1. Recordar las palabras exactas de Dios y alejarse con determinación. [Requiere: hum] +FE +Sabiduría +Humildad
+  2. La fruta brilla, huele bien... Quisas Satanás tenga razón, quisás se me esté ocultando algo bueno. -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_rechaza
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Te alejas del árbol. La serpiente observa en silencio mientras tú vuelves al jardín. Al reunirte con Adán, le cuentas lo que pasó.
+
+[Eva]
+"Adán, una serpiente intentó convencerme de comer la fruta prohibida. Me dijo que no moriríamos... pero sé que Jehová no miente."
+
+[EVENTO] ✦ La tentación fue vencida · La fe fue más fuerte que el engaño ✦
+
+[OBJETO] 🛡 Escudo de la Fe — Resististe la primera gran tentación de la historia
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_final_obediente
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+El jardín sigue siendo tuyo. Los animales, el río cristalino, los árboles cargados de frutos. Jehová les permite seguir cuidando el paraíso. Este camino nunca existió en la historia real... pero muestra algo importante.
+
+[Narrador]
+Si Adán y Eva hubieran obedecido, la humanidad nunca habría perdido el paraíso. Cada decisión pequeña puede tener consecuencias enormes. La obediencia a Dios nace de la confianza: creer que Él sabe más que nosotros.
+
+[EVENTO] 🌿 ✦ FIN: El Paraíso Preservado · El camino que pudo haber sido ✦ 🌿
+
+[OBJETO] 🌿 Árbol de la Vida — La promesa de la vida eterna preservada
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_tentacion
+Zona: arbol
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Eva mira la fruta. Brilla bajo el sol. Satanás quería exactamente esto: que pensara solo en ella misma y no en lo que Jehová quiere. Eva tomó la fruta... y comió.
+
+[Eva]
+"Adán... probé la fruta. Y tú también deberías probarla."
+
+[OBJETO] 🍎 El Fruto Prohibido — Comiste lo que Jehová prohibió. Una decisión que cambió la historia.
+
+[DECISIONES]
+  1. Adán rechaza: "¡No! Eva, ¿qué has hecho? Jehová nos lo prohibió." [Requiere: hum] +Humildad +FE
+  2. Adán acepta la fruta. No quiere que Eva enfrente sola las consecuencias. -FE -Sabiduría -Humildad
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_adan_rechaza
+Zona: arbol
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Adán mira a Eva con una mezcla de dolor y firmeza. Ella tiene el fruto en la mano. Él sabe lo que ha hecho. Pero también sabe quién es Jehová... y lo que Él ordenó.
+
+[Adán]
+"Eva, yo te amé. Pero no puedo seguirte en esto. Jehová fue claro: quien coma de ese árbol morirá. Tú elegiste desobedecerle. Yo no puedo hacer lo mismo."
+
+[DECISIONES]
+  1. Alejarse de Eva y presentarse ante Jehová con honestidad. +FE +Valentía
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_obediente_juicio
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Adán se arrodilla en el jardín. Jehová se acerca. Adán le cuenta todo: la serpiente, Eva, la fruta. No esconde nada.
+
+[Jehová Dios]
+"Lo sé todo, Adán. Vi cada momento. Eva eligió escuchar a Satanás en lugar de obedecerme. Tú elegiste obedecerme aunque te costó perder a tu esposa. Eso habla de tu corazón."
+
+[DECISIONES]
+  1. Escuchar el juicio de Jehová sobre Eva... y la promesa para Adán. +FE +Humildad +Sabiduría +Paciencia
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_consecuencias_eva
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová llama a Eva. Ella se acerca con vergüenza. 
+
+[Jehová Dios]
+"Eva, fuiste engañada por la serpiente... pero tú elegiste creerle a ella en lugar de a mí. Adán no te siguió. Saldrás de este jardín sola. Vagar por la tierra, trabajarás con esfuerzo para sobrevivir, envejecerás. Y volverás al polvo del suelo del que fuiste tomada."
+
+[EVENTO] 🔥 Eva es expulsada del Jardín del Edén · Vagará sola por la tierra
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_ambos_comen
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Sus ojos se abren. De repente sienten vergüenza de su desnudez y se cubren con hojas de higuera. Escuchan los pasos de Jehová en el jardín... y se esconden entre los árboles.
+
+[Jehová Dios]
+"¿Dónde estás, Adán?"
+
+[OBJETO] 🍃 Hojas de Higuera — Te cubriste con hojas. La vergüenza del pecado busca esconderse.
+
+[DECISIONES]
+  1. Esconderse más. La vergüenza es demasiado grande. [Requiere: hum] -FE -Sabiduría -Humildad
+  2. Salir y hablar con Jehová. +FE +Humildad
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_confiesa
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Adán y Eva salen de entre los árboles. Ellos sufren las consecuencias.
+[Adán]
+"Escuché tu voz y tuve miedo porque estaba desnudo... comí del árbol que me dijiste que no comiera." [Requiere: hum] +FE
+
+[DECISIONES]
+  1. Escuchar el juicio de Jehová.
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_acusa
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Adán sale pero busca culpar a otros. La vergüenza lo impulsa a señalar en lugar de confesar.
+
+[Adán]
+"La mujer que tú me diste, ella me dio del árbol y yo comí." Eva señala a la serpiente. Nadie asume la responsabilidad.[Requiere: hum] -FE -Humildad - Sabiduría
+
+[DECISIONES]
+  1. Escuchar el juicio de Jehová.
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_juicio
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová escucha todo. Le duele profundamente que Adán y Eva hayan sido egoístas y le desobedecieran. Primero le habla a la serpiente, luego a Eva, luego a Adán.
+
+[Jehová Dios]
+"¿Qué han hecho?! Van a morir y volverán a ser polvo. Con dolor darás a luz, Eva. Con el sudor de tu frente comerás, Adán, hasta que vuelvas al suelo."
+
+[EVENTO] 🔥 Jehová echa a Adán y Eva del Jardín del Edén
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_expulsion
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová echó a Adán y Eva del Jardín del Edén y puso querubines con una espada de fuego llameante para vigilar la entrada. Como Adán y Eva fueron egoístas, perdieron el paraíso, la vida eterna y su amistad con Dios.
+
+[Narrador]
+Una sola decisión. Una sola norma. Y el paraíso se perdió para toda la humanidad. Pero en medio del juicio, Jehová también prometió algo: un día, el daño causado por la desobediencia sería reparado.
+
+[EVENTO] 🍎 FIN · El Paraíso Perdido · Génesis 3 ✦ La esperanza de la restauración permanece
+
+[OBJETO] 🌅 La Promesa de Restauración — Incluso en el juicio, Dios dejó una esperanza
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_nombres_animales
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová trajo ante Adán todos los animales terrestres y todas las aves para que les pusiera nombre. Era una tarea enorme — y una muestra de confianza increíble. Adán estudió a cada criatura antes de nombrarla.
+
+[Jehová Dios]
+"Adán, cuida de todo lo que he creado. Ponle nombre a cada animal. Tú eres responsable de esta creación."
+
+[OBJETO] 🌾 Don de Nombrar — Adán cumplió con sabiduría la tarea de nombrar a cada criatura.
+
+[DECISIONES]
+  1. Tomarse el tiempo de estudiar bien a cada animal antes de nombrarlo. Hacerlo con cuidado y gratitud. [Requiere: hum] +Sabiduría +Humildad
+  2. Nombrarlos rápidamente para terminar pronto. Hay tantos... [Requiere: sab] +Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_soledad
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Al terminar de nombrar a los animales, Adán se dio cuenta de algo: todos tenían pareja. El elefante con la elefanta. El águila con la águila hembra. Pero él... estaba solo. Jehová vio eso.
+
+[Jehová Dios]
+"No es bueno que el hombre continúe solo. Voy a hacerle una ayudante, como complemento de él."
+
+[DECISIONES]
+  1. Confiar en que Jehová sabe lo que necesitas, aunque todavía no lo veas. [Requiere: fe] +Fe
+  2. Sentirte triste por estar solo. ¿Por qué Jehová no lo pensó antes? -Fe
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_eva_creada
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová hizo que Adán cayera en un sueño profundo. Tomó una de sus costillas y de ella formó a Eva. Cuando Adán despertó y la vio, no pudo contener su asombro.
+
+[Adán]
+"¡Esto por fin es hueso de mis huesos y carne de mi carne! Esta será llamada Mujer, porque del hombre fue tomada."
+
+[EVENTO] ✦ Eva es creada · La primera familia comienza · Génesis 2:22
+
+[OBJETO] 💑 La Familia — La primera institución creada por Jehová
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_vida_eden
+Zona: eden
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Los días en el Edén eran perfectos. Adán y Eva cuidaban el jardín, conversaban con los animales, y disfrutaban de la presencia de Jehová. Pero un día, Eva se alejó sola hacia el centro del jardín...
+
+[Narrador]
+Jehová les había dado una sola norma. Una sola. De todos los árboles podían comer, excepto uno. Por mucho tiempo la respetaron. Pero Satanás esperaba su momento.
+
+[DECISIONES]
+  1. Adán busca a Eva para recordarle juntos la norma de Jehová. [Requiere: hum] +Humildad +Fe
+  2. Cada uno hace lo suyo. Eva se aleja sola hacia el árbol prohibido. -Humildad
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_vida_fuera
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Fuera del jardín, la tierra era diferente. Dura. Producía espinos y cardos. Adán tenía que trabajar con el sudor de su frente para conseguir alimento. Eva, sola y expulsada, vagaba por tierras desconocidas.
+
+[Narrador]
+Con el tiempo, Adán tuvo hijos. Caín, luego Abel. Les contó todo lo que había pasado en el Edén. Las consecuencias del pecado se extendían a todos sus descendientes.
+
+[DECISIONES]
+  1. Enseñar a tus hijos sobre Jehová con honestidad, incluyendo el error que cometiste. [Requiere: hum] +Humildad +Sabiduría
+  2. Evitar hablar del tema. El pasado es doloroso. -Sabiduría -Fe
+
+────────────────────────────────────────────────────────────
+ESCENA: adan_reflexion_final
+Zona: expulsion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Adán vivió 930 años. Durante ese tiempo vio crecer a sus hijos y nietos. Vio el mundo cambiar. Nunca olvidó el Edén — ni la promesa de Jehová de que un día la situación mejoraría.
+
+[Narrador]
+Una decisión. Un momento de debilidad. Y el mundo entero cambió. Pero Jehová no abandonó a la humanidad. Prometió una "descendencia" que con el tiempo restauraría todo lo que se había perdido. (Génesis 3:15)
+
+[EVENTO] ✦ Adán vivió 930 años · La esperanza de la restauración permanece · Génesis 5:5
+
+[OBJETO] 🌱 La Promesa de Génesis 3:15 — La primera profecía de restauración en la historia
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_inicio
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé era un hombre bueno que vivía en un mundo lleno de violencia. Era muy difícil para él vivir rodeado de personas malvadas que no respetaban a Jehová. Un día, su padre Lamec le habla con palabras proféticas.
+
+[Lamec (padre de Noé)]
+"Noé, hijo mío, sé que la vida no es fácil. Adán me dijo una vez que hace cientos de años que las cosas van mal. Pero Jehová dijo que gracias a ti mejoraría la situación."
+
+[DECISIONES]
+  1. "¿Y cómo? ¿Qué puedo hacer yo para cambiar las cosas?" Buscar la respuesta de Jehová con humildad. [Requiere: hum] +FE +Sabiduría
+  2. Ignorar las palabras. Son tiempos difíciles y no ves cómo podrías cambiar algo. -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_duda_llamado
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Los días pasan. La violencia a tu alrededor crece. Ves peleas, injusticias, gente que no tiene miedo de nada ni de nadie. Una noche, en medio del silencio, Jehová te habla directamente.
+
+[Jehová Dios]
+"Noé, he decidido acabar con toda esa gente violenta. La tierra está llena de maldad. Pero tú eres diferente. Tú me importas."
+
+[DECISIONES]
+  1. Escuchar con atención y humildad lo que Jehová tiene para decirte. +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_llamado
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová decidió traer un diluvio para acabar con la gente mala y le explicó a Noé cómo podían salvarse él y su familia.
+
+[Jehová Dios]
+"Haz un arca para ti y tu familia. También tienes que meter dentro toda clase de animales para que no mueran."
+
+[OBJETO] 📜 El Llamado de Jehová — Aceptaste una misión imposible con fe total.
+
+[DECISIONES]
+  1. "Haré todo lo que me dices." Obedecer de inmediato sin hacer preguntas. [Requiere: hum] +FE +Valentía
+  2. Preguntar primero: "¿Un arca? ¿Cuándo llegará el diluvio? ¿Cómo será de grande?" [Requiere: sab] +Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_pregunta
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová responde con paciencia. Te explica las medidas exactas del arca, los materiales, cómo sellarla con alquitrán.
+
+[Jehová Dios]
+"El arca tendrá 300 codos de largo, 50 de ancho y 30 de alto. Usarás madera de gofer y la cubrirás de alquitrán por dentro y por fuera. Harás tres pisos. Yo te daré las instrucciones paso a paso."
+
+[DECISIONES]
+  1. Con esa información clara, comprometerte a construirla exactamente como Jehová dice. [Requiere: hum] +Sabiduría +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_miedo_opinion
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Jehová ve tu corazón y habla directamente a tu temor.
+
+[Jehová Dios]
+"Noé, ¿confías en mí? ¿O confías más en lo que piense la gente? Yo soy quien crea tormentas y calma mares. La opinión de los hombres no puede salvarte... la mía sí."
+
+[DECISIONES]
+  1. Dejar el miedo a la opinión ajena y comprometerte a construir el arca. +FE +Valentía
+  2. Seguir preocupado. Quizás si construyes el arca en secreto nadie se burlará. -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_acepta_secreto
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Intentas construir discretamente, pero un arca de esas dimensiones es imposible de ocultar. Pronto todos en la región lo saben. La gente se ríe igual. Y además, no has hablado de Jehová a nadie.
+
+[Narrador]
+La obediencia a medias no es obediencia. Jehová te pidió que hablaras de Él también. Hay tiempo para hacerlo bien.
+
+[DECISIONES]
+  1. Reconsiderar y empezar a hablar abiertamente de Jehová mientras construyes. +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_acepta_total
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé les contó a su esposa, a sus tres hijos Sem, Cam y Jafet, y a las esposas de ellos todo lo que Jehová le había dicho. Era posible que tardaran 40 o 50 años en construir el arca. Tenían que cortar árboles, hacer vigas de madera, poner alquitrán para que el agua no entrara...
+
+[Hijo de Noé]
+"¡Tardaremos mucho en construir el arca! ¿Cuándo llegará el diluvio?"
+
+[EVENTO] 🪵 ✦ La construcción del arca comienza · Décadas de trabajo por delante ✦
+
+[OBJETO] 🪓 Hacha de Constructor — Herramienta del arca de Noé
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_mundo_nefilim
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+El mundo de Noé no era simplemente malo. Era aterrador. Ángeles rebeldes habían abandonado el cielo, tomado forma humana y se habían casado con mujeres. Sus hijos — los nefilim — eran gigantes violentos y sanguinarios que sembraban terror.
+
+[Narrador]
+La Biblia los llama "derribadores" o "los que hacen caer a otros". Eran hombres "poderosos" y "de fama". Y todo niño los admiraba. Noé tenía que proteger a sus hijos de esa influencia.
+
+[DECISIONES]
+  1. Hablar abiertamente con tus hijos sobre la maldad que los rodea y por qué Jehová la odia. [Requiere: hum] +Humildad +Sabiduría
+  2. Mejor no asustar a los niños. Son pequeños todavía. -Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_familia_instruccion
+Zona: tierra_noe
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé y su esposa enseñaban a sus hijos Sem, Cam y Jafet sobre Jehová. Les explicaban que Dios odia la violencia, que hay un propósito detrás de todo. Era difícil — los nefilim parecían más fuertes, más emocionantes. Pero la verdad tenía más peso.
+
+[Esposa de Noé]
+"Hijos, los nefilim son admirados hoy. Pero Jehová ve todo. Un día, quienes lo amen serán protegidos. Y quienes lo rechacen... sufrirán las consecuencias."
+
+[DECISIONES]
+  1. Ser paciente con tus hijos cuando hacen preguntas difíciles sobre por qué Jehová permite tanta maldad. [Requiere: pac] +Paciencia +Fe
+  2. Confiar en que las semillas que plantas ahora darán fruto con el tiempo. [Requiere: fe] +Fe +Humildad
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_predicador
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé no solo construía el arca. También predicaba. Era un "predicador de justicia" (2 Pedro 2:5). Avisaba a la gente de que venía una destrucción. Pero Jesús dijo que la gente "no hizo caso" — estaban ocupados comiendo, bebiendo, casándose.
+
+[Persona del pueblo]
+"¿Un diluvio? ¿Que va a cubrir TODO? Noé, llevas años diciéndonos lo mismo. Mira el cielo — ni una nube. Estás perdiendo el tiempo."
+
+[DECISIONES]
+  1. Seguir predicando con paciencia aunque nadie escuche. No es tu trabajo convencerlos, sino advertirlos. [Requiere: pac] +Paciencia +Fe
+  2. Responder con calma: "Lo que Jehová dice, se cumple. Aún hay tiempo para escuchar." [Requiere: fe] +Fe +Humildad
+  3. Cansarte. ¿Para qué predicar si nadie escucha? -Fe -Paciencia
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_animales_milagro
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+El día llegó. Los animales empezaron a venir. Solos. Sin que nadie los arreara ni los obligara. Elefantes, jirafas, leones, serpientes, pájaros de todos los colores... Caminando, volando, arrastrándose hacia el arca. La gente los miraba sin entender.
+
+[Vecino asombrado]
+"¿Estás viendo esto? ¿Cómo saben hacia dónde ir? ¿Quién los envía?" Algunos se asombraron. Pero aun así... no entraron.
+
+[OBJETO] 🦁 El León Manso — Viste animales salvajes entrar en paz al arca. Solo Jehová pudo hacer eso.
+
+[DECISIONES]
+  1. Ver en esto la mano de Jehová y llenarte de fe renovada. Si Él puede controlar a los animales, puede hacer cualquier cosa. [Requiere: fe] +Fe +Humildad
+  2. Aprovechar el asombro de la gente para predicar una última vez. [Requiere: sab] +Sabiduría +Fe
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_dentro_arca_rutina
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+La vida dentro del arca era un trabajo constante. Los animales necesitaban comida y cuidado cada día. La familia tenía que organizarse, cooperar, no perder la calma. Semanas se convirtieron en meses.
+
+[Sem (hijo de Noé)]
+"Padre, llevamos meses aquí. Los animales necesitan más de lo que calculamos. Algunos de mis hermanos están agotados. ¿Cómo seguimos?"
+
+[DECISIONES]
+  1. Repartir las tareas con humildad. Todos tienen que colaborar, incluyendo tú. [Requiere: hum] +Humildad +Paciencia
+  2. Reorganizar el sistema de turnos y cuidados para que sea más eficiente. [Requiere: sab] +Sabiduría
+  3. Decirles que se aguanten. Jehová proveerá. -Humildad
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_paloma
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé abrió la pequeña ventana y soltó una paloma. Regresó sin nada — agua por todas partes. Siete días después, la soltó de nuevo. Esta vez... regresó con una rama de olivo fresco en el pico.
+
+[Esposa de Noé]
+"¡Una rama de olivo! ¿Eso significa que hay tierra seca? ¿Pronto podremos salir?"
+
+[OBJETO] 🕊 Ramo de Olivo — La paloma volvió con una hoja de olivo. Señal de que Jehová cumple sus promesas.
+
+[DECISIONES]
+  1. Esperar. La rama es una señal de esperanza, pero Jehová dirá cuándo salir. No adelantarse. [Requiere: pac] +Paciencia +Fe
+  2. Celebrar con la familia. Jehová está cumpliendo su promesa paso a paso. [Requiere: fe] +Fe
+  3. Querer abrir la puerta ya. ¡Si hay tierra seca, por qué esperar! -Paciencia
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_construccion_burla
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Años pasan. El arca crece. La gente del lugar se acerca a mirar, algunos con curiosidad, muchos con burla. Un vecino se acerca a uno de tus hijos.
+
+[Vecino burlón]
+"¡Mi familia dice que están perdiendo el tiempo hablando de Jehová y construyendo ese barco enorme! No hay ninguna nube en el cielo. ¡Están locos!"
+
+[DECISIONES]
+  1. Responder con fe: "Debemos confiar en que Jehová nos recompensará por lo que estamos haciendo." [Requiere: fe] +FE +Valentía
+  2. Callarte y seguir trabajando sin responder. No vale la pena discutir. [Requiere: sab] +Sabiduría
+  3. Dejarte llevar por la duda. ¿Y si ellos tienen razón y estás perdiendo el tiempo? -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_testigo_fe
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé también habló de Jehová a la gente, pero no le hicieron caso. Sin embargo, su fe no dependía de la respuesta de los demás.
+
+[Noé]
+"Debemos tener fe y confiar en que Jehová nos va a recompensar por todo lo que estamos haciendo. No construimos esto para que la gente lo entienda. Lo construimos porque confiamos en Dios."
+
+[DECISIONES]
+  1. Continuar construyendo con fe firme. +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_silencio
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Tu silencio es sabio. Cada tabla que colocas es tu respuesta. El arca habla por sí sola.
+
+[Narrador]
+Noé también habló de Jehová a la gente cuando tuvo oportunidad, pero no le hicieron caso. Lo que sí hicieron fue ver el arca terminarse, año tras año.
+
+[DECISIONES]
+  1. Seguir trabajando. El tiempo dirá quién tenía razón.
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_duda_construccion
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Te sientas en el suelo, cansado. Décadas de trabajo. Sin lluvia. Sin señales. Solo burlas.
+
+[Jehová Dios]
+"Noé. ¿Recuerdas el día que te hablé? ¿Cambió algo de lo que te dije? Yo no cambio. Mi palabra no cambia. Lo que te prometí, lo cumpliré."
+
+[DECISIONES]
+  1. Recuperar la fe y levantarte a seguir construyendo. [Requiere: fe] +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_siete_dias
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Justo en el momento adecuado, después de décadas de trabajo, Jehová les dijo a Noé y su familia que entraran en el arca. ¡Tenían solo siete días para meter dentro todo tipo de animales!
+
+[Jehová Dios]
+"Noé, entra tú y toda tu familia en el arca. De todo animal limpio tomarás siete parejas, y de los animales que no son limpios, una pareja. Porque dentro de siete días haré llover sobre la tierra cuarenta días y cuarenta noches."
+
+[DECISIONES]
+  1. Entrar de inmediato. Ves los animales acercarse solos desde el horizonte... es una señal de Jehová. [Requiere: hum] +FE +Sabiduría
+  2. Intentar convencer una última vez a los vecinos para que entren también. [Requiere: fe] +Valentía
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_ultimo_intento
+Zona: construccion
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Corres a avisar a los vecinos. Algunos se ríen. Otros te ignoran. Ninguno entra. Con el corazón pesado, regresas al arca.
+
+[Vecino]
+"¡Siete días! ¡Ja! Llevamos años esperando tu diluvio, Noé. ¡Sigue esperando!"
+
+[DECISIONES]
+  1. Entrar al arca. Hiciste lo que podías. El resto está en manos de Jehová. [Requiere: hum] +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_entrada_arca
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Los animales entraron de dos en dos, de siete en siete. Elefantes, jirafas, leones, pájaros de todos los colores. Era un espectáculo que nunca nadie había visto. Y entonces... Jehová cerró la puerta.
+
+[Narrador]
+No fue Noé quien cerró la puerta. Fue Jehová. Como diciendo: "Yo me encargo. Están seguros."
+
+[EVENTO] 🚢 ✦ Jehová cerró la puerta del arca · El diluvio está a punto de comenzar ✦
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_lluvia_comienza
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Al séptimo día desde que entraron al arca, el cielo cambió. Primero unas nubes oscuras. Luego un trueno lejano. Luego otra gota... y otra. Y de repente...
+
+[Narrador]
+El cielo se abrió. No era lluvia normal. Era como si las cataratas del cielo se hubieran roto. El agua caía con una fuerza que nunca nadie había visto. Los ríos comenzaron a desbordarse. Los campos desaparecieron.
+
+[DECISIONES]
+  1. Asomarte por la pequeña ventana y ver cómo el agua sube... y sube... y sigue subiendo. +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_agua_sube
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Las casas de los vecinos que se burlaron desaparecieron bajo el agua. Los árboles más altos quedaron cubiertos. Llovió sin parar por 40 días y 40 noches. El agua cubrió hasta las montañas más altas de la tierra.
+
+[Hijo de Noé]
+"¡Padre! ¡El agua ya cubrió todo! ¡No se ve tierra por ningún lado! Solo agua... hasta donde alcanza la vista."
+
+[DECISIONES]
+  1. "Jehová cerró la puerta. Jehová controla el agua. Estamos seguros aquí." Responder con calma. [Requiere: fe] +FE +Valentía
+  2. Sentir el peso de lo que ocurre afuera. Tristeza mezclada con gratitud. [Requiere: sab] +Sabiduría +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_tristeza_gratitud
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Piensas en las personas que no quisieron escuchar. Les advertiste. Les hablaste de Jehová. No quisieron. Y ahora...
+
+[Noé]
+"No me alegra lo que pasa afuera. Jehová tampoco se alegra de tener que hacer esto. Pero la maldad tenía que terminar. Nosotros estamos aquí porque confiamos en Él. Y eso marca toda la diferencia."
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_arca_flota
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+El arca comenzó a moverse. A flotar. Una estructura enorme, llena de animales y personas, navegando sobre lo que había sido la tierra. Las olas la mecían suavemente. Adentro, los animales estaban tranquilos. Jehová los cuidaba.
+
+[Narrador]
+Durante 40 días y 40 noches llovió sin cesar. Luego el agua siguió subiendo otros 150 días más. Todo lo que respiraba en la tierra seca pereció. Solo Noé y los que estaban con él en el arca sobrevivieron.
+
+[EVENTO] 🌊 ✦ El diluvio cubrió toda la tierra · Solo el arca flotaba sobre las aguas ✦
+
+[DECISIONES]
+  1. Continuar... los días pasan dentro del arca.
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_diluvio
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Pasaron los días. Luego las semanas. Luego los meses. Más de un año dentro del arca. No había ventanas grandes. No había noticias del mundo exterior. Solo el sonido del agua, los animales, y la familia. Y la promesa de Jehová.
+
+[Narrador]
+No había radio, ni reloj, ni calendario. Solo fe. Solo esperar. Solo confiar en que el mismo Dios que cerró la puerta, la abriría a su tiempo.
+
+[OBJETO] ⚓ El Ancla de la Fe — Mantuviste la calma más de un año dentro del arca. Eso es paciencia real.
+
+[DECISIONES]
+  1. Mantener la calma y el orden dentro del arca, confiando en Jehová. [Requiere: pac] +FE +Sabiduría
+  2. La espera es agotadora. Sentir ansiedad y preguntar cuándo podrán salir. -FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_ansiedad
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+La familia también siente el peso de la espera. Han pasado meses. El arca huele a animales, la madera cruje con las olas.
+
+[Familiar de Noé]
+"¿Cuándo podremos salir? ¡Ya ha pasado más de un año!"
+
+[DECISIONES]
+  1. Responder con la fe de Noé: "Jehová nos dirá cuándo es seguro salir. Tengan fe." [Requiere: fe] +FE +Valentía
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_espera
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé enviaba aves para ver si había tierra seca. Una paloma regresó con una hoja de olivo en el pico. La esperanza llenó el arca.
+
+[Noé]
+"Jehová nos dirá cuándo es seguro salir. Tengan fe. Él nos trajo hasta aquí. Él nos sacará."
+
+[DECISIONES]
+  1. Esperar pacientemente la señal de Jehová. Primero envía una paloma para explorar. [Requiere: pac] +FE +Sabiduría
+  2. Intentar abrir la puerta tú mismo. Ya ves tierra seca desde la ventana. -FE -Sabiduría
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_impaciente
+Zona: arca_adentro
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Empujas la puerta... pero no se mueve. Jehová la cerró, solo Jehová la abrirá. En ese momento entiendes: la paciencia también es fe.
+
+[Narrador]
+La fe no es solo creer cuando todo va bien. Es también esperar cuando ya casi puedes ver el final.
+
+[DECISIONES]
+  1. Volver a tu lugar y esperar con calma la palabra de Jehová. [Requiere: pac] +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_salida
+Zona: tierra_nueva
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Finalmente, Jehová le dijo a Noé que podían salir. Ya no quedaba ninguna persona violenta o malvada en la tierra. Los animales salieron corriendo, volando, saltando. La familia respiró aire fresco.
+
+[Jehová Dios]
+"Sal del arca tú, y tu esposa, tus hijos y las esposas de tus hijos. Saca también a todos los animales. Multiplíquense en la tierra."
+
+[EVENTO] 🌈 ✦ Noé y su familia salen del arca · La tierra es nueva y limpia ✦
+
+[DECISIONES]
+  1. Continuar...
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_arcoiris
+Zona: tierra_nueva
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé construyó un altar y ofreció sacrificios a Jehová. Entonces Jehová prometió algo que la humanidad nunca olvidaría.
+
+[Jehová Dios]
+"Jamás usaré un diluvio para acabar con la vida en la tierra. Pongo mi arco en las nubes como señal del pacto entre yo y la tierra. Cada vez que aparezca, recordarán mi promesa."
+
+[EVENTO] 🌈 ✦ El arcoíris · La promesa eterna de Jehová · Génesis 8:22 ✦
+
+[OBJETO] 🌈 Promesa del Arcoíris — Jehová jamás volvería a destruir la tierra con agua
+
+[DECISIONES]
+  1. Contemplar el arcoíris con gratitud y asombro. [Requiere: hum] +FE
+
+────────────────────────────────────────────────────────────
+ESCENA: noe_final
+Zona: tierra_nueva
+────────────────────────────────────────────────────────────
+
+[NARRACIÓN]
+Noé y su familia sobrevivieron porque tuvieron fe. No una fe fácil: fue una fe que aguantó décadas de burlas, años de trabajo duro y más de un año encerrados esperando. Esa es la clase de fe que Jehová valora.
+
+[Narrador]
+"¿Por qué pudo haber sido difícil para Noé tener fe? ¿Por qué tuvieron que ser pacientes Noé y su familia? ¿Por qué necesitas tú tener fe y paciencia?" — Génesis 6-8; Hebreos 11:7
+
+[EVENTO] ⛵ FIN · Noé demuestra que tiene fe · Génesis 5:28–8:22
+
+[OBJETO] ⛵ El Arca de Noé — Símbolo eterno de la fe y la paciencia
+
+
+======================================================================
+PREGUNTAS DE TRIVIA
+======================================================================
+
+────────────────────────────────────────────────────────────
+ID: a1 | Ref: Génesis 2:7
+PREGUNTA: ¿De qué material creó Jehová a Adán?
+    A. Barro del río
+  ✓ B. Polvo del suelo
+    C. Arcilla del mar
+    D. Piedra del jardín
+EXPLICACIÓN: Jehová Dios formó al hombre del polvo del suelo y sopló en su nariz el aliento de vida.
+
+────────────────────────────────────────────────────────────
+ID: a2 | Ref: Génesis 5:5
+PREGUNTA: ¿Cuántos años vivió Adán según la Biblia?
+    A. 500 años
+    B. 730 años
+  ✓ C. 930 años
+    D. 1000 años
+EXPLICACIÓN: Adán vivió 930 años en total. Vivió lo suficiente para ver a muchos de sus descendientes.
+
+────────────────────────────────────────────────────────────
+ID: a3 | Ref: Génesis 3:24
+PREGUNTA: ¿Qué hizo Jehová para que Adán no pudiera volver al jardín del Edén?
+    A. Construyó una muralla
+  ✓ B. Puso querubines y una espada de fuego
+    C. Inundó el jardín
+    D. Hizo desaparecer el jardín
+EXPLICACIÓN: Jehová puso querubines y una espada llameante que giraba para guardar el camino al árbol de la vida.
+
+────────────────────────────────────────────────────────────
+ID: a4 | Ref: Génesis 2:17
+PREGUNTA: ¿Cómo se llamaba el árbol del que Adán y Eva NO podían comer?
+    A. El árbol de la sabiduría
+    B. El árbol de la vida
+  ✓ C. El árbol del conocimiento del bien y del mal
+    D. El árbol del paraíso
+EXPLICACIÓN: Era el árbol del conocimiento del bien y del mal. El árbol de la vida también estaba en el jardín, pero no era el prohibido.
+
+────────────────────────────────────────────────────────────
+ID: a5 | Ref: Génesis 4:1
+PREGUNTA: ¿Quién fue el primer hijo de Adán y Eva mencionado en la Biblia?
+    A. Abel
+    B. Set
+  ✓ C. Caín
+    D. Enoc
+EXPLICACIÓN: Caín fue el primer hijo. Luego nació Abel. Después de la muerte de Abel, Eva tuvo a Set.
+
+────────────────────────────────────────────────────────────
+ID: a6 | Ref: Génesis 3:15
+PREGUNTA: ¿Qué prometió Jehová en Génesis 3:15 que sería el primer paso hacia la restauración?
+    A. Un nuevo jardín
+  ✓ B. Una "descendencia" que aplastaría a la serpiente
+    C. El regreso al Edén
+    D. Un diluvio purificador
+EXPLICACIÓN: Jehová prometió una "descendencia" que heriría en la cabeza a la serpiente. Esta es la primera profecía mesiánica de la Biblia.
+
+────────────────────────────────────────────────────────────
+ID: n1 | Ref: Génesis 10:1; 11:1-9
+PREGUNTA: ¿Noé llegó a estar vivo cuando se dividieron los idiomas en la Torre de Babel?
+    A. No, ya había muerto
+  ✓ B. Sí, vivió hasta los 950 años, mucho después de Babel
+    C. No se sabe
+    D. Solo vivió hasta el diluvio
+EXPLICACIÓN: Noé vivió 950 años. El diluvio ocurrió cuando tenía ~600 años. La Torre de Babel ocurrió varias décadas después del diluvio, cuando Noé todavía vivía.
+
+────────────────────────────────────────────────────────────
+ID: n2 | Ref: Génesis 7:6
+PREGUNTA: ¿Cuántos años tenía Noé cuando comenzó el diluvio?
+    A. 500 años
+  ✓ B. 600 años
+    C. 700 años
+    D. 900 años
+EXPLICACIÓN: Noé tenía 600 años cuando las aguas del diluvio vinieron sobre la tierra.
+
+────────────────────────────────────────────────────────────
+ID: n3 | Ref: Génesis 6:1-4
+PREGUNTA: ¿Qué son los "nefilim" mencionados en Génesis 6:4?
+    A. Ángeles buenos enviados por Dios
+  ✓ B. Hijos de ángeles rebeldes y mujeres humanas — gigantes violentos
+    C. Una tribu poderosa de guerreros
+    D. Animales extintos antes del diluvio
+EXPLICACIÓN: Los nefilim eran hijos de ángeles rebeldes que tomaron forma humana y se casaron con mujeres. Eran gigantes "poderosos" y "de fama", pero extremadamente violentos.
+
+────────────────────────────────────────────────────────────
+ID: n4 | Ref: Génesis 7:11; 8:14
+PREGUNTA: ¿Cuánto tiempo estuvo Noé y su familia dentro del arca en total?
+    A. 40 días y 40 noches
+    B. 6 meses
+  ✓ C. Más de un año
+    D. 3 meses exactos
+EXPLICACIÓN: Entraron el día 17 del segundo mes del año 600 de Noé, y salieron el día 27 del segundo mes del año siguiente. Más de 370 días en total.
+
+────────────────────────────────────────────────────────────
+ID: n5 | Ref: Génesis 6:9
+PREGUNTA: ¿Por qué Jehová eligió a Noé específicamente para construir el arca?
+    A. Era el más rico de su tiempo
+    B. Era carpintero profesional
+  ✓ C. Era un hombre recto e íntegro que andaba con Dios
+    D. Era el más viejo de su generación
+EXPLICACIÓN: La Biblia dice que Noé era "un hombre justo, íntegro entre sus contemporáneos" y que "andaba con el Dios verdadero". Su carácter moral fue lo que lo distinguió.
+
+────────────────────────────────────────────────────────────
+ID: n6 | Ref: Génesis 8:8-11
+PREGUNTA: ¿Qué envió Noé desde el arca para saber si había tierra seca? ¿Y qué trajo de vuelta?
+    A. Un cuervo, trajo un pez
+  ✓ B. Una paloma, trajo una rama de olivo
+    C. Un águila, no volvió
+    D. Una paloma, no trajo nada
+EXPLICACIÓN: Noé envió una paloma. La primera vez volvió sin nada. La segunda vez volvió con una rama de olivo fresca en el pico — señal de que las aguas habían bajado.
+
+────────────────────────────────────────────────────────────
+ID: n7 | Ref: Génesis 6:15
+PREGUNTA: ¿Qué medidas tenía el arca de Noé y a qué equivalen hoy?
+    A. 50m de largo — como un edificio de 3 pisos
+  ✓ B. 133m de largo — más que un campo de fútbol y medio
+    C. 200m de largo — como dos estadios
+    D. 80m de largo — como un barco moderno pequeño
+EXPLICACIÓN: El arca medía 300 codos de largo, equivalente a unos 133 metros. Era más grande que los mayores barcos de madera construidos en tiempos modernos.
+
+────────────────────────────────────────────────────────────
+ID: n8 | Ref: Génesis 9:13-15
+PREGUNTA: ¿Qué es el arcoíris según la Biblia y qué representa?
+    A. Una señal de la lluvia que viene
+    B. Un fenómeno óptico sin significado especial
+  ✓ C. El pacto de Jehová de no volver a destruir la tierra con un diluvio
+    D. Una bendición a la familia de Noé
+EXPLICACIÓN: Jehová puso el arcoíris como señal de su pacto: jamás volvería a usar un diluvio para destruir toda la vida en la tierra.
+
+
+======================================================================
+CONTEXTO HISTÓRICO
+======================================================================
+
+[ADAN]
+Fechas: ~4026 a.e.c.
+Lugar: Jardín del Edén · Mesopotamia
+Descripción: La historia de la humanidad comienza aquí. Adán y Eva vivían en un paraíso perfecto junto a Jehová. Una sola norma. Una sola decisión. Y todo cambió.
+
+[NOE]
+Fechas: ~2970 – 2370 a.e.c.
+Lugar: Región del Éufrates · Monte Ararat
+Descripción: Noé vivió en el mundo más violento de la historia. Ángeles rebeldes, gigantes nefilim, maldad total. Y Jehová le pidió algo imposible: construir un arca enorme durante décadas.
+
+
+======================================================================
+PERSONAJES
+======================================================================
+
+🍎 Adán y Eva [adan]
+  Era: El Jardín del Edén · Génesis 2-3
+  Desc: Vivían en el paraíso perfecto. Jehová les dio todo... pero también una norma. Cuando la serpiente habla, ¿qué decides?
+
+🚢 Noé [noe]
+  Era: Mundo antiguo · Génesis 5-8
+  Desc: Un hombre bueno rodeado de violencia. Jehová le pide construir un arca enorme. ¿Tendrás la fe para obedecer aunque nadie te crea?

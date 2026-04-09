@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senderos — Estudio Bíblico Profundo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1208; --parch:#f5ede0; --parch2:#ede0cc;
+    --gold:#b8860b; --gold2:#d4a017; --amber:#c8850a;
+    --rust:#8b3a0f; --sage:#4a6741; --scroll:#e8d5b0;
+    --shadow:rgba(26,18,8,0.18); --dim:#6b5030; --red:#8b1a1a;
+    --blue:#1a3a5c; --teal:#2a6b6b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);font-family:'Crimson Pro',Georgia,serif;color:var(--ink);min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 120% 80% at 20% 30%,#2a1a08 0%,transparent 60%),radial-gradient(ellipse 100% 100% at 80% 80%,#1a0e04 0%,transparent 55%),repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,220,130,0.015) 2px,rgba(255,220,130,0.015) 3px);z-index:0;}
+
+  /* ── NAV ── */
+  .nav{position:relative;z-index:20;display:flex;gap:0;border-bottom:1px solid rgba(184,134,11,0.3);background:rgba(26,18,8,0.95);backdrop-filter:blur(8px);}
+  .nav-btn{padding:14px 22px;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:rgba(245,237,224,0.5);cursor:pointer;border:none;background:transparent;text-transform:uppercase;transition:all 0.2s;position:relative;}
+  .nav-btn:hover{color:var(--gold2);}
+  .nav-btn.active{color:var(--gold2);}
+  .nav-btn.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .nav-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--rust);border-radius:50%;font-size:0.6rem;color:var(--parch);margin-left:6px;font-family:'JetBrains Mono',monospace;}
+
+  /* ── HEADER ── */
+  .header{position:relative;z-index:10;text-align:center;padding:36px 24px 24px;border-bottom:1px solid rgba(184,134,11,0.3);}
+  .header-ornament{color:var(--gold);font-size:1.2rem;letter-spacing:6px;opacity:0.7;margin-bottom:12px;}
+  .header h1{font-family:'Cinzel',serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--gold2);letter-spacing:4px;text-shadow:0 2px 24px rgba(184,134,11,0.5);}
+  .header p{margin-top:8px;color:rgba(245,237,224,0.55);font-style:italic;font-size:1.05rem;letter-spacing:1px;}
+
+  /* ── PAGES ── */
+  .page{display:none;position:relative;z-index:5;max-width:960px;margin:0 auto;padding:32px 20px 80px;}
+  .page.active{display:block;}
+
+  /* ── PANELS ── */
+  .panel{background:linear-gradient(145deg,var(--parch) 0%,var(--scroll) 100%);border:1px solid rgba(184,134,11,0.45);border-radius:4px;padding:28px 32px;margin-bottom:24px;box-shadow:0 4px 32px var(--shadow),inset 0 1px 0 rgba(255,255,255,0.4);position:relative;overflow:hidden;}
+  .panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--amber),var(--gold),transparent);}
+  .panel-title{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:3px;color:var(--rust);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .panel-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold2),transparent);opacity:0.4;}
+
+  .char-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .char-chip{padding:6px 14px;background:rgba(184,134,11,0.1);border:1px solid rgba(184,134,11,0.3);border-radius:20px;color:var(--dim);font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
+  .char-chip:hover{background:rgba(184,134,11,0.2);border-color:var(--gold);color:var(--ink);}
+  .char-chip.selected{background:var(--gold);border-color:var(--gold2);color:var(--ink);font-weight:600;}
+
+  label{display:block;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--rust);text-transform:uppercase;margin-bottom:8px;}
+  input,textarea,select{width:100%;background:rgba(255,255,255,0.55);border:1px solid rgba(184,134,11,0.35);border-radius:3px;padding:12px 16px;font-family:'Crimson Pro',Georgia,serif;font-size:1.05rem;color:var(--ink);outline:none;transition:border-color 0.2s,box-shadow 0.2s;margin-bottom:16px;}
+  input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,134,11,0.12);}
+  textarea{resize:vertical;min-height:120px;}
+  select{cursor:pointer;}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,var(--gold) 0%,var(--amber) 100%);color:var(--ink);border:none;border-radius:3px;font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 12px rgba(184,134,11,0.35);}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(184,134,11,0.5);}
+  .btn:active{transform:translateY(0);}
+  .btn-ghost{background:transparent;border:1px solid rgba(184,134,11,0.5);color:var(--gold2);box-shadow:none;}
+  .btn-ghost:hover{background:rgba(184,134,11,0.1);}
+  .btn-sm{padding:8px 16px;font-size:0.7rem;}
+  .btn-danger{background:linear-gradient(135deg,var(--red),#6b1010);color:var(--parch);}
+  .btn-sage{background:linear-gradient(135deg,var(--sage),#3a5531);color:var(--parch);}
+
+  .q-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .q-pill{padding:7px 14px;background:rgba(139,58,15,0.08);border:1px solid rgba(139,58,15,0.25);border-radius:3px;font-size:0.88rem;color:var(--rust);cursor:pointer;transition:all 0.2s;}
+  .q-pill:hover{background:rgba(139,58,15,0.15);}
+  .q-pill.active{background:var(--rust);color:var(--parch);}
+
+  .result-area{display:none;animation:fadeIn 0.4s ease;}
+  .result-area.show{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  .result-block{background:linear-gradient(160deg,var(--parch) 0%,#f0e6ce 100%);border:1px solid rgba(184,134,11,0.3);border-left:4px solid var(--gold);border-radius:3px;padding:24px 28px;margin-bottom:16px;}
+  .result-block h3{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:var(--rust);text-transform:uppercase;margin-bottom:12px;}
+  .result-body{font-size:1.05rem;line-height:1.85;color:#2a1a08;}
+  .result-body p{margin-bottom:12px;}
+
+  .wol-cite{display:inline-flex;align-items:center;gap:5px;background:rgba(139,26,26,0.07);border:1px solid rgba(139,26,26,0.2);border-radius:2px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--red);text-decoration:none;margin:3px;}
+  .wol-cite:hover{background:rgba(139,26,26,0.15);}
+  .scripture-ref{display:inline-block;background:rgba(139,26,26,0.08);border:1px solid rgba(139,26,26,0.2);border-radius:2px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--red);margin:2px;}
+
+  .timeline{position:relative;padding-left:32px;margin:16px 0;}
+  .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--amber),transparent);}
+  .tl-item{position:relative;margin-bottom:20px;background:rgba(255,255,255,0.4);border:1px solid rgba(184,134,11,0.2);border-radius:3px;padding:14px 18px;}
+  .tl-item::before{content:'';position:absolute;left:-26px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--parch);box-shadow:0 0 8px rgba(184,134,11,0.5);}
+  .tl-label{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--rust);margin-bottom:4px;}
+  .tl-text{font-size:0.95rem;line-height:1.65;color:var(--ink);}
+
+  .reflex-q{background:rgba(74,103,65,0.08);border-left:3px solid var(--sage);border-radius:0 3px 3px 0;padding:14px 18px;margin-bottom:12px;font-style:italic;color:#2a3a28;line-height:1.65;}
+
+  .tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:-1px;}
+  .tab{padding:10px 18px;background:rgba(245,237,224,0.3);border:1px solid rgba(184,134,11,0.3);border-bottom:none;border-radius:3px 3px 0 0;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:1.5px;color:var(--dim);cursor:pointer;transition:all 0.2s;text-transform:uppercase;}
+  .tab.active{background:var(--parch);color:var(--rust);border-color:rgba(184,134,11,0.45);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;animation:fadeIn 0.3s ease;}
+
+  .loading{display:none;align-items:center;gap:12px;padding:20px;color:var(--dim);font-style:italic;}
+  .loading.show{display:flex;}
+  .spinner{width:24px;height:24px;border:2px solid rgba(184,134,11,0.2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .wol-footer{margin-top:12px;padding:10px 14px;background:rgba(139,26,26,0.05);border:1px solid rgba(139,26,26,0.15);border-radius:3px;font-size:0.8rem;color:var(--dim);font-style:italic;}
+  .wol-footer a{color:var(--rust);}
+
+  .hidden{display:none!important;}
+  ::-webkit-scrollbar{width:8px;}
+  ::-webkit-scrollbar-track{background:var(--ink);}
+  ::-webkit-scrollbar-thumb{background:rgba(184,134,11,0.4);border-radius:4px;}
+
+  /* ── FUENTES PROPIAS ── */
+  .source-item{background:rgba(255,255,255,0.45);border:1px solid rgba(184,134,11,0.3);border-radius:3px;padding:14px 18px;margin-bottom:10px;position:relative;}
+  .source-item-title{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:var(--rust);margin-bottom:4px;}
+  .source-item-preview{font-size:0.9rem;color:var(--dim);line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+  .source-item-actions{position:absolute;top:10px;right:12px;display:flex;gap:6px;}
+  .icon-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,134,11,0.3);border-radius:3px;background:rgba(255,255,255,0.4);cursor:pointer;font-size:0.85rem;transition:all 0.2s;}
+  .icon-btn:hover{background:rgba(184,134,11,0.2);}
+  .source-active-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(74,103,65,0.12);border:1px solid rgba(74,103,65,0.35);border-radius:20px;color:var(--sage);font-size:0.78rem;font-family:'Cinzel',serif;letter-spacing:1px;margin-bottom:12px;}
+
+  /* ── BIBLIOTECA ── */
+  .library-empty{text-align:center;padding:48px 24px;color:rgba(245,237,224,0.3);font-style:italic;}
+  .study-card{background:linear-gradient(145deg,var(--parch),var(--scroll));border:1px solid rgba(184,134,11,0.35);border-radius:4px;padding:20px 24px;margin-bottom:16px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+  .study-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--amber));}
+  .study-card:hover{transform:translateX(2px);border-color:rgba(184,134,11,0.6);box-shadow:0 4px 20px var(--shadow);}
+  .study-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+  .study-card-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--rust);letter-spacing:1px;}
+  .study-card-date{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--dim);}
+  .study-card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+  .meta-tag{padding:3px 10px;background:rgba(184,134,11,0.1);border:1px solid rgba(184,134,11,0.25);border-radius:12px;font-size:0.75rem;color:var(--dim);font-family:'JetBrains Mono',monospace;}
+  .study-card-notes{font-size:0.9rem;color:var(--dim);font-style:italic;line-height:1.5;margin-top:8px;}
+  .study-card-actions{display:flex;gap:8px;margin-top:12px;}
+
+  /* ── CONCEPTOS / TAGS ── */
+  .concept-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+  .concept-tag{padding:7px 16px;background:rgba(42,107,107,0.1);border:1px solid rgba(42,107,107,0.35);border-radius:20px;color:var(--teal);font-size:0.88rem;cursor:pointer;transition:all 0.2s;}
+  .concept-tag:hover{background:rgba(42,107,107,0.2);}
+  .concept-tag.active{background:var(--teal);color:var(--parch);}
+  .concept-count{font-family:'JetBrains Mono',monospace;font-size:0.7rem;margin-left:5px;opacity:0.7;}
+
+  /* ── VIEWER ── */
+  .study-viewer{background:linear-gradient(145deg,var(--parch),var(--scroll));border:1px solid rgba(184,134,11,0.45);border-radius:4px;padding:28px 32px;}
+  .study-viewer-header{border-bottom:1px solid rgba(184,134,11,0.2);padding-bottom:16px;margin-bottom:24px;}
+  .study-viewer-title{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--rust);letter-spacing:2px;margin-bottom:8px;}
+
+  /* ── FUENTE INDICATOR ── */
+  .source-indicator{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;background:rgba(42,107,107,0.1);border:1px solid rgba(42,107,107,0.3);border-radius:12px;font-size:0.75rem;color:var(--teal);font-family:'JetBrains Mono',monospace;margin:3px;}
+
+  /* ── MODAL ── */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.show{display:flex;}
+  .modal{background:linear-gradient(145deg,var(--parch),var(--scroll));border:1px solid rgba(184,134,11,0.5);border-radius:6px;padding:32px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto;position:relative;}
+  .modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3rem;color:var(--dim);cursor:pointer;line-height:1;}
+  .modal-close:hover{color:var(--rust);}
+
+  /* ── TOAST ── */
+  .toast{position:fixed;bottom:24px;right:24px;z-index:200;background:var(--sage);color:var(--parch);padding:12px 24px;border-radius:3px;font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:1px;box-shadow:0 4px 20px rgba(0,0,0,0.4);transform:translateY(20px);opacity:0;transition:all 0.3s;pointer-events:none;}
+  .toast.show{transform:translateY(0);opacity:1;}
+
+  @media(max-width:600px){.panel,.study-viewer{padding:20px 18px;}.page{padding:20px 14px 60px;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-ornament">✦ ✦ ✦</div>
+  <h1>Senderos</h1>
+  <p>Estudio bíblico profundo — personaje · acontecimiento · contexto</p>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button class="nav-btn active" onclick="showPage('estudio')">✦ Estudio</button>
+  <button class="nav-btn" onclick="showPage('fuentes')">📄 Mis fuentes <span class="nav-badge" id="badge-fuentes">0</span></button>
+  <button class="nav-btn" onclick="showPage('biblioteca')">📚 Biblioteca <span class="nav-badge" id="badge-biblioteca">0</span></button>
+  <button class="nav-btn" onclick="showPage('conceptos')">🕸 Conceptos</button>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PAGE: ESTUDIO                                            -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="page-estudio" class="page active">
+
+  <div id="step1" class="panel">
+    <div class="panel-title">✦ Paso 1 — Elige un personaje bíblico</div>
+    <div class="char-grid">
+      <span class="char-chip" onclick="selectChar(this,'José')">José</span>
+      <span class="char-chip" onclick="selectChar(this,'David')">David</span>
+      <span class="char-chip" onclick="selectChar(this,'Moisés')">Moisés</span>
+      <span class="char-chip" onclick="selectChar(this,'Rut')">Rut</span>
+      <span class="char-chip" onclick="selectChar(this,'Ester')">Ester</span>
+      <span class="char-chip" onclick="selectChar(this,'Elías')">Elías</span>
+      <span class="char-chip" onclick="selectChar(this,'Pablo')">Pablo</span>
+      <span class="char-chip" onclick="selectChar(this,'Pedro')">Pedro</span>
+      <span class="char-chip" onclick="selectChar(this,'Abraham')">Abraham</span>
+      <span class="char-chip" onclick="selectChar(this,'Job')">Job</span>
+      <span class="char-chip" onclick="selectChar(this,'Débora')">Débora</span>
+      <span class="char-chip" onclick="selectChar(this,'Noemí')">Noemí</span>
+    </div>
+    <label>O escribe otro personaje</label>
+    <input id="customChar" type="text" placeholder="ej. Jeremías, Noé, Ananías…" oninput="clearChips()"/>
+    <label>Pasaje bíblico (recomendado)</label>
+    <input id="passage" type="text" placeholder="ej. Génesis 40–43, 1 Samuel 17, Hechos 9…"/>
+    <label>Momento o acontecimiento específico</label>
+    <input id="event" type="text" placeholder="ej. José en la cárcel, La vocación de Moisés…"/>
+
+    <!-- Fuentes activas -->
+    <div id="active-sources-indicator" style="margin-top:8px;margin-bottom:16px;display:none;">
+      <div style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:8px;">Fuentes propias activas para este estudio</div>
+      <div id="active-sources-list"></div>
+    </div>
+
+    <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+      <button class="btn btn-ghost btn-sm" onclick="showPage('fuentes')">📄 Gestionar mis fuentes</button>
+      <button class="btn" onclick="goStep2()">Continuar ›</button>
+    </div>
+  </div>
+
+  <div id="step2" class="panel hidden">
+    <div class="panel-title">✦ Paso 2 — ¿Desde qué ángulo quieres estudiar hoy?</div>
+    <p style="font-style:italic;color:var(--dim);margin-bottom:16px;font-size:0.95rem;">Selecciona uno o varios ángulos de análisis</p>
+    <div class="q-grid">
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="QUE">¿Qué hizo y cómo afectó su relación con Dios y los demás?</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="CONTEXTO">¿Cómo era su entorno? Contexto cultural y familiar</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="COMO">¿Cómo lo hizo? ¿Se apoyó en Jehová u otros?</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="PORQUE">¿Por qué lo hizo así? Motivaciones espirituales</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="CUANDO">¿Cuándo? Momento histórico y cronología</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="ASOCIACIONES">Asociaciones con otros personajes o pasajes</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="LINEA">Línea de tiempo del personaje</span>
+      <span class="q-pill" onclick="toggleAngle(this)" data-val="REFLEXION">Preguntas de reflexión personal</span>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn btn-ghost btn-sm" onclick="goStep1()">‹ Atrás</button>
+      <button class="btn" onclick="launchStudy()">🕊 Iniciar estudio</button>
+    </div>
+  </div>
+
+  <div id="results" class="result-area">
+    <div class="panel" style="border-left:4px solid var(--gold);background:linear-gradient(135deg,#1a1208 0%,#2a1a08 100%);">
+      <div style="color:var(--gold);font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">Estudio activo · Fuentes combinadas</div>
+      <div id="studyTitle" style="color:var(--parch);font-size:1.6rem;font-family:'Cinzel',serif;"></div>
+      <div id="studyPassage" style="color:rgba(245,237,224,0.5);font-style:italic;margin-top:4px;font-size:0.95rem;"></div>
+      <div id="sources-used-in-study" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;"></div>
+    </div>
+
+    <div style="background:rgba(245,237,224,0.05);border:1px solid rgba(184,134,11,0.3);border-radius:4px;overflow:hidden;">
+      <div class="tabs" id="tabsRow"></div>
+      <div id="tabContents" style="padding:24px 28px;background:linear-gradient(145deg,var(--parch),var(--scroll));"></div>
+    </div>
+
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:24px;flex-wrap:wrap;">
+      <button class="btn btn-sage" onclick="saveCurrentStudy()">💾 Guardar estudio</button>
+      <button class="btn btn-ghost" onclick="resetApp()">✦ Nuevo estudio</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PAGE: FUENTES PROPIAS                                    -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="page-fuentes" class="page">
+  <div class="panel">
+    <div class="panel-title">📄 Agregar nueva fuente propia</div>
+    <p style="font-style:italic;color:var(--dim);margin-bottom:20px;font-size:0.95rem;">
+      Pegá cualquier texto — notas personales, artículos, transcripciones, comentarios — y la IA lo incorporará a tus estudios junto a la Biblioteca Watchtower.
+    </p>
+    <label>Título de la fuente</label>
+    <input id="src-title" type="text" placeholder="ej. Notas del discurso sobre José, Comentario Matthew Henry…"/>
+    <label>Categoría / etiqueta</label>
+    <input id="src-tag" type="text" placeholder="ej. fe, paciencia, profecía, contexto histórico…"/>
+    <label>Contenido del texto</label>
+    <textarea id="src-body" rows="8" placeholder="Pegá aquí el texto completo de tu fuente…"></textarea>
+    <div style="text-align:right">
+      <button class="btn" onclick="addSource()">✦ Guardar fuente</button>
+    </div>
+  </div>
+
+  <div id="sources-list-container">
+    <div class="panel-title" style="color:rgba(245,237,224,0.5);padding:16px 0 0;">MIS FUENTES GUARDADAS</div>
+    <div id="sources-list"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PAGE: BIBLIOTECA                                         -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="page-biblioteca" class="page">
+  <div class="panel" style="background:linear-gradient(145deg,#1a1208,#2a1a08);border-color:rgba(184,134,11,0.3);">
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <input id="lib-search" type="text" placeholder="Buscar en estudios guardados…" style="flex:1;background:rgba(255,255,255,0.08);color:var(--parch);border-color:rgba(184,134,11,0.3);margin-bottom:0;" oninput="renderLibrary()"/>
+      <select id="lib-filter" style="width:auto;flex-shrink:0;background:rgba(255,255,255,0.08);color:var(--parch);border-color:rgba(184,134,11,0.3);margin-bottom:0;" onchange="renderLibrary()">
+        <option value="">Todos los personajes</option>
+      </select>
+    </div>
+  </div>
+  <div id="biblioteca-list"></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PAGE: CONCEPTOS                                          -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="page-conceptos" class="page">
+  <div class="panel">
+    <div class="panel-title">🕸 Biblioteca de conceptos</div>
+    <p style="font-style:italic;color:var(--dim);margin-bottom:16px;font-size:0.95rem;">
+      Ideas, temas y conceptos extraídos de tus estudios. Hacé clic en un concepto para ver todos los estudios y fuentes relacionados.
+    </p>
+    <div id="concept-cloud-container"></div>
+  </div>
+  <div id="concept-results"></div>
+</div>
+
+<!-- ════════ MODAL VIEWER ════════ -->
+<div class="modal-overlay" id="modal-viewer">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ════════ MODAL SAVE ════════ -->
+<div class="modal-overlay" id="modal-save">
+  <div class="modal" style="max-width:480px;">
+    <button class="modal-close" onclick="document.getElementById('modal-save').classList.remove('show')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:2px;color:var(--rust);text-transform:uppercase;margin-bottom:16px;">Guardar estudio</div>
+    <label>Notas personales (opcional)</label>
+    <textarea id="save-notes" rows="4" placeholder="Agrega reflexiones, preguntas que te surgieron, ideas para investigar más…"></textarea>
+    <label>Conceptos / etiquetas (separados por coma)</label>
+    <input id="save-concepts" type="text" placeholder="ej. fe, paciencia, providencia divina, integridad…"/>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:8px;">
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('modal-save').classList.remove('show')">Cancelar</button>
+      <button class="btn btn-sm" onclick="confirmSave()">💾 Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+let selectedChar = '';
+let selectedAngles = new Set();
+let tabs = [];
+let studyResults = {}; // angle -> html string
+let activeSources = []; // ids of sources toggled ON
+
+function getStudies() { try { return JSON.parse(localStorage.getItem('senderos_studies')||'[]'); } catch(e){return[];} }
+function saveStudies(arr) { localStorage.setItem('senderos_studies', JSON.stringify(arr)); }
+function getSources() { try { return JSON.parse(localStorage.getItem('senderos_sources')||'[]'); } catch(e){return[];} }
+function saveSources(arr) { localStorage.setItem('senderos_sources', JSON.stringify(arr)); }
+
+// ═══════════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════════
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  const btns = document.querySelectorAll('.nav-btn');
+  const labels = ['estudio','fuentes','biblioteca','conceptos'];
+  btns[labels.indexOf(name)]?.classList.add('active');
+  if (name==='fuentes') renderSources();
+  if (name==='biblioteca') { renderLibraryFilter(); renderLibrary(); }
+  if (name==='conceptos') renderConcepts();
+  updateBadges();
+}
+
+function updateBadges() {
+  document.getElementById('badge-fuentes').textContent = getSources().length;
+  document.getElementById('badge-biblioteca').textContent = getStudies().length;
+}
+
+// ═══════════════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// ═══════════════════════════════════════════════════════════
+// FUENTES PROPIAS
+// ═══════════════════════════════════════════════════════════
+function addSource() {
+  const title = document.getElementById('src-title').value.trim();
+  const tag = document.getElementById('src-tag').value.trim();
+  const body = document.getElementById('src-body').value.trim();
+  if (!title || !body) { alert('Ingresa título y contenido.'); return; }
+  const sources = getSources();
+  sources.push({ id: Date.now()+'', title, tag, body, created: new Date().toLocaleDateString('es-AR') });
+  saveSources(sources);
+  document.getElementById('src-title').value='';
+  document.getElementById('src-tag').value='';
+  document.getElementById('src-body').value='';
+  renderSources();
+  updateBadges();
+  showToast('✦ Fuente guardada correctamente');
+}
+
+function renderSources() {
+  const sources = getSources();
+  const container = document.getElementById('sources-list');
+  if (!sources.length) {
+    container.innerHTML = `<div style="text-align:center;padding:32px;color:rgba(245,237,224,0.25);font-style:italic;">Aún no tenés fuentes guardadas.</div>`;
+    updateActiveSources();
+    return;
+  }
+  container.innerHTML = sources.map(s => `
+    <div class="source-item" id="src-item-${s.id}">
+      <div class="source-item-actions">
+        <div class="icon-btn" title="${activeSources.includes(s.id)?'Desactivar':'Activar'} para estudios" onclick="toggleActiveSource('${s.id}')" id="src-toggle-${s.id}" style="${activeSources.includes(s.id)?'background:rgba(74,103,65,0.3);border-color:var(--sage);':''}">
+          ${activeSources.includes(s.id)?'✅':'⬜'}
+        </div>
+        <div class="icon-btn" title="Eliminar" onclick="deleteSource('${s.id}')">🗑</div>
+      </div>
+      <div class="source-item-title">${s.title} ${s.tag?`<span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--teal);margin-left:6px;">#${s.tag}</span>`:''}</div>
+      <div class="source-item-preview" style="padding-right:70px;">${s.body}</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--dim);margin-top:6px;">${s.created} · ${s.body.length} caracteres</div>
+    </div>
+  `).join('');
+  updateActiveSources();
+}
+
+function toggleActiveSource(id) {
+  if (activeSources.includes(id)) {
+    activeSources = activeSources.filter(x=>x!==id);
+  } else {
+    activeSources.push(id);
+  }
+  renderSources();
+  updateActiveSources();
+}
+
+function deleteSource(id) {
+  if (!confirm('¿Eliminar esta fuente?')) return;
+  const sources = getSources().filter(s=>s.id!==id);
+  saveSources(sources);
+  activeSources = activeSources.filter(x=>x!==id);
+  renderSources();
+  updateBadges();
+  showToast('Fuente eliminada');
+}
+
+function updateActiveSources() {
+  const indicator = document.getElementById('active-sources-indicator');
+  const list = document.getElementById('active-sources-list');
+  const sources = getSources().filter(s=>activeSources.includes(s.id));
+  if (!sources.length) {
+    indicator.style.display='none'; return;
+  }
+  indicator.style.display='block';
+  list.innerHTML = sources.map(s=>`<span class="source-indicator">📄 ${s.title}</span>`).join('');
+  // also update results header
+  const usedEl = document.getElementById('sources-used-in-study');
+  if (usedEl) usedEl.innerHTML = sources.map(s=>`<span class="source-indicator">📄 ${s.title}</span>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════════
+// ESTUDIO
+// ═══════════════════════════════════════════════════════════
+function selectChar(el, name) {
+  document.querySelectorAll('.char-chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedChar = name;
+  document.getElementById('customChar').value = '';
+}
+function clearChips() {
+  document.querySelectorAll('.char-chip').forEach(c => c.classList.remove('selected'));
+  selectedChar = '';
+}
+function toggleAngle(el) {
+  const val = el.dataset.val;
+  el.classList.contains('active') ? (el.classList.remove('active'), selectedAngles.delete(val)) : (el.classList.add('active'), selectedAngles.add(val));
+}
+function goStep2() {
+  const custom = document.getElementById('customChar').value.trim();
+  if (custom) selectedChar = custom;
+  if (!selectedChar) { alert('Por favor selecciona o escribe un personaje.'); return; }
+  document.getElementById('step1').classList.add('hidden');
+  document.getElementById('step2').classList.remove('hidden');
+}
+function goStep1() {
+  document.getElementById('step2').classList.add('hidden');
+  document.getElementById('step1').classList.remove('hidden');
+}
+function resetApp() {
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('step1').classList.remove('hidden');
+  document.getElementById('step2').classList.add('hidden');
+  selectedAngles = new Set();
+  studyResults = {};
+  document.querySelectorAll('.q-pill, .char-chip').forEach(el => el.classList.remove('active','selected'));
+  selectedChar = '';
+  ['customChar','passage','event'].forEach(id => document.getElementById(id).value = '');
+}
+
+const tabLabels = {QUE:'¿Qué hizo?',CONTEXTO:'Contexto',COMO:'¿Cómo?',PORQUE:'¿Por qué?',CUANDO:'Cronología',ASOCIACIONES:'Asociaciones',LINEA:'Línea de tiempo',REFLEXION:'Reflexión'};
+
+function buildTabs(angles) {
+  const row = document.getElementById('tabsRow');
+  const contents = document.getElementById('tabContents');
+  row.innerHTML = ''; contents.innerHTML = '';
+  tabs = [...angles];
+  tabs.forEach((a, i) => {
+    const t = document.createElement('div');
+    t.className = 'tab'+(i===0?' active':'');
+    t.textContent = tabLabels[a]||a;
+    t.onclick = () => switchTab(i);
+    row.appendChild(t);
+    const c = document.createElement('div');
+    c.className = 'tab-content'+(i===0?' active':'');
+    c.id = 'tc-'+a;
+    c.innerHTML = `<div class="loading show"><div class="spinner"></div><span>Consultando fuentes…</span></div>`;
+    contents.appendChild(c);
+  });
+}
+function switchTab(i) {
+  tabs.forEach((a, j) => {
+    document.querySelectorAll('.tab')[j]?.classList.toggle('active', j===i);
+    document.getElementById('tc-'+a)?.classList.toggle('active', j===i);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// SYSTEM PROMPT (incluye fuentes propias)
+// ═══════════════════════════════════════════════════════════
+function buildSystem(char, passage, event) {
+  const ref = passage ? ` en el pasaje ${passage}` : '';
+  const evt = event ? `, acontecimiento: "${event}"` : '';
+
+  const mySourcesData = getSources().filter(s=>activeSources.includes(s.id));
+  let sourcesBlock = '';
+  if (mySourcesData.length) {
+    sourcesBlock = `\n\nFUENTES PERSONALES DEL USUARIO (úsalas como fuente primaria complementaria a WOL):
+${mySourcesData.map((s,i)=>`--- FUENTE PERSONAL ${i+1}: "${s.title}" ${s.tag?'['+s.tag+']':''} ---\n${s.body}`).join('\n\n')}
+--- FIN DE FUENTES PERSONALES ---
+
+Cuando uses información de las fuentes personales, indícalo claramente mencionando el título de la fuente entre corchetes, ej: [según "${mySourcesData[0].title}"].`;
+  }
+
+  return `Eres un asistente especializado en estudio bíblico profundo. Tus fuentes de información son:
+1. La Biblioteca en Línea Watchtower en https://wol.jw.org/es/wol/h/r4/lp-s (fuente principal)
+2. Las fuentes personales del usuario que se incluyen a continuación (si las hay)${sourcesBlock}
+
+REGLAS OBLIGATORIAS:
+1. Usa la herramienta web_search EXCLUSIVAMENTE con búsquedas que incluyan "site:wol.jw.org". Ejemplo: "site:wol.jw.org José integridad Potifar".
+2. Realiza al menos 2 búsquedas diferentes para cada consulta para obtener información completa.
+3. Combina lo que encuentres en wol.jw.org con el contenido de las fuentes personales del usuario si son relevantes.
+4. Al final de tu respuesta incluye una sección titulada "FUENTES:" con los títulos y URLs exactas de los artículos WOL usados, y los títulos de las fuentes personales usadas.
+5. Cita referencias bíblicas entre paréntesis: (Gén. 39:2), (Sal. 105:17), etc.
+6. Responde siempre en español con profundidad espiritual y párrafos bien desarrollados.
+7. El nombre de Dios es Jehová — úsalo así cuando las fuentes WOL lo hagan.
+8. Si encontrás información relevante en las fuentes personales, priorizala y compárala con lo que dice WOL.
+
+Personaje de estudio: ${char}${ref}${evt}`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// USER PROMPTS
+// ═══════════════════════════════════════════════════════════
+function buildUserPrompt(angle, char, passage, event) {
+  const ctx = `Personaje: ${char}${passage?' | Pasaje: '+passage:''}${event?' | Acontecimiento: "'+event+'"':''}`;
+  const mySourcesData = getSources().filter(s=>activeSources.includes(s.id));
+  const srcHint = mySourcesData.length ? `\nRecordá también revisar las fuentes personales del usuario para este tema.` : '';
+  const map = {
+    QUE: `${ctx}\n\nBusca en site:wol.jw.org sobre ${char} y responde con profundidad:\n¿Qué hizo exactamente este personaje? ¿Cómo afectaron sus acciones su relación con Jehová? ¿Qué consecuencias tuvo en las personas a su alrededor?\nBúsquedas sugeridas: "site:wol.jw.org ${char}" y "site:wol.jw.org ${char} ${passage||'relación Jehová'}"${srcHint}`,
+    CONTEXTO: `${ctx}\n\nBusca en site:wol.jw.org y describe:\n¿Cuál era el entorno geográfico, cultural y familiar de ${char}? ¿En qué nación vivía? ¿Qué costumbres, valores o presiones sociales lo rodeaban?\nBúsquedas sugeridas: "site:wol.jw.org ${char} contexto historia" y "site:wol.jw.org ${char} familia época costumbres"${srcHint}`,
+    COMO: `${ctx}\n\nBusca en site:wol.jw.org y analiza:\n¿Cómo enfrentó ${char} este momento? ¿Se apoyó en Jehová mediante oración o fe? ¿Recurrió a instrucciones divinas previas?\nBúsquedas sugeridas: "site:wol.jw.org ${char} fe oración" y "site:wol.jw.org ${char} Jehová apoyo"${srcHint}`,
+    PORQUE: `${ctx}\n\nBusca en site:wol.jw.org y reflexiona:\n¿Por qué actuó ${char} como lo hizo? ¿Cuáles habrán sido sus motivaciones más profundas: fe, obediencia, miedo, amor, convicción?\nBúsquedas sugeridas: "site:wol.jw.org ${char} motivación carácter" y "site:wol.jw.org ${char} integridad cualidades"${srcHint}`,
+    CUANDO: `${ctx}\n\nBusca en site:wol.jw.org y explica:\n¿En qué momento de la historia bíblica ocurrió esto con ${char}? ¿Qué eventos históricos lo enmarcan? ¿Cómo se relaciona con el plan de Jehová?\nBúsquedas sugeridas: "site:wol.jw.org ${char} cronología historia" y "site:wol.jw.org ${char} época período"${srcHint}`,
+    ASOCIACIONES: `${ctx}\n\nBusca en site:wol.jw.org y encuentra:\n¿Con qué otros personajes bíblicos tiene paralelos ${char}? ¿Prefigura o anticipa a Jesucristo? ¿Qué lecciones comparte con otros relatos?\nBúsquedas sugeridas: "site:wol.jw.org ${char} tipo símbolo prefiguración" y "site:wol.jw.org ${char} paralelo similitud"${srcHint}`,
+    LINEA: `${ctx}\n\nBusca en site:wol.jw.org la vida completa de ${char} y construye una cronología.\nBúsquedas: "site:wol.jw.org ${char}" y "site:wol.jw.org ${char} vida historia"\n\nResponde ÚNICAMENTE con JSON válido (sin texto fuera del JSON):\n{"timeline":[{"label":"Nombre del período","texto":"Descripción breve","ref":"Referencia bíblica","fuente":"Título del artículo WOL"},...]}\n5 a 8 eventos en orden cronológico.`,
+    REFLEXION: `${ctx}\n\nBusca en site:wol.jw.org lecciones de vida de ${char} y genera exactamente 6 preguntas de reflexión personal profundas, basadas en lo que dicen las publicaciones Watchtower.${mySourcesData.length?'\nIncluye también 2 preguntas basadas en las fuentes personales del usuario si son relevantes.':''}\nNúmeralas 1-6 (u 8 si incluís las de fuentes personales).`
+  };
+  return map[angle] || `Busca en site:wol.jw.org sobre ${char} y analiza: ${angle}${srcHint}`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// API CALL
+// ═══════════════════════════════════════════════════════════
+async function callClaude(system, userPrompt) {
+  const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({
+      model:"claude-sonnet-4-20250514",
+      max_tokens:1200,
+      system,
+      tools:[{type:"web_search_20250305",name:"web_search"}],
+      messages:[{role:"user",content:userPrompt}]
+    })
+  });
+  const data = await resp.json();
+  if (data.error) throw new Error(data.error.message);
+  return (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n\n') || 'Sin resultado.';
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER RESULTS
+// ═══════════════════════════════════════════════════════════
+function wolFooter() {
+  return `<div class="wol-footer">Contenido basado en la <a href="https://wol.jw.org/es/wol/h/r4/lp-s" target="_blank">Biblioteca en Línea Watchtower</a> y fuentes personales del usuario.</div>`;
+}
+function sourcesBlock(text) {
+  const urls = [...new Set((text.match(/https?:\/\/wol\.jw\.org[^\s\)\"<>]+/g)||[]))];
+  if (!urls.length) return '';
+  return `<div class="result-block" style="border-left-color:var(--sage)"><h3>📚 Fuentes — Biblioteca Watchtower</h3><div>${urls.map(u=>`<a class="wol-cite" href="${u}" target="_blank">${decodeURIComponent(u.split('/').pop()||'WOL')}</a>`).join('')}</div></div>`;
+}
+function personalSourcesBlock(text) {
+  const sources = getSources().filter(s=>activeSources.includes(s.id));
+  const used = sources.filter(s=>text.includes(s.title));
+  if (!used.length) return '';
+  return `<div class="result-block" style="border-left-color:var(--teal)"><h3>📄 Fuentes personales utilizadas</h3><div>${used.map(s=>`<span class="source-indicator">📄 ${s.title}</span>`).join('')}</div></div>`;
+}
+
+function renderResult(angle, text, char) {
+  studyResults[angle] = text;
+  const el = document.getElementById('tc-'+angle);
+  if (!el) return;
+  const parts = text.split(/FUENTES[:\s]*/i);
+  const main = parts[0].trim();
+
+  if (angle==='LINEA') {
+    try {
+      const m = main.match(/\{[\s\S]*\}/);
+      const d = JSON.parse(m?m[0]:main.replace(/```json|```/g,'').trim());
+      let html = `<div class="result-block"><h3>Línea de tiempo — ${char}</h3><div class="timeline">`;
+      (d.timeline||[]).forEach(ev=>{
+        html+=`<div class="tl-item"><div class="tl-label">${ev.label}</div><div class="tl-text">${ev.texto} <span class="scripture-ref">${ev.ref}</span></div>${ev.fuente?`<div style="margin-top:5px;font-size:0.78rem;color:var(--dim);font-style:italic">📖 ${ev.fuente}</div>`:''}</div>`;
+      });
+      html+=`</div></div>${personalSourcesBlock(text)}${sourcesBlock(text)}${wolFooter()}`;
+      el.innerHTML=html; return;
+    } catch(e){}
+  }
+
+  if (angle==='REFLEXION') {
+    const qs = main.split('\n').filter(l=>l.trim()&&/^\d/.test(l.trim()));
+    let html=`<div class="result-block"><h3>Preguntas de reflexión personal</h3><p style="font-size:0.85rem;color:var(--dim);margin-bottom:16px;font-style:italic">Basadas en publicaciones Watchtower y fuentes personales</p>`;
+    (qs.length?qs:main.split('\n\n').filter(p=>p.trim())).forEach(q=>{ html+=`<div class="reflex-q">${q.trim()}</div>`; });
+    html+=`</div>${personalSourcesBlock(text)}${sourcesBlock(text)}${wolFooter()}`;
+    el.innerHTML=html; return;
+  }
+
+  const paras = main.split('\n\n').filter(p=>p.trim());
+  let html=`<div class="result-block"><h3>${tabLabels[angle]||angle}</h3>`;
+  paras.forEach(p=>{ html+=`<p class="result-body">${p.trim()}</p>`; });
+  html+=`</div>`;
+  const refs=[...new Set((main.match(/\b[A-ZÁÉÍÓÚa-záéíóúñÑ]+\.?\s*\d+[:.]\d+/g)||[]))].slice(0,20);
+  if(refs.length){
+    html+=`<div class="result-block" style="border-left-color:var(--red)"><h3>Referencias bíblicas</h3><div>`;
+    refs.forEach(r=>{ html+=`<span class="scripture-ref">${r}</span> `; });
+    html+=`</div></div>`;
+  }
+  html+=personalSourcesBlock(text)+sourcesBlock(text)+wolFooter();
+  el.innerHTML=html;
+}
+
+// ═══════════════════════════════════════════════════════════
+// LAUNCH
+// ═══════════════════════════════════════════════════════════
+async function launchStudy() {
+  if (!selectedAngles.size) { alert('Por favor selecciona al menos un ángulo de estudio.'); return; }
+  const custom = document.getElementById('customChar').value.trim();
+  if (custom) selectedChar = custom;
+  const passage = document.getElementById('passage').value.trim();
+  const event = document.getElementById('event').value.trim();
+
+  document.getElementById('step2').classList.add('hidden');
+  document.getElementById('results').classList.add('show');
+  document.getElementById('studyTitle').textContent = selectedChar+(event?' — '+event:'');
+  document.getElementById('studyPassage').textContent = passage?'📖 '+passage:'';
+
+  // Show active sources in results header
+  updateActiveSources();
+
+  buildTabs(selectedAngles);
+  const system = buildSystem(selectedChar, passage, event);
+
+  for (const angle of selectedAngles) {
+    try {
+      const text = await callClaude(system, buildUserPrompt(angle, selectedChar, passage, event));
+      renderResult(angle, text, selectedChar);
+    } catch(err) {
+      const c = document.getElementById('tc-'+angle);
+      if(c) c.innerHTML=`<div class="result-block" style="border-left-color:var(--red)"><h3>Error de conexión</h3><p>${err.message}</p><p style="margin-top:8px;font-size:0.85rem;color:var(--dim)">Podés buscar directamente en <a href="https://wol.jw.org/es/wol/h/r4/lp-s" target="_blank" style="color:var(--rust)">wol.jw.org</a>.</p></div>`;
+      studyResults[angle] = '';
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// GUARDAR ESTUDIO
+// ═══════════════════════════════════════════════════════════
+let pendingSaveStudy = null;
+function saveCurrentStudy() {
+  const passage = document.getElementById('passage').value.trim();
+  const event = document.getElementById('event').value.trim();
+  pendingSaveStudy = {
+    char: selectedChar,
+    passage,
+    event,
+    angles: [...selectedAngles],
+    results: {...studyResults},
+    sources: [...activeSources]
+  };
+  document.getElementById('save-notes').value='';
+  document.getElementById('save-concepts').value='';
+  document.getElementById('modal-save').classList.add('show');
+}
+
+function confirmSave() {
+  if (!pendingSaveStudy) return;
+  const notes = document.getElementById('save-notes').value.trim();
+  const concepts = document.getElementById('save-concepts').value.split(',').map(c=>c.trim()).filter(Boolean);
+
+  const studies = getStudies();
+  studies.unshift({
+    id: Date.now()+'',
+    char: pendingSaveStudy.char,
+    passage: pendingSaveStudy.passage,
+    event: pendingSaveStudy.event,
+    angles: pendingSaveStudy.angles,
+    results: pendingSaveStudy.results,
+    sources: pendingSaveStudy.sources,
+    notes,
+    concepts,
+    date: new Date().toLocaleDateString('es-AR')
+  });
+  saveStudies(studies);
+  document.getElementById('modal-save').classList.remove('show');
+  updateBadges();
+  showToast('✦ Estudio guardado en la Biblioteca');
+  pendingSaveStudy = null;
+}
+
+// ═══════════════════════════════════════════════════════════
+// BIBLIOTECA
+// ═══════════════════════════════════════════════════════════
+function renderLibraryFilter() {
+  const studies = getStudies();
+  const chars = [...new Set(studies.map(s=>s.char))];
+  const sel = document.getElementById('lib-filter');
+  sel.innerHTML = '<option value="">Todos los personajes</option>' + chars.map(c=>`<option value="${c}">${c}</option>`).join('');
+}
+
+function renderLibrary() {
+  const q = (document.getElementById('lib-search').value||'').toLowerCase();
+  const filterChar = document.getElementById('lib-filter').value;
+  let studies = getStudies();
+  if (filterChar) studies = studies.filter(s=>s.char===filterChar);
+  if (q) studies = studies.filter(s=>
+    s.char.toLowerCase().includes(q) ||
+    (s.passage||'').toLowerCase().includes(q) ||
+    (s.event||'').toLowerCase().includes(q) ||
+    (s.notes||'').toLowerCase().includes(q) ||
+    (s.concepts||[]).some(c=>c.toLowerCase().includes(q))
+  );
+  const container = document.getElementById('biblioteca-list');
+  if (!studies.length) {
+    container.innerHTML = `<div class="library-empty">Aún no tenés estudios guardados.<br><br><button class="btn btn-ghost btn-sm" onclick="showPage('estudio')">✦ Ir a estudiar</button></div>`;
+    return;
+  }
+  container.innerHTML = studies.map(s=>`
+    <div class="study-card" onclick="viewStudy('${s.id}')">
+      <div class="study-card-header">
+        <div class="study-card-title">${s.char}${s.event?' — '+s.event:''}</div>
+        <div class="study-card-date">${s.date}</div>
+      </div>
+      <div class="study-card-meta">
+        ${s.passage?`<span class="meta-tag">📖 ${s.passage}</span>`:''}
+        ${s.angles.map(a=>`<span class="meta-tag">${tabLabels[a]||a}</span>`).join('')}
+        ${s.sources&&s.sources.length?`<span class="meta-tag" style="color:var(--teal)">📄 ${s.sources.length} fuente${s.sources.length>1?'s':''} propia${s.sources.length>1?'s':''}</span>`:''}
+      </div>
+      ${(s.concepts||[]).length?`<div class="concept-cloud">${s.concepts.map(c=>`<span class="concept-tag" style="font-size:0.8rem;padding:4px 12px;">${c}</span>`).join('')}</div>`:''}
+      ${s.notes?`<div class="study-card-notes">"${s.notes.slice(0,120)}${s.notes.length>120?'…':''}"</div>`:''}
+      <div class="study-card-actions" onclick="event.stopPropagation()">
+        <button class="btn btn-ghost btn-sm" onclick="viewStudy('${s.id}')">Ver estudio</button>
+        <button class="btn btn-sm" style="background:rgba(139,58,15,0.15);color:var(--rust);border:1px solid rgba(139,58,15,0.3);box-shadow:none;" onclick="deleteStudy('${s.id}')">Eliminar</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function deleteStudy(id) {
+  if (!confirm('¿Eliminar este estudio?')) return;
+  saveStudies(getStudies().filter(s=>s.id!==id));
+  renderLibrary();
+  updateBadges();
+  showToast('Estudio eliminado');
+}
+
+function viewStudy(id) {
+  const study = getStudies().find(s=>s.id===id);
+  if (!study) return;
+  const usedSources = getSources().filter(s=>(study.sources||[]).includes(s.id));
+  let html = `<div class="study-viewer">
+    <div class="study-viewer-header">
+      <div class="study-viewer-title">${study.char}${study.event?' — '+study.event:''}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+        ${study.passage?`<span class="meta-tag">📖 ${study.passage}</span>`:''}
+        <span class="meta-tag">${study.date}</span>
+      </div>
+      ${usedSources.length?`<div style="margin-top:10px;">${usedSources.map(s=>`<span class="source-indicator">📄 ${s.title}</span>`).join('')}</div>`:''}
+      ${study.notes?`<div class="study-card-notes" style="margin-top:12px;padding:12px;background:rgba(74,103,65,0.08);border-left:3px solid var(--sage);border-radius:0 3px 3px 0;">${study.notes}</div>`:''}
+      ${(study.concepts||[]).length?`<div class="concept-cloud" style="margin-top:10px;">${study.concepts.map(c=>`<span class="concept-tag" style="font-size:0.8rem;padding:4px 12px;">${c}</span>`).join('')}</div>`:''}
+    </div>`;
+
+  // Tabs for results
+  if (study.angles && study.angles.length) {
+    html += `<div class="tabs" id="modal-tabs-row">`;
+    study.angles.forEach((a,i)=>{
+      html += `<div class="tab${i===0?' active':''}" onclick="switchModalTab(${i},${JSON.stringify(study.angles).replace(/"/g,"'")})">${tabLabels[a]||a}</div>`;
+    });
+    html += `</div><div id="modal-tab-contents" style="padding:20px;background:linear-gradient(145deg,var(--parch),var(--scroll));">`;
+    study.angles.forEach((a,i)=>{
+      html += `<div class="tab-content${i===0?' active':''}" id="modal-tc-${i}">${study.results[a]?renderResultHtml(a,study.results[a],study.char):'<p style="color:var(--dim);font-style:italic;">Sin contenido guardado para este ángulo.</p>'}</div>`;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`;
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-viewer').classList.add('show');
+}
+
+function switchModalTab(i, angles) {
+  angles.forEach((_,j)=>{
+    document.querySelectorAll('#modal-tabs-row .tab')[j]?.classList.toggle('active',j===i);
+    document.getElementById('modal-tc-'+j)?.classList.toggle('active',j===i);
+  });
+}
+
+function renderResultHtml(angle, text, char) {
+  const main = text.split(/FUENTES[:\s]*/i)[0].trim();
+  if (angle==='LINEA') {
+    try {
+      const m = main.match(/\{[\s\S]*\}/);
+      const d = JSON.parse(m?m[0]:main.replace(/```json|```/g,'').trim());
+      let html=`<div class="result-block"><h3>Línea de tiempo</h3><div class="timeline">`;
+      (d.timeline||[]).forEach(ev=>{html+=`<div class="tl-item"><div class="tl-label">${ev.label}</div><div class="tl-text">${ev.texto} <span class="scripture-ref">${ev.ref}</span></div></div>`;});
+      html+=`</div></div>`;
+      return html;
+    } catch(e){}
+  }
+  if (angle==='REFLEXION') {
+    const qs = main.split('\n').filter(l=>l.trim()&&/^\d/.test(l.trim()));
+    let html=`<div class="result-block"><h3>Preguntas de reflexión</h3>`;
+    (qs.length?qs:main.split('\n\n').filter(p=>p.trim())).forEach(q=>{html+=`<div class="reflex-q">${q.trim()}</div>`;});
+    html+=`</div>`;
+    return html;
+  }
+  const paras = main.split('\n\n').filter(p=>p.trim());
+  let html=`<div class="result-block"><h3>${tabLabels[angle]||angle}</h3>`;
+  paras.forEach(p=>{ html+=`<p class="result-body">${p.trim()}</p>`; });
+  html+=`</div>`;
+  return html;
+}
+
+function closeModal() {
+  document.getElementById('modal-viewer').classList.remove('show');
+}
+
+// ═══════════════════════════════════════════════════════════
+// CONCEPTOS
+// ═══════════════════════════════════════════════════════════
+let activeConceptFilter = null;
+
+function renderConcepts() {
+  const studies = getStudies();
+  const conceptMap = {};
+  studies.forEach(s=>{
+    (s.concepts||[]).forEach(c=>{
+      if (!conceptMap[c]) conceptMap[c]=[];
+      conceptMap[c].push(s);
+    });
+  });
+  // Also add source tags
+  const sources = getSources();
+  sources.forEach(s=>{
+    if (s.tag) {
+      if (!conceptMap[s.tag]) conceptMap[s.tag]=[];
+      // mark as source
+    }
+  });
+
+  const container = document.getElementById('concept-cloud-container');
+  if (!Object.keys(conceptMap).length) {
+    container.innerHTML = `<p style="color:var(--dim);font-style:italic;">Aún no tenés conceptos. Guardá estudios con etiquetas para verlos aquí.</p>`;
+    document.getElementById('concept-results').innerHTML='';
+    return;
+  }
+  const sorted = Object.entries(conceptMap).sort((a,b)=>b[1].length-a[1].length);
+  container.innerHTML = `<div class="concept-cloud">${sorted.map(([c,arr])=>`
+    <span class="concept-tag${activeConceptFilter===c?' active':''}" onclick="filterByConcept('${c}')">
+      ${c}<span class="concept-count">${arr.length}</span>
+    </span>`).join('')}</div>`;
+
+  if (activeConceptFilter && conceptMap[activeConceptFilter]) {
+    renderConceptResults(activeConceptFilter, conceptMap[activeConceptFilter]);
+  }
+}
+
+function filterByConcept(concept) {
+  activeConceptFilter = activeConceptFilter===concept ? null : concept;
+  renderConcepts();
+}
+
+function renderConceptResults(concept, studies) {
+  const container = document.getElementById('concept-results');
+  container.innerHTML = `<div class="panel" style="background:linear-gradient(145deg,#1a1208,#2a1a08);border-color:rgba(42,107,107,0.4);">
+    <div style="color:var(--teal);font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">Estudios relacionados con "${concept}"</div>
+    ${studies.map(s=>`
+      <div class="study-card" style="margin-bottom:12px;" onclick="viewStudy('${s.id}'); showPage('biblioteca')">
+        <div class="study-card-header">
+          <div class="study-card-title">${s.char}${s.event?' — '+s.event:''}</div>
+          <div class="study-card-date">${s.date}</div>
+        </div>
+        ${s.notes?`<div class="study-card-notes">"${s.notes.slice(0,100)}…"</div>`:''}
+      </div>
+    `).join('')}
+  </div>`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+updateBadges();
+renderSources();
+</script>
+</body>
+</html>

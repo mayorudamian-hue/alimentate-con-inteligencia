@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historias Virtuales</title>
+<link rel="stylesheet" href="style.css">
+<script src="game.js" defer></script>
+<script src="stories/adan.js" defer></script>
+<script src="stories/noe.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- OVERLAY TRANSICIÓN -->
+<div id="scene-transition"></div>
+
+<!-- PANTALLA DE CARGA -->
+<div id="screen-loading">
+  <div class="loading-cross">✦</div>
+  <div class="loading-title">Historias Virtuales</div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill"></div></div>
+  <div class="loading-msg" id="loading-msg">Cargando...</div>
+</div>
+
+<!-- PANTALLA: TÍTULO -->
+<div id="screen-title" style="display:none">
+  <div class="stars"></div>
+  <div class="title-cross">✦</div>
+  <div class="title-main">Historias<br>Virtuales</div>
+  <div class="title-sub">Decisiones que pueden hacerte bien o mal</div>
+  <div class="title-verse">¿Qué hubiera pasado si…?<br><em>Veamos.</em></div>
+  <div class="title-btns">
+    <button class="btn-start" onclick="showMapSelect()">⚔ &nbsp;Comenzar Viaje</button>
+    <button class="btn-start" onclick="showProfile()" style="background:transparent;border-color:var(--gold);color:var(--gold);font-size:0.85rem;padding:0.6rem 1.8rem">👤 &nbsp;Mi Perfil</button>
+    <button class="btn-start" onclick="showCards()" style="background:transparent;border-color:var(--gold-dark);color:var(--gold-dark);font-size:0.82rem;padding:0.5rem 1.8rem">📖 &nbsp;Ver Personajes</button>
+  </div>
+</div>
+
+<!-- PANTALLA: MAPA SELECTOR -->
+<div id="screen-map-select">
+  <div class="map-sel-header">
+    <div class="map-sel-title">Historias Virtuales</div>
+    <div class="map-sel-sub">Elige una historia en el mapa</div>
+  </div>
+  <div class="map-sel-body">
+    <div class="map-sel-wrap" id="map-sel-wrap">
+      <img id="map-sel-img" src="" alt="Mapa bíblico">
+      <div class="map-pin" id="pin-adan">
+        <div class="pin-pulse"></div>
+        <div class="pin-icon">🍎</div>
+        <div class="pin-label">Adán y Eva<br><span>~4026 a.e.c.</span></div>
+      </div>
+      <div class="map-pin" id="pin-noe">
+        <div class="pin-pulse"></div>
+        <div class="pin-icon">⛵</div>
+        <div class="pin-label">Noé<br><span>~2970 a.e.c.</span></div>
+      </div>
+    </div>
+    <div class="map-sel-hint">📍 Toca una historia para comenzar</div>
+    <div class="map-nav-btns">
+      <button class="map-nav-btn primary" onclick="showProfile()">👤 Mi Perfil</button>
+      <button class="map-nav-btn" onclick="showCards()">📖 Personajes</button>
+      <button class="map-nav-btn" onclick="checkDailyReward()">🌅 Premio diario</button>
+      <button class="map-nav-btn" onclick="openShop()">🏛 Tienda</button>
+    </div>
+  </div>
+</div>
+
+<!-- PANTALLA: CRONOLOGÍA -->
+<div id="screen-timeline">
+  <div class="tl-header">
+    <div class="tl-story-icon" id="tl-icon">🍎</div>
+    <div>
+      <div class="tl-story-name" id="tl-name">—</div>
+      <div class="tl-story-era" id="tl-era"></div>
+    </div>
+  </div>
+  <div class="tl-desc" id="tl-desc"></div>
+  <div class="tl-wrap">
+    <div class="tl-img-wrap">
+      <img id="tl-img" src="" alt="Línea de tiempo">
+      <div class="tl-marker" id="tl-marker">
+        <div class="tl-marker-line"></div>
+        <div class="tl-marker-dot"></div>
+        <div class="tl-marker-label" id="tl-marker-label">~4026</div>
+      </div>
+    </div>
+  </div>
+  <div class="tl-btns">
+    <button class="btn-menu" style="background:transparent;border-color:var(--gold-dark);color:var(--gold-dark);font-size:0.82rem" onclick="showMapSelect()">← Volver al mapa</button>
+    <button class="btn-menu" style="background:transparent;border-color:var(--gold-dark);color:var(--gold-dark);font-size:0.82rem" onclick="showProfile()">👤 Mi Perfil</button>
+    <button class="btn-menu" id="tl-start-btn" onclick="">⚔ &nbsp;Comenzar Historia</button>
+  </div>
+</div>
+
+<!-- PANTALLA: FICHAS DE PERSONAJES -->
+<div id="screen-cards">
+  <div class="cards-title">✦ Personajes ✦</div>
+  <div class="cards-sub">Conoce a los protagonistas de la historia</div>
+  <div class="cards-grid" id="cards-grid"></div>
+  <div class="cards-nav">
+    <button class="cards-back-btn" onclick="showMapSelect()">← Volver al mapa</button>
+    <button class="cards-back-btn" onclick="showProfile()">👤 Mi Perfil</button>
+  </div>
+</div>
+
+<!-- PANTALLA: MI PERFIL -->
+<div id="screen-profile">
+  <div class="profile-header">
+    <div class="profile-avatar">✦</div>
+    <div class="profile-info">
+      <div class="profile-name">Mi Perfil</div>
+      <div class="profile-tagline">Tu progreso en Historias Virtuales</div>
+      <div class="profile-xp-row">
+        <span class="profile-xp-num" id="prof-xp">0 XP</span>
+        <div class="profile-xp-track"><div class="profile-xp-fill" id="prof-xp-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="profile-nav">
+      <button class="profile-nav-btn" onclick="showMapSelect()">← Mapa</button>
+      <button class="profile-nav-btn" onclick="showCards()">📖 Pers.</button>
+      <button class="profile-nav-btn" onclick="openShop()">🏛 Tienda</button>
+    </div>
+  </div>
+  <div class="profile-grid" id="profile-grid"></div>
+</div>
+
+<!-- PANTALLA: JUEGO -->
+<div id="screen-game">
+  <!-- HUD -->
+  <div id="hud">
+    <button onclick="goToMenu()" style="background:transparent;border:1px solid var(--gold-dark);color:var(--gold-dark);font-family:'Cinzel',serif;font-size:0.62rem;padding:0.18rem 0.45rem;cursor:pointer;flex-shrink:0">← Mapa</button>
+    <span class="hud-char" id="hud-name">—</span>
+    <span class="hud-sep">|</span>
+    <div class="hud-stat">
+      <span class="hud-label">✦FE</span>
+      <div class="bar-wrap"><div class="bar-fill" id="bar-fe" style="background:linear-gradient(90deg,#7a5c1e,#c9a84c)"></div></div>
+      <span class="hud-val" id="hud-fe">55</span>
+    </div>
+    <div class="hud-stat">
+      <span class="hud-label">📖SAB</span>
+      <div class="bar-wrap"><div class="bar-fill" id="bar-sab" style="background:linear-gradient(90deg,#1a4a7a,#4a9adc)"></div></div>
+      <span class="hud-val" id="hud-sab">15</span>
+    </div>
+    <div class="hud-stat">
+      <span class="hud-label">⏳PAC</span>
+      <div class="bar-wrap"><div class="bar-fill" id="bar-pac" style="background:linear-gradient(90deg,#2a6a2a,#5adc5a)"></div></div>
+      <span class="hud-val" id="hud-pac">20</span>
+    </div>
+    <div class="hud-stat">
+      <span class="hud-label">🕊HUM</span>
+      <div class="bar-wrap"><div class="bar-fill" id="bar-hum" style="background:linear-gradient(90deg,#6a2a6a,#dc5adc)"></div></div>
+      <span class="hud-val" id="hud-hum">40</span>
+    </div>
+    <span class="hud-sep">|</span>
+    <div class="hud-stat">
+      <span class="hud-label">XP</span>
+      <div class="bar-wrap bar-xp"><div class="bar-fill" id="bar-xp" style="background:linear-gradient(90deg,#7a5c1e,#c9a84c)"></div></div>
+      <span class="hud-val" id="hud-xp">0</span>
+    </div>
+    <span class="hud-sep">|</span>
+    <button class="trivia-hud-btn" id="trivia-hud-btn" onclick="openTrivia(true)">📖 Trivia</button>
+    <button class="trivia-hud-btn" onclick="openTrade()" title="Canjear objeto">🎁</button>
+    <button class="trivia-hud-btn" onclick="openShop()" title="Tienda">🏛</button>
+    <button class="trivia-hud-btn" onclick="checkDailyReward()" title="Premio diario">🌅</button>
+  </div>
+
+  <!-- ÁREA PRINCIPAL -->
+  <div id="main-area">
+    <!-- Mapa lateral -->
+    <div id="panel-map">
+      <div class="panel-title">⛰ Mapa</div>
+      <div class="map-zones" id="map-zones"></div>
+    </div>
+
+    <!-- Historia -->
+    <div id="panel-story">
+      <div id="story-location">
+        <span class="location-icon" id="loc-icon">🌿</span>
+        <span class="location-name" id="loc-name">—</span>
+        <span class="location-desc" id="loc-desc"></span>
+      </div>
+      <div id="story-box"></div>
+      <div id="choices-area">
+        <div class="choices-label">¿Qué harás?</div>
+        <div class="choices-list" id="choices-list"></div>
+      </div>
+    </div>
+
+    <!-- Imagen de escena -->
+    <div id="scene-image-wrap" class="hidden">
+      <img id="scene-img" src="" alt="Ilustración bíblica">
+      <div class="img-caption" id="scene-img-caption">Historia Bíblica Ilustrada</div>
+    </div>
+
+    <!-- Panel derecho -->
+    <div id="panel-right">
+      <div class="right-tabs">
+        <div class="right-tab active" onclick="switchTab('quests',event)">📜 Mis.</div>
+        <div class="right-tab" onclick="switchTab('inv',event)">🎒 Inv.</div>
+        <div class="right-tab" onclick="switchTab('stats',event)">📊 Est.</div>
+      </div>
+      <div class="right-content" id="right-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: TRIVIA -->
+<div id="trivia-modal" class="modal-overlay">
+  <div class="modal-box">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem">
+      <span class="trivia-badge">📖 Pregunta bíblica</span>
+      <span style="font-family:Cinzel,serif;font-size:0.7rem;color:var(--gold);margin-left:auto" id="trivia-xp-badge">+30 XP</span>
+    </div>
+    <div class="trivia-question" id="trivia-question">—</div>
+    <div class="trivia-ref" id="trivia-ref"></div>
+    <div class="trivia-options" id="trivia-options"></div>
+    <div class="trivia-result" id="trivia-result">
+      <div id="trivia-result-text"></div>
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;font-family:Cinzel,serif;font-size:0.72rem;color:var(--gold)" id="trivia-item-reward" style="display:none"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.9rem">
+      <button class="trivia-skip" id="trivia-skip-btn" onclick="skipTrivia()">Saltar →</button>
+      <button class="btn-menu" id="trivia-next-btn" onclick="closeTrivia()" style="display:none;padding:0.4rem 1.1rem;font-size:0.8rem">Continuar ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: CANJE -->
+<div id="trade-modal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-title">🎁 Usar objeto del inventario</div>
+    <div class="modal-sub">Los objetos ganados con buenas decisiones pueden cambiarse por puntos de cualidad. Los objetos de consecuencias negativas no se pueden canjear. La Humildad no se puede comprar ni canjear.</div>
+    <div class="trade-items-list" id="trade-items-list"></div>
+    <div class="trade-stat-selector" id="trade-stat-selector">
+      <div class="trade-stat-label">¿Qué cualidad quieres reforzar?</div>
+      <div class="trade-stat-options">
+        <button class="trade-stat-btn" id="trade-fe" onclick="confirmTrade('fe')">✦ Fe<span class="stat-current" id="tcur-fe"></span></button>
+        <button class="trade-stat-btn" id="trade-sab" onclick="confirmTrade('sab')">📖 Sab<span class="stat-current" id="tcur-sab"></span></button>
+        <button class="trade-stat-btn" id="trade-pac" onclick="confirmTrade('pac')">⏳ Pac<span class="stat-current" id="tcur-pac"></span></button>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:0.9rem">
+      <button class="trivia-skip" onclick="closeTrade()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: TIENDA -->
+<div id="shop-modal" class="modal-overlay">
+  <div class="shop-box">
+    <div class="shop-header">
+      <div class="shop-title">🏛 Tienda de Objetos</div>
+      <div class="shop-sub">Usa tu experiencia acumulada para comprar objetos. Luego intercámbialos por cualidades.</div>
+      <div class="shop-xp-bar">
+        <span class="shop-xp-label">XP TOTAL</span>
+        <div class="shop-xp-track"><div class="shop-xp-fill" id="shop-xp-fill"></div></div>
+        <span class="shop-xp-val" id="shop-xp-display">0</span>
+      </div>
+    </div>
+    <div class="shop-items" id="shop-items-list"></div>
+    <div class="shop-footer">
+      <div class="shop-note">🕊 La humildad no se puede comprar — solo se gana tomando buenas decisiones.</div>
+      <button class="trivia-skip" onclick="closeShop()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: PREMIO DIARIO -->
+<div id="daily-modal" class="modal-overlay">
+  <div class="daily-box">
+    <div class="daily-icon" id="daily-icon">🌅</div>
+    <div class="daily-title" id="daily-title">Premio Diario</div>
+    <div class="daily-subtitle" id="daily-subtitle">Volviste hoy. Tu fidelidad es recompensada.</div>
+    <div class="daily-reward-big" id="daily-xp-big">+24</div>
+    <div class="daily-reward-label">XP DE EXPERIENCIA</div>
+    <div class="daily-hourly-section">
+      <div class="daily-hourly-title">⏱ Progreso de horas acumuladas</div>
+      <div class="daily-progress-wrap"><div class="daily-progress-fill" id="daily-progress-fill" style="width:0%"></div></div>
+      <div class="daily-progress-labels"><span>0h</span><span>6h</span><span>12h</span><span>18h</span><span>24h</span></div>
+      <div class="daily-hourly-xp" id="daily-hourly-xp">+0.0 XP acumulados</div>
+      <div class="daily-warning" id="daily-early-warning"></div>
+    </div>
+    <div class="daily-btns">
+      <button class="daily-claim-btn" id="daily-claim-btn" onclick="claimDaily()">✦ Reclamar Premio Diario</button>
+      <button class="daily-early-btn" id="daily-early-btn" onclick="claimEarly()">⚠ Reclamar ahora (−12 XP penalidad)</button>
+      <button class="daily-skip-btn" onclick="closeDailyModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: TUTORIAL -->
+<div id="tutorial-modal" class="modal-overlay">
+  <div class="tutorial-box">
+    <div style="text-align:center;margin-bottom:0.9rem">
+      <div id="tut-icon" style="font-size:2.3rem;margin-bottom:0.4rem">📖</div>
+      <div id="tut-counter" style="font-family:Cinzel,serif;font-size:0.62rem;color:var(--gold-dark);letter-spacing:0.18em;margin-bottom:0.25rem">1 / 7</div>
+      <div id="tut-title" style="font-family:'Cinzel Decorative',cursive;font-size:0.95rem;color:var(--gold-light);margin-bottom:0.6rem"></div>
+      <div id="tut-dots" style="margin-bottom:0.6rem"></div>
+    </div>
+    <div id="tut-text" style="font-family:'Crimson Text',serif;font-size:0.93rem;color:var(--parchment);line-height:1.7;font-style:italic;white-space:pre-line;min-height:75px;text-align:center"></div>
+    <div style="display:flex;gap:0.45rem;margin-top:1.1rem;justify-content:space-between;align-items:center">
+      <button id="tut-prev" onclick="tutPrev()" style="display:none;background:transparent;border:1px solid var(--gold-dark);color:var(--gold-dark);font-family:Cinzel,serif;font-size:0.72rem;padding:0.35rem 0.7rem;cursor:pointer">← Anterior</button>
+      <div style="flex:1"></div>
+      <button onclick="closeTutorial()" style="background:transparent;border:none;color:var(--gold-dark);font-family:Cinzel,serif;font-size:0.67rem;cursor:pointer">Saltar</button>
+      <button id="tut-next" onclick="tutNext()" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;color:var(--ink);font-family:Cinzel,serif;font-size:0.82rem;font-weight:700;padding:0.48rem 1.1rem;cursor:pointer">Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<!-- XP TOAST -->
+<div class="xp-toast" id="xp-toast"></div>
+
+<script>
+  // Pin positions — runs after defer scripts
+  document.addEventListener('DOMContentLoaded', () => {
+    const pinAdan = document.getElementById('pin-adan');
+    const pinNoe  = document.getElementById('pin-noe');
+    if(pinAdan){ pinAdan.style.left='28%'; pinAdan.style.top='68%'; }
+    if(pinNoe){  pinNoe.style.left='48%';  pinNoe.style.top='62%';  }
+  });
+</script>
+
+</body>
+</html>
