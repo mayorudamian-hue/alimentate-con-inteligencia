@@ -454,6 +454,79 @@
     margin-bottom: 10px;
   }
 
+  /* ── Meal picker row (dropdown + shuffle) ── */
+  .meal-picker-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .meal-picker-row .meal-select {
+    flex: 1;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    padding: 9px 10px;
+  }
+  .shuffle-btn {
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 12px;
+    padding: 9px 11px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .shuffle-btn:hover {
+    background: rgba(203,92,56,0.08);
+    transform: rotate(20deg) scale(1.05);
+  }
+
+  /* ── Ingredients hint ── */
+  .meal-ingredients-hint {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 4px 0 8px;
+    line-height: 1.45;
+  }
+
+  /* ── Portion chips ── */
+  .portion-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .portion-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+  .portion-chip {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    padding: 4px 10px;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.15s;
+  }
+  .portion-chip.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .portion-chip:hover:not(.active) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   .meal-name {
     font-weight: 800;
     font-size: 0.95rem;
@@ -2994,35 +3067,70 @@ function renderPlanner() {
           <div style="margin-top:6px;opacity:0.85;">💡 ${ACTIVE_DAY_TIPS[Math.floor(Math.random() * ACTIVE_DAY_TIPS.length)]}</div>
         </div>
         ${MEAL_TYPES.map(mealType => {
-          const preset = mealStats(day.id, mealType.id);
-          const custom = customMealStats(day.id, mealType.id);
-          const combined = combinedMealStats(day.id, mealType.id);
-          const hasPreset = !!preset.meal;
-          const hasCustom = custom.calories > 0 || custom.carbs > 0 || custom.proteins > 0 || custom.fats > 0 || custom.fiber > 0;
-          const hasAny = hasPreset || hasCustom;
+          const preset      = mealStats(day.id, mealType.id);
+          const custom      = customMealStats(day.id, mealType.id);
+          const combined    = combinedMealStats(day.id, mealType.id);
+          const hasPreset   = !!preset.meal;
+          const hasCustom   = custom.calories > 0 || custom.proteins > 0 || custom.carbs > 0 || custom.fats > 0;
+          const hasAny      = hasPreset || hasCustom;
+          const currentId   = entryFor(day.id, mealType.id).mealId || "";
+          const currentPortion = entryFor(day.id, mealType.id).portion || "m";
+
+          // Platos disponibles para este tipo de comida
+          const availableMeals = MEALS[mealType.id] || [];
+
           return `
             <section class="meal-card">
               <div class="meal-top">
                 <strong>${mealType.label}</strong>
                 <span class="tag ${hasAny ? "ok" : "warn"}">${hasAny ? "Armada" : "Vacía"}</span>
               </div>
+
+              ${availableMeals.length > 0 ? `
+              <div class="meal-picker-row">
+                <select class="meal-select meal-dropdown"
+                  data-day="${day.id}" data-meal="${mealType.id}">
+                  <option value="">— Sin plato sugerido —</option>
+                  ${availableMeals.map(m => `
+                    <option value="${m.id}" ${m.id === currentId ? "selected" : ""}>${m.name}</option>
+                  `).join("")}
+                </select>
+                <button class="shuffle-btn" data-shuffle-day="${day.id}" data-shuffle-meal="${mealType.id}" title="Sugerir otro plato">🔀</button>
+              </div>
+              ` : ""}
+
               ${hasPreset ? `
-              <div class="meal-name">${preset.meal.name}</div>
               <div class="meal-detail">${preset.meal.detail}</div>
+              <div class="meal-ingredients-hint">
+                🛒 ${preset.meal.ingredients.join(" · ")}
+              </div>
               ` : `
-              <div class="meal-detail" style="color:var(--muted);font-style:italic;">
-                Arrastrá ingredientes desde Despensa o usá "Sugerir platos".
+              <div class="meal-detail" style="color:var(--muted);font-style:italic;font-size:0.83rem;">
+                Elegí un plato arriba o arrastrá ingredientes desde la despensa.
               </div>
               `}
+
               ${hasAny ? `
               <div class="macro-row">
                 <div class="macro-pill"><span>Kcal</span><strong>${combined.calories}</strong></div>
-                <div class="macro-pill"><span>Carb</span><strong>${combined.carbs} g</strong></div>
-                <div class="macro-pill"><span>Prot</span><strong>${combined.proteins} g</strong></div>
-                <div class="macro-pill"><span>Grasa</span><strong>${combined.fats} g</strong></div>
-                <div class="macro-pill"><span>Fibra</span><strong>${combined.fiber} g</strong></div>
+                <div class="macro-pill"><span>Carb</span><strong>${combined.carbs}g</strong></div>
+                <div class="macro-pill"><span>Prot</span><strong>${combined.proteins}g</strong></div>
+                <div class="macro-pill"><span>Grasa</span><strong>${combined.fats}g</strong></div>
+                <div class="macro-pill"><span>Fibra</span><strong>${combined.fiber}g</strong></div>
+              </div>
+              ${hasPreset ? `
+              <div class="portion-row">
+                <span class="portion-label">Porción:</span>
+                ${Object.entries(PORTION_OPTIONS).map(([code, opt]) => `
+                  <button class="portion-chip ${currentPortion === code ? "active" : ""}"
+                    data-portion-day="${day.id}" data-portion-meal="${mealType.id}" data-portion-code="${code}">
+                    ${opt.label}
+                  </button>
+                `).join("")}
               </div>
               ` : ""}
+              ` : ""}
+
               ${renderCustomZone(day.id, mealType.id)}
             </section>
           `;
@@ -3041,6 +3149,51 @@ function renderPlanner() {
       e.preventDefault();
       const dayId = track.dataset.toggleDay;
       state.activeDays[dayId] = !state.activeDays[dayId];
+      saveState();
+      renderPlanner();
+      renderSummary();
+    });
+  });
+
+  // ── Dropdown de platos ──
+  container.querySelectorAll(".meal-dropdown").forEach(sel => {
+    sel.addEventListener("change", () => {
+      const dayId   = sel.dataset.day;
+      const mealId  = sel.dataset.meal;
+      state.plan[dayId][mealId].mealId  = sel.value || null;
+      state.plan[dayId][mealId].portion = "m";
+      saveState();
+      renderPlanner();
+      renderSummary();
+      renderShopping();
+    });
+  });
+
+  // ── Botón shuffle por comida ──
+  container.querySelectorAll(".shuffle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const dayId  = btn.dataset.shuffleDay;
+      const mealId = btn.dataset.shuffleMeal;
+      const currentId = state.plan[dayId][mealId].mealId;
+      const pool = (MEALS[mealId] || []).filter(m => m.id !== currentId);
+      if (!pool.length) return;
+      const picked = pool[Math.floor(Math.random() * pool.length)];
+      state.plan[dayId][mealId].mealId  = picked.id;
+      state.plan[dayId][mealId].portion = "m";
+      saveState();
+      renderPlanner();
+      renderSummary();
+      renderShopping();
+    });
+  });
+
+  // ── Chips de porción ──
+  container.querySelectorAll("[data-portion-day]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const dayId  = btn.dataset.portionDay;
+      const mealId = btn.dataset.portionMeal;
+      const code   = btn.dataset.portionCode;
+      state.plan[dayId][mealId].portion = code;
       saveState();
       renderPlanner();
       renderSummary();
