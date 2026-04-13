@@ -4,757 +4,5376 @@
     "version": "1.0",
     "unidades": "calorías en kcal, macros en gramos (g) por porción indicada"
   },
-
   "perfilesNutricionales": {
     "_descripcion": "Rangos diarios orientativos por objetivo. Se usan para elegir las comidas que mejor se ajusten al perfil del usuario al armar la semana automática.",
     "bajarPeso": {
       "label": "Controlar el peso",
       "descripcion": "Prioriza cenas livianas, platos con lightCarb y highProtein. Evita combinar muchas harinas con grasas altas.",
-      "calorias":      { "min": 1650, "max": 1900 },
-      "carbohidratos": { "min": 130,  "max": 170  },
-      "proteinas":     { "min": 95,   "max": 115  },
-      "grasas":        { "min": 50,   "max": 60   },
-      "fibra":         { "min": 25,   "max": 35   },
+      "calorias": {
+        "min": 1650,
+        "max": 1900
+      },
+      "carbohidratos": {
+        "min": 130,
+        "max": 170
+      },
+      "proteinas": {
+        "min": 95,
+        "max": 115
+      },
+      "grasas": {
+        "min": 50,
+        "max": 60
+      },
+      "fibra": {
+        "min": 25,
+        "max": 35
+      },
       "prioridadPorComida": {
-        "desayuno":  ["balanced", "lightCarb"],
-        "almuerzo":  ["balanced", "highProtein"],
-        "merienda":  ["balanced", "lightCarb"],
-        "cena":      ["lightCarb", "highProtein"]
+        "desayuno": [
+          "balanced",
+          "lightCarb"
+        ],
+        "almuerzo": [
+          "balanced",
+          "highProtein"
+        ],
+        "merienda": [
+          "balanced",
+          "lightCarb"
+        ],
+        "cena": [
+          "lightCarb",
+          "highProtein"
+        ]
       }
     },
     "entrenar": {
       "label": "Rendir en el entrenamiento",
       "descripcion": "Más calorías y carbohidratos para sostener la actividad física. Proteínas altas para recuperación muscular. Grasas moderadas.",
-      "calorias":      { "min": 2100, "max": 2400 },
-      "carbohidratos": { "min": 210,  "max": 270  },
-      "proteinas":     { "min": 90,   "max": 115  },
-      "grasas":        { "min": 60,   "max": 75   },
-      "fibra":         { "min": 25,   "max": 35   },
+      "calorias": {
+        "min": 2100,
+        "max": 2400
+      },
+      "carbohidratos": {
+        "min": 210,
+        "max": 270
+      },
+      "proteinas": {
+        "min": 90,
+        "max": 115
+      },
+      "grasas": {
+        "min": 60,
+        "max": 75
+      },
+      "fibra": {
+        "min": 25,
+        "max": 35
+      },
       "prioridadPorComida": {
-        "desayuno":  ["highCarb", "highProtein"],
-        "almuerzo":  ["highCarb", "highProtein", "balanced"],
-        "merienda":  ["highCarb", "balanced"],
-        "cena":      ["highProtein", "balanced"]
+        "desayuno": [
+          "highCarb",
+          "highProtein"
+        ],
+        "almuerzo": [
+          "highCarb",
+          "highProtein",
+          "balanced"
+        ],
+        "merienda": [
+          "highCarb",
+          "balanced"
+        ],
+        "cena": [
+          "highProtein",
+          "balanced"
+        ]
       }
     },
     "mejorarCuerpo": {
       "label": "Mejorar la composición corporal",
       "descripcion": "Sube proteínas para apoyar masa muscular. Carbohidratos moderados. Platos completos y equilibrados.",
-      "calorias":      { "min": 1800, "max": 2100 },
-      "carbohidratos": { "min": 160,  "max": 200  },
-      "proteinas":     { "min": 105,  "max": 130  },
-      "grasas":        { "min": 55,   "max": 70   },
-      "fibra":         { "min": 25,   "max": 30   },
+      "calorias": {
+        "min": 1800,
+        "max": 2100
+      },
+      "carbohidratos": {
+        "min": 160,
+        "max": 200
+      },
+      "proteinas": {
+        "min": 105,
+        "max": 130
+      },
+      "grasas": {
+        "min": 55,
+        "max": 70
+      },
+      "fibra": {
+        "min": 25,
+        "max": 30
+      },
       "prioridadPorComida": {
-        "desayuno":  ["highProtein", "balanced"],
-        "almuerzo":  ["highProtein", "balanced"],
-        "merienda":  ["highProtein", "balanced"],
-        "cena":      ["highProtein", "lightCarb"]
+        "desayuno": [
+          "highProtein",
+          "balanced"
+        ],
+        "almuerzo": [
+          "highProtein",
+          "balanced"
+        ],
+        "merienda": [
+          "highProtein",
+          "balanced"
+        ],
+        "cena": [
+          "highProtein",
+          "lightCarb"
+        ]
       }
     },
     "masEnergia": {
       "label": "Más energía durante el día",
       "descripcion": "Prioriza desayunos y almuerzos con más carbohidratos para sostener el día sin caídas de energía.",
-      "calorias":      { "min": 1900, "max": 2200 },
-      "carbohidratos": { "min": 190,  "max": 230  },
-      "proteinas":     { "min": 90,   "max": 110  },
-      "grasas":        { "min": 55,   "max": 70   },
-      "fibra":         { "min": 25,   "max": 30   },
+      "calorias": {
+        "min": 1900,
+        "max": 2200
+      },
+      "carbohidratos": {
+        "min": 190,
+        "max": 230
+      },
+      "proteinas": {
+        "min": 90,
+        "max": 110
+      },
+      "grasas": {
+        "min": 55,
+        "max": 70
+      },
+      "fibra": {
+        "min": 25,
+        "max": 30
+      },
       "prioridadPorComida": {
-        "desayuno":  ["highCarb", "balanced"],
-        "almuerzo":  ["highCarb", "balanced"],
-        "merienda":  ["highCarb", "balanced"],
-        "cena":      ["balanced", "lightCarb"]
+        "desayuno": [
+          "highCarb",
+          "balanced"
+        ],
+        "almuerzo": [
+          "highCarb",
+          "balanced"
+        ],
+        "merienda": [
+          "highCarb",
+          "balanced"
+        ],
+        "cena": [
+          "balanced",
+          "lightCarb"
+        ]
       }
     },
     "diaTransquilo": {
       "label": "Día tranquilo (pareja)",
       "descripcion": "Promedio para dos personas sin exigencia física. Platos completos y porciones moderadas.",
-      "calorias":      { "min": 1850, "max": 2000 },
-      "carbohidratos": { "min": 170,  "max": 210  },
-      "proteinas":     { "min": 85,   "max": 105  },
-      "grasas":        { "min": 55,   "max": 65   },
-      "fibra":         { "min": 25,   "max": 30   },
+      "calorias": {
+        "min": 1850,
+        "max": 2000
+      },
+      "carbohidratos": {
+        "min": 170,
+        "max": 210
+      },
+      "proteinas": {
+        "min": 85,
+        "max": 105
+      },
+      "grasas": {
+        "min": 55,
+        "max": 65
+      },
+      "fibra": {
+        "min": 25,
+        "max": 30
+      },
       "prioridadPorComida": {
-        "desayuno":  ["balanced", "highCarb"],
-        "almuerzo":  ["balanced", "highProtein"],
-        "merienda":  ["balanced", "lightCarb"],
-        "cena":      ["balanced", "lightCarb"]
+        "desayuno": [
+          "balanced",
+          "highCarb"
+        ],
+        "almuerzo": [
+          "balanced",
+          "highProtein"
+        ],
+        "merienda": [
+          "balanced",
+          "lightCarb"
+        ],
+        "cena": [
+          "balanced",
+          "lightCarb"
+        ]
       }
     }
   },
-
   "etiquetas": {
     "_descripcion": "Las etiquetas (tags) se usan para filtrar comidas según el perfil nutricional. Cada comida puede tener una o más etiquetas.",
-    "balanced":    "Plato equilibrado: tiene proteína, carbohidrato y grasa en proporciones razonables.",
+    "balanced": "Plato equilibrado: tiene proteína, carbohidrato y grasa en proporciones razonables.",
     "highProtein": "Alto en proteínas. Ideal para objetivos de cuerpo, entrenamiento o bajar peso.",
-    "highCarb":    "Alto en carbohidratos. Ideal para energía y días de mucha actividad física.",
-    "lightCarb":   "Bajo o moderado en carbohidratos. Ideal para cenas o control de peso."
+    "highCarb": "Alto en carbohidratos. Ideal para energía y días de mucha actividad física.",
+    "lightCarb": "Bajo o moderado en carbohidratos. Ideal para cenas o control de peso."
   },
-
   "comidas": {
-
     "desayuno": [
       {
         "id": "des-pan-huevo",
         "nombre": "Pan integral + 2 huevos + café",
         "detalle": "Clásico equilibrado para arrancar con energía y buena saciedad.",
-        "calorias": 380, "carbohidratos": 30, "proteinas": 19, "grasas": 16, "fibra": 4,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 380,
+        "carbohidratos": 30,
+        "proteinas": 19,
+        "grasas": 16,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Tiene carbohidrato, proteína y grasa saludable si sumás unas semillas o un chorrito de oliva.",
-        "ingredientes": ["Pan integral", "Huevos", "Café o té"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Pan integral",
+          "Huevos",
+          "Café o té"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-yogur-avena-fruta",
         "nombre": "Yogur + avena + banana + nueces",
         "detalle": "Muy útil para mañanas largas o si necesitás sostener energía.",
-        "calorias": 410, "carbohidratos": 46, "proteinas": 18, "grasas": 14, "fibra": 6,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 410,
+        "carbohidratos": 46,
+        "proteinas": 18,
+        "grasas": 14,
+        "fibra": 6,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Combina cereal, lácteo, fruta y grasa buena.",
-        "ingredientes": ["Yogur natural", "Avena", "Banana", "Nueces"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Yogur natural",
+          "Avena",
+          "Banana",
+          "Nueces"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-tostadas-ricota-fruta",
         "nombre": "Tostadas con ricota + fruta",
         "detalle": "Opción suave, rápida y fácil de repetir en la semana.",
-        "calorias": 340, "carbohidratos": 35, "proteinas": 16, "grasas": 11, "fibra": 4,
-        "tags": ["balanced"],
+        "calorias": 340,
+        "carbohidratos": 35,
+        "proteinas": 16,
+        "grasas": 11,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Suma carbohidrato, proteína moderada y fruta para vitaminas.",
-        "ingredientes": ["Pan integral", "Ricota o queso untable", "Fruta de estación"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Pan integral",
+          "Ricota o queso untable",
+          "Fruta de estación"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-omelette-tostada-palta",
         "nombre": "Omelette + tostada + palta",
         "detalle": "Más proteína y grasas sanas, con carbohidrato moderado.",
-        "calorias": 390, "carbohidratos": 22, "proteinas": 21, "grasas": 22, "fibra": 5,
-        "tags": ["highProtein", "lightCarb"],
+        "calorias": 390,
+        "carbohidratos": 22,
+        "proteinas": 21,
+        "grasas": 22,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Ideal cuando querés más saciedad sin exagerar harinas.",
-        "ingredientes": ["Huevos", "Pan integral", "Palta", "Tomate"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Huevos",
+          "Pan integral",
+          "Palta",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-licuado-proteico",
         "nombre": "Licuado de leche, banana, avena y mantequilla de maní",
         "detalle": "Rápido y práctico si no tenés mucho tiempo a la mañana.",
-        "calorias": 430, "carbohidratos": 43, "proteinas": 20, "grasas": 17, "fibra": 5,
-        "tags": ["highCarb", "highProtein"],
+        "calorias": 430,
+        "carbohidratos": 43,
+        "proteinas": 20,
+        "grasas": 17,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "highProtein"
+        ],
         "balance": "Mezcla energía rápida, algo de proteína y grasas saludables.",
-        "ingredientes": ["Leche o bebida vegetal", "Banana", "Avena", "Mantequilla de maní"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Leche o bebida vegetal",
+          "Banana",
+          "Avena",
+          "Mantequilla de maní"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-medialunas-cafe",
         "nombre": "Medialunas + café con leche",
         "detalle": "El desayuno clásico argentino de panadería. Liviano pero sabroso.",
-        "calorias": 360, "carbohidratos": 44, "proteinas": 10, "grasas": 14, "fibra": 1,
-        "tags": ["highCarb"],
+        "calorias": 360,
+        "carbohidratos": 44,
+        "proteinas": 10,
+        "grasas": 14,
+        "fibra": 1,
+        "tags": [
+          "highCarb"
+        ],
         "balance": "Rico en carbohidratos. Complementar con fruta o yogur si la mañana es larga.",
-        "ingredientes": ["Medialunas", "Café", "Leche", "Azúcar o edulcorante"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Medialunas",
+          "Café",
+          "Leche",
+          "Azúcar o edulcorante"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-mate-tostadas-jamon-queso",
         "nombre": "Mate + tostadas con jamón y queso",
         "detalle": "Clásico rioplatense. Proteína, carbohidrato y el mate de siempre.",
-        "calorias": 350, "carbohidratos": 28, "proteinas": 17, "grasas": 14, "fibra": 3,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 350,
+        "carbohidratos": 28,
+        "proteinas": 17,
+        "grasas": 14,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Muy equilibrado para una mañana normal.",
-        "ingredientes": ["Pan lactal o integral", "Jamón cocido", "Queso en fetas", "Yerba mate"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Pan lactal o integral",
+          "Jamón cocido",
+          "Queso en fetas",
+          "Yerba mate"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-facturas-yogur",
         "nombre": "Facturas + yogur con fruta",
         "detalle": "Combina el placer del fin de semana con algo de proteína y fruta.",
-        "calorias": 420, "carbohidratos": 50, "proteinas": 12, "grasas": 16, "fibra": 2,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 420,
+        "carbohidratos": 50,
+        "proteinas": 12,
+        "grasas": 16,
+        "fibra": 2,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Alto en carbs. El yogur y la fruta mejoran bastante el perfil general.",
-        "ingredientes": ["Facturas de panadería", "Yogur natural", "Fruta de estación"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Facturas de panadería",
+          "Yogur natural",
+          "Fruta de estación"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-tostadas-queso-crema-frutas",
         "nombre": "Tostadas con queso crema + manzana, naranja y banana",
         "detalle": "Combinación fresca y variada. El queso crema suma proteína y las frutas vitaminas.",
-        "calorias": 370, "carbohidratos": 48, "proteinas": 11, "grasas": 10, "fibra": 6,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 370,
+        "carbohidratos": 48,
+        "proteinas": 11,
+        "grasas": 10,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Buena variedad de vitaminas y fibra. Liviano y fácil de armar.",
-        "ingredientes": ["Pan integral", "Queso crema", "Manzana", "Naranja", "Banana"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Pan integral",
+          "Queso crema",
+          "Manzana",
+          "Naranja",
+          "Banana"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-tostadas-huevo-palta",
         "nombre": "Tostadas integrales con huevo y palta",
         "detalle": "Clásico moderno con energía duradera y mucha saciedad.",
-        "calorias": 375, "carbohidratos": 41, "proteinas": 20, "grasas": 12, "fibra": 7,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 375,
+        "carbohidratos": 41,
+        "proteinas": 20,
+        "grasas": 12,
+        "fibra": 7,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Excelente balance: proteína del huevo, grasa buena de la palta y carbohidrato del pan.",
-        "ingredientes": ["Pan integral", "Huevos", "Palta", "Fruta de estación"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Pan integral",
+          "Huevos",
+          "Palta",
+          "Fruta de estación"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-mate-pan-campo-queso",
         "nombre": "Mate + pan de campo integral + queso blanco",
         "detalle": "Clásico argentino con fibra. El queso blanco descremado suma proteína sin mucha grasa.",
-        "calorias": 280, "carbohidratos": 45, "proteinas": 10, "grasas": 5, "fibra": 5,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 280,
+        "carbohidratos": 45,
+        "proteinas": 10,
+        "grasas": 5,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Liviano y funcional. Sumar una fruta de estación mejora vitaminas y saciedad.",
-        "ingredientes": ["Yerba mate", "Pan de campo integral", "Queso blanco descremado", "Naranja o mandarina"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Yerba mate",
+          "Pan de campo integral",
+          "Queso blanco descremado",
+          "Naranja o mandarina"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-avena-leche-fruta",
         "nombre": "Avena con leche caliente + fruta",
         "detalle": "Desayuno reconfortante, sencillo y muy habitual en casa.",
-        "calorias": 360, "carbohidratos": 52, "proteinas": 13, "grasas": 8, "fibra": 7,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 360,
+        "carbohidratos": 52,
+        "proteinas": 13,
+        "grasas": 8,
+        "fibra": 7,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Buen aporte de fibra y carbohidrato lento. La fruta suma vitaminas y hace más saciante.",
-        "ingredientes": ["Avena", "Leche", "Banana o manzana o naranja"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Avena",
+          "Leche",
+          "Banana o manzana o naranja"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-tostadas-queso-tomate",
         "nombre": "Tostadas con queso y tomate",
         "detalle": "Desayuno rápido y fresco. El tomate suma vitamina C y hace el desayuno más liviano.",
-        "calorias": 310, "carbohidratos": 32, "proteinas": 13, "grasas": 10, "fibra": 3,
-        "tags": ["balanced"],
+        "calorias": 310,
+        "carbohidratos": 32,
+        "proteinas": 13,
+        "grasas": 10,
+        "fibra": 3,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Simple y equilibrado. Fácil de preparar cualquier mañana.",
-        "ingredientes": ["Pan integral", "Queso en fetas o untable", "Tomate", "Aceite de oliva"],
-        "mealTypes": ["desayuno", "merienda"]
+        "ingredientes": [
+          "Pan integral",
+          "Queso en fetas o untable",
+          "Tomate",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       },
       {
         "id": "des-mate-tostadas-dulce",
         "nombre": "Mate + tostadas con dulce de leche o mermelada",
         "detalle": "El desayuno del viernes o el fin de semana. Un placer moderado sin exagerar.",
-        "calorias": 330, "carbohidratos": 52, "proteinas": 7, "grasas": 8, "fibra": 2,
-        "tags": ["highCarb"],
+        "calorias": 330,
+        "carbohidratos": 52,
+        "proteinas": 7,
+        "grasas": 8,
+        "fibra": 2,
+        "tags": [
+          "highCarb"
+        ],
         "balance": "Alto en carbohidratos simples. Rico para una mañana tranquila, pero no todos los días.",
-        "ingredientes": ["Yerba mate", "Pan lactal o de molde", "Dulce de leche o mermelada"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Yerba mate",
+          "Pan lactal o de molde",
+          "Dulce de leche o mermelada"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
       },
       {
         "id": "des-mate-domingo",
         "nombre": "Mate + medialunas o facturas (domingo tranquilo)",
         "detalle": "El desayuno del domingo. Sin apuro, con mate y algo rico de la panadería.",
-        "calorias": 380, "carbohidratos": 50, "proteinas": 9, "grasas": 14, "fibra": 1,
-        "tags": ["highCarb"],
+        "calorias": 380,
+        "carbohidratos": 50,
+        "proteinas": 9,
+        "grasas": 14,
+        "fibra": 1,
+        "tags": [
+          "highCarb"
+        ],
         "balance": "Más indulgente. Un domingo está bien. Compensar con un almuerzo más completo.",
-        "ingredientes": ["Yerba mate", "Medialunas o facturas", "Azúcar o edulcorante"],
-        "mealTypes": ["desayuno"]
+        "ingredientes": [
+          "Yerba mate",
+          "Medialunas o facturas",
+          "Azúcar o edulcorante"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
+      },
+      {
+        "id": "des-granola-yogur-miel",
+        "nombre": "Granola casera con yogur y miel",
+        "detalle": "Textura crocante con dulzor natural. Rico en fibra y energía sostenida.",
+        "calorias": 390,
+        "carbohidratos": 52,
+        "proteinas": 12,
+        "grasas": 14,
+        "fibra": 6,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "La granola aporta carbohidrato lento y fibra, el yogur suma proteína y probióticos.",
+        "ingredientes": [
+          "Avena",
+          "Nueces",
+          "Semillas de girasol",
+          "Yogur natural",
+          "Miel"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
+      },
+      {
+        "id": "des-huevo-revuelto-espinaca",
+        "nombre": "Huevos revueltos con espinacas y tostada",
+        "detalle": "Desayuno salado y proteico para arrancar con mucha energía.",
+        "calorias": 360,
+        "carbohidratos": 24,
+        "proteinas": 22,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Proteína completa del huevo, hierro de la espinaca y carbohidrato del pan.",
+        "ingredientes": [
+          "Huevos",
+          "Espinaca",
+          "Pan integral",
+          "Aceite de oliva",
+          "Ajo"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
+      },
+      {
+        "id": "des-porridge-frutos-rojos",
+        "nombre": "Porridge de avena con frutos rojos y semillas de chía",
+        "detalle": "Desayuno caliente con alto contenido de fibra y antioxidantes.",
+        "calorias": 340,
+        "carbohidratos": 50,
+        "proteinas": 11,
+        "grasas": 8,
+        "fibra": 9,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "La chía y la avena son una combinación de fibra soluble e insoluble excelente.",
+        "ingredientes": [
+          "Avena",
+          "Leche o bebida vegetal",
+          "Arándanos o frutillas",
+          "Semillas de chía",
+          "Miel"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
+      },
+      {
+        "id": "des-tostadas-salmon-palta",
+        "nombre": "Tostadas integrales con salmón ahumado y palta",
+        "detalle": "Desayuno nutritivo con omega-3 y grasas saludables. Ideal para días de mucha actividad.",
+        "calorias": 410,
+        "carbohidratos": 28,
+        "proteinas": 24,
+        "grasas": 22,
+        "fibra": 6,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "El salmón aporta omega-3 y proteína de alta calidad. La palta completa con grasas buenas.",
+        "ingredientes": [
+          "Pan integral",
+          "Salmón ahumado",
+          "Palta",
+          "Limón",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "desayuno"
+        ]
+      },
+      {
+        "id": "des-bowl-frutas-queso",
+        "nombre": "Bowl de frutas de estación con queso cottage",
+        "detalle": "Refrescante y liviano. Ideal para mañanas de calor o días sin mucho apetito.",
+        "calorias": 280,
+        "carbohidratos": 34,
+        "proteinas": 16,
+        "grasas": 6,
+        "fibra": 5,
+        "tags": [
+          "lightCarb",
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "El queso cottage es muy alto en proteína con poca grasa. Las frutas aportan vitaminas y fibra.",
+        "ingredientes": [
+          "Queso cottage",
+          "Banana",
+          "Manzana",
+          "Naranja",
+          "Miel o edulcorante"
+        ],
+        "mealTypes": [
+          "desayuno",
+          "merienda"
+        ]
       }
     ],
-
     "almuerzo": [
       {
         "id": "alm-pollo-arroz-ensalada",
         "nombre": "Pollo + arroz + ensalada",
         "detalle": "La base ideal: fácil de medir, rendidora y muy completa.",
-        "calorias": 560, "carbohidratos": 55, "proteinas": 38, "grasas": 13, "fibra": 5,
-        "tags": ["balanced", "highProtein", "highCarb"],
+        "calorias": 560,
+        "carbohidratos": 55,
+        "proteinas": 38,
+        "grasas": 13,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
         "balance": "Cumple perfecto con verduras, proteína y carbohidrato.",
-        "ingredientes": ["Pollo", "Arroz", "Lechuga", "Tomate", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Pollo",
+          "Arroz",
+          "Lechuga",
+          "Tomate",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-carne-papa-verduras",
         "nombre": "Carne magra + papa al horno + verduras",
         "detalle": "Plato fuerte, simple y muy funcional para el mediodía.",
-        "calorias": 590, "carbohidratos": 42, "proteinas": 36, "grasas": 22, "fibra": 6,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 590,
+        "carbohidratos": 42,
+        "proteinas": 36,
+        "grasas": 22,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Muy completo si mantenés abundantes las verduras.",
-        "ingredientes": ["Carne magra", "Papa", "Brócoli", "Zanahoria", "Aceite de oliva"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Carne magra",
+          "Papa",
+          "Brócoli",
+          "Zanahoria",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-lentejas-arroz-huevo",
         "nombre": "Guiso liviano de lentejas + arroz + huevo",
         "detalle": "Excelente si querés sumar legumbres y proteína vegetal.",
-        "calorias": 545, "carbohidratos": 58, "proteinas": 27, "grasas": 16, "fibra": 12,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 545,
+        "carbohidratos": 58,
+        "proteinas": 27,
+        "grasas": 16,
+        "fibra": 12,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Aporta fibra, hierro y bastante saciedad.",
-        "ingredientes": ["Lentejas", "Arroz", "Huevo", "Cebolla", "Morrón", "Zanahoria"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Lentejas",
+          "Arroz",
+          "Huevo",
+          "Cebolla",
+          "Morrón",
+          "Zanahoria"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-sandwich-atun",
         "nombre": "Sándwich de atún + verduras",
         "detalle": "Opción rápida si no querés cocinar mucho.",
-        "calorias": 430, "carbohidratos": 38, "proteinas": 24, "grasas": 14, "fibra": 4,
-        "tags": ["balanced", "lightCarb"],
+        "calorias": 430,
+        "carbohidratos": 38,
+        "proteinas": 24,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "lightCarb"
+        ],
         "balance": "Bastante equilibrado si la mayonesa es medida y sumás vegetales.",
-        "ingredientes": ["Pan integral", "Atún", "Lechuga", "Tomate", "Queso untable"],
-        "mealTypes": ["almuerzo", "merienda"]
+        "ingredientes": [
+          "Pan integral",
+          "Atún",
+          "Lechuga",
+          "Tomate",
+          "Queso untable"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "merienda"
+        ]
       },
       {
         "id": "alm-pasta-pavo-verduras",
         "nombre": "Fideos + pavo o pollo + verduras salteadas",
         "detalle": "Buena alternativa cuando necesitás más combustible.",
-        "calorias": 610, "carbohidratos": 67, "proteinas": 34, "grasas": 14, "fibra": 5,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 610,
+        "carbohidratos": 67,
+        "proteinas": 34,
+        "grasas": 14,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Más alto en carbohidratos, ideal para días de mucha actividad.",
-        "ingredientes": ["Fideos", "Pechuga de pollo o pavo", "Zucchini", "Cebolla", "Aceite de oliva"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Fideos",
+          "Pechuga de pollo o pavo",
+          "Zucchini",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-milanesa-ensalada",
         "nombre": "Milanesa al horno + ensalada + pan",
         "detalle": "El clásico argentino en versión más liviana, horneada en lugar de frita.",
-        "calorias": 580, "carbohidratos": 36, "proteinas": 40, "grasas": 20, "fibra": 3,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 580,
+        "carbohidratos": 36,
+        "proteinas": 40,
+        "grasas": 20,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Alta proteína. Reducir el pan y cargar más ensalada mejora el balance.",
-        "ingredientes": ["Carne o pollo apanado", "Pan rallado", "Lechuga", "Tomate", "Pan"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Carne o pollo apanado",
+          "Pan rallado",
+          "Lechuga",
+          "Tomate",
+          "Pan"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-guiso-garbanzos",
         "nombre": "Guiso de garbanzos con verduras",
         "detalle": "Plato de cuchara lleno de fibra, hierro y proteína vegetal.",
-        "calorias": 530, "carbohidratos": 55, "proteinas": 24, "grasas": 14, "fibra": 14,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 530,
+        "carbohidratos": 55,
+        "proteinas": 24,
+        "grasas": 14,
+        "fibra": 14,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Muy saciante. Buena opción en invierno para platos calientes completos.",
-        "ingredientes": ["Garbanzos", "Morrón", "Cebolla", "Zanahoria", "Zapallo", "Arroz"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Garbanzos",
+          "Morrón",
+          "Cebolla",
+          "Zanahoria",
+          "Zapallo",
+          "Arroz"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-locro-light",
         "nombre": "Locro liviano de maíz y porotos",
         "detalle": "Versión más moderada del clásico argentino. Calorioso y lleno de nutrientes.",
-        "calorias": 560, "carbohidratos": 58, "proteinas": 26, "grasas": 16, "fibra": 11,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 560,
+        "carbohidratos": 58,
+        "proteinas": 26,
+        "grasas": 16,
+        "fibra": 11,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Combinación completa de legumbres, cereal y verdura.",
-        "ingredientes": ["Maíz blanco", "Porotos", "Cebolla", "Zanahoria", "Pechuga de pollo"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Maíz blanco",
+          "Porotos",
+          "Cebolla",
+          "Zanahoria",
+          "Pechuga de pollo"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-carbonada",
         "nombre": "Carbonada criolla con arroz",
         "detalle": "Guiso dulce-salado típico argentino con zapallo, durazno y carne.",
-        "calorias": 545, "carbohidratos": 50, "proteinas": 30, "grasas": 16, "fibra": 5,
-        "tags": ["balanced"],
+        "calorias": 545,
+        "carbohidratos": 50,
+        "proteinas": 30,
+        "grasas": 16,
+        "fibra": 5,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Muy completo. La fruta suma vitaminas y le da un sabor único.",
-        "ingredientes": ["Carne magra", "Zapallo", "Papa", "Arroz", "Durazno", "Cebolla"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Carne magra",
+          "Zapallo",
+          "Papa",
+          "Arroz",
+          "Durazno",
+          "Cebolla"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-albondigas-pure",
         "nombre": "Albóndigas en salsa + puré de papa",
         "detalle": "Clásico reconfortante de cocina casera argentina.",
-        "calorias": 575, "carbohidratos": 42, "proteinas": 34, "grasas": 20, "fibra": 4,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 575,
+        "carbohidratos": 42,
+        "proteinas": 34,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Bien balanceado. Sumarle ensalada verde mejora la proporción vegetal.",
-        "ingredientes": ["Carne picada", "Pan rallado", "Huevo", "Papa", "Salsa de tomate", "Cebolla"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Carne picada",
+          "Pan rallado",
+          "Huevo",
+          "Papa",
+          "Salsa de tomate",
+          "Cebolla"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-fideos-bolognesa",
         "nombre": "Fideos con salsa boloñesa",
         "detalle": "Uno de los almuerzos más populares en Argentina. Rinde, gusta y es fácil de preparar.",
-        "calorias": 590, "carbohidratos": 62, "proteinas": 30, "grasas": 18, "fibra": 4,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 590,
+        "carbohidratos": 62,
+        "proteinas": 30,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Alto en carbohidratos. Bueno para días activos. Cuidar el tamaño de la porción de carne.",
-        "ingredientes": ["Fideos", "Carne picada", "Salsa de tomate", "Cebolla", "Ajo", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Fideos",
+          "Carne picada",
+          "Salsa de tomate",
+          "Cebolla",
+          "Ajo",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-carne-pure-papa",
         "nombre": "Carne magra + puré de papa + ensalada",
         "detalle": "Variante del puré con papa en lugar de calabaza. Más contundente y familiar.",
-        "calorias": 565, "carbohidratos": 44, "proteinas": 34, "grasas": 16, "fibra": 4,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 565,
+        "carbohidratos": 44,
+        "proteinas": 34,
+        "grasas": 16,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Muy completo. El puré de papa suma carbohidrato energético y la ensalada equilibra.",
-        "ingredientes": ["Carne magra", "Papa", "Leche", "Manteca", "Lechuga", "Tomate"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Carne magra",
+          "Papa",
+          "Leche",
+          "Manteca",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-arroz-salteado-pollo",
         "nombre": "Arroz salteado con pollo y verduras",
         "detalle": "Clásico de la semana: arroz en sartén con pollo en trozos y las verduras que haya.",
-        "calorias": 530, "carbohidratos": 52, "proteinas": 34, "grasas": 12, "fibra": 4,
-        "tags": ["balanced", "highProtein", "highCarb"],
+        "calorias": 530,
+        "carbohidratos": 52,
+        "proteinas": 34,
+        "grasas": 12,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
         "balance": "Muy equilibrado. El salteado conserva mejor los nutrientes de las verduras.",
-        "ingredientes": ["Arroz", "Pechuga de pollo", "Morrón", "Cebolla", "Zapallito", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Arroz",
+          "Pechuga de pollo",
+          "Morrón",
+          "Cebolla",
+          "Zapallito",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-tarta-pollo",
         "nombre": "Tarta de pollo + ensalada mixta",
         "detalle": "Tarta casera con relleno de pollo desmenuzado. Práctica, rinde y se puede preparar el día anterior.",
-        "calorias": 510, "carbohidratos": 35, "proteinas": 30, "grasas": 22, "fibra": 3,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 510,
+        "carbohidratos": 35,
+        "proteinas": 30,
+        "grasas": 22,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Proteína del pollo bien distribuida. La ensalada es clave para equilibrar la grasa de la masa.",
-        "ingredientes": ["Masa para tarta", "Pollo cocido desmenuzado", "Cebolla", "Morrón", "Huevos", "Queso"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Masa para tarta",
+          "Pollo cocido desmenuzado",
+          "Cebolla",
+          "Morrón",
+          "Huevos",
+          "Queso"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-asado-ensalada",
         "nombre": "Asado familiar + ensalada + pan",
         "detalle": "El almuerzo dominical argentino por excelencia. Con cortes variados y buena ensalada.",
-        "calorias": 620, "carbohidratos": 20, "proteinas": 42, "grasas": 30, "fibra": 3,
-        "tags": ["highProtein"],
+        "calorias": 620,
+        "carbohidratos": 20,
+        "proteinas": 42,
+        "grasas": 30,
+        "fibra": 3,
+        "tags": [
+          "highProtein"
+        ],
         "balance": "Alto en proteína y grasa. La ensalada abundante ayuda a equilibrar. Porción moderada de carne.",
-        "ingredientes": ["Cortes de carne vacuna", "Chorizos o morcilla", "Lechuga", "Tomate", "Cebolla", "Pan"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Cortes de carne vacuna",
+          "Chorizos o morcilla",
+          "Lechuga",
+          "Tomate",
+          "Cebolla",
+          "Pan"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-empanadas-ensalada",
         "nombre": "Empanadas al horno (3) + ensalada",
         "detalle": "Las empanadas horneadas son mucho más livianas que las fritas. Un clásico argentino reconvertido.",
-        "calorias": 540, "carbohidratos": 48, "proteinas": 28, "grasas": 20, "fibra": 3,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 540,
+        "carbohidratos": 48,
+        "proteinas": 28,
+        "grasas": 20,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Proteína y carbohidrato presentes. Clave que la ensalada sea abundante.",
-        "ingredientes": ["Masa para empanadas", "Carne picada o pollo", "Huevo duro", "Cebolla", "Lechuga", "Tomate"],
-        "mealTypes": ["almuerzo"]
+        "ingredientes": [
+          "Masa para empanadas",
+          "Carne picada o pollo",
+          "Huevo duro",
+          "Cebolla",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
       },
       {
         "id": "alm-tarta-verduras-ensalada",
         "nombre": "Tarta de verduras + ensalada mixta",
         "detalle": "La tarta casera argentina con masa liviana y relleno de verduras y huevo.",
-        "calorias": 480, "carbohidratos": 38, "proteinas": 20, "grasas": 22, "fibra": 5,
-        "tags": ["balanced"],
+        "calorias": 480,
+        "carbohidratos": 38,
+        "proteinas": 20,
+        "grasas": 22,
+        "fibra": 5,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Carbohidrato y proteína moderados. La ensalada suma fibra y vitaminas.",
-        "ingredientes": ["Masa para tarta", "Espinaca o acelga", "Huevos", "Queso", "Lechuga", "Tomate"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Masa para tarta",
+          "Espinaca o acelga",
+          "Huevos",
+          "Queso",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-arroz-atun",
         "nombre": "Arroz con atún y verduras salteadas",
         "detalle": "Fácil, rápido, económico y muy completo. Uno de los clásicos prácticos argentinos.",
-        "calorias": 490, "carbohidratos": 52, "proteinas": 30, "grasas": 10, "fibra": 3,
-        "tags": ["balanced", "highProtein", "highCarb"],
+        "calorias": 490,
+        "carbohidratos": 52,
+        "proteinas": 30,
+        "grasas": 10,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
         "balance": "El atún suma proteína de calidad con poca grasa. Muy funcional.",
-        "ingredientes": ["Arroz", "Atún al natural", "Morrón", "Cebolla de verdeo", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Arroz",
+          "Atún al natural",
+          "Morrón",
+          "Cebolla de verdeo",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-filet-merluza",
         "nombre": "Filet de merluza al horno + papa + ensalada",
         "detalle": "La merluza es el pescado más popular en Argentina. Proteína magra de excelente calidad.",
-        "calorias": 460, "carbohidratos": 30, "proteinas": 36, "grasas": 12, "fibra": 4,
-        "tags": ["balanced", "highProtein", "lightCarb"],
+        "calorias": 460,
+        "carbohidratos": 30,
+        "proteinas": 36,
+        "grasas": 12,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Muy completo. Alta proteína, carbohidrato moderado y grasa baja.",
-        "ingredientes": ["Filet de merluza", "Papa", "Limón", "Lechuga", "Tomate", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Filet de merluza",
+          "Papa",
+          "Limón",
+          "Lechuga",
+          "Tomate",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-pollo-quinoa-vegetales",
         "nombre": "Pollo a las hierbas + quinoa + brócoli y zanahoria",
         "detalle": "Plato completo que sigue la regla del plato: mitad vegetales, un cuarto proteína, un cuarto granos.",
-        "calorias": 475, "carbohidratos": 35, "proteinas": 35, "grasas": 15, "fibra": 7,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 475,
+        "carbohidratos": 35,
+        "proteinas": 35,
+        "grasas": 15,
+        "fibra": 7,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Muy equilibrado. La quinoa aporta proteína vegetal y aminoácidos esenciales.",
-        "ingredientes": ["Pechuga de pollo", "Quinoa", "Brócoli", "Zanahoria", "Espinaca", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Quinoa",
+          "Brócoli",
+          "Zanahoria",
+          "Espinaca",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       },
       {
         "id": "alm-bife-lomo-calabaza",
         "nombre": "Bife de lomo + calabaza asada + ensalada",
         "detalle": "El lomo es uno de los cortes más magros de la carne argentina. Sabroso y nutritivo.",
-        "calorias": 420, "carbohidratos": 25, "proteinas": 32, "grasas": 12, "fibra": 5,
-        "tags": ["balanced", "highProtein", "lightCarb"],
+        "calorias": 420,
+        "carbohidratos": 25,
+        "proteinas": 32,
+        "grasas": 12,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Alta proteína con buen hierro. La calabaza suma carbohidrato y betacaroteno.",
-        "ingredientes": ["Bife de lomo", "Calabaza", "Lechuga", "Tomate", "Cebolla", "Aceite de oliva"],
-        "mealTypes": ["almuerzo", "cena"]
+        "ingredientes": [
+          "Bife de lomo",
+          "Calabaza",
+          "Lechuga",
+          "Tomate",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-pure-papa",
+        "nombre": "Milanesa con puré de papas",
+        "detalle": "Uno de los platos más emblemáticos de la mesa argentina. Proteína y carbohidrato en dosis generosas.",
+        "calorias": 650,
+        "carbohidratos": 55,
+        "proteinas": 35,
+        "grasas": 28,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Alta en calorías. Sumar una ensalada verde y reducir el puré ayuda a equilibrar.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Papa",
+          "Leche",
+          "Manteca",
+          "Pan rallado",
+          "Huevo"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-bife-ensalada-mixta",
+        "nombre": "Bife de lomo con ensalada mixta",
+        "detalle": "Plato clásico de bodegón argentino. Alta proteína con muy pocos carbohidratos.",
+        "calorias": 580,
+        "carbohidratos": 10,
+        "proteinas": 45,
+        "grasas": 38,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Muy alto en proteína y grasa. El lomo es magro pero el dorado suma grasas. Ensalada abundante.",
+        "ingredientes": [
+          "Bife de lomo",
+          "Lechuga",
+          "Tomate",
+          "Zanahoria",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-revuelto-gramajo",
+        "nombre": "Revuelto de Gramajo (papas, huevo, jamón)",
+        "detalle": "Clásico porteño de cocina casera. Rápido, sabroso y muy rendidor.",
+        "calorias": 550,
+        "carbohidratos": 42,
+        "proteinas": 22,
+        "grasas": 34,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Alto en grasas por el freído de la papa. Versión al horno reduce calorías notablemente.",
+        "ingredientes": [
+          "Papa",
+          "Huevos",
+          "Jamón cocido",
+          "Cebolla de verdeo",
+          "Aceite",
+          "Sal"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-guiso-lentejas-chorizo",
+        "nombre": "Guiso de lentejas con chorizo colorado",
+        "detalle": "Plato de cuchara con mucha fibra y sabor bien argentino. Ideal en días fríos.",
+        "calorias": 520,
+        "carbohidratos": 45,
+        "proteinas": 28,
+        "grasas": 25,
+        "fibra": 12,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Las lentejas aportan proteína vegetal y fibra. El chorizo suma sabor y grasa. Porciones moderadas.",
+        "ingredientes": [
+          "Lentejas",
+          "Chorizo colorado",
+          "Cebolla",
+          "Morrón",
+          "Zanahoria",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-pastel-papa-carne",
+        "nombre": "Pastel de papa y carne",
+        "detalle": "El pastel de papa es uno de los platos de horno más queridos de la cocina casera argentina.",
+        "calorias": 540,
+        "carbohidratos": 48,
+        "proteinas": 30,
+        "grasas": 24,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Buena combinación de carbohidrato y proteína. El queso gratinado suma grasa sabrosa.",
+        "ingredientes": [
+          "Carne picada",
+          "Papa",
+          "Cebolla",
+          "Morrón",
+          "Huevo",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-locro-criollo",
+        "nombre": "Locro Criollo (maíz, porotos, carne)",
+        "detalle": "El guiso nacional argentino. Muy completo, calórico y lleno de historia.",
+        "calorias": 510,
+        "carbohidratos": 42,
+        "proteinas": 35,
+        "grasas": 22,
+        "fibra": 10,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Combinación perfecta de legumbres, cereal y carne. Saciante y nutritivo.",
+        "ingredientes": [
+          "Maíz blanco",
+          "Porotos",
+          "Carne de cerdo o vacuna",
+          "Chorizo",
+          "Cebolla",
+          "Morrón"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-tallarines-estofado",
+        "nombre": "Tallarines con estofado de carne",
+        "detalle": "El domingo en casa. Pasta con salsa de carne bien cocida y mucho sabor.",
+        "calorias": 620,
+        "carbohidratos": 75,
+        "proteinas": 28,
+        "grasas": 18,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en carbohidratos. Ideal para días activos o post-entrenamiento. Porción de carne moderada.",
+        "ingredientes": [
+          "Tallarines o fideos",
+          "Carne para estofado",
+          "Tomate",
+          "Zanahoria",
+          "Cebolla",
+          "Laurel"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-pollo-calabaza-asada",
+        "nombre": "Pollo al horno con calabaza asada",
+        "detalle": "Plato liviano y muy sabroso. La calabaza caramelizada complementa el pollo a la perfección.",
+        "calorias": 440,
+        "carbohidratos": 25,
+        "proteinas": 38,
+        "grasas": 22,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Excelente proporción proteína-carbohidrato. La calabaza suma fibra y betacaroteno.",
+        "ingredientes": [
+          "Pollo",
+          "Calabaza",
+          "Ajo",
+          "Romero",
+          "Aceite de oliva",
+          "Sal y pimienta"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-zapallitos-rellenos",
+        "nombre": "Zapallitos rellenos (con carne y arroz)",
+        "detalle": "Un clásico de las abuelas argentinas. Económico, nutritivo y muy completo.",
+        "calorias": 380,
+        "carbohidratos": 22,
+        "proteinas": 26,
+        "grasas": 18,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Buena proporción de proteína vegetal y animal. El zapallito aporta vitaminas y agua.",
+        "ingredientes": [
+          "Zapallitos",
+          "Carne picada",
+          "Arroz cocido",
+          "Cebolla",
+          "Tomate",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-matambre-papas",
+        "nombre": "Matambre a la pizza con papas fritas",
+        "detalle": "El plato de los días especiales. Muy sabroso y contundente.",
+        "calorias": 780,
+        "carbohidratos": 52,
+        "proteinas": 48,
+        "grasas": 42,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy calórico. Mejor para días de mucha actividad o como comida del domingo ocasional.",
+        "ingredientes": [
+          "Matambre",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Papa",
+          "Aceite"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-bifes-criolla",
+        "nombre": "Bifes a la criolla (carne, papa, cebolla, morrón)",
+        "detalle": "Plato de sartén reconfortante y muy argentino. Se cocina todo junto en la salsa.",
+        "calorias": 490,
+        "carbohidratos": 40,
+        "proteinas": 38,
+        "grasas": 18,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Excelente combinación de proteína y verduras. La salsa criolla suma vitaminas.",
+        "ingredientes": [
+          "Bife de carne",
+          "Papa",
+          "Cebolla",
+          "Morrón",
+          "Tomate",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-arroz-pollo-casero",
+        "nombre": "Arroz con pollo (estilo casero)",
+        "detalle": "El plato de la semana por excelencia. Rinde, gusta y es fácil de preparar.",
+        "calorias": 520,
+        "carbohidratos": 60,
+        "proteinas": 35,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. El pollo sin piel reduce la grasa y el arroz aporta energía sostenida.",
+        "ingredientes": [
+          "Arroz",
+          "Pollo",
+          "Morrón",
+          "Cebolla",
+          "Ajo",
+          "Caldo casero",
+          "Arvejas"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-entrada-plancha-calabaza",
+        "nombre": "Entraña a la plancha con puré de calabaza",
+        "detalle": "La entraña es uno de los cortes más sabrosos y tiernos de la carne argentina.",
+        "calorias": 460,
+        "carbohidratos": 18,
+        "proteinas": 42,
+        "grasas": 24,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Muy alta en proteína. El puré de calabaza aporta carbohidrato moderado y vitamina A.",
+        "ingredientes": [
+          "Entraña",
+          "Calabaza",
+          "Sal gruesa",
+          "Chimichurri o limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-canelones-carne-verdura",
+        "nombre": "Canelones de carne y verdura (con salsa)",
+        "detalle": "Pasta rellena con carne y espinaca. Clásico de los domingos en familia.",
+        "calorias": 590,
+        "carbohidratos": 65,
+        "proteinas": 32,
+        "grasas": 22,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en carbohidratos. La espinaca suma hierro y fibra. Porciones moderadas.",
+        "ingredientes": [
+          "Pasta para canelones",
+          "Carne picada",
+          "Espinaca",
+          "Salsa blanca",
+          "Salsa de tomate",
+          "Queso"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-clasica",
+        "nombre": "Hamburguesa clásica de carne con pan y ensalada",
+        "detalle": "La hamburguesa casera argentina. Con pan brioche o lactal, lechuga, tomate y queso.",
+        "calorias": 580,
+        "carbohidratos": 42,
+        "proteinas": 36,
+        "grasas": 28,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Alta en proteína y grasa. La ensalada equilibra. Mejor al horno que a la plancha con mucho aceite.",
+        "ingredientes": [
+          "Carne picada",
+          "Pan para hamburguesa",
+          "Lechuga",
+          "Tomate",
+          "Queso en fetas",
+          "Mostaza o ketchup"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-doble",
+        "nombre": "Hamburguesa doble con papas al horno",
+        "detalle": "Versión más contundente para días de mucha actividad o el fin de semana.",
+        "calorias": 780,
+        "carbohidratos": 55,
+        "proteinas": 52,
+        "grasas": 38,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy calórica. Para días activos o como comida principal única del día.",
+        "ingredientes": [
+          "Carne picada (doble)",
+          "Pan para hamburguesa",
+          "Queso doble",
+          "Papa",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-pollo",
+        "nombre": "Hamburguesa de pollo a la plancha",
+        "detalle": "Versión más liviana con pechuga de pollo molida. Menos grasa y muy proteica.",
+        "calorias": 460,
+        "carbohidratos": 38,
+        "proteinas": 38,
+        "grasas": 14,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Muy buena opción light. El pollo molido tiene mucha menos grasa que la carne vacuna.",
+        "ingredientes": [
+          "Pechuga de pollo molida",
+          "Pan integral",
+          "Lechuga",
+          "Tomate",
+          "Palta",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-garbanzos",
+        "nombre": "Hamburguesa de garbanzos (vegana)",
+        "detalle": "Versión 100% vegetal. Muy alta en fibra y proteína vegetal.",
+        "calorias": 390,
+        "carbohidratos": 48,
+        "proteinas": 18,
+        "grasas": 12,
+        "fibra": 10,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Excelente fuente de fibra y proteína vegetal. Sin colesterol ni grasa saturada.",
+        "ingredientes": [
+          "Garbanzos",
+          "Cebolla",
+          "Ajo",
+          "Perejil",
+          "Pan rallado",
+          "Pan integral",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-lentejas",
+        "nombre": "Hamburguesa de lentejas y zanahoria",
+        "detalle": "Burger vegetal con base de lentejas. Nutritiva, económica y muy sabrosa.",
+        "calorias": 370,
+        "carbohidratos": 50,
+        "proteinas": 16,
+        "grasas": 10,
+        "fibra": 11,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Muy alta en fibra. Las lentejas aportan hierro y proteína vegetal de calidad.",
+        "ingredientes": [
+          "Lentejas cocidas",
+          "Zanahoria rallada",
+          "Cebolla",
+          "Comino",
+          "Pan rallado",
+          "Pan integral"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-cerdo",
+        "nombre": "Hamburguesa de cerdo con manzana y mostaza",
+        "detalle": "Combinación dulce-salada muy sabrosa. El cerdo magro tiene buen perfil proteico.",
+        "calorias": 520,
+        "carbohidratos": 40,
+        "proteinas": 34,
+        "grasas": 22,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "El lomo de cerdo es una proteína magra. La manzana suma fibra y dulzor natural.",
+        "ingredientes": [
+          "Carne de cerdo molida",
+          "Manzana",
+          "Mostaza",
+          "Pan brioche",
+          "Lechuga",
+          "Cebolla morada"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-atun",
+        "nombre": "Hamburguesa de atún y papa",
+        "detalle": "Burger de pescado al estilo casero. Alta proteína con omega-3.",
+        "calorias": 430,
+        "carbohidratos": 36,
+        "proteinas": 32,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "El atún aporta proteína magra y ácidos grasos esenciales. Muy completa.",
+        "ingredientes": [
+          "Atún al natural",
+          "Papa cocida",
+          "Huevo",
+          "Perejil",
+          "Pan integral",
+          "Tomate",
+          "Lechuga"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-espinaca-queso",
+        "nombre": "Hamburguesa de carne con espinaca y queso azul",
+        "detalle": "Versión gourmet casera. El queso azul le da un sabor intenso y diferente.",
+        "calorias": 560,
+        "carbohidratos": 30,
+        "proteinas": 38,
+        "grasas": 32,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alta en proteína y grasa. Sin papas fritas es más manejable calóricamente.",
+        "ingredientes": [
+          "Carne picada",
+          "Espinaca salteada",
+          "Queso azul",
+          "Pan integral",
+          "Tomate",
+          "Cebolla caramelizada"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-remolacha",
+        "nombre": "Hamburguesa de remolacha y avena (vegetariana)",
+        "detalle": "Burger vegetal colorida con remolacha. Alta en antioxidantes y fibra.",
+        "calorias": 350,
+        "carbohidratos": 46,
+        "proteinas": 12,
+        "grasas": 11,
+        "fibra": 8,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "La remolacha aporta nitratos naturales que mejoran la circulación. Rica en fibra y antioxidantes.",
+        "ingredientes": [
+          "Remolacha rallada",
+          "Avena",
+          "Huevo",
+          "Cebolla",
+          "Ajo",
+          "Pan integral",
+          "Rúcula"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-sin-pan",
+        "nombre": "Hamburguesa de carne sin pan (en hoja de lechuga)",
+        "detalle": "Versión low-carb. La lechuga reemplaza el pan para reducir carbohidratos.",
+        "calorias": 320,
+        "carbohidratos": 8,
+        "proteinas": 34,
+        "grasas": 18,
+        "fibra": 2,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Ideal para control de carbohidratos. Alta proteína y sin harinas.",
+        "ingredientes": [
+          "Carne picada",
+          "Hojas de lechuga romana",
+          "Tomate",
+          "Pepino",
+          "Mostaza",
+          "Queso"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-quinoa",
+        "nombre": "Hamburguesa de quinoa y zapallo",
+        "detalle": "Burger vegetal con proteína completa de quinoa. Sin gluten y muy nutritiva.",
+        "calorias": 380,
+        "carbohidratos": 44,
+        "proteinas": 14,
+        "grasas": 13,
+        "fibra": 6,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "La quinoa tiene todos los aminoácidos esenciales. Opción ideal para dietas sin gluten.",
+        "ingredientes": [
+          "Quinoa cocida",
+          "Zapallo asado",
+          "Cebolla",
+          "Huevo",
+          "Pan sin gluten",
+          "Palta"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-hamburguesa-napolitana",
+        "nombre": "Hamburguesa napolitana (con jamón, queso y salsa)",
+        "detalle": "La fusión argentina por excelencia. Hamburguesa con toppings de milanesa napolitana.",
+        "calorias": 640,
+        "carbohidratos": 38,
+        "proteinas": 42,
+        "grasas": 34,
+        "fibra": 3,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Muy sabrosa pero alta en grasa y sodio. Para ocasiones especiales.",
+        "ingredientes": [
+          "Carne picada",
+          "Jamón cocido",
+          "Queso en fetas",
+          "Salsa de tomate",
+          "Pan brioche",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-tomate-queso",
+        "nombre": "Polenta cremosa con salsa de tomate y queso",
+        "detalle": "Clásico reconfortante italiano-argentino. La polenta cremosa con tuco simple y queso rallado.",
+        "calorias": 420,
+        "carbohidratos": 52,
+        "proteinas": 14,
+        "grasas": 16,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Carbohidrato de maíz con proteína del queso. Agregar carne o huevo mejora el perfil proteico.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Caldo de verduras",
+          "Salsa de tomate",
+          "Queso rallado",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-estofado-carne",
+        "nombre": "Polenta con estofado de carne",
+        "detalle": "Combinación muy argentina y contundente. El estofado sobre polenta es plato de invierno clásico.",
+        "calorias": 580,
+        "carbohidratos": 48,
+        "proteinas": 34,
+        "grasas": 22,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. La carne aporta proteína e hierro, la polenta energía sostenida.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Carne para estofado",
+          "Tomate",
+          "Zanahoria",
+          "Cebolla",
+          "Laurel",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-champignones",
+        "nombre": "Polenta cremosa con salsa de champiñones",
+        "detalle": "Versión vegetariana sofisticada. Los champiñones aportan umami y proteína vegetal.",
+        "calorias": 380,
+        "carbohidratos": 46,
+        "proteinas": 12,
+        "grasas": 16,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "lightCarb"
+        ],
+        "balance": "Muy sabrosa sin carne. Los champiñones tienen vitamina D y sabor intenso.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Champiñones",
+          "Ajo",
+          "Crema o leche",
+          "Queso rallado",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-frita-mozzarella",
+        "nombre": "Polenta frita con mozzarella",
+        "detalle": "Polenta solidificada, cortada y frita o al horno con queso derretido. Irresistible.",
+        "calorias": 490,
+        "carbohidratos": 50,
+        "proteinas": 16,
+        "grasas": 26,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Más calórica por el freído. Versión al horno reduce bastante la grasa.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Mozzarella",
+          "Aceite",
+          "Sal",
+          "Pimienta",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-tuco-albondigas",
+        "nombre": "Polenta con tuco y albóndigas",
+        "detalle": "El plato de la abuela. Muy completo y reconfortante para los días fríos.",
+        "calorias": 620,
+        "carbohidratos": 54,
+        "proteinas": 36,
+        "grasas": 26,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy equilibrado en macros. Las albóndigas caseras con carne magra reducen la grasa total.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Carne picada",
+          "Salsa de tomate",
+          "Cebolla",
+          "Huevo",
+          "Pan rallado",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-pollo-verduras",
+        "nombre": "Polenta con pollo desmenuzado y verduras salteadas",
+        "detalle": "Versión más liviana con pollo en lugar de carne roja. Muy completa y fácil de preparar.",
+        "calorias": 490,
+        "carbohidratos": 46,
+        "proteinas": 32,
+        "grasas": 16,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Excelente proporción proteína-carbohidrato. El pollo magro reduce las grasas saturadas.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Pechuga de pollo",
+          "Zapallito",
+          "Morrón",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-gorgonzola-nueces",
+        "nombre": "Polenta cremosa con gorgonzola y nueces",
+        "detalle": "Versión gourmet. El queso azul y las nueces le dan un sabor intenso y sofisticado.",
+        "calorias": 510,
+        "carbohidratos": 44,
+        "proteinas": 16,
+        "grasas": 30,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "Alta en grasas por el queso y las nueces, pero son grasas de calidad. Porción moderada.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Queso gorgonzola o azul",
+          "Nueces",
+          "Manteca",
+          "Caldo",
+          "Pimienta negra"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-spinaca-huevo",
+        "nombre": "Polenta con espinaca salteada y huevo poché",
+        "detalle": "Cena nutritiva y visualmente atractiva. El huevo poché sobre polenta es tendencia.",
+        "calorias": 400,
+        "carbohidratos": 42,
+        "proteinas": 18,
+        "grasas": 16,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "El huevo completa la proteína de la polenta. La espinaca suma hierro y vitamina K.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Espinaca",
+          "Huevo",
+          "Ajo",
+          "Aceite de oliva",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-chorizo-colorado",
+        "nombre": "Polenta con chorizo colorado y pimentón",
+        "detalle": "Combinación muy argentina con el sabor ahumado del chorizo colorado.",
+        "calorias": 550,
+        "carbohidratos": 46,
+        "proteinas": 24,
+        "grasas": 28,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Sabrosa pero alta en grasa por el chorizo. Porciones moderadas y acompañar con ensalada.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Chorizo colorado",
+          "Pimentón ahumado",
+          "Cebolla",
+          "Tomate",
+          "Aceite"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-polenta-calabaza-salvia",
+        "nombre": "Polenta de calabaza con salvia y queso parmesano",
+        "detalle": "Polenta enriquecida con puré de calabaza. Color dorado, sabor dulce y muy nutritiva.",
+        "calorias": 430,
+        "carbohidratos": 54,
+        "proteinas": 13,
+        "grasas": 16,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "La calabaza suma betacaroteno y fibra. El parmesano aporta calcio y proteína concentrada.",
+        "ingredientes": [
+          "Harina de maíz",
+          "Calabaza",
+          "Salvia",
+          "Queso parmesano",
+          "Manteca",
+          "Caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-papas-ensalada",
+        "nombre": "Filet de merluza con papas al horno y ensalada",
+        "detalle": "Clásico completo con proteína magra, carbohidrato y verdura.",
+        "calorias": 460,
+        "carbohidratos": 34,
+        "proteinas": 36,
+        "grasas": 12,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. La merluza es proteína magra de excelente calidad.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Papa",
+          "Lechuga",
+          "Tomate",
+          "Limón",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-pure-papa",
+        "nombre": "Filet de merluza con puré de papas",
+        "detalle": "Combinación suave y muy fácil de digerir. Ideal para cualquier día de la semana.",
+        "calorias": 440,
+        "carbohidratos": 38,
+        "proteinas": 34,
+        "grasas": 12,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Proteína magra con carbohidrato suave. El puré de papa es muy digestivo.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Papa",
+          "Leche",
+          "Manteca",
+          "Limón",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-pure-calabaza",
+        "nombre": "Filet de merluza con puré de calabaza",
+        "detalle": "Versión más liviana y colorida. La calabaza aporta betacaroteno y menor índice glucémico.",
+        "calorias": 390,
+        "carbohidratos": 24,
+        "proteinas": 34,
+        "grasas": 10,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Excelente perfil. Alta proteína con carbohidrato moderado y muy poca grasa.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Calabaza",
+          "Aceite de oliva",
+          "Limón",
+          "Ajo",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-arroz-verduras",
+        "nombre": "Filet de merluza con arroz y verduras salteadas",
+        "detalle": "Plato muy completo y equilibrado. El arroz aporta energía sostenida.",
+        "calorias": 470,
+        "carbohidratos": 48,
+        "proteinas": 36,
+        "grasas": 10,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy bien distribuido en macros. Ideal para días activos.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Arroz",
+          "Zapallito",
+          "Morrón",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-rebozada-ensalada",
+        "nombre": "Filet de merluza rebozado al horno con ensalada",
+        "detalle": "Versión horneada de la merluza rebozada. Menos grasa que la frita pero igual de crujiente.",
+        "calorias": 430,
+        "carbohidratos": 28,
+        "proteinas": 34,
+        "grasas": 16,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Al horno reduce notablemente la grasa. La ensalada suma fibra y vitaminas.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Pan rallado",
+          "Huevo",
+          "Limón",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-merluza-salsa-blanca",
+        "nombre": "Filet de merluza en salsa blanca con vegetales",
+        "detalle": "Preparación cremosa y suave. La salsa blanca liviana con leche descremada no pesa.",
+        "calorias": 410,
+        "carbohidratos": 18,
+        "proteinas": 34,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alta proteína con grasa moderada. Muy sabrosa y digestiva.",
+        "ingredientes": [
+          "Filet de merluza",
+          "Leche descremada",
+          "Harina",
+          "Manteca",
+          "Zapallito",
+          "Zanahoria"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-atun-arroz-verduras",
+        "nombre": "Atún con arroz y verduras salteadas",
+        "detalle": "Clásico práctico y económico. Proteína, carbohidrato y verdura en un solo plato.",
+        "calorias": 480,
+        "carbohidratos": 52,
+        "proteinas": 30,
+        "grasas": 10,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy funcional. El atún al natural tiene proteína magra sin grasa extra.",
+        "ingredientes": [
+          "Atún al natural",
+          "Arroz",
+          "Morrón",
+          "Cebolla de verdeo",
+          "Zapallito",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-atun-papas-horno",
+        "nombre": "Atún con papas al horno y ensalada",
+        "detalle": "Combinación sencilla y muy completa. Las papas al horno son mucho más livianas que fritas.",
+        "calorias": 450,
+        "carbohidratos": 40,
+        "proteinas": 28,
+        "grasas": 12,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. Proteína del atún, carbohidrato de papa y fibra de la ensalada.",
+        "ingredientes": [
+          "Atún al natural",
+          "Papa",
+          "Lechuga",
+          "Tomate",
+          "Pepino",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-atun-pure-calabaza",
+        "nombre": "Atún con puré de calabaza",
+        "detalle": "Combinación liviana y nutritiva. La calabaza aporta dulzor y vitamina A.",
+        "calorias": 380,
+        "carbohidratos": 28,
+        "proteinas": 28,
+        "grasas": 8,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Muy liviano y proteico. Ideal para días de control calórico.",
+        "ingredientes": [
+          "Atún al natural",
+          "Calabaza",
+          "Aceite de oliva",
+          "Limón",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-atun-pasta-tomate",
+        "nombre": "Pasta con atún y salsa de tomate",
+        "detalle": "Plato rápido y muy popular en Argentina. Fideos con atún es la solución de la semana.",
+        "calorias": 520,
+        "carbohidratos": 62,
+        "proteinas": 28,
+        "grasas": 10,
+        "fibra": 4,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en carbohidratos. El atún suma proteína magra. Ideal para días activos.",
+        "ingredientes": [
+          "Fideos",
+          "Atún al natural",
+          "Salsa de tomate",
+          "Ajo",
+          "Aceite de oliva",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pastel-papas-clasico",
+        "nombre": "Pastel de papas clásico con carne picada",
+        "detalle": "El pastel de papas es uno de los platos de horno más queridos de la cocina argentina.",
+        "calorias": 540,
+        "carbohidratos": 48,
+        "proteinas": 30,
+        "grasas": 24,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Buena combinación de carbohidrato y proteína. El gratinado suma sabor sin exagerar.",
+        "ingredientes": [
+          "Papa",
+          "Carne picada",
+          "Cebolla",
+          "Morrón",
+          "Huevo duro",
+          "Queso rallado",
+          "Aceitunas"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pastel-papas-pollo",
+        "nombre": "Pastel de papas con pollo desmenuzado",
+        "detalle": "Versión más liviana del pastel clásico. El pollo reduce la grasa saturada.",
+        "calorias": 470,
+        "carbohidratos": 46,
+        "proteinas": 32,
+        "grasas": 16,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. El pollo sin piel es proteína magra y la papa suma carbohidrato energético.",
+        "ingredientes": [
+          "Papa",
+          "Pollo cocido desmenuzado",
+          "Cebolla",
+          "Morrón",
+          "Queso rallado",
+          "Leche"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pastel-papas-vegetariano",
+        "nombre": "Pastel de papas vegetariano con lentejas y verduras",
+        "detalle": "Versión sin carne con lentejas como base proteica. Alta en fibra y muy saciante.",
+        "calorias": 430,
+        "carbohidratos": 54,
+        "proteinas": 18,
+        "grasas": 12,
+        "fibra": 11,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Las lentejas aportan hierro, fibra y proteína vegetal. Muy nutritivo sin carne.",
+        "ingredientes": [
+          "Papa",
+          "Lentejas",
+          "Cebolla",
+          "Morrón",
+          "Zanahoria",
+          "Queso rallado",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pollo-naranja-arroz",
+        "nombre": "Pollo a la naranja con arroz",
+        "detalle": "Plato agridulce muy sabroso. El jugo de naranja carameliza el pollo y le da un sabor único.",
+        "calorias": 520,
+        "carbohidratos": 52,
+        "proteinas": 36,
+        "grasas": 14,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy equilibrado. La naranja aporta vitamina C que mejora la absorción del hierro de la carne.",
+        "ingredientes": [
+          "Pollo",
+          "Naranja",
+          "Arroz",
+          "Miel",
+          "Ajo",
+          "Romero",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pollo-naranja-pure",
+        "nombre": "Pollo a la naranja con puré de papas",
+        "detalle": "Versión más cremosa y reconfortante. El puré suave con la salsa cítrica es una combinación perfecta.",
+        "calorias": 530,
+        "carbohidratos": 46,
+        "proteinas": 36,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. La salsa de naranja reduce la necesidad de agregar otras grasas.",
+        "ingredientes": [
+          "Pollo",
+          "Naranja",
+          "Papa",
+          "Leche",
+          "Manteca",
+          "Miel",
+          "Mostaza"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pollo-naranja-vegetales",
+        "nombre": "Pollo a la naranja con vegetales asados",
+        "detalle": "Versión más liviana con vegetales en lugar de almidón. Alta proteína y baja en carbohidratos.",
+        "calorias": 430,
+        "carbohidratos": 20,
+        "proteinas": 38,
+        "grasas": 16,
+        "fibra": 6,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Excelente para control de peso. Alta proteína y mucha fibra vegetal.",
+        "ingredientes": [
+          "Pollo",
+          "Naranja",
+          "Calabaza",
+          "Morrón",
+          "Zapallito",
+          "Romero",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pastel-carne-clasico",
+        "nombre": "Pastel de carne clásico (meatloaf)",
+        "detalle": "Carne picada sazonada, horneada y glaseada. Rinde mucho y es ideal para preparar con anticipación.",
+        "calorias": 480,
+        "carbohidratos": 18,
+        "proteinas": 38,
+        "grasas": 28,
+        "fibra": 2,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alto en proteína. Acompañar con puré o ensalada para equilibrar el plato.",
+        "ingredientes": [
+          "Carne picada",
+          "Pan rallado",
+          "Huevo",
+          "Cebolla",
+          "Ajo",
+          "Salsa de tomate",
+          "Mostaza"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pastel-carne-pure",
+        "nombre": "Pastel de carne con puré de papas y ensalada",
+        "detalle": "El pastel de carne completo con guarnición. Plato muy argentino y rendidor.",
+        "calorias": 580,
+        "carbohidratos": 42,
+        "proteinas": 38,
+        "grasas": 26,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. El puré y la ensalada equilibran el plato con carbohidrato y fibra.",
+        "ingredientes": [
+          "Carne picada",
+          "Papa",
+          "Leche",
+          "Huevo",
+          "Cebolla",
+          "Salsa de tomate",
+          "Lechuga"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-chuleta-cerdo-papas",
+        "nombre": "Chuleta de cerdo a la plancha con papas al horno",
+        "detalle": "Corte muy popular y económico. La chuleta bien condimentada es jugosa y sabrosa.",
+        "calorias": 540,
+        "carbohidratos": 36,
+        "proteinas": 38,
+        "grasas": 24,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy proteico. El cerdo magro tiene similar perfil que el pollo. Papas al horno sin aceite extra.",
+        "ingredientes": [
+          "Chuleta de cerdo",
+          "Papa",
+          "Ajo",
+          "Romero",
+          "Limón",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-chuleta-cerdo-pure-calabaza",
+        "nombre": "Chuleta de cerdo con puré de calabaza",
+        "detalle": "Combinación dulce-salada muy equilibrada. La calabaza complementa perfectamente el cerdo.",
+        "calorias": 490,
+        "carbohidratos": 24,
+        "proteinas": 38,
+        "grasas": 24,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alta proteína con carbohidrato moderado. La calabaza suma vitamina A y fibra.",
+        "ingredientes": [
+          "Chuleta de cerdo",
+          "Calabaza",
+          "Miel",
+          "Mostaza",
+          "Aceite de oliva",
+          "Tomillo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-chuleta-cerdo-manzana",
+        "nombre": "Chuleta de cerdo con manzana y cebolla caramelizada",
+        "detalle": "Clásica combinación europea muy popular en Argentina. La manzana equilibra la grasa del cerdo.",
+        "calorias": 510,
+        "carbohidratos": 28,
+        "proteinas": 36,
+        "grasas": 24,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "La manzana aporta pectina que ayuda a reducir el colesterol del cerdo. Muy sabroso.",
+        "ingredientes": [
+          "Chuleta de cerdo",
+          "Manzana",
+          "Cebolla",
+          "Manteca",
+          "Tomillo",
+          "Vino blanco"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-chuleta-cerdo-arroz",
+        "nombre": "Chuleta de cerdo con arroz y ensalada mixta",
+        "detalle": "Plato completo y muy rendidor. El arroz con el jugo de la chuleta queda muy sabroso.",
+        "calorias": 560,
+        "carbohidratos": 50,
+        "proteinas": 38,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy equilibrado. Proteína, carbohidrato y grasa en buenas proporciones.",
+        "ingredientes": [
+          "Chuleta de cerdo",
+          "Arroz",
+          "Lechuga",
+          "Tomate",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-tuco-casero",
+        "nombre": "Fideos con tuco casero",
+        "detalle": "El tuco de tomate cocinado despacio es uno de los sabores más hogareños de Argentina.",
+        "calorias": 500,
+        "carbohidratos": 68,
+        "proteinas": 14,
+        "grasas": 14,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en carbohidratos. Muy energético. Agregar carne o albóndigas mejora el perfil proteico.",
+        "ingredientes": [
+          "Fideos",
+          "Tomate perita",
+          "Cebolla",
+          "Ajo",
+          "Albahaca",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-crema-jamon",
+        "nombre": "Fideos con crema y jamón",
+        "detalle": "La salsa más rápida y popular en Argentina. Crema, jamón y queso rallado.",
+        "calorias": 580,
+        "carbohidratos": 62,
+        "proteinas": 22,
+        "grasas": 26,
+        "fibra": 3,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en grasa por la crema. Con crema light y jamón cocido magro se reduce bastante.",
+        "ingredientes": [
+          "Fideos",
+          "Crema de leche",
+          "Jamón cocido",
+          "Queso rallado",
+          "Nuez moscada"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-pesto",
+        "nombre": "Fideos con pesto de albahaca",
+        "detalle": "Salsa verde italiana muy popular en Argentina. Fresca, aromática y muy sabrosa.",
+        "calorias": 550,
+        "carbohidratos": 60,
+        "proteinas": 16,
+        "grasas": 26,
+        "fibra": 4,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Las grasas del pesto son saludables (oliva y nueces). Porción moderada para controlar calorías.",
+        "ingredientes": [
+          "Fideos",
+          "Albahaca fresca",
+          "Ajo",
+          "Aceite de oliva",
+          "Parmesano",
+          "Nueces o piñones"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-salsa-blanca-verduras",
+        "nombre": "Fideos con salsa blanca y verduras",
+        "detalle": "Pasta cremosa con vegetales salteados. Reconfortante y muy fácil de preparar.",
+        "calorias": 510,
+        "carbohidratos": 64,
+        "proteinas": 16,
+        "grasas": 18,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Las verduras suman fibra y vitaminas. Con leche descremada la salsa es más liviana.",
+        "ingredientes": [
+          "Fideos",
+          "Leche",
+          "Harina",
+          "Manteca",
+          "Brócoli",
+          "Zapallito",
+          "Queso rallado"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-aglio-olio",
+        "nombre": "Fideos aglio e olio con parmesano",
+        "detalle": "La pasta más simple y sabrosa. Solo ajo, aceite de oliva y parmesano.",
+        "calorias": 490,
+        "carbohidratos": 62,
+        "proteinas": 14,
+        "grasas": 20,
+        "fibra": 3,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Simple pero calórico por el aceite. Porción moderada y acompañar con ensalada.",
+        "ingredientes": [
+          "Fideos",
+          "Ajo",
+          "Aceite de oliva",
+          "Parmesano",
+          "Perejil",
+          "Guindilla opcional"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-arrabiata",
+        "nombre": "Fideos a la arrabiata (salsa picante de tomate)",
+        "detalle": "Tuco picante con ajo y guindilla. Muy sabroso y bajo en grasa.",
+        "calorias": 470,
+        "carbohidratos": 66,
+        "proteinas": 13,
+        "grasas": 12,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Una de las salsas más livianas. El tomate y el aceite de oliva son excelentes.",
+        "ingredientes": [
+          "Fideos",
+          "Tomate perita",
+          "Ajo",
+          "Guindilla o ají molido",
+          "Aceite de oliva",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-atun-tomate",
+        "nombre": "Fideos con atún y salsa de tomate",
+        "detalle": "La solución rápida de la semana. Proteína, carbohidrato y sabor en 20 minutos.",
+        "calorias": 520,
+        "carbohidratos": 62,
+        "proteinas": 28,
+        "grasas": 10,
+        "fibra": 4,
+        "tags": [
+          "highCarb",
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy funcional. El atún al natural suma proteína magra sin agregar grasa extra.",
+        "ingredientes": [
+          "Fideos",
+          "Atún al natural",
+          "Salsa de tomate",
+          "Ajo",
+          "Aceite de oliva",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-manteca-salvia",
+        "nombre": "Fideos con manteca y salvia",
+        "detalle": "Salsa italiana clásica y minimalista. Muy aromática y reconfortante.",
+        "calorias": 480,
+        "carbohidratos": 62,
+        "proteinas": 12,
+        "grasas": 18,
+        "fibra": 3,
+        "tags": [
+          "highCarb"
+        ],
+        "balance": "Simple pero sabroso. Porción controlada y acompañar con ensalada para equilibrar.",
+        "ingredientes": [
+          "Fideos",
+          "Manteca",
+          "Salvia fresca",
+          "Parmesano",
+          "Pimienta negra"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-cuatro-quesos",
+        "nombre": "Fideos cuatro quesos",
+        "detalle": "La pasta más indulgente. Combinación de quesos fundidos sobre pasta al dente.",
+        "calorias": 620,
+        "carbohidratos": 60,
+        "proteinas": 26,
+        "grasas": 32,
+        "fibra": 3,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en grasa y sodio por los quesos. Para ocasiones especiales con porción moderada.",
+        "ingredientes": [
+          "Fideos",
+          "Mozzarella",
+          "Queso azul",
+          "Parmesano",
+          "Queso crema",
+          "Pimienta negra"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fideos-boloñesa-casera",
+        "nombre": "Fideos con boloñesa casera de carne y verduras",
+        "detalle": "La boloñesa lenta con zanahoria, apio y carne. El plato más preparado en Argentina.",
+        "calorias": 590,
+        "carbohidratos": 62,
+        "proteinas": 30,
+        "grasas": 18,
+        "fibra": 6,
+        "tags": [
+          "highCarb",
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. Las verduras en la salsa suman fibra y vitaminas sin que se noten.",
+        "ingredientes": [
+          "Fideos",
+          "Carne picada",
+          "Tomate",
+          "Zanahoria",
+          "Apio",
+          "Cebolla",
+          "Vino tinto",
+          "Laurel"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-chimichurri-pan",
+        "nombre": "Asado con chimichurri y pan",
+        "detalle": "El asado más clásico. Cortes a las brasas con chimichurri casero y pan para acompañar.",
+        "calorias": 640,
+        "carbohidratos": 22,
+        "proteinas": 44,
+        "grasas": 32,
+        "fibra": 3,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Alto en proteína y grasa. El chimichurri suma sabor sin calorías extra. Pan moderado.",
+        "ingredientes": [
+          "Cortes de carne vacuna",
+          "Ajo",
+          "Perejil",
+          "Orégano",
+          "Aceite de oliva",
+          "Vinagre",
+          "Pan"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-ensalada-rusa",
+        "nombre": "Asado con ensalada rusa",
+        "detalle": "Combinación clásica de bodegón argentino. La ensalada rusa casera complementa perfectamente la carne.",
+        "calorias": 620,
+        "carbohidratos": 28,
+        "proteinas": 42,
+        "grasas": 30,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Alta proteína. La ensalada rusa suma carbohidrato y verdura. Mayonesa moderada.",
+        "ingredientes": [
+          "Cortes de carne vacuna",
+          "Papa",
+          "Zanahoria",
+          "Arvejas",
+          "Mayonesa",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-tira-asado-guarnicion",
+        "nombre": "Tira de asado con guarnición de verduras asadas",
+        "detalle": "La tira de asado es el corte más popular del asado argentino. Con vegetales a las brasas.",
+        "calorias": 580,
+        "carbohidratos": 18,
+        "proteinas": 42,
+        "grasas": 34,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Muy alta en proteína. Los vegetales asados suman fibra y vitaminas sin carbohidrato extra.",
+        "ingredientes": [
+          "Tira de asado",
+          "Calabaza",
+          "Morrón",
+          "Cebolla",
+          "Zapallito",
+          "Sal gruesa"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-pollo-brasas",
+        "nombre": "Pollo a las brasas con papas asadas",
+        "detalle": "El pollo entero o en piezas a las brasas. Versión más liviana del asado clásico.",
+        "calorias": 520,
+        "carbohidratos": 30,
+        "proteinas": 44,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Mucho más liviano que la carne vacuna. Sin piel reduce notablemente la grasa.",
+        "ingredientes": [
+          "Pollo",
+          "Papa",
+          "Ajo",
+          "Limón",
+          "Romero",
+          "Aceite de oliva",
+          "Sal gruesa"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-chorizos-ensalada",
+        "nombre": "Chorizos al asador con ensalada mixta y pan",
+        "detalle": "Los chorizos a las brasas son infaltables en el asado argentino. Con ensalada para equilibrar.",
+        "calorias": 560,
+        "carbohidratos": 24,
+        "proteinas": 28,
+        "grasas": 36,
+        "fibra": 3,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Alto en grasa por el chorizo. La ensalada y el pan equilibran. Porción de 2 chorizos.",
+        "ingredientes": [
+          "Chorizo criollo",
+          "Pan",
+          "Lechuga",
+          "Tomate",
+          "Cebolla",
+          "Chimichurri"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-vacio-papa",
+        "nombre": "Vacío a las brasas con papa al rescoldo",
+        "detalle": "El vacío es uno de los cortes más sabrosos y tiernos del asado. La papa al rescoldo es un clásico.",
+        "calorias": 600,
+        "carbohidratos": 28,
+        "proteinas": 46,
+        "grasas": 28,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Corte muy sabroso con buena relación grasa-proteína. La papa al rescoldo no necesita aceite.",
+        "ingredientes": [
+          "Vacío de carne",
+          "Papa",
+          "Sal gruesa",
+          "Chimichurri",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-costillas-cerdo",
+        "nombre": "Costillas de cerdo a las brasas con ensalada",
+        "detalle": "Las costillitas de cerdo son jugosas, sabrosas y muy populares en el asado argentino.",
+        "calorias": 590,
+        "carbohidratos": 10,
+        "proteinas": 40,
+        "grasas": 34,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alto en proteína y grasa. Sin guarnición con almidón se controla mejor el total calórico.",
+        "ingredientes": [
+          "Costillas de cerdo",
+          "Ajo",
+          "Pimentón",
+          "Limón",
+          "Lechuga",
+          "Tomate",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-asado-completo-familiar",
+        "nombre": "Asado completo familiar (tira, chorizo, pollo)",
+        "detalle": "El asado del domingo con variedad de cortes. La versión más festiva y social.",
+        "calorias": 720,
+        "carbohidratos": 20,
+        "proteinas": 52,
+        "grasas": 38,
+        "fibra": 3,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Muy calórico y alto en proteína. Para compensar, ensalada abundante y sin pan extra.",
+        "ingredientes": [
+          "Tira de asado",
+          "Chorizo criollo",
+          "Pollo",
+          "Sal gruesa",
+          "Chimichurri",
+          "Ensalada mixta"
+        ],
+        "mealTypes": [
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "alm-provoleta-ensalada",
+        "nombre": "Provoleta a las brasas con ensalada y pan",
+        "detalle": "La entrada infaltable del asado argentino. Queso provolone fundido a la parrilla con orégano.",
+        "calorias": 420,
+        "carbohidratos": 18,
+        "proteinas": 24,
+        "grasas": 28,
+        "fibra": 2,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Alta en grasa por el queso. Ideal como entrada o plato liviano acompañado de ensalada.",
+        "ingredientes": [
+          "Queso provolone",
+          "Orégano",
+          "Ají molido",
+          "Pan",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-caballo",
+        "nombre": "Milanesa a caballo (con huevo frito)",
+        "detalle": "La milanesa con huevo frito encima. Un clásico de bodegón argentino.",
+        "calorias": 640,
+        "carbohidratos": 28,
+        "proteinas": 46,
+        "grasas": 36,
+        "fibra": 2,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Muy alta en proteína. El huevo suma grasas. Acompañar con ensalada para equilibrar.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Huevo",
+          "Pan rallado",
+          "Ajo",
+          "Perejil",
+          "Aceite"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-papas-fritas",
+        "nombre": "Milanesa con papas fritas",
+        "detalle": "El combo más pedido en los bodegones argentinos. Clásico irresistible.",
+        "calorias": 780,
+        "carbohidratos": 62,
+        "proteinas": 40,
+        "grasas": 42,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy calórico. Para ocasiones especiales. Papas al horno reducen bastante las calorías.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Papa",
+          "Aceite para freír",
+          "Pan rallado",
+          "Huevo",
+          "Ajo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-arroz-ensalada",
+        "nombre": "Milanesa al horno con arroz y ensalada",
+        "detalle": "Versión más completa y equilibrada de la milanesa horneada.",
+        "calorias": 620,
+        "carbohidratos": 52,
+        "proteinas": 40,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy bien distribuida en macros. El arroz aporta energía y la ensalada fibra.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Arroz",
+          "Lechuga",
+          "Tomate",
+          "Pan rallado",
+          "Huevo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-verduras-asadas",
+        "nombre": "Milanesa al horno con verduras asadas",
+        "detalle": "La opción más saludable. Sin papa frita, con vegetales coloridos al horno.",
+        "calorias": 520,
+        "carbohidratos": 28,
+        "proteinas": 40,
+        "grasas": 22,
+        "fibra": 6,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Muy completa. Las verduras asadas suman fibra, vitaminas y antioxidantes.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Calabaza",
+          "Morrón",
+          "Zapallito",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-rellena",
+        "nombre": "Milanesa rellena (con jamón y queso)",
+        "detalle": "Dos milanesas con jamón y queso adentro. La versión más festiva y jugosa.",
+        "calorias": 680,
+        "carbohidratos": 26,
+        "proteinas": 50,
+        "grasas": 38,
+        "fibra": 2,
+        "tags": [
+          "highProtein"
+        ],
+        "balance": "Muy alta en proteína y grasa. Para ocasiones especiales con guarnición liviana.",
+        "ingredientes": [
+          "Milanesa de carne (x2)",
+          "Jamón cocido",
+          "Queso en fetas",
+          "Pan rallado",
+          "Huevo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-pollo-horno",
+        "nombre": "Milanesa de pollo al horno con ensalada",
+        "detalle": "Versión más liviana de la milanesa. La pechuga de pollo tiene mucha menos grasa.",
+        "calorias": 480,
+        "carbohidratos": 26,
+        "proteinas": 42,
+        "grasas": 16,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Excelente opción. Alta proteína con mucho menos grasa que la milanesa de carne.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Pan rallado",
+          "Huevo",
+          "Ajo",
+          "Perejil",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-pollo-napolitana",
+        "nombre": "Milanesa de pollo napolitana",
+        "detalle": "La napolitana en versión pollo. Con salsa de tomate, jamón y queso gratinado.",
+        "calorias": 520,
+        "carbohidratos": 24,
+        "proteinas": 46,
+        "grasas": 22,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Alta proteína. Más liviana que la napolitana de carne. Ensalada para completar.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Salsa de tomate",
+          "Jamón cocido",
+          "Mozzarella",
+          "Pan rallado",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-pollo-pure",
+        "nombre": "Milanesa de pollo con puré de calabaza",
+        "detalle": "Combinación liviana y nutritiva. Mucha proteína con carbohidrato moderado.",
+        "calorias": 460,
+        "carbohidratos": 26,
+        "proteinas": 42,
+        "grasas": 14,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Muy buena relación proteína-carbohidrato. La calabaza suma vitamina A y fibra.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Calabaza",
+          "Pan rallado",
+          "Huevo",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-pollo-papas-horno",
+        "nombre": "Milanesa de pollo con papas al horno",
+        "detalle": "El combo clásico en versión más liviana. Pollo en lugar de carne y papas al horno.",
+        "calorias": 560,
+        "carbohidratos": 46,
+        "proteinas": 42,
+        "grasas": 16,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Muy equilibrado. Una de las mejores versiones del combo milanesa-papas.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Papa",
+          "Pan rallado",
+          "Huevo",
+          "Aceite de oliva",
+          "Ajo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-soja-ensalada",
+        "nombre": "Milanesa de soja con ensalada mixta",
+        "detalle": "La milanesa vegana argentina por excelencia. Muy popular y económica.",
+        "calorias": 380,
+        "carbohidratos": 32,
+        "proteinas": 24,
+        "grasas": 14,
+        "fibra": 8,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Buena proteína vegetal con alta fibra. Sin colesterol y muy digestiva.",
+        "ingredientes": [
+          "Soja texturizada",
+          "Pan rallado",
+          "Huevo o aquafaba",
+          "Ajo",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-soja-pure",
+        "nombre": "Milanesa de soja con puré de papas",
+        "detalle": "Versión vegana o vegetariana completa. La soja texturizada imita muy bien la textura de la carne.",
+        "calorias": 440,
+        "carbohidratos": 50,
+        "proteinas": 22,
+        "grasas": 14,
+        "fibra": 8,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Carbohidrato y proteína vegetal bien combinados. Sin grasa saturada.",
+        "ingredientes": [
+          "Soja texturizada",
+          "Papa",
+          "Leche vegetal",
+          "Pan rallado",
+          "Ajo",
+          "Perejil"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-milanesa-soja-napolitana",
+        "nombre": "Milanesa de soja napolitana",
+        "detalle": "La napolitana vegana. Con salsa de tomate y queso vegetal o muzarella.",
+        "calorias": 420,
+        "carbohidratos": 34,
+        "proteinas": 22,
+        "grasas": 18,
+        "fibra": 8,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "Versión vegana muy completa. El queso suma calcio y proteína. Alta en fibra.",
+        "ingredientes": [
+          "Soja texturizada",
+          "Salsa de tomate",
+          "Mozzarella o queso vegano",
+          "Pan rallado",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-sandwich-milanesa-clasico",
+        "nombre": "Sándwich de milanesa clásico",
+        "detalle": "El sándwich más popular de Argentina. Milanesa en pan con lechuga y tomate.",
+        "calorias": 620,
+        "carbohidratos": 52,
+        "proteinas": 38,
+        "grasas": 24,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Muy completo. El pan suma carbohidrato. La lechuga y el tomate equilibran con fibra.",
+        "ingredientes": [
+          "Milanesa de carne o pollo",
+          "Pan francés o de molde",
+          "Lechuga",
+          "Tomate",
+          "Mayonesa"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-sandwich-milanesa-completo",
+        "nombre": "Sándwich de milanesa completo (con huevo, jamón y queso)",
+        "detalle": "La versión más generosa del sándwich de milanesa. Con todos los toppings.",
+        "calorias": 720,
+        "carbohidratos": 54,
+        "proteinas": 48,
+        "grasas": 32,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy calórico pero muy proteico. Para días de mucha actividad o como comida única.",
+        "ingredientes": [
+          "Milanesa de carne",
+          "Pan",
+          "Huevo frito",
+          "Jamón cocido",
+          "Queso",
+          "Lechuga",
+          "Tomate"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-sandwich-milanesa-pollo",
+        "nombre": "Sándwich de milanesa de pollo con palta",
+        "detalle": "Versión moderna y más liviana. La palta reemplaza la mayonesa con grasas más saludables.",
+        "calorias": 580,
+        "carbohidratos": 48,
+        "proteinas": 42,
+        "grasas": 22,
+        "fibra": 6,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Muy buena opción. La palta suma grasas omega-9 y potasio en lugar de grasas trans.",
+        "ingredientes": [
+          "Milanesa de pollo",
+          "Pan integral",
+          "Palta",
+          "Lechuga",
+          "Tomate",
+          "Limón"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-salteña-boliviana",
+        "nombre": "Salteñas bolivianas (2 unidades)",
+        "detalle": "Empanada jugosa boliviana con caldo gelatinizado adentro. Más húmeda y especiada que la argentina.",
+        "calorias": 480,
+        "carbohidratos": 52,
+        "proteinas": 22,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "El relleno jugoso con papa, arveja y carne es muy completo. Masa más gruesa que la empanada argentina.",
+        "ingredientes": [
+          "Harina",
+          "Carne",
+          "Papa",
+          "Arvejas",
+          "Huevo duro",
+          "Aceitunas",
+          "Ají amarillo",
+          "Gelatina de caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-fricase-cerdo",
+        "nombre": "Fricasé de cerdo con chuño y mote",
+        "detalle": "Guiso picante de cerdo con chuño (papa deshidratada) y maíz. Plato festivo boliviano.",
+        "calorias": 580,
+        "carbohidratos": 48,
+        "proteinas": 36,
+        "grasas": 24,
+        "fibra": 7,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy completo. El chuño es bajo en calorías y alto en fibra. El cerdo aporta proteína de calidad.",
+        "ingredientes": [
+          "Cerdo",
+          "Chuño",
+          "Mote de maíz",
+          "Ají amarillo",
+          "Cebolla",
+          "Ajo",
+          "Comino",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-sopa-mani",
+        "nombre": "Sopa de maní boliviana",
+        "detalle": "Sopa cremosa y reconfortante a base de maní molido con papas y fideos. Muy nutritiva.",
+        "calorias": 420,
+        "carbohidratos": 38,
+        "proteinas": 18,
+        "grasas": 22,
+        "fibra": 5,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "El maní aporta proteína vegetal y grasas buenas. La papa y los fideos suman carbohidrato energético.",
+        "ingredientes": [
+          "Maní tostado",
+          "Papa",
+          "Fideos",
+          "Carne o pollo",
+          "Cebolla",
+          "Ajo",
+          "Perejil",
+          "Caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-silpancho",
+        "nombre": "Silpancho (milanesa boliviana con arroz, papa y huevo)",
+        "detalle": "Plato emblemático cochabambino. Milanesa muy fina sobre cama de arroz y papa, con huevo frito y ensalada cruda.",
+        "calorias": 680,
+        "carbohidratos": 62,
+        "proteinas": 42,
+        "grasas": 26,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy completo y contundente. La milanesa fina tiene menos aceite que la tradicional.",
+        "ingredientes": [
+          "Carne picada fina",
+          "Arroz",
+          "Papa",
+          "Huevo",
+          "Tomate",
+          "Cebolla",
+          "Perejil",
+          "Pan rallado"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-pique-macho",
+        "nombre": "Pique macho (carne, chorizo, papa frita y verduras)",
+        "detalle": "Plato abundante y festivo. Carne y chorizo picados sobre papas fritas con huevo, morrón y tomate.",
+        "calorias": 780,
+        "carbohidratos": 55,
+        "proteinas": 44,
+        "grasas": 40,
+        "fibra": 5,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy calórico. Plato para compartir o días de mucha actividad. Reducir las papas fritas ayuda bastante.",
+        "ingredientes": [
+          "Carne vacuna",
+          "Chorizo",
+          "Papa",
+          "Huevo",
+          "Morrón",
+          "Tomate",
+          "Cebolla",
+          "Ají"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-aji-pollo-boliviano",
+        "nombre": "Ají de pollo boliviano con arroz y papa",
+        "detalle": "Guiso cremoso de pollo con ají amarillo y papa. Uno de los platos más populares de Bolivia.",
+        "calorias": 540,
+        "carbohidratos": 50,
+        "proteinas": 36,
+        "grasas": 18,
+        "fibra": 5,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. El ají amarillo aporta vitamina C y el pollo proteína magra de calidad.",
+        "ingredientes": [
+          "Pollo",
+          "Ají amarillo",
+          "Papa",
+          "Arroz",
+          "Cebolla",
+          "Ajo",
+          "Comino",
+          "Caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-majadito-charque",
+        "nombre": "Majadito (arroz con charque y plátano frito)",
+        "detalle": "Plato típico del oriente boliviano. Arroz con carne seca (charque), huevo y plátano frito.",
+        "calorias": 620,
+        "carbohidratos": 68,
+        "proteinas": 30,
+        "grasas": 22,
+        "fibra": 4,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
+        "balance": "Alto en carbohidratos entre el arroz y el plátano. El charque es proteína concentrada y sabrosa.",
+        "ingredientes": [
+          "Arroz",
+          "Charque (carne seca)",
+          "Plátano",
+          "Huevo",
+          "Cebolla",
+          "Tomate",
+          "Aceite"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-thimpu-cordero",
+        "nombre": "Thimpu de cordero con chuño y verduras",
+        "detalle": "Guiso andino de cordero con papa deshidratada y verduras. Plato festivo y muy nutritivo.",
+        "calorias": 520,
+        "carbohidratos": 34,
+        "proteinas": 40,
+        "grasas": 22,
+        "fibra": 7,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "Alta proteína del cordero con fibra del chuño. Muy saciante y nutritivo.",
+        "ingredientes": [
+          "Cordero",
+          "Chuño",
+          "Zanahoria",
+          "Cebolla",
+          "Ají",
+          "Comino",
+          "Perejil",
+          "Caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-chairo-boliviano",
+        "nombre": "Chairo (sopa andina de chuño y carne)",
+        "detalle": "Sopa espesa y reconfortante con chuño, trigo, carne y verduras. Plato andino tradicional.",
+        "calorias": 390,
+        "carbohidratos": 42,
+        "proteinas": 24,
+        "grasas": 12,
+        "fibra": 8,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "Muy completo y nutritivo. El chuño y el trigo aportan fibra. La carne suma hierro y proteína.",
+        "ingredientes": [
+          "Chuño",
+          "Trigo pelado",
+          "Carne de res",
+          "Zanahoria",
+          "Arvejas",
+          "Cebolla",
+          "Ají",
+          "Hierbabuena"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-lomo-montado",
+        "nombre": "Lomo montado (bife con arroz, plátano y huevo)",
+        "detalle": "Plato típico del oriente boliviano. Bife de res con arroz, plátano frito y huevo encima.",
+        "calorias": 660,
+        "carbohidratos": 58,
+        "proteinas": 42,
+        "grasas": 26,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "highCarb"
+        ],
+        "balance": "Muy completo. El plátano aporta potasio y dulzor. El huevo suma proteína completa.",
+        "ingredientes": [
+          "Bife de res",
+          "Arroz",
+          "Plátano",
+          "Huevo",
+          "Aceite",
+          "Sal",
+          "Pimienta"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-picante-pollo-boliviano",
+        "nombre": "Picante de pollo boliviano con arroz y chuño",
+        "detalle": "Guiso picante y muy aromático. El locoto y el ají le dan el sabor característico boliviano.",
+        "calorias": 510,
+        "carbohidratos": 44,
+        "proteinas": 38,
+        "grasas": 16,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. El picante activa el metabolismo. Alta proteína con carbohidrato moderado.",
+        "ingredientes": [
+          "Pollo",
+          "Locoto o ají",
+          "Arroz",
+          "Chuño",
+          "Cebolla",
+          "Ajo",
+          "Comino",
+          "Orégano"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
+      },
+      {
+        "id": "alm-sopa-quinoa-boliviana",
+        "nombre": "Sopa de quinoa con verduras y pollo",
+        "detalle": "La quinoa real boliviana en su versión más tradicional. Nutritiva, liviana y muy reconfortante.",
+        "calorias": 360,
+        "carbohidratos": 38,
+        "proteinas": 26,
+        "grasas": 10,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "La quinoa tiene proteína completa con todos los aminoácidos esenciales. Muy nutritiva y liviana.",
+        "ingredientes": [
+          "Quinoa",
+          "Pollo",
+          "Zanahoria",
+          "Papa",
+          "Apio",
+          "Cebolla",
+          "Perejil",
+          "Caldo"
+        ],
+        "mealTypes": [
+          "almuerzo",
+          "cena"
+        ]
       }
     ],
-
     "merienda": [
       {
         "id": "mer-yogur-banana",
         "nombre": "Yogur + banana",
         "detalle": "Ligero pero útil para no llegar con hambre extrema a la noche.",
-        "calorias": 230, "carbohidratos": 30, "proteinas": 9, "grasas": 4, "fibra": 3,
-        "tags": ["balanced", "highCarb"],
+        "calorias": 230,
+        "carbohidratos": 30,
+        "proteinas": 9,
+        "grasas": 4,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
         "balance": "Suma carbohidrato fácil, algo de proteína y te ordena mejor la tarde.",
-        "ingredientes": ["Yogur natural", "Banana"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Yogur natural",
+          "Banana"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-tostadas-queso-fruta",
         "nombre": "Tostadas integrales + queso untable + fruta",
         "detalle": "Práctica, rápida y fácil para cortar la tarde sin pasarte.",
-        "calorias": 260, "carbohidratos": 28, "proteinas": 10, "grasas": 8, "fibra": 4,
-        "tags": ["balanced"],
+        "calorias": 260,
+        "carbohidratos": 28,
+        "proteinas": 10,
+        "grasas": 8,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Tiene carbohidrato, un poco de proteína y fruta para sumar regulación.",
-        "ingredientes": ["Pan integral", "Queso untable", "Fruta de estación"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Pan integral",
+          "Queso untable",
+          "Fruta de estación"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-frutos-secos-manzana",
         "nombre": "Manzana + puñado de frutos secos",
         "detalle": "Simple y portable para una merienda sin cocina.",
-        "calorias": 240, "carbohidratos": 22, "proteinas": 6, "grasas": 14, "fibra": 5,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 240,
+        "carbohidratos": 22,
+        "proteinas": 6,
+        "grasas": 14,
+        "fibra": 5,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "La fruta te da energía y los frutos secos mejoran saciedad.",
-        "ingredientes": ["Manzana", "Frutos secos"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Manzana",
+          "Frutos secos"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-sandwich-pavo",
         "nombre": "Sándwich integral de pavo y tomate",
         "detalle": "Buena opción si querés una merienda con más proteína.",
-        "calorias": 290, "carbohidratos": 26, "proteinas": 18, "grasas": 9, "fibra": 3,
-        "tags": ["highProtein", "balanced"],
+        "calorias": 290,
+        "carbohidratos": 26,
+        "proteinas": 18,
+        "grasas": 9,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
         "balance": "Ayuda a repartir mejor la proteína durante el día.",
-        "ingredientes": ["Pan integral", "Pavo o pollo", "Tomate", "Queso fresco"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Pan integral",
+          "Pavo o pollo",
+          "Tomate",
+          "Queso fresco"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-licuado-leche-avena",
         "nombre": "Licuado de leche + avena + fruta",
         "detalle": "Merienda rendidora si te toca una tarde larga o activa.",
-        "calorias": 310, "carbohidratos": 36, "proteinas": 13, "grasas": 8, "fibra": 5,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 310,
+        "carbohidratos": 36,
+        "proteinas": 13,
+        "grasas": 8,
+        "fibra": 5,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Muy útil cuando necesitás un poco más de combustible.",
-        "ingredientes": ["Leche o bebida vegetal", "Avena", "Banana o frutilla"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Leche o bebida vegetal",
+          "Avena",
+          "Banana o frutilla"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-mate-galletas",
         "nombre": "Mate + galletitas de arroz o integrales",
         "detalle": "La merienda más argentina. Liviana y para picar sin excederse.",
-        "calorias": 200, "carbohidratos": 30, "proteinas": 4, "grasas": 5, "fibra": 2,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 200,
+        "carbohidratos": 30,
+        "proteinas": 4,
+        "grasas": 5,
+        "fibra": 2,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Muy liviano. Agregar un poco de queso o ricota mejora bastante.",
-        "ingredientes": ["Yerba mate", "Galletitas integrales o de arroz"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Yerba mate",
+          "Galletitas integrales o de arroz"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-mate-facturas",
         "nombre": "Mate + facturas de panadería",
         "detalle": "La merienda del domingo. Más indulgente, pero con el mate equilibra.",
-        "calorias": 350, "carbohidratos": 44, "proteinas": 7, "grasas": 15, "fibra": 1,
-        "tags": ["highCarb"],
+        "calorias": 350,
+        "carbohidratos": 44,
+        "proteinas": 7,
+        "grasas": 15,
+        "fibra": 1,
+        "tags": [
+          "highCarb"
+        ],
         "balance": "Alto en harinas y grasas. Mejor reservarlo para ocasiones.",
-        "ingredientes": ["Yerba mate", "Facturas", "Azúcar o edulcorante"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Yerba mate",
+          "Facturas",
+          "Azúcar o edulcorante"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-torta-casera",
         "nombre": "Porción de torta casera + infusión",
         "detalle": "Un clásico de la tarde argentina hecho en casa.",
-        "calorias": 290, "carbohidratos": 38, "proteinas": 6, "grasas": 12, "fibra": 1,
-        "tags": ["highCarb"],
+        "calorias": 290,
+        "carbohidratos": 38,
+        "proteinas": 6,
+        "grasas": 12,
+        "fibra": 1,
+        "tags": [
+          "highCarb"
+        ],
         "balance": "Moderado si la porción es razonable. Sumar un té o mate sin azúcar.",
-        "ingredientes": ["Harina", "Huevo", "Azúcar", "Aceite", "Té o mate cocido"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Harina",
+          "Huevo",
+          "Azúcar",
+          "Aceite",
+          "Té o mate cocido"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-yogur-griego-frutos-rojos",
         "nombre": "Yogur griego + arándanos o frutillas + nueces",
         "detalle": "Ideal para mantener el metabolismo activo y evitar llegar con mucha hambre a la cena.",
-        "calorias": 175, "carbohidratos": 12, "proteinas": 15, "grasas": 9, "fibra": 3,
-        "tags": ["highProtein", "lightCarb", "balanced"],
+        "calorias": 175,
+        "carbohidratos": 12,
+        "proteinas": 15,
+        "grasas": 9,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Muy alta proteína para una merienda. Bajo en calorías y muy saciante.",
-        "ingredientes": ["Yogur griego natural", "Arándanos o frutillas", "Nueces"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Yogur griego natural",
+          "Arándanos o frutillas",
+          "Nueces"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-cafe-sandwichito",
         "nombre": "Café con leche + sandwichito integral con queso",
         "detalle": "Reemplaza las facturas por algo que te mantenga satisfecho más tiempo.",
-        "calorias": 210, "carbohidratos": 22, "proteinas": 12, "grasas": 7, "fibra": 2,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 210,
+        "carbohidratos": 22,
+        "proteinas": 12,
+        "grasas": 7,
+        "fibra": 2,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Equilibrado para media tarde. Proteína del queso ayuda a sostener la saciedad.",
-        "ingredientes": ["Café", "Leche descremada", "Pan integral", "Queso Danbo o Tybo magro"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Café",
+          "Leche descremada",
+          "Pan integral",
+          "Queso Danbo o Tybo magro"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-fruta-mani",
         "nombre": "Fruta + maní tostado",
         "detalle": "Merienda sencilla y muy argentina. El maní aporta grasas buenas y proteína vegetal.",
-        "calorias": 230, "carbohidratos": 24, "proteinas": 7, "grasas": 12, "fibra": 4,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 230,
+        "carbohidratos": 24,
+        "proteinas": 7,
+        "grasas": 12,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Muy práctica. La fruta da energía rápida y el maní sostiene la saciedad.",
-        "ingredientes": ["Manzana o banana o naranja", "Maní tostado sin sal"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Manzana o banana o naranja",
+          "Maní tostado sin sal"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
       },
       {
         "id": "mer-yogur-solo",
         "nombre": "Yogur natural solo",
         "detalle": "La merienda más rápida. Yogur entero o descremado, sin agregados innecesarios.",
-        "calorias": 150, "carbohidratos": 14, "proteinas": 8, "grasas": 5, "fibra": 0,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 150,
+        "carbohidratos": 14,
+        "proteinas": 8,
+        "grasas": 5,
+        "fibra": 1,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Muy liviano. Si necesitás más saciedad, agregar una fruta o unas nueces.",
-        "ingredientes": ["Yogur natural entero o descremado"],
-        "mealTypes": ["merienda", "desayuno"]
+        "ingredientes": [
+          "Yogur natural entero o descremado"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       },
       {
         "id": "mer-fruta-sola",
         "nombre": "Fruta de estación",
         "detalle": "La merienda más liviana. Ideal para días tranquilos cuando no tenés mucha hambre.",
-        "calorias": 120, "carbohidratos": 28, "proteinas": 1, "grasas": 0, "fibra": 4,
-        "tags": ["lightCarb"],
+        "calorias": 120,
+        "carbohidratos": 28,
+        "proteinas": 1,
+        "grasas": 0,
+        "fibra": 4,
+        "tags": [
+          "lightCarb"
+        ],
         "balance": "Muy bajo en calorías. Suma vitaminas y fibra. Combinar con algo proteico si hay más hambre.",
-        "ingredientes": ["Manzana o banana o naranja o mandarina o pera"],
-        "mealTypes": ["merienda"]
+        "ingredientes": [
+          "Manzana o banana o naranja o mandarina o pera"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
+      },
+      {
+        "id": "mer-tostadas-palta-tomate",
+        "nombre": "Tostadas con palta y tomate cherry",
+        "detalle": "Merienda saciante con grasas saludables y mucho sabor.",
+        "calorias": 270,
+        "carbohidratos": 26,
+        "proteinas": 7,
+        "grasas": 16,
+        "fibra": 7,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "La palta aporta omega-9 y el tomate suma licopeno. Muy buena saciedad.",
+        "ingredientes": [
+          "Pan integral",
+          "Palta",
+          "Tomate cherry",
+          "Limón",
+          "Sal y pimienta"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
+      },
+      {
+        "id": "mer-hummus-crudites",
+        "nombre": "Hummus casero con bastones de zanahoria y apio",
+        "detalle": "Merienda vegetal y proteica. El hummus aporta proteína de garbanzo y aceite de oliva.",
+        "calorias": 200,
+        "carbohidratos": 18,
+        "proteinas": 8,
+        "grasas": 11,
+        "fibra": 6,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Alta en fibra vegetal. Ideal para picotear sin culpa y con mucha saciedad.",
+        "ingredientes": [
+          "Garbanzos",
+          "Tahini",
+          "Limón",
+          "Ajo",
+          "Zanahoria",
+          "Apio"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
+      },
+      {
+        "id": "mer-manzana-queso-nueces",
+        "nombre": "Manzana en rodajas + queso Port Salut + nueces",
+        "detalle": "Combinación clásica dulce-salada. Muy saciante y equilibrada.",
+        "calorias": 280,
+        "carbohidratos": 22,
+        "proteinas": 11,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "lightCarb"
+        ],
+        "balance": "Fruta, proteína láctea y grasas buenas de las nueces. Sin harinas y muy satisfactoria.",
+        "ingredientes": [
+          "Manzana",
+          "Queso Port Salut o similar",
+          "Nueces"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
+      },
+      {
+        "id": "mer-galletitas-avena-frutos-secos",
+        "nombre": "Galletitas caseras de avena y frutos secos (2 unidades)",
+        "detalle": "Merienda dulce pero nutritiva. Sin harinas refinadas.",
+        "calorias": 160,
+        "carbohidratos": 22,
+        "proteinas": 4,
+        "grasas": 7,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "La avena aporta fibra soluble. Los frutos secos suman grasas buenas y proteína.",
+        "ingredientes": [
+          "Avena",
+          "Nueces o almendras",
+          "Pasas",
+          "Miel",
+          "Canela"
+        ],
+        "mealTypes": [
+          "merienda"
+        ]
+      },
+      {
+        "id": "mer-batido-proteico-banana",
+        "nombre": "Batido de banana, leche y cacao amargo",
+        "detalle": "Merienda líquida y reconfortante. El cacao sin azúcar aporta antioxidantes.",
+        "calorias": 240,
+        "carbohidratos": 36,
+        "proteinas": 10,
+        "grasas": 5,
+        "fibra": 3,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Rápido de preparar. Suma carbohidrato, proteína láctea y sabor a chocolate natural.",
+        "ingredientes": [
+          "Leche descremada",
+          "Banana",
+          "Cacao amargo en polvo",
+          "Miel"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
+      },
+      {
+        "id": "mer-ricota-fruta-miel",
+        "nombre": "Ricota con fruta picada y miel",
+        "detalle": "Merienda suave, proteica y muy fácil de preparar. Ideal para cualquier tarde.",
+        "calorias": 210,
+        "carbohidratos": 24,
+        "proteinas": 14,
+        "grasas": 6,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "balanced"
+        ],
+        "balance": "La ricota es una de las fuentes de proteína más económicas y versátiles.",
+        "ingredientes": [
+          "Ricota",
+          "Manzana o durazno o banana",
+          "Miel",
+          "Canela"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
+      },
+      {
+        "id": "mer-mate-tostadas-queso",
+        "nombre": "Mate + tostadas integrales con queso blanco",
+        "detalle": "La versión saludable de la merienda rioplatense. Proteica y con fibra.",
+        "calorias": 220,
+        "carbohidratos": 24,
+        "proteinas": 12,
+        "grasas": 6,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Muy equilibrado. El queso blanco suma calcio y proteína sin mucha grasa.",
+        "ingredientes": [
+          "Yerba mate",
+          "Pan integral",
+          "Queso blanco descremado"
+        ],
+        "mealTypes": [
+          "merienda",
+          "desayuno"
+        ]
       }
     ],
-
     "cena": [
       {
         "id": "cen-omelette-ensalada",
         "nombre": "Omelette + ensalada",
         "detalle": "Liviano en carbohidratos y muy práctico para cerrar el día.",
-        "calorias": 330, "carbohidratos": 12, "proteinas": 20, "grasas": 19, "fibra": 3,
-        "tags": ["lightCarb", "highProtein"],
+        "calorias": 330,
+        "carbohidratos": 12,
+        "proteinas": 20,
+        "grasas": 19,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "highProtein"
+        ],
         "balance": "Sumá bastante verdura y ya tenés una cena muy redonda.",
-        "ingredientes": ["Huevos", "Lechuga", "Tomate", "Cebolla", "Aceite de oliva"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Huevos",
+          "Lechuga",
+          "Tomate",
+          "Cebolla",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-pollo-verduras-pure",
         "nombre": "Pollo + verduras + puré de calabaza",
         "detalle": "Cena completa y más amable si querés algo tibio.",
-        "calorias": 420, "carbohidratos": 24, "proteinas": 33, "grasas": 16, "fibra": 6,
-        "tags": ["balanced", "highProtein", "lightCarb"],
+        "calorias": 420,
+        "carbohidratos": 24,
+        "proteinas": 33,
+        "grasas": 16,
+        "fibra": 6,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Proteína alta con carbohidrato moderado y mucha verdura.",
-        "ingredientes": ["Pollo", "Calabaza", "Acelga o espinaca", "Aceite de oliva"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Pollo",
+          "Calabaza",
+          "Acelga o espinaca",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-pescado-papa-ensalada",
         "nombre": "Pescado + papa + ensalada",
         "detalle": "Muy completo y fácil de digerir.",
-        "calorias": 470, "carbohidratos": 31, "proteinas": 34, "grasas": 18, "fibra": 4,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 470,
+        "carbohidratos": 31,
+        "proteinas": 34,
+        "grasas": 18,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Aporta proteína de calidad y carbohidrato controlado.",
-        "ingredientes": ["Pescado", "Papa", "Lechuga", "Pepino", "Aceite de oliva"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Pescado",
+          "Papa",
+          "Lechuga",
+          "Pepino",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-sopa-lentejas-tostada",
         "nombre": "Sopa de verduras + lentejas + tostada",
         "detalle": "Cena reconfortante, económica y bastante equilibrada.",
-        "calorias": 360, "carbohidratos": 37, "proteinas": 17, "grasas": 10, "fibra": 10,
-        "tags": ["balanced"],
+        "calorias": 360,
+        "carbohidratos": 37,
+        "proteinas": 17,
+        "grasas": 10,
+        "fibra": 10,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Buena combinación si querés algo liviano sin quedarte corto.",
-        "ingredientes": ["Lentejas", "Zapallo", "Zanahoria", "Cebolla", "Pan integral"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Lentejas",
+          "Zapallo",
+          "Zanahoria",
+          "Cebolla",
+          "Pan integral"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-wrap-pollo-verduras",
         "nombre": "Wrap integral de pollo y verduras",
         "detalle": "Rápido, prolijo y fácil para una noche con poco tiempo.",
-        "calorias": 410, "carbohidratos": 29, "proteinas": 28, "grasas": 14, "fibra": 4,
-        "tags": ["balanced", "highProtein"],
+        "calorias": 410,
+        "carbohidratos": 29,
+        "proteinas": 28,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
         "balance": "Tiene de todo si no te quedás corto con el relleno vegetal.",
-        "ingredientes": ["Tortilla integral", "Pollo", "Lechuga", "Tomate", "Yogur o queso untable"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Tortilla integral",
+          "Pollo",
+          "Lechuga",
+          "Tomate",
+          "Yogur o queso untable"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-revuelto-gramajo",
         "nombre": "Revuelto Gramajo",
         "detalle": "Clásico porteño a base de huevo, papa paja y jamón. Fácil y muy argentino.",
-        "calorias": 440, "carbohidratos": 26, "proteinas": 26, "grasas": 24, "fibra": 2,
-        "tags": ["balanced", "highProtein", "lightCarb"],
+        "calorias": 440,
+        "carbohidratos": 26,
+        "proteinas": 26,
+        "grasas": 24,
+        "fibra": 2,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Tiene carbohidrato, proteína y grasa. Sumarle ensalada verde lo completa bien.",
-        "ingredientes": ["Huevos", "Papa", "Jamón cocido", "Cebolla de verdeo", "Aceite"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Huevos",
+          "Papa",
+          "Jamón cocido",
+          "Cebolla de verdeo",
+          "Aceite"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-tarta-verduras",
         "nombre": "Tarta de verduras y huevo",
         "detalle": "Clásica tarta casera argentina. Fácil de preparar y llevar.",
-        "calorias": 390, "carbohidratos": 30, "proteinas": 18, "grasas": 20, "fibra": 4,
-        "tags": ["balanced"],
+        "calorias": 390,
+        "carbohidratos": 30,
+        "proteinas": 18,
+        "grasas": 20,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
         "balance": "Buen equilibrio si se carga bien de verduras. Cuidar la masa que suma grasa.",
-        "ingredientes": ["Masa para tarta", "Huevos", "Espinaca o acelga", "Cebolla", "Queso"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Masa para tarta",
+          "Huevos",
+          "Espinaca o acelga",
+          "Cebolla",
+          "Queso"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-milanesa-napolitana",
         "nombre": "Milanesa napolitana + ensalada",
         "detalle": "Uno de los platos más queridos de la cocina argentina.",
-        "calorias": 510, "carbohidratos": 22, "proteinas": 38, "grasas": 26, "fibra": 2,
-        "tags": ["highProtein"],
+        "calorias": 510,
+        "carbohidratos": 22,
+        "proteinas": 38,
+        "grasas": 26,
+        "fibra": 2,
+        "tags": [
+          "highProtein"
+        ],
         "balance": "Alta en proteína y grasa. Compensar con ensalada abundante y sin mayonesa.",
-        "ingredientes": ["Milanesa de carne o pollo", "Salsa de tomate", "Queso en fetas", "Jamón", "Ensalada"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Milanesa de carne o pollo",
+          "Salsa de tomate",
+          "Queso en fetas",
+          "Jamón",
+          "Ensalada"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-cazuela-pollo",
         "nombre": "Cazuela de pollo con papas y morrón",
         "detalle": "Guiso liviano argentino. Reconfortante para las noches de frío.",
-        "calorias": 430, "carbohidratos": 28, "proteinas": 34, "grasas": 14, "fibra": 4,
-        "tags": ["balanced", "highProtein", "lightCarb"],
+        "calorias": 430,
+        "carbohidratos": 28,
+        "proteinas": 34,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highProtein",
+          "lightCarb"
+        ],
         "balance": "Alta proteína con carbohidrato moderado. Muy completo.",
-        "ingredientes": ["Pollo", "Papa", "Morrón", "Cebolla", "Caldo casero", "Aceite de oliva"],
-        "mealTypes": ["cena", "almuerzo"]
+        "ingredientes": [
+          "Pollo",
+          "Papa",
+          "Morrón",
+          "Cebolla",
+          "Caldo casero",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-tacos-lechuga-atun",
         "nombre": "Tacos de lechuga con atún y vegetales salteados",
         "detalle": "Alta proteína y muy bajo en carbohidratos simples. Ideal para una digestión rápida antes de dormir.",
-        "calorias": 300, "carbohidratos": 12, "proteinas": 28, "grasas": 8, "fibra": 3,
-        "tags": ["lightCarb", "highProtein"],
+        "calorias": 300,
+        "carbohidratos": 12,
+        "proteinas": 28,
+        "grasas": 8,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "highProtein"
+        ],
         "balance": "Excelente opción nocturna. El atún es proteína pura y la lechuga reemplaza la tortilla.",
-        "ingredientes": ["Atún al natural", "Hojas de lechuga romana", "Zapallito", "Champignones o morrón", "Aceite de oliva", "Limón"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Atún al natural",
+          "Hojas de lechuga romana",
+          "Zapallito",
+          "Champignones o morrón",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-vacio-vegetales",
         "nombre": "Vacío o peceto al horno + vegetales salteados",
         "detalle": "El peceto o el vacío bien desgrasado son excelentes para una cena proteica y sabrosa.",
-        "calorias": 340, "carbohidratos": 15, "proteinas": 30, "grasas": 14, "fibra": 4,
-        "tags": ["lightCarb", "highProtein"],
+        "calorias": 340,
+        "carbohidratos": 15,
+        "proteinas": 30,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "highProtein"
+        ],
         "balance": "Alta proteína con poco carbohidrato. Los vegetales salteados completan el plato con fibra.",
-        "ingredientes": ["Peceto o vacío desgrasado", "Romero", "Cebolla", "Morrón", "Zapallito verde"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Peceto o vacío desgrasado",
+          "Romero",
+          "Cebolla",
+          "Morrón",
+          "Zapallito verde"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-ensalada-atun",
         "nombre": "Ensalada grande con atún",
         "detalle": "Cena liviana y proteica. Sin pan, solo verduras y atún. Ideal para cerrar el día sin pesadez.",
-        "calorias": 280, "carbohidratos": 10, "proteinas": 28, "grasas": 10, "fibra": 5,
-        "tags": ["lightCarb", "highProtein"],
+        "calorias": 280,
+        "carbohidratos": 10,
+        "proteinas": 28,
+        "grasas": 10,
+        "fibra": 5,
+        "tags": [
+          "lightCarb",
+          "highProtein"
+        ],
         "balance": "Muy liviana y proteica. El atún cubre bien las proteínas nocturnas sin sumar carbohidratos.",
-        "ingredientes": ["Atún al natural", "Lechuga", "Tomate", "Pepino", "Zanahoria rallada", "Aceite de oliva", "Limón"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Atún al natural",
+          "Lechuga",
+          "Tomate",
+          "Pepino",
+          "Zanahoria rallada",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
       },
       {
         "id": "cen-sopa-verduras-huevo",
         "nombre": "Sopa de verduras + huevo",
         "detalle": "Cena reconfortante y muy liviana. La sopa casera con un huevo escalfado o duro adentro.",
-        "calorias": 270, "carbohidratos": 18, "proteinas": 14, "grasas": 10, "fibra": 5,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 270,
+        "carbohidratos": 18,
+        "proteinas": 14,
+        "grasas": 10,
+        "fibra": 5,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Muy fácil de digerir. El huevo suma proteína sin sobrecargar la cena.",
-        "ingredientes": ["Zapallo", "Zanahoria", "Apio", "Cebolla", "Huevo", "Caldo casero"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Zapallo",
+          "Zanahoria",
+          "Apio",
+          "Cebolla",
+          "Huevo",
+          "Caldo casero"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
       },
       {
         "id": "cen-ensalada-huevo-duro",
         "nombre": "Ensalada completa con huevo duro",
         "detalle": "La cena del viernes cuando no hay ganas de cocinar. Rápida, proteica y liviana.",
-        "calorias": 290, "carbohidratos": 12, "proteinas": 16, "grasas": 16, "fibra": 4,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 290,
+        "carbohidratos": 12,
+        "proteinas": 16,
+        "grasas": 16,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "El huevo duro aporta proteína completa. Sumar un chorrito de aceite de oliva mejora las grasas.",
-        "ingredientes": ["Lechuga", "Tomate", "Huevo duro", "Zanahoria", "Aceitunas", "Aceite de oliva"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Lechuga",
+          "Tomate",
+          "Huevo duro",
+          "Zanahoria",
+          "Aceitunas",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-pizza-casera",
         "nombre": "Pizza casera (2 porciones)",
         "detalle": "La cena del sábado. Hecha en casa es más liviana y controlable que la de delivery.",
-        "calorias": 480, "carbohidratos": 55, "proteinas": 20, "grasas": 18, "fibra": 3,
-        "tags": ["highCarb", "balanced"],
+        "calorias": 480,
+        "carbohidratos": 55,
+        "proteinas": 20,
+        "grasas": 18,
+        "fibra": 3,
+        "tags": [
+          "highCarb",
+          "balanced"
+        ],
         "balance": "Alta en carbohidratos. Porciones moderadas y agregar verduras arriba mejora el balance.",
-        "ingredientes": ["Harina", "Salsa de tomate", "Mozzarella", "Orégano", "Aceite de oliva"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Harina",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Orégano",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
       },
       {
         "id": "cen-liviana-sobras",
         "nombre": "Cena liviana: ensalada o sobras del almuerzo",
         "detalle": "El domingo a la noche. Aprovechar lo que quedó del asado o armar algo simple y fresco.",
-        "calorias": 260, "carbohidratos": 14, "proteinas": 18, "grasas": 12, "fibra": 3,
-        "tags": ["lightCarb", "balanced"],
+        "calorias": 260,
+        "carbohidratos": 14,
+        "proteinas": 18,
+        "grasas": 12,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
         "balance": "Perfecto para cerrar el fin de semana sin sobrecargar. Liviano y sin cocinar.",
-        "ingredientes": ["Sobras de carne o pollo", "Lechuga", "Tomate", "Pan"],
-        "mealTypes": ["cena"]
+        "ingredientes": [
+          "Sobras de carne o pollo",
+          "Lechuga",
+          "Tomate",
+          "Pan"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-tarta-acelga-queso",
+        "nombre": "Tarta de acelga y queso (1 porción)",
+        "detalle": "Clásica tarta casera argentina, liviana y nutritiva para cerrar el día.",
+        "calorias": 280,
+        "carbohidratos": 22,
+        "proteinas": 12,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "Buen aporte de calcio y hierro. La acelga suma vitaminas. Porción moderada de masa.",
+        "ingredientes": [
+          "Masa para tarta",
+          "Acelga",
+          "Huevos",
+          "Queso cuartirolo",
+          "Cebolla"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-sopa-verduras-fideos",
+        "nombre": "Sopa de verduras con fideos finos",
+        "detalle": "La cena reconfortante por excelencia. Liviana, digestiva y muy hogareña.",
+        "calorias": 180,
+        "carbohidratos": 25,
+        "proteinas": 6,
+        "grasas": 4,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Muy liviana. Agregar un huevo o legumbre mejora el aporte proteico.",
+        "ingredientes": [
+          "Fideos finos",
+          "Zanahoria",
+          "Apio",
+          "Zapallo",
+          "Cebolla",
+          "Caldo casero"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-merluza-pure-calabaza",
+        "nombre": "Filete de merluza a la plancha con puré de calabaza",
+        "detalle": "Cena completa con proteína magra y carbohidrato suave. Muy fácil de digerir.",
+        "calorias": 310,
+        "carbohidratos": 18,
+        "proteinas": 32,
+        "grasas": 9,
+        "fibra": 4,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "La merluza es proteína muy magra. El puré de calabaza suma vitamina A y bajo índice glucémico.",
+        "ingredientes": [
+          "Filete de merluza",
+          "Calabaza",
+          "Aceite de oliva",
+          "Limón",
+          "Ajo"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-omelette-espinacas",
+        "nombre": "Omelette de espinacas y queso",
+        "detalle": "Cena rápida, proteica y muy liviana. Sin carbohidratos adicionales.",
+        "calorias": 260,
+        "carbohidratos": 5,
+        "proteinas": 18,
+        "grasas": 19,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "highProtein"
+        ],
+        "balance": "Muy baja en carbohidratos. Alta en proteína y grasas buenas del huevo.",
+        "ingredientes": [
+          "Huevos",
+          "Espinaca",
+          "Queso cuartirolo o muzarella",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-ensalada-rucula-tomate",
+        "nombre": "Ensalada de rúcula, tomate y parmesano",
+        "detalle": "Cena muy liviana y refrescante. Ideal cuando no hay mucho apetito nocturno.",
+        "calorias": 190,
+        "carbohidratos": 8,
+        "proteinas": 10,
+        "grasas": 13,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Muy liviana. Agregar proteína (huevo, atún o pollo) para una cena más completa.",
+        "ingredientes": [
+          "Rúcula",
+          "Tomate",
+          "Parmesano",
+          "Aceite de oliva",
+          "Limón",
+          "Sal"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-berenjenas-napolitana",
+        "nombre": "Berenjenas a la napolitana (al horno)",
+        "detalle": "Versión vegetariana de la napolitana. Rica en fibra vegetal y muy sabrosa.",
+        "calorias": 240,
+        "carbohidratos": 15,
+        "proteinas": 14,
+        "grasas": 12,
+        "fibra": 6,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Muy buena opción vegetal. La berenjena es muy baja en calorías y alta en fibra.",
+        "ingredientes": [
+          "Berenjena",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Orégano",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-budin-zapallo-zanahoria",
+        "nombre": "Budín de zapallo y zanahoria",
+        "detalle": "Preparación horneada suave y nutritiva. Ideal para digerir fácil antes de dormir.",
+        "calorias": 210,
+        "carbohidratos": 20,
+        "proteinas": 8,
+        "grasas": 11,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Bajo en calorías y muy digerible. La zanahoria suma betacaroteno y dulzor natural.",
+        "ingredientes": [
+          "Zapallo",
+          "Zanahoria",
+          "Huevo",
+          "Queso rallado",
+          "Aceite de oliva"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-pechuga-limon-rucula",
+        "nombre": "Pechuga de pollo al limón con rúcula",
+        "detalle": "Cena proteica muy liviana. La pechuga a la plancha con salsa cítrica.",
+        "calorias": 290,
+        "carbohidratos": 4,
+        "proteinas": 42,
+        "grasas": 10,
+        "fibra": 2,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Altísima proteína con muy bajo carbohidrato. Perfecta para noches de control calórico.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Limón",
+          "Ajo",
+          "Rúcula",
+          "Aceite de oliva",
+          "Mostaza"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-canelones-verdura",
+        "nombre": "Canelones de verdura (2 unidades, sin salsa roja)",
+        "detalle": "Cena de pasta rellena con espinaca y ricota. Liviana y nutritiva.",
+        "calorias": 320,
+        "carbohidratos": 35,
+        "proteinas": 15,
+        "grasas": 14,
+        "fibra": 4,
+        "tags": [
+          "balanced"
+        ],
+        "balance": "Buen equilibrio pasta-relleno. Sin salsa roja es más liviana para la noche.",
+        "ingredientes": [
+          "Pasta para canelones",
+          "Espinaca",
+          "Ricota",
+          "Queso rallado",
+          "Salsa blanca"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-humita-olla",
+        "nombre": "Humita en olla (versión ligera)",
+        "detalle": "Preparación andina reconfortante. Cremosa, dulce y muy saciante con pocas calorías.",
+        "calorias": 270,
+        "carbohidratos": 38,
+        "proteinas": 9,
+        "grasas": 8,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "El choclo aporta carbohidrato con fibra. Con menos queso es más liviana y digerible.",
+        "ingredientes": [
+          "Choclo",
+          "Cebolla",
+          "Morrón",
+          "Queso fresco",
+          "Leche",
+          "Pimentón"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-zapallitos-revueltos",
+        "nombre": "Zapallitos revueltos con huevo y cebolla",
+        "detalle": "Cena rápida y casera. Muy argentina y muy fácil de preparar.",
+        "calorias": 220,
+        "carbohidratos": 12,
+        "proteinas": 14,
+        "grasas": 13,
+        "fibra": 3,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Liviana y nutritiva. El huevo suma proteína completa y el zapallito aporta agua y vitaminas.",
+        "ingredientes": [
+          "Zapallitos",
+          "Huevos",
+          "Cebolla",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-tarta-calabaza-choclo",
+        "nombre": "Tarta de calabaza y choclo (1 porción)",
+        "detalle": "Combinación dulce-salada muy popular en Argentina. Sabrosa y nutritiva.",
+        "calorias": 260,
+        "carbohidratos": 35,
+        "proteinas": 8,
+        "grasas": 10,
+        "fibra": 4,
+        "tags": [
+          "balanced",
+          "highCarb"
+        ],
+        "balance": "Carbohidrato con fibra del choclo y calabaza. Sumar queso mejora el aporte proteico.",
+        "ingredientes": [
+          "Masa para tarta",
+          "Calabaza",
+          "Choclo",
+          "Cebolla",
+          "Queso",
+          "Huevo"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-ensalada-lentejas-huevo",
+        "nombre": "Ensalada de lentejas, tomate y huevo",
+        "detalle": "Cena fría nutritiva y muy proteica. Ideal en verano o noches cálidas.",
+        "calorias": 310,
+        "carbohidratos": 38,
+        "proteinas": 18,
+        "grasas": 9,
+        "fibra": 9,
+        "tags": [
+          "balanced",
+          "highProtein"
+        ],
+        "balance": "Las lentejas combinan proteína vegetal con fibra. El huevo completa los aminoácidos.",
+        "ingredientes": [
+          "Lentejas cocidas",
+          "Tomate",
+          "Huevo duro",
+          "Cebolla",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "cena",
+          "almuerzo"
+        ]
+      },
+      {
+        "id": "cen-brochetas-pollo-vegetales",
+        "nombre": "Brochetas de pollo y vegetales (2 unidades)",
+        "detalle": "Cena vistosa y proteica. Muy fácil de hacer a la plancha o al horno.",
+        "calorias": 280,
+        "carbohidratos": 8,
+        "proteinas": 36,
+        "grasas": 11,
+        "fibra": 3,
+        "tags": [
+          "highProtein",
+          "lightCarb"
+        ],
+        "balance": "Muy alta proteína con pocos carbohidratos. Los vegetales en la brocheta suman fibra.",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Morrón",
+          "Zapallito",
+          "Cebolla",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
+      },
+      {
+        "id": "cen-sopa-zapallo-jengibre",
+        "nombre": "Sopa de zapallo y jengibre",
+        "detalle": "Sopa cremosa y antiinflamatoria. El jengibre suma sabor y propiedades digestivas.",
+        "calorias": 150,
+        "carbohidratos": 22,
+        "proteinas": 4,
+        "grasas": 5,
+        "fibra": 4,
+        "tags": [
+          "lightCarb",
+          "balanced"
+        ],
+        "balance": "Muy liviana y reconfortante. Sumar yogur al servir da cremosidad y proteína extra.",
+        "ingredientes": [
+          "Zapallo",
+          "Jengibre fresco",
+          "Cebolla",
+          "Caldo de verduras",
+          "Crema o yogur"
+        ],
+        "mealTypes": [
+          "cena"
+        ]
       }
     ]
-
   }
 }
