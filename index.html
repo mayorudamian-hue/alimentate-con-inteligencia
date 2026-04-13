@@ -2242,10 +2242,6 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function mealById(type, id) {
-  if (!id) return null;
-  return MEALS[type].find(meal => meal.id === id) || null;
-}
 
 function entryFor(dayId, mealType) {
   return state.plan[dayId][mealType];
@@ -2267,23 +2263,6 @@ function scaleMetric(value, multiplier) {
   return Math.round(value * multiplier);
 }
 
-function mealStats(dayId, mealType) {
-  const entry = entryFor(dayId, mealType);
-  const meal = mealById(mealType, entry.mealId);
-  if (!meal) {
-    return { meal: null, multiplier: 1, calories: 0, carbs: 0, proteins: 0, fats: 0, fiber: 0 };
-  }
-  const multiplier = portionMultiplier(entry.portion) * globalMultiplier() * peopleMultiplier();
-  return {
-    meal,
-    multiplier,
-    calories: scaleMetric(meal.calories, multiplier),
-    carbs: scaleMetric(meal.carbs, multiplier),
-    proteins: scaleMetric(meal.proteins, multiplier),
-    fats: scaleMetric(meal.fats, multiplier),
-    fiber: scaleMetric(meal.fiber || 0, multiplier)
-  };
-}
 
 function customMealStats(dayId, mealTypeId) {
   const totals = customMealTotals(customMealKey(dayId, mealTypeId));
@@ -2580,16 +2559,7 @@ function presetCategory(item) {
 }
 
 function combinedMealStats(dayId, mealTypeId) {
-  const preset = mealStats(dayId, mealTypeId);
-  const custom = customMealStats(dayId, mealTypeId);
-  return {
-    meal: preset.meal,
-    calories: preset.calories + custom.calories,
-    carbs: preset.carbs + custom.carbs,
-    proteins: preset.proteins + custom.proteins,
-    fats: preset.fats + custom.fats,
-    fiber: preset.fiber + custom.fiber
-  };
+  return customMealStats(dayId, mealTypeId);
 }
 
 function targetRange(range) {
@@ -2666,67 +2636,8 @@ function currentTarget() {
   };
 }
 
-function chooseMeal(type, goal, excludeId = null) {
-  const goalData = GOALS[goal];
-  const priorities = goalData.mealBias[type] || ["balanced"];
-  let candidates = [];
 
-  for (const tag of priorities) {
-    const match = MEALS[type].filter(meal => meal.tags.includes(tag) && meal.id !== excludeId);
-    if (match.length) {
-      candidates = match;
-      break;
-    }
-  }
 
-  if (!candidates.length) {
-    candidates = MEALS[type].filter(meal => meal.id !== excludeId);
-  }
-
-  return candidates[Math.floor(Math.random() * candidates.length)];
-}
-
-function buildAutomaticWeek(goal) {
-  const nextPlan = {};
-  DAYS.forEach(day => {
-    nextPlan[day.id] = {};
-    MEAL_TYPES.forEach(({ id }) => {
-      const selected = chooseMeal(id, goal, nextPlan[day.id][id]);
-      nextPlan[day.id][id] = {
-        mealId: selected.id,
-        portion: goal === "energia" && id !== "dinner" ? "l" : goal === "control" && id === "dinner" ? "s" : "m"
-      };
-    });
-  });
-  state.plan = nextPlan;
-  saveState();
-  render();
-}
-
-function setBalancedWeek() {
-  const nextPlan = {};
-  DAYS.forEach((day, dayIndex) => {
-    nextPlan[day.id] = {};
-    MEAL_TYPES.forEach(({ id }) => {
-      const balancedMeals = MEALS[id].filter(meal => meal.tags.includes("balanced"));
-      nextPlan[day.id][id] = {
-        mealId: balancedMeals[dayIndex % balancedMeals.length].id,
-        portion: "m"
-      };
-    });
-  });
-  state.plan = nextPlan;
-  saveState();
-  render();
-}
-
-function randomizeMeal(dayId, mealType) {
-  const currentId = entryFor(dayId, mealType).mealId;
-  const selected = chooseMeal(mealType, state.goal, currentId);
-  state.plan[dayId][mealType].mealId = selected.id;
-  saveState();
-  render();
-}
 
 function dayTotals(dayId) {
   return MEAL_TYPES.reduce((acc, mealType) => {
@@ -2767,12 +2678,6 @@ function buildShoppingList() {
   const counts = new Map();
   DAYS.forEach(day => {
     MEAL_TYPES.forEach(({ id }) => {
-      const meal = mealStats(day.id, id);
-      if (meal.meal) {
-        meal.meal.ingredients.forEach(item => {
-          counts.set(item, (counts.get(item) || 0) + portionMultiplier(entryFor(day.id, id).portion));
-        });
-      }
       const key = customMealKey(day.id, id);
       (customMeals[key] || []).forEach(item => {
         const ing = ingredients.find(ingredient => ingredient.id === item.ingId);
@@ -2979,7 +2884,7 @@ function renderPlanner() {
           <span class="toggle-label">${isActiveDay ? "⚡ Día activo" : "Día normal"}</span>
         </label>
         <div class="active-day-banner ${isActiveDay ? "show" : ""}">
-          <strong>🔥 Objetivo día activo (para los dos)</strong>
+          <strong>🔥 Objetivo día activo${(state.people || 1) === 2 ? " (para los dos)" : ""}</strong>
           Calorías: ${ACTIVE_DAY_TARGET.calories[0]}–${ACTIVE_DAY_TARGET.calories[1]} kcal &nbsp;·&nbsp;
           Carbos: ${ACTIVE_DAY_TARGET.carbs[0]}–${ACTIVE_DAY_TARGET.carbs[1]} g &nbsp;·&nbsp;
           Proteína: ${ACTIVE_DAY_TARGET.proteins[0]}–${ACTIVE_DAY_TARGET.proteins[1]} g &nbsp;·&nbsp;
