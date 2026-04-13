@@ -1771,32 +1771,64 @@
 
     <!-- ── Profile modal ── -->
     <div class="modal-overlay" id="profileModal">
-      <div class="modal-box" style="max-width:480px;">
-        <h3>👤 Tu Perfil Nutricional</h3>
-        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">
+      <div class="modal-box" style="max-width:560px;">
+        <h3 id="profileModalTitle">👤 Tu Perfil Nutricional</h3>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;" id="profileModalSubtitle">
           Completá tus datos y calculamos tu metabolismo basal con la fórmula de Harris-Benedict para sugerirte una meta exacta.
         </p>
-        <div class="profile-grid" style="grid-template-columns:1fr 1fr;margin-bottom:16px;">
-          <div class="option-card">
-            <label>Sexo</label>
-            <select id="modalSex" class="meal-select" style="margin:0;width:100%;">
-              <option value="female">Mujer</option>
-              <option value="male">Hombre</option>
-            </select>
-          </div>
-          <div class="option-card">
-            <label>Edad (años)</label>
-            <input type="number" id="modalAge" min="14" max="100" placeholder="Ej: 32" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
-          </div>
-          <div class="option-card">
-            <label>Peso (kg)</label>
-            <input type="number" id="modalWeight" min="40" max="200" step="0.1" placeholder="Ej: 72" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
-          </div>
-          <div class="option-card">
-            <label>Altura (cm)</label>
-            <input type="number" id="modalHeight" min="140" max="220" placeholder="Ej: 168" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+
+        <!-- Persona 1 (siempre visible) -->
+        <div id="profilePerson1Block">
+          <div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:8px;" id="person1Label">Tu perfil</div>
+          <div class="profile-grid" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+            <div class="option-card">
+              <label>Sexo</label>
+              <select id="modalSex" class="meal-select" style="margin:0;width:100%;">
+                <option value="female">Mujer</option>
+                <option value="male">Hombre</option>
+              </select>
+            </div>
+            <div class="option-card">
+              <label>Edad (años)</label>
+              <input type="number" id="modalAge" min="14" max="100" placeholder="Ej: 32" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
+            <div class="option-card">
+              <label>Peso (kg)</label>
+              <input type="number" id="modalWeight" min="40" max="200" step="0.1" placeholder="Ej: 72" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
+            <div class="option-card">
+              <label>Altura (cm)</label>
+              <input type="number" id="modalHeight" min="140" max="220" placeholder="Ej: 168" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
           </div>
         </div>
+
+        <!-- Persona 2 (solo visible si people === 2) -->
+        <div id="profilePerson2Block" style="display:none;">
+          <div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:var(--leaf);margin-bottom:8px;">Persona 2</div>
+          <div class="profile-grid" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+            <div class="option-card">
+              <label>Sexo</label>
+              <select id="modalSex2" class="meal-select" style="margin:0;width:100%;">
+                <option value="female">Mujer</option>
+                <option value="male">Hombre</option>
+              </select>
+            </div>
+            <div class="option-card">
+              <label>Edad (años)</label>
+              <input type="number" id="modalAge2" min="14" max="100" placeholder="Ej: 29" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
+            <div class="option-card">
+              <label>Peso (kg)</label>
+              <input type="number" id="modalWeight2" min="40" max="200" step="0.1" placeholder="Ej: 68" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
+            <div class="option-card">
+              <label>Altura (cm)</label>
+              <input type="number" id="modalHeight2" min="140" max="220" placeholder="Ej: 162" style="width:100%;border-radius:12px;border:1px solid var(--line);padding:10px 12px;font:inherit;background:#fff;color:var(--ink);margin-top:4px;box-sizing:border-box;" />
+            </div>
+          </div>
+        </div>
+
         <div class="option-card" style="margin-bottom:16px;">
           <label>Nivel de Actividad</label>
           <select id="modalActivity" class="meal-select" style="margin:0;width:100%;">
@@ -2286,33 +2318,39 @@ function stripPresetMealsFromPlan(plan) {
 function loadState() {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) {
-    return { goal: "pareja", activity: "bajo", basePortion: "normal", plan: createDefaultPlan(), summaryMode: "day", selectedDay: "monday", activeDays: {}, people: 1, profile: { sex: "female", age: "", weight: "", height: "" } };
+    return { goal: "pareja", activity: "bajo", basePortion: "normal", plan: createDefaultPlan(), summaryMode: "day", selectedDay: "monday", activeDays: {}, people: 1, profile: { sex: "female", age: "", weight: "", height: "" }, profile2: null };
   }
   try {
     const parsed = JSON.parse(raw);
+    const p2 = parsed.profile2;
     return {
-      goal: parsed.goal && GOALS[parsed.goal] ? parsed.goal : "pareja",
-      activity: parsed.activity && ACTIVITY_LEVELS[parsed.activity] ? parsed.activity : "bajo",
+      goal:        parsed.goal && GOALS[parsed.goal] ? parsed.goal : "pareja",
+      activity:    parsed.activity && ACTIVITY_LEVELS[parsed.activity] ? parsed.activity : "bajo",
       basePortion: parsed.basePortion && BASE_PORTIONS[parsed.basePortion] ? parsed.basePortion : "normal",
-      plan: stripPresetMealsFromPlan(parsed.plan || createDefaultPlan()),
+      plan:        normalizePlan(parsed.plan || createDefaultPlan()),
       summaryMode: parsed.summaryMode || "day",
       selectedDay: parsed.selectedDay && DAYS.find(d => d.id === parsed.selectedDay) ? parsed.selectedDay : "monday",
-      activeDays: parsed.activeDays || {},
-      people: parsed.people === 2 ? 2 : 1,
+      activeDays:  parsed.activeDays || {},
+      people:      parsed.people === 2 ? 2 : 1,
       profile: {
-        sex: parsed.profile?.sex === "male" ? "male" : "female",
-        age: parsed.profile?.age ?? "",
+        sex:    parsed.profile?.sex === "male" ? "male" : "female",
+        age:    parsed.profile?.age    ?? "",
         weight: parsed.profile?.weight ?? "",
         height: parsed.profile?.height ?? ""
-      }
+      },
+      profile2: p2 && Number(p2.age) && Number(p2.weight) && Number(p2.height) ? {
+        sex:    p2.sex === "male" ? "male" : "female",
+        age:    p2.age,
+        weight: p2.weight,
+        height: p2.height
+      } : null
     };
   } catch (error) {
-    return { goal: "pareja", activity: "bajo", basePortion: "normal", plan: createDefaultPlan(), summaryMode: "day", selectedDay: "monday", activeDays: {}, people: 1, profile: { sex: "female", age: "", weight: "", height: "" } };
+    return { goal: "pareja", activity: "bajo", basePortion: "normal", plan: createDefaultPlan(), summaryMode: "day", selectedDay: "monday", activeDays: {}, people: 1, profile: { sex: "female", age: "", weight: "", height: "" }, profile2: null };
   }
 }
 
 function saveState() {
-  state.plan = stripPresetMealsFromPlan(state.plan);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
@@ -2672,55 +2710,88 @@ function targetRange(range) {
 }
 
 function profilePlan() {
-  const age = Number(state.profile?.age);
+  const age    = Number(state.profile?.age);
   const weight = Number(state.profile?.weight);
   const height = Number(state.profile?.height);
-  const sex = state.profile?.sex === "male" ? "male" : "female";
+  const sex    = state.profile?.sex === "male" ? "male" : "female";
 
   if (!age || !weight || !height) return null;
 
   const unsafe = age < 14 || age > 90 || weight < 35 || weight > 250 || height < 130 || height > 230;
-  const bmi = weight / ((height / 100) ** 2);
-  const bmr = sex === "male"
-    ? 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)
-    : 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
   const activityFactor = state.activity === "alto" ? 1.55 : state.activity === "medio" ? 1.375 : 1.2;
-  const maintenance = bmr * activityFactor;
 
-  let mode = "maintenance";
-  let calories = maintenance;
-  let macroShare = { carbs: 0.45, proteins: 0.25, fats: 0.3 };
-  let fiber = [25, 30];
+  function bmrFor(s, a, w, h) {
+    return s === "male"
+      ? 88.36 + (13.4 * w) + (4.8 * h) - (5.7 * a)
+      : 447.6  + (9.2  * w) + (3.1 * h) - (4.3 * a);
+  }
+
+  const bmr1  = bmrFor(sex, age, weight, height);
+  const bmi1  = weight / ((height / 100) ** 2);
+  const maint1 = bmr1 * activityFactor;
+
+  // Si hay perfil de segunda persona, promedia los dos
+  const p2 = state.profile2;
+  const hasPair = p2 && Number(p2.age) && Number(p2.weight) && Number(p2.height);
+
+  let totalMaintenance, bmi, mode, calories, macroShare;
+
+  if (hasPair) {
+    const sex2    = p2.sex === "male" ? "male" : "female";
+    const age2    = Number(p2.age);
+    const weight2 = Number(p2.weight);
+    const height2 = Number(p2.height);
+    const bmr2    = bmrFor(sex2, age2, weight2, height2);
+    const bmi2    = weight2 / ((height2 / 100) ** 2);
+    const maint2  = bmr2 * activityFactor;
+
+    totalMaintenance = maint1 + maint2;
+    bmi = (bmi1 + bmi2) / 2; // promedio IMC para determinar modo
+
+    const unsafe2 = age2 < 14 || age2 > 90 || weight2 < 35 || weight2 > 250 || height2 < 130 || height2 > 230;
+    if (unsafe || unsafe2) return { unsafe: true };
+  } else {
+    if (unsafe) return { unsafe: true, bmi: bmi1, bmr: Math.round(bmr1), maintenance: Math.round(maint1), mode: "maintenance", target: null };
+    totalMaintenance = maint1;
+    bmi = bmi1;
+  }
+
+  mode = "maintenance";
+  calories = totalMaintenance;
+  macroShare = { carbs: 0.45, proteins: 0.25, fats: 0.3 };
+  const fiber = [25, 30];
 
   if (bmi < 18.5) {
     mode = "surplus";
-    calories = maintenance + 250;
+    calories = totalMaintenance + (hasPair ? 500 : 250);
     macroShare = { carbs: 0.5, proteins: 0.2, fats: 0.3 };
   } else if (bmi >= 25) {
     mode = "deficit";
-    calories = maintenance - 300;
+    calories = totalMaintenance - (hasPair ? 600 : 300);
     macroShare = { carbs: 0.35, proteins: 0.3, fats: 0.35 };
   }
 
-  const baseMultiplier = BASE_PORTIONS[state.basePortion].multiplier * peopleMultiplier();
-  const caloriesRange = [Math.round((calories - 120) * baseMultiplier), Math.round((calories + 120) * baseMultiplier)];
-  const carbsBase = (calories * macroShare.carbs / 4) * baseMultiplier;
-  const proteinsBase = (calories * macroShare.proteins / 4) * baseMultiplier;
-  const fatsBase = (calories * macroShare.fats / 9) * baseMultiplier;
-  const fiberRange = fiber.map(value => Math.round(value * peopleMultiplier()));
+  const baseMultiplier = BASE_PORTIONS[state.basePortion].multiplier;
+  const caloriesRange  = [Math.round((calories - 150) * baseMultiplier), Math.round((calories + 150) * baseMultiplier)];
+  const carbsBase      = (calories * macroShare.carbs / 4) * baseMultiplier;
+  const proteinsBase   = (calories * macroShare.proteins / 4) * baseMultiplier;
+  const fatsBase       = (calories * macroShare.fats / 9) * baseMultiplier;
+  const fiberMult      = hasPair ? 2 : 1;
+  const fiberRange     = fiber.map(v => Math.round(v * fiberMult * baseMultiplier));
 
   return {
-    unsafe,
+    unsafe: false,
     bmi,
-    bmr: Math.round(bmr),
-    maintenance: Math.round(maintenance),
+    bmr:  Math.round(hasPair ? (bmr1 + bmrFor(p2?.sex === "male" ? "male" : "female", Number(p2?.age), Number(p2?.weight), Number(p2?.height))) : bmr1),
+    maintenance: Math.round(totalMaintenance),
     mode,
+    hasPair,
     target: {
       calories: caloriesRange,
-      carbs: [Math.round(carbsBase - 12), Math.round(carbsBase + 12)],
-      proteins: [Math.round(proteinsBase - 10), Math.round(proteinsBase + 10)],
-      fats: [Math.round(fatsBase - 6), Math.round(fatsBase + 6)],
-      fiber: fiberRange
+      carbs:    [Math.round(carbsBase - 15), Math.round(carbsBase + 15)],
+      proteins: [Math.round(proteinsBase - 12), Math.round(proteinsBase + 12)],
+      fats:     [Math.round(fatsBase - 8),  Math.round(fatsBase + 8)],
+      fiber:    fiberRange
     }
   };
 }
@@ -3454,11 +3525,10 @@ function renderProfileCalcBox() {
   const modeLabel = plan.mode === "surplus" ? "Superávit calórico" : plan.mode === "deficit" ? "Déficit calórico" : "Mantenimiento";
   box.style.display = "block";
   box.innerHTML = `
-    <strong>Plan Inteligente Activado ✅</strong>
-    <div>IMC: ${plan.bmi.toFixed(1)} · TMB: ${plan.bmr} kcal · Gasto estimado: ${plan.maintenance} kcal</div>
-    <div style="margin-top:6px;">Modo: <strong>${modeLabel}</strong></div>
+    <strong>Plan Inteligente Activado ✅${plan.hasPair ? " — Pareja" : ""}</strong>
+    <div>Gasto total estimado: ${plan.maintenance} kcal${plan.hasPair ? " (suma de los dos)" : ""} · Modo: <strong>${modeLabel}</strong></div>
     <div style="margin-top:6px;font-size:0.85rem;color:var(--muted);">
-      Objetivo: ${plan.target.calories[0]}–${plan.target.calories[1]} kcal ·
+      Objetivo diario: ${plan.target.calories[0]}–${plan.target.calories[1]} kcal ·
       Prot ${plan.target.proteins[0]}–${plan.target.proteins[1]} g ·
       Carb ${plan.target.carbs[0]}–${plan.target.carbs[1]} g ·
       Grasas ${plan.target.fats[0]}–${plan.target.fats[1]} g
@@ -3466,7 +3536,8 @@ function renderProfileCalcBox() {
     <button class="tiny-btn" id="clearProfileLink" style="margin-top:8px;border:none;background:transparent;color:var(--accent);cursor:pointer;padding:0;">Borrar perfil</button>
   `;
   document.getElementById("clearProfileLink").addEventListener("click", () => {
-    state.profile = { sex: "female", age: "", weight: "", height: "" };
+    state.profile  = { sex: "female", age: "", weight: "", height: "" };
+    state.profile2 = null;
     saveState();
     renderProfileCalcBox();
     render();
@@ -3475,11 +3546,29 @@ function renderProfileCalcBox() {
 }
 
 openProfileBtn.addEventListener("click", () => {
-  document.getElementById("modalSex").value      = state.profile?.sex      || "female";
-  document.getElementById("modalAge").value      = state.profile?.age      || "";
-  document.getElementById("modalWeight").value   = state.profile?.weight   || "";
-  document.getElementById("modalHeight").value   = state.profile?.height   || "";
-  document.getElementById("modalActivity").value = state.activity          || "medio";
+  const isPair = (state.people || 1) === 2;
+
+  // Título y subtítulo dinámico
+  document.getElementById("profileModalTitle").textContent = isPair ? "👥 Perfil de la pareja" : "👤 Tu Perfil Nutricional";
+  document.getElementById("profileModalSubtitle").textContent = isPair
+    ? "Completá los datos de cada persona. Calculamos el promedio de sus metabolismos para ajustar la meta compartida."
+    : "Completá tus datos y calculamos tu metabolismo basal con la fórmula de Harris-Benedict para sugerirte una meta exacta.";
+  document.getElementById("person1Label").textContent = isPair ? "Persona 1" : "Tu perfil";
+  document.getElementById("profilePerson2Block").style.display = isPair ? "" : "none";
+
+  // Carga perfil persona 1
+  document.getElementById("modalSex").value    = state.profile?.sex    || "female";
+  document.getElementById("modalAge").value    = state.profile?.age    || "";
+  document.getElementById("modalWeight").value = state.profile?.weight || "";
+  document.getElementById("modalHeight").value = state.profile?.height || "";
+
+  // Carga perfil persona 2 si existe
+  document.getElementById("modalSex2").value    = state.profile2?.sex    || "female";
+  document.getElementById("modalAge2").value    = state.profile2?.age    || "";
+  document.getElementById("modalWeight2").value = state.profile2?.weight || "";
+  document.getElementById("modalHeight2").value = state.profile2?.height || "";
+
+  document.getElementById("modalActivity").value = state.activity || "medio";
   suggestionBox.style.display = "none";
   calculateBtn.textContent = "Calcular Meta";
   profileModal.classList.add("open");
@@ -3488,50 +3577,106 @@ openProfileBtn.addEventListener("click", () => {
 closeProfileBtn.addEventListener("click", () => profileModal.classList.remove("open"));
 profileModal.addEventListener("click", e => { if (e.target === profileModal) profileModal.classList.remove("open"); });
 
-calculateBtn.addEventListener("click", () => {
-  const sex      = document.getElementById("modalSex").value;
-  const age      = Number(document.getElementById("modalAge").value);
-  const weight   = Number(document.getElementById("modalWeight").value);
-  const height   = Number(document.getElementById("modalHeight").value);
-  const activity = document.getElementById("modalActivity").value;
-
-  if (!age || !weight || !height) { showToast("Completá todos los datos."); return; }
-  if (age < 14 || age > 90 || weight < 35 || weight > 250 || height < 130 || height > 230) {
-    showToast("Valores fuera de rango. Revisá los datos.");
-    return;
-  }
-
-  const bmr = sex === "male"
+function calcBMR(sex, age, weight, height) {
+  return sex === "male"
     ? 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)
     : 447.6  + (9.2  * weight) + (3.1 * height) - (4.3 * age);
-  const actFactor  = activity === "alto" ? 1.55 : activity === "medio" ? 1.375 : 1.2;
-  const maintenance = Math.round(bmr * actFactor);
-  const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+}
 
-  let targetCalories, modeText, assignedGoal;
-  if (bmi < 18.5) {
-    targetCalories = maintenance + 250; modeText = "superávit calórico para ganancia muscular"; assignedGoal = "cuerpo";
-  } else if (bmi >= 25) {
-    targetCalories = maintenance - 300; modeText = "déficit calórico para descenso de grasa";   assignedGoal = "control";
-  } else {
-    targetCalories = maintenance;       modeText = "mantenimiento para estabilizar peso";        assignedGoal = "energia";
+function bmiMode(bmi) {
+  if (bmi < 18.5) return { mode: "surplus",     delta: +250, modeText: "superávit calórico para ganancia muscular", goal: "cuerpo"  };
+  if (bmi >= 25)  return { mode: "deficit",      delta: -300, modeText: "déficit calórico para descenso de grasa",   goal: "control" };
+  return              { mode: "maintenance",  delta: 0,    modeText: "mantenimiento para estabilizar peso",        goal: "energia" };
+}
+
+calculateBtn.addEventListener("click", () => {
+  const isPair   = (state.people || 1) === 2;
+  const activity = document.getElementById("modalActivity").value;
+  const actFactor = activity === "alto" ? 1.55 : activity === "medio" ? 1.375 : 1.2;
+
+  // Persona 1
+  const sex1    = document.getElementById("modalSex").value;
+  const age1    = Number(document.getElementById("modalAge").value);
+  const weight1 = Number(document.getElementById("modalWeight").value);
+  const height1 = Number(document.getElementById("modalHeight").value);
+
+  if (!age1 || !weight1 || !height1) { showToast("Completá los datos de la Persona 1."); return; }
+  if (age1 < 14 || age1 > 90 || weight1 < 35 || weight1 > 250 || height1 < 130 || height1 > 230) {
+    showToast("Valores fuera de rango en Persona 1."); return;
   }
 
-  const totalCal = targetCalories * (state.people || 1);
+  const bmr1  = calcBMR(sex1, age1, weight1, height1);
+  const maint1 = bmr1 * actFactor;
+  const bmi1  = weight1 / ((height1 / 100) ** 2);
+  const res1  = bmiMode(bmi1);
+  const target1 = maint1 + res1.delta;
+
+  let avgTarget, avgBmi, assignedGoal, summaryHTML;
+
+  if (isPair) {
+    const sex2    = document.getElementById("modalSex2").value;
+    const age2    = Number(document.getElementById("modalAge2").value);
+    const weight2 = Number(document.getElementById("modalWeight2").value);
+    const height2 = Number(document.getElementById("modalHeight2").value);
+
+    if (!age2 || !weight2 || !height2) { showToast("Completá los datos de la Persona 2."); return; }
+    if (age2 < 14 || age2 > 90 || weight2 < 35 || weight2 > 250 || height2 < 130 || height2 > 230) {
+      showToast("Valores fuera de rango en Persona 2."); return;
+    }
+
+    const bmr2   = calcBMR(sex2, age2, weight2, height2);
+    const maint2 = bmr2 * actFactor;
+    const bmi2   = weight2 / ((height2 / 100) ** 2);
+    const res2   = bmiMode(bmi2);
+    const target2 = maint2 + res2.delta;
+
+    avgTarget = Math.round(target1 + target2);
+    avgBmi    = ((bmi1 + bmi2) / 2).toFixed(1);
+    // Objetivo: el más restrictivo si difieren, para no perjudicar a ninguno
+    assignedGoal = (res1.goal === res2.goal) ? res1.goal : "pareja";
+
+    summaryHTML = `
+      <strong style="color:var(--accent-strong);font-size:1.05rem;">Meta combinada para los dos</strong><br>
+      <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="font-size:0.88rem;">
+          <strong>Persona 1</strong> — IMC ${bmi1.toFixed(1)}<br>
+          <span style="color:var(--muted);">${Math.round(target1)} kcal/día · ${res1.modeText}</span>
+        </div>
+        <div style="font-size:0.88rem;">
+          <strong>Persona 2</strong> — IMC ${bmi2.toFixed(1)}<br>
+          <span style="color:var(--muted);">${Math.round(target2)} kcal/día · ${res2.modeText}</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:0.95rem;">
+        🍽️ Total diario para los dos: <strong>${avgTarget} kcal</strong>
+      </div>`;
+  } else {
+    avgTarget    = Math.round(target1);
+    avgBmi       = bmi1.toFixed(1);
+    assignedGoal = res1.goal;
+    summaryHTML  = `
+      <strong style="color:var(--accent-strong);font-size:1.05rem;">Tu IMC es ${avgBmi}.</strong><br>
+      <span style="font-size:0.95rem;color:var(--ink);">
+        Meta recomendada: <strong>${avgTarget} kcal/día</strong>. ${res1.modeText}.
+      </span>`;
+  }
 
   if (calculateBtn.textContent === "Calcular Meta") {
     suggestionBox.style.display = "block";
-    suggestionBox.innerHTML = `
-      <strong style="color:var(--accent-strong);font-size:1.05rem;">Tu IMC es ${bmi}.</strong><br>
-      <span style="font-size:0.95rem;color:var(--ink);">
-        Meta recomendada: <strong>${targetCalories} kcal/día por persona</strong>
-        ${state.people === 2 ? `→ <strong>${totalCal} kcal en total</strong> para los dos` : ""}.
-        <br>Modo: ${modeText}.
-      </span>
-    `;
+    suggestionBox.innerHTML = summaryHTML;
     calculateBtn.textContent = "Aplicar esta meta";
   } else {
-    state.profile  = { sex, age, weight, height };
+    state.profile  = { sex: sex1, age: age1, weight: weight1, height: height1 };
+    if (isPair) {
+      state.profile2 = {
+        sex:    document.getElementById("modalSex2").value,
+        age:    Number(document.getElementById("modalAge2").value),
+        weight: Number(document.getElementById("modalWeight2").value),
+        height: Number(document.getElementById("modalHeight2").value)
+      };
+    } else {
+      state.profile2 = null;
+    }
     state.activity = activity;
     state.goal     = assignedGoal;
     saveState();
@@ -3544,11 +3689,27 @@ calculateBtn.addEventListener("click", () => {
 
 renderProfileCalcBox();
 document.getElementById("resetBtn").addEventListener("click", () => {
-  state = { goal: "pareja", activity: "bajo", basePortion: "normal", plan: createDefaultPlan(), summaryMode: "day", selectedDay: "monday", activeDays: {}, people: 1, profile: { sex: "female", age: "", weight: "", height: "" } };
+  const savedProfile  = state.profile;
+  const savedActivity = state.activity;
+  const savedGoal     = state.goal;
+  const savedPortion  = state.basePortion;
+  const savedPeople   = state.people;
+  state = {
+    goal: savedGoal,
+    activity: savedActivity,
+    basePortion: savedPortion,
+    plan: createDefaultPlan(),
+    summaryMode: "day",
+    selectedDay: "monday",
+    activeDays: {},
+    people: savedPeople,
+    profile: savedProfile
+  };
   customMeals = {};
   saveCustomMeals(customMeals);
   saveState();
   render();
+  showToast("✓ Semana reiniciada. Tu perfil se conservó.");
 });
 
 // ── Weeks management ──────────────────────────────────────
