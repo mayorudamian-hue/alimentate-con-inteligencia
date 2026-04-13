@@ -636,18 +636,66 @@
     padding: 10px 12px;
     border-radius: 16px;
     background: rgba(46, 36, 29, 0.04);
+    transition: background 0.2s;
   }
+
+  .day-total.cal-ok   { background: rgba(106, 143, 78, 0.10); }
+  .day-total.cal-warn { background: rgba(241, 182, 76, 0.15); }
+  .day-total.cal-over { background: rgba(203, 92, 56, 0.12); }
 
   .day-total .total-kcal {
     font-weight: 800;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
+
+  .cal-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  .cal-badge.ok   { background: rgba(106,143,78,0.18); color: var(--leaf); }
+  .cal-badge.warn { background: rgba(241,182,76,0.25); color: #8a6420; }
+  .cal-badge.over { background: rgba(203,92,56,0.18); color: var(--accent-strong); }
 
   .day-total .total-macros {
     margin-top: 4px;
     color: var(--muted);
     font-size: 0.83rem;
     line-height: 1.45;
+  }
+
+  /* ── Tag filter bar ── */
+  .tag-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 0 4px;
+  }
+
+  .tag-filter-btn {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 4px 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .tag-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .tag-filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
   }
 
   .sidebar {
@@ -1966,6 +2014,7 @@
             <strong>Tarjetas rápidas</strong>
             <button class="preset-btn" id="addAllPresetsBtn">Agregar todas</button>
           </div>
+          <div class="tag-filter-bar" id="tagFilterBar"></div>
           <div class="preset-grid" id="presetIngredients"></div>
         </div>
 
@@ -2890,6 +2939,26 @@ function dayTotals(dayId) {
   }, { calories: 0, carbs: 0, proteins: 0, fats: 0, fiber: 0 });
 }
 
+function calStatus(calories, dayId) {
+  if (calories === 0) return "";
+  const target = targetForDay(dayId);
+  const [lo, hi] = target.calories;
+  if (calories < lo * 0.85) return "";          // muy poco — sin color aún
+  if (calories <= hi * 1.05) return "cal-ok";   // dentro del rango
+  if (calories <= hi * 1.2)  return "cal-warn"; // levemente por encima
+  return "cal-over";                             // bastante por encima
+}
+
+function calBadge(calories, dayId) {
+  if (calories === 0) return "";
+  const target = targetForDay(dayId);
+  const [lo, hi] = target.calories;
+  if (calories < lo * 0.85) return "";
+  if (calories <= hi * 1.05) return `<span class="cal-badge ok">✓ En rango</span>`;
+  if (calories <= hi * 1.2)  return `<span class="cal-badge warn">↑ Un poco alto</span>`;
+  return `<span class="cal-badge over">↑↑ Por encima</span>`;
+}
+
 function weeklyTotals() {
   return DAYS.reduce((acc, day) => {
     const totals = dayTotals(day.id);
@@ -3206,8 +3275,8 @@ function renderPlanner() {
             </section>
           `;
         }).join("")}
-        <div class="day-total">
-          <div class="total-kcal">${totals.calories} kcal aprox.</div>
+        <div class="day-total ${calStatus(totals.calories, day.id)}">
+          <div class="total-kcal">${totals.calories} kcal ${calBadge(totals.calories, day.id)}</div>
           <div class="total-macros">Carbohidratos: ${totals.carbs} g | Proteinas: ${totals.proteins} g | Grasas: ${totals.fats} g | Fibra: ${totals.fiber} g</div>
           ${isActiveDay ? `<div style="margin-top:6px;font-size:0.8rem;color:#b85c1c;font-weight:700;">⚡ Objetivo día activo: ${ACTIVE_DAY_TARGET.calories[0]}–${ACTIVE_DAY_TARGET.calories[1]} kcal · Carbos: ${ACTIVE_DAY_TARGET.carbs[0]}–${ACTIVE_DAY_TARGET.carbs[1]} g · Fibra: ${ACTIVE_DAY_TARGET.fiber[0]}–${ACTIVE_DAY_TARGET.fiber[1]} g</div>` : ""}
         </div>
@@ -3959,6 +4028,7 @@ function saveCustomMeals(data) {
 let ingredients = loadIngredients();
 let customMeals = loadCustomMeals();
 let dragIngId = null;
+let activeTagFilter = null; // tag string or null
 
 function customMealKey(dayId, mealTypeId) {
   return `${dayId}-${mealTypeId}`;
@@ -4799,29 +4869,61 @@ function renderIngredients() {
 function renderPresetIngredients() {
   const list = document.getElementById("presetIngredients");
   const addAllBtn = document.getElementById("addAllPresetsBtn");
+  const filterBar = document.getElementById("tagFilterBar");
   if (!list) return;
-  const missingPresets = PRESET_INGREDIENTS.filter(item => !ingredientExistsByName(item.name));
 
-  if (addAllBtn) {
-    addAllBtn.style.display = missingPresets.length ? "" : "none";
+  const missingPresets = PRESET_INGREDIENTS.filter(item => !ingredientExistsByName(item.name));
+  if (addAllBtn) addAllBtn.style.display = missingPresets.length ? "" : "none";
+
+  // Build full item list (presets + manual ingredients)
+  const presetNames = new Set(PRESET_INGREDIENTS.map(item => item.name.trim().toLowerCase()));
+  const allItems = [
+    ...PRESET_INGREDIENTS.map(item => ({ ...item, source: "preset" })),
+    ...ingredients
+      .filter(ing => !presetNames.has(ing.name.trim().toLowerCase()))
+      .map(ing => ({ ...ing, source: "manual" }))
+  ];
+
+  // Collect all unique semantic tags from items (exclude internal system tags)
+  const systemTags = new Set(["balanced", "highProtein", "highCarb", "lightCarb"]);
+  const allTags = [...new Set(
+    allItems.flatMap(item => (item.tags || []).filter(t => !systemTags.has(t)))
+  )].sort();
+
+  // Render tag filter bar
+  if (filterBar) {
+    filterBar.innerHTML = [
+      `<button class="tag-filter-btn ${activeTagFilter === null ? "active" : ""}" data-tag="">Todos</button>`,
+      ...allTags.map(tag =>
+        `<button class="tag-filter-btn ${activeTagFilter === tag ? "active" : ""}" data-tag="${tag}">${tag}</button>`
+      )
+    ].join("");
+
+    filterBar.querySelectorAll(".tag-filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeTagFilter = btn.dataset.tag || null;
+        renderPresetIngredients();
+      });
+    });
   }
 
-  const categories = new Map();
-  const presetNames = new Set(PRESET_INGREDIENTS.map(item => item.name.trim().toLowerCase()));
+  // Filter items by active tag
+  const filtered = activeTagFilter
+    ? allItems.filter(item => (item.tags || []).includes(activeTagFilter))
+    : allItems;
 
-  PRESET_INGREDIENTS.forEach(item => {
+  // Group by category
+  const categories = new Map();
+  filtered.forEach(item => {
     const category = presetCategory(item);
     if (!categories.has(category)) categories.set(category, []);
-    categories.get(category).push({ ...item, source: "preset" });
+    categories.get(category).push(item);
   });
 
-  ingredients
-    .filter(ing => !presetNames.has(ing.name.trim().toLowerCase()))
-    .forEach(ing => {
-      const category = presetCategory(ing);
-      if (!categories.has(category)) categories.set(category, []);
-      categories.get(category).push({ ...ing, source: "manual" });
-    });
+  if (!categories.size) {
+    list.innerHTML = `<p style="color:var(--muted);font-size:0.82rem;padding:12px 0;text-align:center;">Sin resultados para "<strong>${activeTagFilter}</strong>".</p>`;
+    return;
+  }
 
   list.innerHTML = Array.from(categories.entries()).map(([category, items], index) => `
     <details class="preset-category" ${index < 2 ? "open" : ""}>
@@ -4833,6 +4935,7 @@ function renderPresetIngredients() {
         ${items.map(item => {
           const exists = ingredientExistsByName(item.name);
           const isManual = item.source === "manual";
+          const semanticTags = (item.tags || []).filter(t => !systemTags.has(t));
           return `
           <div class="preset-card">
             <div class="preset-top">
@@ -4842,6 +4945,12 @@ function renderPresetIngredients() {
             <div class="preset-meta">
               ${item.qty} · ${item.calories} kcal · C:${item.carbs}g · P:${item.proteins}g · G:${item.fats}g · F:${item.fiber}g
             </div>
+            ${semanticTags.length ? `
+              <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;">
+                ${semanticTags.slice(0, 4).map(t => `
+                  <span style="font-size:0.68rem;background:rgba(106,143,78,0.12);color:var(--leaf);border-radius:999px;padding:2px 8px;font-weight:700;cursor:pointer;"
+                        data-quick-tag="${t}">${t}</span>`).join("")}
+              </div>` : ""}
             <div class="preset-actions">
               <small style="color:var(--muted);">${isManual ? "Creado por vos" : exists ? "Ya está en despensa" : "Lista para agregar"}</small>
               <div class="preset-action-buttons">
@@ -4849,12 +4958,19 @@ function renderPresetIngredients() {
                 ${isManual ? "" : `<button class="preset-btn" data-add-preset="${item.name}" ${exists ? "disabled" : ""}>${exists ? "Agregada" : "Agregar"}</button>`}
               </div>
             </div>
-          </div>
-        `;
+          </div>`;
         }).join("")}
       </div>
     </details>
   `).join("");
+
+  // Click on tag chip → set filter
+  list.querySelectorAll("[data-quick-tag]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      activeTagFilter = chip.dataset.quickTag;
+      renderPresetIngredients();
+    });
+  });
 
   list.querySelectorAll("[data-add-preset]").forEach(btn => {
     btn.addEventListener("click", () => {

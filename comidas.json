@@ -2,7 +2,51 @@
   "_info": {
     "descripcion": "Base de datos de comidas del Planificador Semanal. Cada comida puede pertenecer a una o más categorías (mealTypes). Los perfiles nutricionales definen los rangos diarios orientativos para armar la semana automáticamente.",
     "version": "1.0",
-    "unidades": "calorías en kcal, macros en gramos (g) por porción indicada"
+    "unidades": "calorías en kcal, macros en gramos (g) por porción indicada",
+    "etiquetasSemanticas": [
+      "a la plancha",
+      "arroz",
+      "asado",
+      "atún",
+      "ave",
+      "bajo en carbos",
+      "carne roja",
+      "cerdo",
+      "clásico",
+      "clásico argentino",
+      "completo",
+      "con frutas",
+      "con palta",
+      "con verduras",
+      "contundente",
+      "fin de semana",
+      "guiso",
+      "hamburguesa",
+      "horno",
+      "huevo",
+      "indulgente",
+      "integral",
+      "legumbres",
+      "liviano",
+      "merluza",
+      "omega-3",
+      "pasta",
+      "pescado",
+      "picante",
+      "polenta",
+      "pollo",
+      "proteico",
+      "rebozado",
+      "rápido",
+      "sin carne",
+      "sin cocción",
+      "sin gluten posible",
+      "sin pasta",
+      "sopa",
+      "tarta",
+      "vegano",
+      "vegetariano"
+    ]
   },
   "perfilesNutricionales": {
     "_descripcion": "Rangos diarios orientativos por objetivo. Se usan para elegir las comidas que mejor se ajusten al perfil del usuario al armar la semana automática.",
@@ -238,7 +282,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "rápido",
+          "proteico",
+          "integral"
         ],
         "balance": "Tiene carbohidrato, proteína y grasa saludable si sumás unas semillas o un chorrito de oliva.",
         "ingredientes": [
@@ -261,7 +308,11 @@
         "fibra": 6,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "integral",
+          "proteico",
+          "con frutas"
         ],
         "balance": "Combina cereal, lácteo, fruta y grasa buena.",
         "ingredientes": [
@@ -285,7 +336,10 @@
         "grasas": 11,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "con frutas"
         ],
         "balance": "Suma carbohidrato, proteína moderada y fruta para vitaminas.",
         "ingredientes": [
@@ -309,7 +363,10 @@
         "fibra": 5,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "proteico",
+          "sin gluten posible",
+          "con palta"
         ],
         "balance": "Ideal cuando querés más saciedad sin exagerar harinas.",
         "ingredientes": [
@@ -333,7 +390,11 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "highProtein"
+          "highProtein",
+          "rápido",
+          "proteico",
+          "sin cocción",
+          "con frutas"
         ],
         "balance": "Mezcla energía rápida, algo de proteína y grasas saludables.",
         "ingredientes": [
@@ -357,7 +418,10 @@
         "grasas": 14,
         "fibra": 1,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "indulgente",
+          "rápido"
         ],
         "balance": "Rico en carbohidratos. Complementar con fruta o yogur si la mañana es larga.",
         "ingredientes": [
@@ -381,7 +445,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "clásico argentino",
+          "proteico",
+          "rápido"
         ],
         "balance": "Muy equilibrado para una mañana normal.",
         "ingredientes": [
@@ -406,7 +473,10 @@
         "fibra": 2,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "clásico argentino",
+          "indulgente",
+          "con frutas"
         ],
         "balance": "Alto en carbs. El yogur y la fruta mejoran bastante el perfil general.",
         "ingredientes": [
@@ -429,7 +499,10 @@
         "fibra": 6,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "sin cocción",
+          "liviano",
+          "con frutas"
         ],
         "balance": "Buena variedad de vitaminas y fibra. Liviano y fácil de armar.",
         "ingredientes": [
@@ -454,7 +527,10 @@
         "fibra": 7,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "proteico",
+          "con palta",
+          "integral"
         ],
         "balance": "Excelente balance: proteína del huevo, grasa buena de la palta y carbohidrato del pan.",
         "ingredientes": [
@@ -478,7 +554,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "liviano",
+          "integral"
         ],
         "balance": "Liviano y funcional. Sumar una fruta de estación mejora vitaminas y saciedad.",
         "ingredientes": [
@@ -502,7 +581,11 @@
         "fibra": 7,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "integral",
+          "sin cocción",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "Buen aporte de fibra y carbohidrato lento. La fruta suma vitaminas y hace más saciante.",
         "ingredientes": [
@@ -525,7 +608,10 @@
         "grasas": 10,
         "fibra": 3,
         "tags": [
-          "balanced"
+          "balanced",
+          "rápido",
+          "liviano",
+          "vegetariano"
         ],
         "balance": "Simple y equilibrado. Fácil de preparar cualquier mañana.",
         "ingredientes": [
@@ -549,7 +635,10 @@
         "grasas": 8,
         "fibra": 2,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "indulgente",
+          "rápido"
         ],
         "balance": "Alto en carbohidratos simples. Rico para una mañana tranquila, pero no todos los días.",
         "ingredientes": [
@@ -571,7 +660,10 @@
         "grasas": 14,
         "fibra": 1,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "indulgente",
+          "fin de semana"
         ],
         "balance": "Más indulgente. Un domingo está bien. Compensar con un almuerzo más completo.",
         "ingredientes": [
@@ -594,7 +686,11 @@
         "fibra": 6,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "integral",
+          "vegetariano",
+          "con frutas"
         ],
         "balance": "La granola aporta carbohidrato lento y fibra, el yogur suma proteína y probióticos.",
         "ingredientes": [
@@ -620,7 +716,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "proteico",
+          "vegetariano",
+          "con verduras"
         ],
         "balance": "Proteína completa del huevo, hierro de la espinaca y carbohidrato del pan.",
         "ingredientes": [
@@ -645,7 +744,11 @@
         "fibra": 9,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "integral",
+          "vegetariano",
+          "con frutas",
+          "sin gluten posible"
         ],
         "balance": "La chía y la avena son una combinación de fibra soluble e insoluble excelente.",
         "ingredientes": [
@@ -670,7 +773,11 @@
         "fibra": 6,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "proteico",
+          "pescado",
+          "con palta",
+          "omega-3"
         ],
         "balance": "El salmón aporta omega-3 y proteína de alta calidad. La palta completa con grasas buenas.",
         "ingredientes": [
@@ -696,7 +803,11 @@
         "tags": [
           "lightCarb",
           "highProtein",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "vegetariano",
+          "con frutas"
         ],
         "balance": "El queso cottage es muy alto en proteína con poca grasa. Las frutas aportan vitaminas y fibra.",
         "ingredientes": [
@@ -725,7 +836,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pollo",
+          "ave",
+          "completo",
+          "clásico"
         ],
         "balance": "Cumple perfecto con verduras, proteína y carbohidrato.",
         "ingredientes": [
@@ -751,7 +866,10 @@
         "fibra": 6,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "sin pasta",
+          "clásico"
         ],
         "balance": "Muy completo si mantenés abundantes las verduras.",
         "ingredientes": [
@@ -776,7 +894,11 @@
         "fibra": 12,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "legumbres",
+          "vegetariano",
+          "guiso",
+          "sin carne"
         ],
         "balance": "Aporta fibra, hierro y bastante saciedad.",
         "ingredientes": [
@@ -803,7 +925,11 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "atún",
+          "rápido",
+          "sin cocción"
         ],
         "balance": "Bastante equilibrado si la mayonesa es medida y sumás vegetales.",
         "ingredientes": [
@@ -829,7 +955,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "ave",
+          "con verduras"
         ],
         "balance": "Más alto en carbohidratos, ideal para días de mucha actividad.",
         "ingredientes": [
@@ -847,14 +976,17 @@
         "id": "alm-milanesa-ensalada",
         "nombre": "Milanesa al horno + ensalada + pan",
         "detalle": "El clásico argentino en versión más liviana, horneada en lugar de frita.",
-        "calorias": 580,
+        "calorias": 484,
         "carbohidratos": 36,
         "proteinas": 40,
         "grasas": 20,
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "clásico argentino",
+          "rebozado"
         ],
         "balance": "Alta proteína. Reducir el pan y cargar más ensalada mejora el balance.",
         "ingredientes": [
@@ -873,14 +1005,18 @@
         "id": "alm-guiso-garbanzos",
         "nombre": "Guiso de garbanzos con verduras",
         "detalle": "Plato de cuchara lleno de fibra, hierro y proteína vegetal.",
-        "calorias": 530,
+        "calorias": 442,
         "carbohidratos": 55,
         "proteinas": 24,
         "grasas": 14,
         "fibra": 14,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "legumbres",
+          "vegetariano",
+          "guiso",
+          "sin carne"
         ],
         "balance": "Muy saciante. Buena opción en invierno para platos calientes completos.",
         "ingredientes": [
@@ -907,7 +1043,10 @@
         "fibra": 11,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "guiso",
+          "legumbres"
         ],
         "balance": "Combinación completa de legumbres, cereal y verdura.",
         "ingredientes": [
@@ -925,13 +1064,16 @@
         "id": "alm-carbonada",
         "nombre": "Carbonada criolla con arroz",
         "detalle": "Guiso dulce-salado típico argentino con zapallo, durazno y carne.",
-        "calorias": 545,
+        "calorias": 464,
         "carbohidratos": 50,
         "proteinas": 30,
         "grasas": 16,
         "fibra": 5,
         "tags": [
-          "balanced"
+          "balanced",
+          "carne roja",
+          "clásico argentino",
+          "guiso"
         ],
         "balance": "Muy completo. La fruta suma vitaminas y le da un sabor único.",
         "ingredientes": [
@@ -950,14 +1092,17 @@
         "id": "alm-albondigas-pure",
         "nombre": "Albóndigas en salsa + puré de papa",
         "detalle": "Clásico reconfortante de cocina casera argentina.",
-        "calorias": 575,
+        "calorias": 484,
         "carbohidratos": 42,
         "proteinas": 34,
         "grasas": 20,
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "clásico argentino",
+          "contundente"
         ],
         "balance": "Bien balanceado. Sumarle ensalada verde mejora la proporción vegetal.",
         "ingredientes": [
@@ -984,7 +1129,10 @@
         "fibra": 4,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "carne roja",
+          "clásico"
         ],
         "balance": "Alto en carbohidratos. Bueno para días activos. Cuidar el tamaño de la porción de carne.",
         "ingredientes": [
@@ -1004,7 +1152,7 @@
         "id": "alm-carne-pure-papa",
         "nombre": "Carne magra + puré de papa + ensalada",
         "detalle": "Variante del puré con papa en lugar de calabaza. Más contundente y familiar.",
-        "calorias": 565,
+        "calorias": 456,
         "carbohidratos": 44,
         "proteinas": 34,
         "grasas": 16,
@@ -1038,7 +1186,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pollo",
+          "ave",
+          "arroz",
+          "rápido"
         ],
         "balance": "Muy equilibrado. El salteado conserva mejor los nutrientes de las verduras.",
         "ingredientes": [
@@ -1065,7 +1217,11 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "tarta",
+          "horno"
         ],
         "balance": "Proteína del pollo bien distribuida. La ensalada es clave para equilibrar la grasa de la masa.",
         "ingredientes": [
@@ -1085,13 +1241,17 @@
         "id": "alm-asado-ensalada",
         "nombre": "Asado familiar + ensalada + pan",
         "detalle": "El almuerzo dominical argentino por excelencia. Con cortes variados y buena ensalada.",
-        "calorias": 620,
+        "calorias": 518,
         "carbohidratos": 20,
         "proteinas": 42,
         "grasas": 30,
         "fibra": 3,
         "tags": [
-          "highProtein"
+          "highProtein",
+          "asado",
+          "carne roja",
+          "clásico argentino",
+          "fin de semana"
         ],
         "balance": "Alto en proteína y grasa. La ensalada abundante ayuda a equilibrar. Porción moderada de carne.",
         "ingredientes": [
@@ -1117,7 +1277,9 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "clásico argentino",
+          "horno"
         ],
         "balance": "Proteína y carbohidrato presentes. Clave que la ensalada sea abundante.",
         "ingredientes": [
@@ -1142,7 +1304,11 @@
         "grasas": 22,
         "fibra": 5,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "tarta",
+          "horno",
+          "con verduras"
         ],
         "balance": "Carbohidrato y proteína moderados. La ensalada suma fibra y vitaminas.",
         "ingredientes": [
@@ -1170,7 +1336,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pescado",
+          "atún",
+          "arroz",
+          "rápido"
         ],
         "balance": "El atún suma proteína de calidad con poca grasa. Muy funcional.",
         "ingredientes": [
@@ -1189,7 +1359,7 @@
         "id": "alm-filet-merluza",
         "nombre": "Filet de merluza al horno + papa + ensalada",
         "detalle": "La merluza es el pescado más popular en Argentina. Proteína magra de excelente calidad.",
-        "calorias": 460,
+        "calorias": 372,
         "carbohidratos": 30,
         "proteinas": 36,
         "grasas": 12,
@@ -1197,7 +1367,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "merluza",
+          "horno",
+          "proteico"
         ],
         "balance": "Muy completo. Alta proteína, carbohidrato moderado y grasa baja.",
         "ingredientes": [
@@ -1224,7 +1398,12 @@
         "fibra": 7,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "sin gluten posible",
+          "con verduras",
+          "proteico"
         ],
         "balance": "Muy equilibrado. La quinoa aporta proteína vegetal y aminoácidos esenciales.",
         "ingredientes": [
@@ -1244,7 +1423,7 @@
         "id": "alm-bife-lomo-calabaza",
         "nombre": "Bife de lomo + calabaza asada + ensalada",
         "detalle": "El lomo es uno de los cortes más magros de la carne argentina. Sabroso y nutritivo.",
-        "calorias": 420,
+        "calorias": 336,
         "carbohidratos": 25,
         "proteinas": 32,
         "grasas": 12,
@@ -1252,7 +1431,10 @@
         "tags": [
           "balanced",
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "sin pasta",
+          "proteico"
         ],
         "balance": "Alta proteína con buen hierro. La calabaza suma carbohidrato y betacaroteno.",
         "ingredientes": [
@@ -1279,7 +1461,11 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "clásico argentino",
+          "rebozado",
+          "contundente"
         ],
         "balance": "Alta en calorías. Sumar una ensalada verde y reducir el puré ayuda a equilibrar.",
         "ingredientes": [
@@ -1305,7 +1491,10 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "sin pasta",
+          "liviano"
         ],
         "balance": "Muy alto en proteína y grasa. El lomo es magro pero el dorado suma grasas. Ensalada abundante.",
         "ingredientes": [
@@ -1332,7 +1521,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "clásico argentino",
+          "huevo",
+          "rápido"
         ],
         "balance": "Alto en grasas por el freído de la papa. Versión al horno reduce calorías notablemente.",
         "ingredientes": [
@@ -1359,7 +1551,11 @@
         "fibra": 12,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "legumbres",
+          "guiso",
+          "contundente"
         ],
         "balance": "Las lentejas aportan proteína vegetal y fibra. El chorizo suma sabor y grasa. Porciones moderadas.",
         "ingredientes": [
@@ -1385,7 +1581,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "clásico argentino",
+          "horno"
         ],
         "balance": "Buena combinación de carbohidrato y proteína. El queso gratinado suma grasa sabrosa.",
         "ingredientes": [
@@ -1412,7 +1611,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "carne roja",
+          "guiso",
+          "contundente"
         ],
         "balance": "Combinación perfecta de legumbres, cereal y carne. Saciante y nutritivo.",
         "ingredientes": [
@@ -1438,7 +1641,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "carne roja",
+          "pasta",
+          "clásico argentino"
         ],
         "balance": "Alto en carbohidratos. Ideal para días activos o post-entrenamiento. Porción de carne moderada.",
         "ingredientes": [
@@ -1464,7 +1670,11 @@
         "fibra": 6,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "horno",
+          "con verduras"
         ],
         "balance": "Excelente proporción proteína-carbohidrato. La calabaza suma fibra y betacaroteno.",
         "ingredientes": [
@@ -1491,7 +1701,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "con verduras",
+          "horno"
         ],
         "balance": "Buena proporción de proteína vegetal y animal. El zapallito aporta vitaminas y agua.",
         "ingredientes": [
@@ -1517,7 +1730,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "clásico argentino",
+          "contundente"
         ],
         "balance": "Muy calórico. Mejor para días de mucha actividad o como comida del domingo ocasional.",
         "ingredientes": [
@@ -1542,7 +1758,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "clásico argentino",
+          "con verduras"
         ],
         "balance": "Excelente combinación de proteína y verduras. La salsa criolla suma vitaminas.",
         "ingredientes": [
@@ -1569,7 +1788,11 @@
         "tags": [
           "balanced",
           "highCarb",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "clásico argentino",
+          "arroz"
         ],
         "balance": "Muy equilibrado. El pollo sin piel reduce la grasa y el arroz aporta energía sostenida.",
         "ingredientes": [
@@ -1596,7 +1819,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "a la plancha",
+          "proteico"
         ],
         "balance": "Muy alta en proteína. El puré de calabaza aporta carbohidrato moderado y vitamina A.",
         "ingredientes": [
@@ -1621,7 +1847,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "carne roja",
+          "horno"
         ],
         "balance": "Alto en carbohidratos. La espinaca suma hierro y fibra. Porciones moderadas.",
         "ingredientes": [
@@ -1647,7 +1876,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "hamburguesa",
+          "clásico"
         ],
         "balance": "Alta en proteína y grasa. La ensalada equilibra. Mejor al horno que a la plancha con mucho aceite.",
         "ingredientes": [
@@ -1674,7 +1906,10 @@
         "fibra": 5,
         "tags": [
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "hamburguesa",
+          "contundente"
         ],
         "balance": "Muy calórica. Para días activos o como comida principal única del día.",
         "ingredientes": [
@@ -1701,7 +1936,11 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "pollo",
+          "ave",
+          "hamburguesa",
+          "liviano"
         ],
         "balance": "Muy buena opción light. El pollo molido tiene mucha menos grasa que la carne vacuna.",
         "ingredientes": [
@@ -1728,7 +1967,12 @@
         "fibra": 10,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegano",
+          "vegetariano",
+          "hamburguesa",
+          "legumbres",
+          "sin carne"
         ],
         "balance": "Excelente fuente de fibra y proteína vegetal. Sin colesterol ni grasa saturada.",
         "ingredientes": [
@@ -1756,7 +2000,11 @@
         "fibra": 11,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "hamburguesa",
+          "legumbres",
+          "sin carne"
         ],
         "balance": "Muy alta en fibra. Las lentejas aportan hierro y proteína vegetal de calidad.",
         "ingredientes": [
@@ -1783,7 +2031,9 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "cerdo",
+          "hamburguesa"
         ],
         "balance": "El lomo de cerdo es una proteína magra. La manzana suma fibra y dulzor natural.",
         "ingredientes": [
@@ -1810,7 +2060,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "pescado",
+          "hamburguesa",
+          "omega-3"
         ],
         "balance": "El atún aporta proteína magra y ácidos grasos esenciales. Muy completa.",
         "ingredientes": [
@@ -1838,7 +2091,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "hamburguesa",
+          "con verduras"
         ],
         "balance": "Alta en proteína y grasa. Sin papas fritas es más manejable calóricamente.",
         "ingredientes": [
@@ -1865,7 +2121,11 @@
         "fibra": 8,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegano",
+          "vegetariano",
+          "hamburguesa",
+          "sin carne"
         ],
         "balance": "La remolacha aporta nitratos naturales que mejoran la circulación. Rica en fibra y antioxidantes.",
         "ingredientes": [
@@ -1893,7 +2153,11 @@
         "fibra": 2,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "hamburguesa",
+          "bajo en carbos",
+          "sin gluten posible"
         ],
         "balance": "Ideal para control de carbohidratos. Alta proteína y sin harinas.",
         "ingredientes": [
@@ -1919,7 +2183,11 @@
         "grasas": 13,
         "fibra": 6,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "hamburguesa",
+          "sin carne",
+          "sin gluten posible"
         ],
         "balance": "La quinoa tiene todos los aminoácidos esenciales. Opción ideal para dietas sin gluten.",
         "ingredientes": [
@@ -1945,7 +2213,10 @@
         "grasas": 34,
         "fibra": 3,
         "tags": [
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "hamburguesa",
+          "clásico argentino"
         ],
         "balance": "Muy sabrosa pero alta en grasa y sodio. Para ocasiones especiales.",
         "ingredientes": [
@@ -1972,7 +2243,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "polenta",
+          "sin gluten posible"
         ],
         "balance": "Carbohidrato de maíz con proteína del queso. Agregar carne o huevo mejora el perfil proteico.",
         "ingredientes": [
@@ -1998,7 +2272,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "polenta",
+          "sin gluten posible"
         ],
         "balance": "Muy completo. La carne aporta proteína e hierro, la polenta energía sostenida.",
         "ingredientes": [
@@ -2026,7 +2303,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "lightCarb"
+          "lightCarb",
+          "vegetariano",
+          "polenta",
+          "sin gluten posible"
         ],
         "balance": "Muy sabrosa sin carne. Los champiñones tienen vitamina D y sabor intenso.",
         "ingredientes": [
@@ -2053,7 +2333,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "polenta",
+          "indulgente"
         ],
         "balance": "Más calórica por el freído. Versión al horno reduce bastante la grasa.",
         "ingredientes": [
@@ -2081,7 +2364,10 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "polenta",
+          "sin gluten posible"
         ],
         "balance": "Muy equilibrado en macros. Las albóndigas caseras con carne magra reducen la grasa total.",
         "ingredientes": [
@@ -2109,7 +2395,11 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "polenta",
+          "con verduras"
         ],
         "balance": "Excelente proporción proteína-carbohidrato. El pollo magro reduce las grasas saturadas.",
         "ingredientes": [
@@ -2135,7 +2425,10 @@
         "grasas": 30,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "polenta",
+          "indulgente"
         ],
         "balance": "Alta en grasas por el queso y las nueces, pero son grasas de calidad. Porción moderada.",
         "ingredientes": [
@@ -2162,7 +2455,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "vegetariano",
+          "polenta",
+          "con verduras"
         ],
         "balance": "El huevo completa la proteína de la polenta. La espinaca suma hierro y vitamina K.",
         "ingredientes": [
@@ -2189,7 +2485,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "carne roja",
+          "polenta",
+          "clásico argentino"
         ],
         "balance": "Sabrosa pero alta en grasa por el chorizo. Porciones moderadas y acompañar con ensalada.",
         "ingredientes": [
@@ -2216,7 +2515,10 @@
         "fibra": 6,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "polenta",
+          "sin gluten posible"
         ],
         "balance": "La calabaza suma betacaroteno y fibra. El parmesano aporta calcio y proteína concentrada.",
         "ingredientes": [
@@ -2243,7 +2545,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "merluza",
+          "horno"
         ],
         "balance": "Muy equilibrado. La merluza es proteína magra de excelente calidad.",
         "ingredientes": [
@@ -2270,7 +2575,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "merluza",
+          "horno"
         ],
         "balance": "Proteína magra con carbohidrato suave. El puré de papa es muy digestivo.",
         "ingredientes": [
@@ -2297,7 +2605,10 @@
         "fibra": 5,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "merluza",
+          "horno"
         ],
         "balance": "Excelente perfil. Alta proteína con carbohidrato moderado y muy poca grasa.",
         "ingredientes": [
@@ -2325,7 +2636,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pescado",
+          "merluza",
+          "arroz",
+          "con verduras"
         ],
         "balance": "Muy bien distribuido en macros. Ideal para días activos.",
         "ingredientes": [
@@ -2352,7 +2667,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "merluza",
+          "rebozado"
         ],
         "balance": "Al horno reduce notablemente la grasa. La ensalada suma fibra y vitaminas.",
         "ingredientes": [
@@ -2379,7 +2697,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "merluza",
+          "horno"
         ],
         "balance": "Alta proteína con grasa moderada. Muy sabrosa y digestiva.",
         "ingredientes": [
@@ -2407,7 +2728,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pescado",
+          "atún",
+          "arroz",
+          "rápido"
         ],
         "balance": "Muy funcional. El atún al natural tiene proteína magra sin grasa extra.",
         "ingredientes": [
@@ -2434,7 +2759,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "atún",
+          "horno"
         ],
         "balance": "Muy equilibrado. Proteína del atún, carbohidrato de papa y fibra de la ensalada.",
         "ingredientes": [
@@ -2455,14 +2783,16 @@
         "id": "alm-atun-pure-calabaza",
         "nombre": "Atún con puré de calabaza",
         "detalle": "Combinación liviana y nutritiva. La calabaza aporta dulzor y vitamina A.",
-        "calorias": 380,
+        "calorias": 296,
         "carbohidratos": 28,
         "proteinas": 28,
         "grasas": 8,
         "fibra": 5,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "atún"
         ],
         "balance": "Muy liviano y proteico. Ideal para días de control calórico.",
         "ingredientes": [
@@ -2488,7 +2818,10 @@
         "fibra": 4,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pescado",
+          "atún",
+          "pasta"
         ],
         "balance": "Alto en carbohidratos. El atún suma proteína magra. Ideal para días activos.",
         "ingredientes": [
@@ -2515,7 +2848,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "horno",
+          "clásico argentino"
         ],
         "balance": "Buena combinación de carbohidrato y proteína. El gratinado suma sabor sin exagerar.",
         "ingredientes": [
@@ -2543,7 +2879,10 @@
         "fibra": 5,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "horno"
         ],
         "balance": "Muy completo. El pollo sin piel es proteína magra y la papa suma carbohidrato energético.",
         "ingredientes": [
@@ -2570,7 +2909,11 @@
         "fibra": 11,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "horno",
+          "legumbres",
+          "sin carne"
         ],
         "balance": "Las lentejas aportan hierro, fibra y proteína vegetal. Muy nutritivo sin carne.",
         "ingredientes": [
@@ -2599,7 +2942,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "pollo",
+          "ave",
+          "arroz",
+          "horno"
         ],
         "balance": "Muy equilibrado. La naranja aporta vitamina C que mejora la absorción del hierro de la carne.",
         "ingredientes": [
@@ -2627,7 +2974,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "horno"
         ],
         "balance": "Muy completo. La salsa de naranja reduce la necesidad de agregar otras grasas.",
         "ingredientes": [
@@ -2655,7 +3005,11 @@
         "fibra": 6,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pollo",
+          "ave",
+          "horno",
+          "con verduras"
         ],
         "balance": "Excelente para control de peso. Alta proteína y mucha fibra vegetal.",
         "ingredientes": [
@@ -2683,7 +3037,10 @@
         "fibra": 2,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "carne roja",
+          "horno",
+          "clásico"
         ],
         "balance": "Alto en proteína. Acompañar con puré o ensalada para equilibrar el plato.",
         "ingredientes": [
@@ -2711,7 +3068,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "horno",
+          "contundente"
         ],
         "balance": "Muy completo. El puré y la ensalada equilibran el plato con carbohidrato y fibra.",
         "ingredientes": [
@@ -2739,7 +3099,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "cerdo",
+          "a la plancha",
+          "proteico"
         ],
         "balance": "Muy proteico. El cerdo magro tiene similar perfil que el pollo. Papas al horno sin aceite extra.",
         "ingredientes": [
@@ -2766,7 +3129,9 @@
         "fibra": 5,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "cerdo",
+          "a la plancha"
         ],
         "balance": "Alta proteína con carbohidrato moderado. La calabaza suma vitamina A y fibra.",
         "ingredientes": [
@@ -2793,7 +3158,9 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "cerdo",
+          "a la plancha"
         ],
         "balance": "La manzana aporta pectina que ayuda a reducir el colesterol del cerdo. Muy sabroso.",
         "ingredientes": [
@@ -2821,7 +3188,10 @@
         "tags": [
           "balanced",
           "highProtein",
-          "highCarb"
+          "highCarb",
+          "cerdo",
+          "a la plancha",
+          "arroz"
         ],
         "balance": "Muy equilibrado. Proteína, carbohidrato y grasa en buenas proporciones.",
         "ingredientes": [
@@ -2848,7 +3218,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "carne roja",
+          "clásico argentino"
         ],
         "balance": "Alto en carbohidratos. Muy energético. Agregar carne o albóndigas mejora el perfil proteico.",
         "ingredientes": [
@@ -2875,7 +3248,10 @@
         "fibra": 3,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "indulgente",
+          "rápido"
         ],
         "balance": "Alto en grasa por la crema. Con crema light y jamón cocido magro se reduce bastante.",
         "ingredientes": [
@@ -2901,7 +3277,10 @@
         "fibra": 4,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "vegetariano",
+          "rápido"
         ],
         "balance": "Las grasas del pesto son saludables (oliva y nueces). Porción moderada para controlar calorías.",
         "ingredientes": [
@@ -2928,7 +3307,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "vegetariano",
+          "con verduras"
         ],
         "balance": "Las verduras suman fibra y vitaminas. Con leche descremada la salsa es más liviana.",
         "ingredientes": [
@@ -2956,7 +3338,10 @@
         "fibra": 3,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "vegetariano",
+          "rápido"
         ],
         "balance": "Simple pero calórico por el aceite. Porción moderada y acompañar con ensalada.",
         "ingredientes": [
@@ -2983,7 +3368,10 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "vegetariano",
+          "picante"
         ],
         "balance": "Una de las salsas más livianas. El tomate y el aceite de oliva son excelentes.",
         "ingredientes": [
@@ -3011,7 +3399,10 @@
         "tags": [
           "highCarb",
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pasta",
+          "pescado",
+          "atún"
         ],
         "balance": "Muy funcional. El atún al natural suma proteína magra sin agregar grasa extra.",
         "ingredientes": [
@@ -3037,7 +3428,10 @@
         "grasas": 18,
         "fibra": 3,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "pasta",
+          "vegetariano",
+          "rápido"
         ],
         "balance": "Simple pero sabroso. Porción controlada y acompañar con ensalada para equilibrar.",
         "ingredientes": [
@@ -3063,7 +3457,10 @@
         "fibra": 3,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "pasta",
+          "vegetariano",
+          "indulgente"
         ],
         "balance": "Alto en grasa y sodio por los quesos. Para ocasiones especiales con porción moderada.",
         "ingredientes": [
@@ -3091,7 +3488,10 @@
         "tags": [
           "highCarb",
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pasta",
+          "carne roja",
+          "con verduras"
         ],
         "balance": "Muy completo. Las verduras en la salsa suman fibra y vitaminas sin que se noten.",
         "ingredientes": [
@@ -3113,13 +3513,17 @@
         "id": "alm-asado-chimichurri-pan",
         "nombre": "Asado con chimichurri y pan",
         "detalle": "El asado más clásico. Cortes a las brasas con chimichurri casero y pan para acompañar.",
-        "calorias": 640,
+        "calorias": 552,
         "carbohidratos": 22,
         "proteinas": 44,
         "grasas": 32,
         "fibra": 3,
         "tags": [
-          "highProtein"
+          "highProtein",
+          "asado",
+          "carne roja",
+          "clásico argentino",
+          "fin de semana"
         ],
         "balance": "Alto en proteína y grasa. El chimichurri suma sabor sin calorías extra. Pan moderado.",
         "ingredientes": [
@@ -3147,7 +3551,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "asado",
+          "carne roja",
+          "clásico argentino"
         ],
         "balance": "Alta proteína. La ensalada rusa suma carbohidrato y verdura. Mayonesa moderada.",
         "ingredientes": [
@@ -3174,7 +3581,10 @@
         "fibra": 5,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "asado",
+          "carne roja",
+          "clásico argentino"
         ],
         "balance": "Muy alta en proteína. Los vegetales asados suman fibra y vitaminas sin carbohidrato extra.",
         "ingredientes": [
@@ -3201,7 +3611,11 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "asado",
+          "pollo",
+          "ave",
+          "clásico argentino"
         ],
         "balance": "Mucho más liviano que la carne vacuna. Sin piel reduce notablemente la grasa.",
         "ingredientes": [
@@ -3228,7 +3642,10 @@
         "grasas": 36,
         "fibra": 3,
         "tags": [
-          "highProtein"
+          "highProtein",
+          "asado",
+          "carne roja",
+          "clásico argentino"
         ],
         "balance": "Alto en grasa por el chorizo. La ensalada y el pan equilibran. Porción de 2 chorizos.",
         "ingredientes": [
@@ -3255,7 +3672,10 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "asado",
+          "carne roja",
+          "clásico argentino"
         ],
         "balance": "Corte muy sabroso con buena relación grasa-proteína. La papa al rescoldo no necesita aceite.",
         "ingredientes": [
@@ -3274,14 +3694,17 @@
         "id": "alm-asado-costillas-cerdo",
         "nombre": "Costillas de cerdo a las brasas con ensalada",
         "detalle": "Las costillitas de cerdo son jugosas, sabrosas y muy populares en el asado argentino.",
-        "calorias": 590,
+        "calorias": 506,
         "carbohidratos": 10,
         "proteinas": 40,
         "grasas": 34,
         "fibra": 3,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "asado",
+          "cerdo",
+          "clásico argentino"
         ],
         "balance": "Alto en proteína y grasa. Sin guarnición con almidón se controla mejor el total calórico.",
         "ingredientes": [
@@ -3302,7 +3725,7 @@
         "id": "alm-asado-completo-familiar",
         "nombre": "Asado completo familiar (tira, chorizo, pollo)",
         "detalle": "El asado del domingo con variedad de cortes. La versión más festiva y social.",
-        "calorias": 720,
+        "calorias": 630,
         "carbohidratos": 20,
         "proteinas": 52,
         "grasas": 38,
@@ -4109,7 +4532,11 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "Suma carbohidrato fácil, algo de proteína y te ordena mejor la tarde.",
         "ingredientes": [
@@ -4131,7 +4558,11 @@
         "grasas": 8,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "Tiene carbohidrato, un poco de proteína y fruta para sumar regulación.",
         "ingredientes": [
@@ -4155,7 +4586,12 @@
         "fibra": 5,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "vegetariano",
+          "sin gluten posible"
         ],
         "balance": "La fruta te da energía y los frutos secos mejoran saciedad.",
         "ingredientes": [
@@ -4177,7 +4613,9 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "proteico",
+          "rápido"
         ],
         "balance": "Ayuda a repartir mejor la proteína durante el día.",
         "ingredientes": [
@@ -4201,7 +4639,11 @@
         "fibra": 5,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "integral",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "Muy útil cuando necesitás un poco más de combustible.",
         "ingredientes": [
@@ -4225,7 +4667,10 @@
         "fibra": 2,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "clásico argentino",
+          "liviano",
+          "vegetariano"
         ],
         "balance": "Muy liviano. Agregar un poco de queso o ricota mejora bastante.",
         "ingredientes": [
@@ -4246,7 +4691,9 @@
         "grasas": 15,
         "fibra": 1,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "clásico argentino",
+          "indulgente"
         ],
         "balance": "Alto en harinas y grasas. Mejor reservarlo para ocasiones.",
         "ingredientes": [
@@ -4268,7 +4715,9 @@
         "grasas": 12,
         "fibra": 1,
         "tags": [
-          "highCarb"
+          "highCarb",
+          "indulgente",
+          "vegetariano"
         ],
         "balance": "Moderado si la porción es razonable. Sumar un té o mate sin azúcar.",
         "ingredientes": [
@@ -4294,7 +4743,11 @@
         "tags": [
           "highProtein",
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "proteico",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "Muy alta proteína para una merienda. Bajo en calorías y muy saciante.",
         "ingredientes": [
@@ -4318,7 +4771,9 @@
         "fibra": 2,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "rápido",
+          "liviano"
         ],
         "balance": "Equilibrado para media tarde. Proteína del queso ayuda a sostener la saciedad.",
         "ingredientes": [
@@ -4343,7 +4798,11 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "sin gluten posible"
         ],
         "balance": "Muy práctica. La fruta da energía rápida y el maní sostiene la saciedad.",
         "ingredientes": [
@@ -4365,7 +4824,12 @@
         "fibra": 1,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "proteico",
+          "vegetariano",
+          "sin gluten posible"
         ],
         "balance": "Muy liviano. Si necesitás más saciedad, agregar una fruta o unas nueces.",
         "ingredientes": [
@@ -4386,7 +4850,13 @@
         "grasas": 0,
         "fibra": 4,
         "tags": [
-          "lightCarb"
+          "lightCarb",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "vegetariano",
+          "sin gluten posible",
+          "vegano"
         ],
         "balance": "Muy bajo en calorías. Suma vitaminas y fibra. Combinar con algo proteico si hay más hambre.",
         "ingredientes": [
@@ -4407,7 +4877,10 @@
         "fibra": 7,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "vegetariano",
+          "con palta"
         ],
         "balance": "La palta aporta omega-9 y el tomate suma licopeno. Muy buena saciedad.",
         "ingredientes": [
@@ -4433,7 +4906,12 @@
         "fibra": 6,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "vegetariano",
+          "legumbres",
+          "con verduras",
+          "sin gluten posible"
         ],
         "balance": "Alta en fibra vegetal. Ideal para picotear sin culpa y con mucha saciedad.",
         "ingredientes": [
@@ -4459,7 +4937,11 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "lightCarb"
+          "lightCarb",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "sin gluten posible"
         ],
         "balance": "Fruta, proteína láctea y grasas buenas de las nueces. Sin harinas y muy satisfactoria.",
         "ingredientes": [
@@ -4482,7 +4964,9 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "integral"
         ],
         "balance": "La avena aporta fibra soluble. Los frutos secos suman grasas buenas y proteína.",
         "ingredientes": [
@@ -4507,7 +4991,10 @@
         "fibra": 3,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "sin cocción",
+          "proteico",
+          "con frutas"
         ],
         "balance": "Rápido de preparar. Suma carbohidrato, proteína láctea y sabor a chocolate natural.",
         "ingredientes": [
@@ -4532,7 +5019,11 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "balanced"
+          "balanced",
+          "sin cocción",
+          "liviano",
+          "con frutas",
+          "vegetariano"
         ],
         "balance": "La ricota es una de las fuentes de proteína más económicas y versátiles.",
         "ingredientes": [
@@ -4557,7 +5048,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "clásico argentino",
+          "liviano",
+          "vegetariano"
         ],
         "balance": "Muy equilibrado. El queso blanco suma calcio y proteína sin mucha grasa.",
         "ingredientes": [
@@ -4583,7 +5077,11 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "highProtein"
+          "highProtein",
+          "vegetariano",
+          "rápido",
+          "liviano",
+          "proteico"
         ],
         "balance": "Sumá bastante verdura y ya tenés una cena muy redonda.",
         "ingredientes": [
@@ -4610,7 +5108,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pollo",
+          "ave",
+          "con verduras",
+          "liviano"
         ],
         "balance": "Proteína alta con carbohidrato moderado y mucha verdura.",
         "ingredientes": [
@@ -4635,7 +5137,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "horno",
+          "liviano"
         ],
         "balance": "Aporta proteína de calidad y carbohidrato controlado.",
         "ingredientes": [
@@ -4660,7 +5165,11 @@
         "grasas": 10,
         "fibra": 10,
         "tags": [
-          "balanced"
+          "balanced",
+          "sopa",
+          "legumbres",
+          "vegetariano",
+          "liviano"
         ],
         "balance": "Buena combinación si querés algo liviano sin quedarte corto.",
         "ingredientes": [
@@ -4686,7 +5195,11 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "pollo",
+          "ave",
+          "rápido",
+          "con verduras"
         ],
         "balance": "Tiene de todo si no te quedás corto con el relleno vegetal.",
         "ingredientes": [
@@ -4713,7 +5226,10 @@
         "tags": [
           "balanced",
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "clásico argentino",
+          "rápido",
+          "proteico"
         ],
         "balance": "Tiene carbohidrato, proteína y grasa. Sumarle ensalada verde lo completa bien.",
         "ingredientes": [
@@ -4738,7 +5254,11 @@
         "grasas": 20,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "tarta",
+          "horno",
+          "con verduras"
         ],
         "balance": "Buen equilibrio si se carga bien de verduras. Cuidar la masa que suma grasa.",
         "ingredientes": [
@@ -4763,7 +5283,10 @@
         "grasas": 26,
         "fibra": 2,
         "tags": [
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "clásico argentino",
+          "rebozado"
         ],
         "balance": "Alta en proteína y grasa. Compensar con ensalada abundante y sin mayonesa.",
         "ingredientes": [
@@ -4790,7 +5313,11 @@
         "tags": [
           "balanced",
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pollo",
+          "ave",
+          "guiso",
+          "con verduras"
         ],
         "balance": "Alta proteína con carbohidrato moderado. Muy completo.",
         "ingredientes": [
@@ -4817,7 +5344,12 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "atún",
+          "liviano",
+          "bajo en carbos",
+          "sin gluten posible"
         ],
         "balance": "Excelente opción nocturna. El atún es proteína pura y la lechuga reemplaza la tortilla.",
         "ingredientes": [
@@ -4844,7 +5376,11 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "highProtein"
+          "highProtein",
+          "carne roja",
+          "horno",
+          "con verduras",
+          "proteico"
         ],
         "balance": "Alta proteína con poco carbohidrato. Los vegetales salteados completan el plato con fibra.",
         "ingredientes": [
@@ -4870,7 +5406,12 @@
         "fibra": 5,
         "tags": [
           "lightCarb",
-          "highProtein"
+          "highProtein",
+          "pescado",
+          "atún",
+          "sin cocción",
+          "liviano",
+          "bajo en carbos"
         ],
         "balance": "Muy liviana y proteica. El atún cubre bien las proteínas nocturnas sin sumar carbohidratos.",
         "ingredientes": [
@@ -4897,7 +5438,11 @@
         "fibra": 5,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sopa",
+          "vegetariano",
+          "liviano",
+          "con verduras"
         ],
         "balance": "Muy fácil de digerir. El huevo suma proteína sin sobrecargar la cena.",
         "ingredientes": [
@@ -4923,7 +5468,11 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "sin cocción",
+          "liviano",
+          "bajo en carbos"
         ],
         "balance": "El huevo duro aporta proteína completa. Sumar un chorrito de aceite de oliva mejora las grasas.",
         "ingredientes": [
@@ -4950,7 +5499,10 @@
         "fibra": 3,
         "tags": [
           "highCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "indulgente",
+          "fin de semana"
         ],
         "balance": "Alta en carbohidratos. Porciones moderadas y agregar verduras arriba mejora el balance.",
         "ingredientes": [
@@ -4976,7 +5528,10 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "liviano",
+          "rápido",
+          "sin cocción"
         ],
         "balance": "Perfecto para cerrar el fin de semana sin sobrecargar. Liviano y sin cocinar.",
         "ingredientes": [
@@ -4999,7 +5554,11 @@
         "grasas": 14,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "tarta",
+          "horno",
+          "con verduras"
         ],
         "balance": "Buen aporte de calcio y hierro. La acelga suma vitaminas. Porción moderada de masa.",
         "ingredientes": [
@@ -5025,7 +5584,11 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sopa",
+          "vegetariano",
+          "liviano",
+          "con verduras"
         ],
         "balance": "Muy liviana. Agregar un huevo o legumbre mejora el aporte proteico.",
         "ingredientes": [
@@ -5051,7 +5614,11 @@
         "fibra": 4,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pescado",
+          "merluza",
+          "a la plancha",
+          "liviano"
         ],
         "balance": "La merluza es proteína muy magra. El puré de calabaza suma vitamina A y bajo índice glucémico.",
         "ingredientes": [
@@ -5077,7 +5644,12 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "highProtein"
+          "highProtein",
+          "vegetariano",
+          "rápido",
+          "liviano",
+          "proteico",
+          "con verduras"
         ],
         "balance": "Muy baja en carbohidratos. Alta en proteína y grasas buenas del huevo.",
         "ingredientes": [
@@ -5101,7 +5673,11 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "sin cocción",
+          "liviano",
+          "bajo en carbos"
         ],
         "balance": "Muy liviana. Agregar proteína (huevo, atún o pollo) para una cena más completa.",
         "ingredientes": [
@@ -5127,7 +5703,10 @@
         "fibra": 6,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "horno",
+          "con verduras"
         ],
         "balance": "Muy buena opción vegetal. La berenjena es muy baja en calorías y alta en fibra.",
         "ingredientes": [
@@ -5152,7 +5731,10 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "horno",
+          "con verduras"
         ],
         "balance": "Bajo en calorías y muy digerible. La zanahoria suma betacaroteno y dulzor natural.",
         "ingredientes": [
@@ -5177,7 +5759,12 @@
         "fibra": 2,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pollo",
+          "ave",
+          "a la plancha",
+          "liviano",
+          "proteico"
         ],
         "balance": "Altísima proteína con muy bajo carbohidrato. Perfecta para noches de control calórico.",
         "ingredientes": [
@@ -5203,7 +5790,11 @@
         "grasas": 14,
         "fibra": 4,
         "tags": [
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "pasta",
+          "horno",
+          "con verduras"
         ],
         "balance": "Buen equilibrio pasta-relleno. Sin salsa roja es más liviana para la noche.",
         "ingredientes": [
@@ -5229,7 +5820,10 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "clásico argentino",
+          "liviano"
         ],
         "balance": "El choclo aporta carbohidrato con fibra. Con menos queso es más liviana y digerible.",
         "ingredientes": [
@@ -5255,7 +5849,11 @@
         "fibra": 3,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "vegetariano",
+          "rápido",
+          "liviano",
+          "con verduras"
         ],
         "balance": "Liviana y nutritiva. El huevo suma proteína completa y el zapallito aporta agua y vitaminas.",
         "ingredientes": [
@@ -5280,7 +5878,11 @@
         "fibra": 4,
         "tags": [
           "balanced",
-          "highCarb"
+          "highCarb",
+          "vegetariano",
+          "tarta",
+          "horno",
+          "con verduras"
         ],
         "balance": "Carbohidrato con fibra del choclo y calabaza. Sumar queso mejora el aporte proteico.",
         "ingredientes": [
@@ -5307,7 +5909,11 @@
         "fibra": 9,
         "tags": [
           "balanced",
-          "highProtein"
+          "highProtein",
+          "vegetariano",
+          "legumbres",
+          "liviano",
+          "proteico"
         ],
         "balance": "Las lentejas combinan proteína vegetal con fibra. El huevo completa los aminoácidos.",
         "ingredientes": [
@@ -5334,7 +5940,11 @@
         "fibra": 3,
         "tags": [
           "highProtein",
-          "lightCarb"
+          "lightCarb",
+          "pollo",
+          "ave",
+          "a la plancha",
+          "con verduras"
         ],
         "balance": "Muy alta proteína con pocos carbohidratos. Los vegetales en la brocheta suman fibra.",
         "ingredientes": [
@@ -5360,7 +5970,12 @@
         "fibra": 4,
         "tags": [
           "lightCarb",
-          "balanced"
+          "balanced",
+          "sopa",
+          "vegetariano",
+          "liviano",
+          "con verduras",
+          "sin gluten posible"
         ],
         "balance": "Muy liviana y reconfortante. Sumar yogur al servir da cremosidad y proteína extra.",
         "ingredientes": [
