@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -1934,10 +1934,11 @@
         <div class="planner-header">
           <div class="planner-title">
             <h2>Semana completa</h2>
-            <p>Armá cada desayuno, almuerzo, merienda y cena arrastrando ingredientes desde la despensa.</p>
+            <p>Usá "Sugerir platos" para completar la semana automáticamente, o arrastrá ingredientes desde la despensa para armar tus propias comidas.</p>
           </div>
           <div class="actions">
-            <button class="action-btn primary" id="fillWeekBtn">Completar semana</button>
+            <button class="action-btn primary" id="suggestWeekBtn">✨ Sugerir platos</button>
+            <button class="action-btn primary" id="fillWeekBtn">🧺 Completar despensa</button>
             <button class="action-btn secondary" id="resetBtn">Reiniciar</button>
           </div>
         </div>
@@ -2242,6 +2243,10 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function mealById(type, id) {
+  if (!id) return null;
+  return MEALS[type].find(meal => meal.id === id) || null;
+}
 
 function entryFor(dayId, mealType) {
   return state.plan[dayId][mealType];
@@ -2263,6 +2268,23 @@ function scaleMetric(value, multiplier) {
   return Math.round(value * multiplier);
 }
 
+function mealStats(dayId, mealType) {
+  const entry = entryFor(dayId, mealType);
+  const meal = mealById(mealType, entry.mealId);
+  if (!meal) {
+    return { meal: null, multiplier: 1, calories: 0, carbs: 0, proteins: 0, fats: 0, fiber: 0 };
+  }
+  const multiplier = portionMultiplier(entry.portion) * globalMultiplier() * peopleMultiplier();
+  return {
+    meal,
+    multiplier,
+    calories: scaleMetric(meal.calories, multiplier),
+    carbs: scaleMetric(meal.carbs, multiplier),
+    proteins: scaleMetric(meal.proteins, multiplier),
+    fats: scaleMetric(meal.fats, multiplier),
+    fiber: scaleMetric(meal.fiber || 0, multiplier)
+  };
+}
 
 function customMealStats(dayId, mealTypeId) {
   const totals = customMealTotals(customMealKey(dayId, mealTypeId));
@@ -2559,7 +2581,16 @@ function presetCategory(item) {
 }
 
 function combinedMealStats(dayId, mealTypeId) {
-  return customMealStats(dayId, mealTypeId);
+  const preset = mealStats(dayId, mealTypeId);
+  const custom = customMealStats(dayId, mealTypeId);
+  return {
+    meal: preset.meal,
+    calories: preset.calories + custom.calories,
+    carbs: preset.carbs + custom.carbs,
+    proteins: preset.proteins + custom.proteins,
+    fats: preset.fats + custom.fats,
+    fiber: preset.fiber + custom.fiber
+  };
 }
 
 function targetRange(range) {
@@ -2636,8 +2667,72 @@ function currentTarget() {
   };
 }
 
+function chooseMeal(type, goal, excludeId = null) {
+  const goalData = GOALS[goal];
+  const priorities = goalData.mealBias[type] || ["balanced"];
+  let candidates = [];
 
+  for (const tag of priorities) {
+    const match = MEALS[type].filter(meal => meal.tags.includes(tag) && meal.id !== excludeId);
+    if (match.length) {
+      candidates = match;
+      break;
+    }
+  }
 
+  if (!candidates.length) {
+    candidates = MEALS[type].filter(meal => meal.id !== excludeId);
+  }
+
+  return candidates[Math.floor(Math.random() * candidates.length)];
+}
+
+function buildAutomaticWeek(goal) {
+  const nextPlan = {};
+  DAYS.forEach(day => {
+    nextPlan[day.id] = {};
+    MEAL_TYPES.forEach(({ id }) => {
+      const selected = chooseMeal(id, goal, null);
+      nextPlan[day.id][id] = {
+        mealId: selected ? selected.id : null,
+        portion: goal === "energia" && id !== "dinner" ? "l" : goal === "control" && id === "dinner" ? "s" : "m"
+      };
+    });
+  });
+  state.plan = nextPlan;
+  saveState();
+  render();
+}
+
+function setBalancedWeek() {
+  if (MEALS.breakfast.length === 0) return;
+  const nextPlan = {};
+  DAYS.forEach((day, dayIndex) => {
+    nextPlan[day.id] = {};
+    MEAL_TYPES.forEach(({ id }) => {
+      const balancedMeals = MEALS[id].filter(meal => meal.tags.includes("balanced"));
+      if (!balancedMeals.length) {
+        nextPlan[day.id][id] = { mealId: null, portion: "m" };
+        return;
+      }
+      nextPlan[day.id][id] = {
+        mealId: balancedMeals[dayIndex % balancedMeals.length].id,
+        portion: "m"
+      };
+    });
+  });
+  state.plan = nextPlan;
+  saveState();
+  render();
+}
+
+function randomizeMeal(dayId, mealType) {
+  const currentId = entryFor(dayId, mealType).mealId;
+  const selected = chooseMeal(mealType, state.goal, currentId);
+  state.plan[dayId][mealType].mealId = selected.id;
+  saveState();
+  render();
+}
 
 function dayTotals(dayId) {
   return MEAL_TYPES.reduce((acc, mealType) => {
@@ -2678,6 +2773,12 @@ function buildShoppingList() {
   const counts = new Map();
   DAYS.forEach(day => {
     MEAL_TYPES.forEach(({ id }) => {
+      const meal = mealStats(day.id, id);
+      if (meal.meal) {
+        meal.meal.ingredients.forEach(item => {
+          counts.set(item, (counts.get(item) || 0) + portionMultiplier(entryFor(day.id, id).portion));
+        });
+      }
       const key = customMealKey(day.id, id);
       (customMeals[key] || []).forEach(item => {
         const ing = ingredients.find(ingredient => ingredient.id === item.ingId);
@@ -2893,24 +2994,33 @@ function renderPlanner() {
           <div style="margin-top:6px;opacity:0.85;">💡 ${ACTIVE_DAY_TIPS[Math.floor(Math.random() * ACTIVE_DAY_TIPS.length)]}</div>
         </div>
         ${MEAL_TYPES.map(mealType => {
+          const preset = mealStats(day.id, mealType.id);
           const custom = customMealStats(day.id, mealType.id);
-          const hasItems = custom.calories > 0 || custom.carbs > 0 || custom.proteins > 0 || custom.fats > 0 || custom.fiber > 0;
+          const combined = combinedMealStats(day.id, mealType.id);
+          const hasPreset = !!preset.meal;
+          const hasCustom = custom.calories > 0 || custom.carbs > 0 || custom.proteins > 0 || custom.fats > 0 || custom.fiber > 0;
+          const hasAny = hasPreset || hasCustom;
           return `
             <section class="meal-card">
               <div class="meal-top">
                 <strong>${mealType.label}</strong>
-                <span class="tag ${hasItems ? "ok" : "warn"}">${hasItems ? "Armada" : "Vacia"}</span>
+                <span class="tag ${hasAny ? "ok" : "warn"}">${hasAny ? "Armada" : "Vacía"}</span>
               </div>
-              <div class="meal-detail" style="${hasItems ? "" : "color:var(--muted);font-style:italic;"}">
-                ${hasItems ? "Comida armada con tus ingredientes." : "Arrastrá ingredientes desde Despensa para empezar esta comida."}
+              ${hasPreset ? `
+              <div class="meal-name">${preset.meal.name}</div>
+              <div class="meal-detail">${preset.meal.detail}</div>
+              ` : `
+              <div class="meal-detail" style="color:var(--muted);font-style:italic;">
+                Arrastrá ingredientes desde Despensa o usá "Sugerir platos".
               </div>
-              ${hasItems ? `
+              `}
+              ${hasAny ? `
               <div class="macro-row">
-                <div class="macro-pill"><span>Kcal</span><strong>${custom.calories}</strong></div>
-                <div class="macro-pill"><span>Carb</span><strong>${custom.carbs} g</strong></div>
-                <div class="macro-pill"><span>Prot</span><strong>${custom.proteins} g</strong></div>
-                <div class="macro-pill"><span>Grasa</span><strong>${custom.fats} g</strong></div>
-                <div class="macro-pill"><span>Fibra</span><strong>${custom.fiber} g</strong></div>
+                <div class="macro-pill"><span>Kcal</span><strong>${combined.calories}</strong></div>
+                <div class="macro-pill"><span>Carb</span><strong>${combined.carbs} g</strong></div>
+                <div class="macro-pill"><span>Prot</span><strong>${combined.proteins} g</strong></div>
+                <div class="macro-pill"><span>Grasa</span><strong>${combined.fats} g</strong></div>
+                <div class="macro-pill"><span>Fibra</span><strong>${combined.fiber} g</strong></div>
               </div>
               ` : ""}
               ${renderCustomZone(day.id, mealType.id)}
@@ -3165,6 +3275,14 @@ document.getElementById("modeWeekBtn").addEventListener("click", () => {
   state.summaryMode = "week";
   saveState();
   renderSummary();
+});
+document.getElementById("suggestWeekBtn").addEventListener("click", () => {
+  if (MEALS.breakfast.length === 0) {
+    showToast("Los platos aún no cargaron. Esperá un momento y reintentá.");
+    return;
+  }
+  buildAutomaticWeek(state.goal);
+  showToast("✨ Semana sugerida según tu objetivo");
 });
 document.getElementById("fillWeekBtn").addEventListener("click", () => {
   autoFillWeekFromPantry();
