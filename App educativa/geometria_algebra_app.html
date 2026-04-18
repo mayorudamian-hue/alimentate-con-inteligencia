@@ -1,0 +1,1064 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.app{display:flex;flex-direction:column;gap:0;min-height:600px}
+.nav{display:flex;gap:6px;padding:12px 16px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);flex-wrap:wrap}
+.nav-btn{padding:6px 14px;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;cursor:pointer;color:var(--color-text-primary);transition:background 0.15s}
+.nav-btn:hover{background:var(--color-background-secondary)}
+.nav-btn.active{background:var(--color-background-primary);border-color:var(--color-border-primary);font-weight:500}
+.panel{padding:20px 16px;flex:1}
+.label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px;display:block}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.field{display:flex;flex-direction:column;gap:4px;flex:1;min-width:80px}
+input[type=number]{width:100%;padding:6px 8px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:14px}
+select{padding:6px 8px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:14px}
+.result-card{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:14px 16px;margin-top:14px}
+.result-label{font-size:12px;color:var(--color-text-secondary)}
+.result-val{font-size:28px;font-weight:500;color:var(--color-text-primary)}
+.canvas-wrap{margin-top:16px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;background:var(--color-background-primary)}
+canvas{display:block;max-width:100%}
+.toggle-btn{padding:5px 12px;font-size:12px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;cursor:pointer;color:var(--color-text-secondary)}
+.toggle-btn.on{background:var(--color-background-info);color:var(--color-text-info);border-color:var(--color-border-info)}
+.formula-box{background:var(--color-background-secondary);border-left:3px solid #7F77DD;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 14px;margin-top:12px;font-size:13px;color:var(--color-text-secondary)}
+.formula-box b{color:var(--color-text-primary);font-weight:500}
+.problem-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 14px;cursor:pointer;transition:border-color 0.15s;background:var(--color-background-primary)}
+.problem-card:hover{border-color:var(--color-border-primary)}
+.problem-card.selected{border-color:#7F77DD;background:var(--color-background-secondary)}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md);font-weight:500;margin-bottom:6px}
+.badge.facil{background:#EAF3DE;color:#3B6D11}
+.badge.medio{background:#FAEEDA;color:#854F0B}
+.badge.dificil{background:#FCEBEB;color:#A32D2D}
+.hint-box{background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);padding:10px 14px;margin-top:10px;font-size:13px;color:var(--color-text-warning)}
+.success-box{background:var(--color-background-success);border:0.5px solid var(--color-border-success);border-radius:var(--border-radius-md);padding:10px 14px;margin-top:10px;font-size:13px;color:var(--color-text-success)}
+.check-row{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.check-input{flex:1;min-width:100px;padding:7px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:14px}
+.check-btn{padding:7px 14px;border:0.5px solid #7F77DD;border-radius:var(--border-radius-md);background:#7F77DD;color:#fff;font-size:13px;cursor:pointer;font-weight:500}
+.check-btn:hover{background:#534AB7}
+.section-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:12px}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:16px 0}
+.unit-row{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.hint-btn{padding:4px 10px;font-size:12px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;cursor:pointer;color:var(--color-text-secondary)}
+.hint-btn:hover{background:var(--color-background-secondary)}
+.problems-grid{display:flex;flex-direction:column;gap:8px}
+.alg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:500px){.alg-grid{grid-template-columns:1fr}}
+.alg-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px;cursor:pointer;background:var(--color-background-primary)}
+.alg-card:hover{border-color:#7F77DD}
+.alg-card.active{border-color:#7F77DD;background:var(--color-background-secondary)}
+.alg-title{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.alg-formula{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.trophy-row{display:flex;gap:12px;background:var(--color-background-secondary);padding:16px;border-radius:var(--border-radius-lg);margin-bottom:20px;justify-content:space-around;border:0.5px solid var(--color-border-tertiary)}
+.trophy-item{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;transition:all 0.3s ease}
+.trophy-icon{font-size:28px;margin-bottom:4px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1))}
+.trophy-label{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--color-text-secondary);letter-spacing:0.5px}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<div class="app">
+  <div class="nav">
+    <button class="nav-btn active" onclick="showPanel('geo', event)">Geometría</button>
+    <button class="nav-btn" onclick="showPanel('alg', event)">Álgebra visual</button>
+    <button class="nav-btn" onclick="showPanel('juegos', event)">Juegos</button>
+    <button class="nav-btn" onclick="showPanel('problemas', event)">Problemas</button>
+    <button class="nav-btn" onclick="showPanel('tools', event)">Herramientas</button>
+  </div>
+  <div id="panel-geo" class="panel">
+    <div class="section-title">Calculadora de áreas y perímetros</div>
+    <div class="row">
+      <div class="field">
+        <span class="label">Figura</span>
+        <select id="g-shape" onchange="drawGeo()">
+          <option value="rectangulo">Rectángulo</option>
+          <option value="cuadrado">Cuadrado</option>
+          <option value="triangulo">Triángulo</option>
+          <option value="L">Figura en L</option>
+          <option value="T">Figura en T</option>
+          <option value="escalon">Escalón</option>
+        </select>
+      </div>
+      <div class="field" id="field-a">
+        <span class="label" id="label-a">Base (a)</span>
+        <input type="number" id="g-a" value="6" min="1" max="20" oninput="drawGeo()">
+      </div>
+      <div class="field" id="field-b">
+        <span class="label" id="label-b">Altura (b)</span>
+        <input type="number" id="g-b" value="4" min="1" max="20" oninput="drawGeo()">
+      </div>
+    </div>
+    <div class="unit-row">
+      <span class="label" style="margin:0">Unidad:</span>
+      <select id="g-unit" onchange="drawGeo()">
+        <option value="mm">milímetros (mm)</option>
+        <option value="cm">centímetros (cm)</option>
+        <option value="m" selected>metros (m)</option>
+        <option value="km">kilómetros (km)</option>
+      </select>
+      <button class="toggle-btn" id="btn-grid" onclick="toggleGrid()">Mostrar cuadrícula</button>
+      <button class="toggle-btn" id="btn-decomp" onclick="toggleDecomp()">Ver descomposición</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="geo-canvas" width="460" height="260"></canvas></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+      <div class="result-card" style="flex:1;min-width:120px">
+        <div class="result-label">Área</div>
+        <div class="result-val" id="g-area">—</div>
+        <div id="g-area-conv" style="font-size:12px;color:var(--color-text-secondary);margin-top:2px"></div>
+      </div>
+      <div class="result-card" id="perim-card" style="flex:1;min-width:120px">
+        <div class="result-label">Perímetro</div>
+        <div class="result-val" id="g-perim">—</div>
+      </div>
+    </div>
+    <div class="formula-box" id="g-formula"></div>
+  </div>
+
+  <div id="panel-alg" class="panel" style="display:none">
+    <div class="section-title">Álgebra visual</div>
+    <div id="alg-scoreboard" style="display:flex; gap:12px; margin-bottom:15px; background:var(--color-background-secondary); padding:10px 14px; border-radius:var(--border-radius-md); font-size:12px; border:0.5px solid var(--color-border-tertiary); align-items:center">
+       <div style="flex:1; font-weight:600; color:var(--color-text-primary)">🏆 Desafíos de Álgebra:</div>
+       <div id="score-difcuad" style="color:var(--color-text-secondary)">Diferencias: 0</div>
+    </div>
+    <div class="alg-grid">
+      <div class="alg-card active" onclick="setAlg('binomio2')">
+        <div class="alg-title">Cuadrado del binomio</div>
+        <div class="alg-formula">(a+b)² = a² + 2ab + b²</div>
+      </div>
+      <div class="alg-card" onclick="setAlg('difcuad')">
+        <div class="alg-title">Diferencia de cuadrados</div>
+        <div class="alg-formula">a² – b² = (a–b)(a+b)</div>
+      </div>
+      <div class="alg-card" onclick="setAlg('binomio3')">
+        <div class="alg-title">Cubo del binomio</div>
+        <div class="alg-formula">(a+b)³ = a³+3a²b+3ab²+b³</div>
+      </div>
+      <div class="alg-card" onclick="setAlg('potencia')">
+        <div class="alg-title">Potencia y raíz</div>
+        <div class="alg-formula">aⁿ ↔ n√a</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row" id="alg-normal-controls">
+      <div class="field"><span class="label">a =</span><input type="number" id="alg-a" value="3" min="1" max="10" oninput="algInput()"></div>
+      <div class="field"><span class="label">b =</span><input type="number" id="alg-b" value="2" min="1" max="10" oninput="algInput()"></div>
+      <button class="check-btn" style="height:32px; margin-top:16px" onclick="triggerAlgAnim()">▶ Repetir</button>
+      <button class="hint-btn" id="btn-step" style="height:32px; margin-top:16px; margin-left:4px" onclick="triggerStepByStep()">📖 Paso a paso</button>
+      <button class="hint-btn" id="btn-dif-challenge" style="height:32px; margin-top:16px; margin-left:4px; display:none; border-color:var(--color-border-primary); color:var(--color-text-primary)" onclick="triggerDifChallenge()">🎯 Desafío</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="alg-canvas" width="460" height="300"></canvas></div>
+    <div class="formula-box" id="alg-result"></div>
+  </div>
+
+  <div id="panel-juegos" class="panel" style="display:none">
+    <div class="section-title">Laboratorio de Juegos</div>
+    <div id="juegos-scoreboard" style="display:flex; gap:12px; margin-bottom:15px; background:var(--color-background-secondary); padding:10px 14px; border-radius:var(--border-radius-md); font-size:12px; border:0.5px solid var(--color-border-tertiary); align-items:center">
+       <div style="flex:1; font-weight:600; color:var(--color-text-primary)">🏆 Marcador de Juegos:</div>
+       <div id="score-puzzle" style="color:var(--color-text-secondary)">Puzzles: 0</div>
+    </div>
+    <div class="alg-grid">
+      <div class="alg-card active" onclick="setJuego('puzzle')">
+        <div class="alg-title">Puzzle del Binomio</div>
+        <div class="alg-formula">Armá el área de (a+b)²</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row" id="juegos-puzzle-levels" style="justify-content:center; gap:8px">
+      <button class="nav-btn" id="btn-pj-facil" onclick="initPuzzle('facil')">Nivel Fácil</button>
+      <button class="nav-btn" id="btn-pj-medio" onclick="initPuzzle('medio')">Nivel Medio</button>
+      <button class="nav-btn" id="btn-pj-dificil" onclick="initPuzzle('dificil')">Nivel Difícil</button>
+    </div>
+    <div class="canvas-wrap" style="cursor:crosshair"><canvas id="juegos-canvas" width="460" height="300"></canvas></div>
+    <div class="formula-box" id="juegos-result"></div>
+  </div>
+
+  <div id="panel-problemas" class="panel" style="display:none">
+    <div class="section-title">Tu progreso y medallas</div>
+    <div id="trophy-row" class="trophy-row"></div>
+    <div class="section-title">Problemas</div>
+    <div class="problems-grid" id="problems-list"></div>
+    <div id="problem-workspace" style="display:none;margin-top:16px">
+      <div class="divider"></div>
+      <div id="pw-title" style="font-size:15px;font-weight:500;margin-bottom:6px"></div>
+      <div id="pw-badge"></div>
+      <div id="pw-enunciado" style="font-size:14px;color:var(--color-text-secondary);margin-top:8px;line-height:1.5"></div>
+      <div class="canvas-wrap" style="margin-top:14px"><canvas id="pw-canvas" width="460" height="240"></canvas></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <div class="result-card" style="flex:1;min-width:120px">
+          <div class="result-label">Área</div>
+          <div class="result-val" id="pw-area">—</div>
+        </div>
+      </div>
+      <div class="check-row">
+        <input class="check-input" type="number" id="pw-respuesta" placeholder="Tu respuesta..." />
+        <button class="check-btn" onclick="verificarRespuesta()">Verificar</button>
+        <button class="hint-btn" onclick="mostrarPista()">Pista</button>
+      </div>
+      <div id="pw-feedback"></div>
+      <div id="pw-pista" style="display:none"></div>
+    </div>
+  </div>
+
+  <div id="panel-tools" class="panel" style="display:none">
+    <div class="section-title">Conversor de áreas</div>
+    <div class="result-card" style="margin-top:0; margin-bottom:20px; background:var(--color-background-primary); border:1px dashed var(--color-border-primary)">
+      <div class="row" style="justify-content: center; gap: 15px;">
+        <div class="field" style="max-width: 140px;">
+          <span class="label">Valor</span>
+          <input type="number" id="t-val" value="1" oninput="convertArea()">
+        </div>
+        <div class="field" style="max-width: 100px;">
+          <span class="label">Desde</span>
+          <select id="t-from" onchange="convertArea()">
+            <option value="mm">mm²</option>
+            <option value="cm">cm²</option>
+            <option value="m" selected>m²</option>
+            <option value="km">km²</option>
+          </select>
+        </div>
+        <div style="font-size: 20px; color: var(--color-text-secondary); margin-top: 15px;">=</div>
+        <div class="field" style="max-width: 100px;">
+          <span class="label">Hacia</span>
+          <select id="t-to" onchange="convertArea()">
+            <option value="mm">mm²</option>
+            <option value="cm" selected>cm²</option>
+            <option value="m">m²</option>
+            <option value="km">km²</option>
+          </select>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:20px">
+        <div class="result-label">Resultado</div>
+        <div class="result-val" id="t-result">10.000 cm²</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-title">Tabla de potencias y raíces</div>
+    <div class="canvas-wrap" style="padding: 15px; background: var(--color-background-primary); overflow-x: auto;">
+      <table style="width:100%; border-collapse: collapse; font-size: 13px; color: var(--color-text-primary); min-width: 300px;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--color-border-tertiary); color: var(--color-text-secondary); text-transform: uppercase; font-size: 11px;">
+            <th style="padding: 8px; text-align: left;">n</th>
+            <th style="padding: 8px; text-align: center;">n²</th>
+            <th style="padding: 8px; text-align: center;">n³</th>
+            <th style="padding: 8px; text-align: center;">√n</th>
+            <th style="padding: 8px; text-align: center;">∛n</th>
+          </tr>
+        </thead>
+        <tbody id="t-powers-body">
+          <!-- Generado dinámicamente por renderPowersTable() -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROBLEMAS = [{"id":1,"nivel":"facil","titulo":"Pintar una pared","enunciado":"Una pared mide 4 m por 2,5 m. ¿Cuánta pintura necesitás si rinde 10 m² por litro?","config":{"modo":"rectangulo","a":4,"b":2.5}},{"id":2,"nivel":"facil","titulo":"Piso de cerámicas","enunciado":"Un piso mide 2,4 m por 1,8 m. Las baldosas son de 30 cm × 30 cm.","config":{"modo":"rectangulo","a":2.4,"b":1.8}},{"id":3,"nivel":"medio","titulo":"Techo de chapa","enunciado":"Un techo mide 6 m por 4 m. Cada chapa cubre 2 m².","config":{"modo":"rectangulo","a":6,"b":4}},{"id":4,"nivel":"facil","titulo":"Terreno alambrado","enunciado":"Un terreno mide 10 m por 6 m. ¿Cuántos metros de alambre necesitás?","config":{"modo":"perimetro","a":10,"b":6}},{"id":5,"nivel":"medio","titulo":"Triángulo de terreno","enunciado":"Base 8 m y altura 5 m.","config":{"modo":"triangulo","a":8,"b":5}},{"id":6,"nivel":"medio","titulo":"Casa en videojuego","enunciado":"Construís una casa de 8 × 5 bloques.","config":{"modo":"rectangulo","a":8,"b":5}},{"id":7,"nivel":"dificil","titulo":"Figura en L","enunciado":"Calculá el área descomponiendo la figura.","config":{"modo":"poligono","tipo":"L"}},{"id":8,"nivel":"dificil","titulo":"Figura en T","enunciado":"Encontrá el área total.","config":{"modo":"poligono","tipo":"T"}},{"id":9,"nivel":"dificil","titulo":"Escalón","enunciado":"Descomponé la figura y calculá el área.","config":{"modo":"poligono","tipo":"escalon"}},{"id":10,"nivel":"medio","titulo":"Binomio al cuadrado","enunciado":"Representá (a+b)^2 con a=3, b=2","config":{"modo":"binomio","a":3,"b":2}}];
+
+const UNIDADES = {m:1,cm:100,km:0.001,ft:3.28084,pulg:39.3701};
+const CONV_AREA = {m:1,cm:10000,km:0.000001,ft:10.7639,pulg:1550};
+let showGrid=false, showDecomp=false, algMode='binomio2', currentProblem=null, intentos=0;
+let algAnimId = null, algP = 1, algTargetP = 1, targetThresholdIdx = -1;
+let puzzleState = { isSolved: false, pieces: [], targetOrigin: { x: 50, y: 50 }, a: 3, b: 2, pu: 30, startTime: 0, timerId: null, timeTaken: 0, awaitingFormula: false, challengeActive: false, juegoMode: 'puzzle' };
+
+const ALG_THRESHOLDS = {
+  binomio2: [0.4, 0.8, 1.0],
+  difcuad: [0.25, 0.5, 0.6, 1.0]
+};
+
+const TROPHY_ICONS = [{icon:'🥉',label:'Bronce'}, {icon:'🥈',label:'Plata'}, {icon:'🥇',label:'Oro'}];
+
+let solvedProblems = [];
+let algebraStats = { puzzle: 0, difcuad: 0 };
+function loadProgress() {
+  const saved = localStorage.getItem('geo_app_solved');
+  if (saved) solvedProblems = JSON.parse(saved);
+  
+  const savedAlg = localStorage.getItem('geo_app_alg_stats');
+  if (savedAlg) algebraStats = JSON.parse(savedAlg);
+}
+function saveProgress() {
+  localStorage.setItem('geo_app_solved', JSON.stringify(solvedProblems));
+  localStorage.setItem('geo_app_alg_stats', JSON.stringify(algebraStats));
+}
+
+// Cache de elementos y estilos para mayor eficiencia
+const el = {
+  gShape: document.getElementById('g-shape'),
+  gA: document.getElementById('g-a'),
+  gB: document.getElementById('g-b'),
+  gUnit: document.getElementById('g-unit'),
+  lblA: document.getElementById('label-a'),
+  lblB: document.getElementById('label-b'),
+  fieldB: document.getElementById('field-b'),
+  geoArea: document.getElementById('g-area'),
+  geoAreaConv: document.getElementById('g-area-conv'),
+  geoPerim: document.getElementById('g-perim'),
+  geoFormula: document.getElementById('g-formula'),
+  geoCanvas: document.getElementById('geo-canvas'),
+  algA: document.getElementById('alg-a'),
+  algB: document.getElementById('alg-b'),
+  algCanvas: document.getElementById('alg-canvas'),
+  algResult: document.getElementById('alg-result'),
+  juegosCanvas: document.getElementById('juegos-canvas'),
+  juegosResult: document.getElementById('juegos-result'),
+  scorePuzzle: document.getElementById('score-puzzle'),
+  scoreDifcuad: document.getElementById('score-difcuad'),
+  juegosPuzzleLevels: document.getElementById('juegos-puzzle-levels'),
+  tVal: document.getElementById('t-val'),
+  tFrom: document.getElementById('t-from'),
+  tTo: document.getElementById('t-to'),
+  tResult: document.getElementById('t-result'),
+};
+
+const COLORS = {
+  purple: '#7F77DD', purpleL: '#EEEDFE',
+  teal: '#1D9E75', tealL: '#E1F5EE',
+  coral: '#D85A30', coralL: '#FAECE7',
+  amber: '#BA7517', amberL: '#FAEEDA'
+};
+
+let theme = {};
+function updateThemeCache() {
+  const root = getComputedStyle(document.documentElement);
+  theme.bg = root.getPropertyValue('--color-background-primary').trim();
+  theme.txt = root.getPropertyValue('--color-text-primary').trim();
+  theme.txtS = root.getPropertyValue('--color-text-secondary').trim();
+  theme.font = root.getPropertyValue('--font-sans').trim();
+}
+
+function showPanel(id, ev){
+  document.querySelectorAll('.panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).style.display='block';
+  if(ev) ev.target.classList.add('active');
+  if(id==='geo') drawGeo();
+  if(id==='alg') { algInput(); renderAlgebraStats(); }
+  if(id==='juegos') { initPuzzle('facil'); renderAlgebraStats(); }
+  if(id==='problemas') { renderProblems(); renderTrophies(); }
+  if(id==='tools') { convertArea(); renderPowersTable(); }
+}
+
+function toggleGrid(){showGrid=!showGrid;document.getElementById('btn-grid').classList.toggle('on',showGrid);requestAnimationFrame(drawGeo)}
+function toggleDecomp(){showDecomp=!showDecomp;document.getElementById('btn-decomp').classList.toggle('on',showDecomp);requestAnimationFrame(drawGeo)}
+
+function drawGeo(){
+  if(!theme.bg) updateThemeCache();
+  const shape=el.gShape.value;
+  const a=parseFloat(el.gA.value)||1;
+  const b=parseFloat(el.gB.value)||1;
+  const unit=el.gUnit.value;
+  
+  if(shape==='cuadrado'){el.lblB.textContent='Lado (a)';el.fieldB.style.display='none'}
+  else{el.fieldB.style.display='flex';el.lblA.textContent='Base (a)';el.lblB.textContent='Altura (b)'}
+  if(shape==='L'||shape==='T'||shape==='escalon'){el.lblA.textContent='Unidad base';el.lblB.textContent='Unidad base'}
+
+  const ctx=el.geoCanvas.getContext('2d');
+  const W=460,H=260;
+  ctx.fillStyle=theme.bg;
+  ctx.fillRect(0,0,W,H);
+
+  ctx.font='12px '+theme.font;
+  let area=0,perim=0,formula='';
+  if(shape==='rectangulo'){
+    area=a*b; perim=2*(a+b);
+    const pw=Math.min(W-80,a*30),ph=Math.min(H-60,b*30);
+    const ox=(W-pw)/2,oy=(H-ph)/2;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy,pw,ph);
+    if(showGrid){
+      ctx.strokeStyle=COLORS.purple+'55';ctx.lineWidth=0.5;
+      for(let i=1;i<a;i++){ctx.beginPath();ctx.moveTo(ox+i*(pw/a),oy);ctx.lineTo(ox+i*(pw/a),oy+ph);ctx.stroke()}
+      for(let j=1;j<b;j++){ctx.beginPath();ctx.moveTo(ox,oy+j*(ph/b));ctx.lineTo(ox+pw,oy+j*(ph/b));ctx.stroke()}
+    }
+    ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy,pw,ph);
+    drawDim(ctx,ox,oy,pw,ph,a,b,unit);
+    formula=`<b>Área</b> = a × b = ${a} × ${b} = ${a*b} ${unit}²<br><b>Perímetro</b> = 2(a+b) = 2(${a}+${b}) = ${perim} ${unit}`;
+  } else if(shape==='cuadrado'){
+    area=a*a; perim=4*a;
+    const s=Math.min(W-80,H-60,a*30);
+    const ox=(W-s)/2,oy=(H-s)/2;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy,s,s);
+    if(showGrid){ctx.strokeStyle=COLORS.purple+'55';ctx.lineWidth=0.5;for(let i=1;i<a;i++){ctx.beginPath();ctx.moveTo(ox+i*(s/a),oy);ctx.lineTo(ox+i*(s/a),oy+s);ctx.stroke();ctx.beginPath();ctx.moveTo(ox,oy+i*(s/a));ctx.lineTo(ox+s,oy+i*(s/a));ctx.stroke()}}
+    ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy,s,s);
+    ctx.fillStyle=theme.txt;ctx.textAlign='center';ctx.fillText(`a = ${a} ${unit}`,W/2,oy+s+20);
+    formula=`<b>Área</b> = a² = ${a}² = ${a*a} ${unit}²<br><b>Perímetro</b> = 4a = 4×${a} = ${perim} ${unit}`;
+  } else if(shape==='triangulo'){
+    area=(a*b)/2; perim=null;
+    const bw=Math.min(W-80,a*28),bh=Math.min(H-60,b*28);
+    const ox=(W-bw)/2,oy=(H-bh)/2;
+    ctx.beginPath();ctx.moveTo(ox,oy+bh);ctx.lineTo(ox+bw,oy+bh);ctx.lineTo(ox,oy);ctx.closePath();
+    ctx.fillStyle=COLORS.tealL;ctx.fill();ctx.strokeStyle=COLORS.teal;ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle=theme.txt;ctx.textAlign='center';
+    ctx.fillText(`base = ${a} ${unit}`,ox+bw/2,oy+bh+18);
+    ctx.save();ctx.translate(ox-14,oy+bh/2);ctx.rotate(-Math.PI/2);ctx.fillText(`h = ${b} ${unit}`,0,0);ctx.restore();
+    formula=`<b>Área</b> = (base × altura) / 2 = (${a} × ${b}) / 2 = ${area} ${unit}²`;
+  } else if(shape==='L'||shape==='T'||shape==='escalon'){
+    drawComplexShape(ctx,W,H,shape,a,b,unit,showDecomp);
+    const r=getComplexArea(shape,a,b);
+    area=r.area; perim=r.perim;
+    formula=r.formula.replace('UNIT',unit);
+  }
+  el.geoArea.textContent=round2(area)+' '+unit+'²';
+  el.geoAreaConv.textContent=unit!=='m'?'= '+round2(area/CONV_AREA[unit])+' m²':'';
+  el.geoPerim.textContent=perim!==null?(round2(perim)+' '+unit):'—';
+  el.geoFormula.innerHTML=formula;
+}
+
+function drawDim(ctx,ox,oy,pw,ph,a,b,unit){
+  ctx.fillStyle=theme.txt;ctx.textAlign='center';
+  ctx.fillText(`a = ${a} ${unit}`,ox+pw/2,oy-8);
+  ctx.save();ctx.translate(ox-14,oy+ph/2);ctx.rotate(-Math.PI/2);ctx.fillText(`b = ${b} ${unit}`,0,0);ctx.restore();
+}
+
+function getComplexArea(shape,u,v){
+  const s=u;
+  if(shape==='L'){const a=5*s,b=3*s,c=2*s,d=2*s;const area=a*b-c*d;return{area,perim:null,formula:`<b>Área L</b> = rectángulo grande − esquina = ${5*u}×${3*u} − ${2*u}×${2*u} = ${15*u*u}−${4*u*u} = ${area} UNIT²`}}
+  if(shape==='T'){const tot=6*s*2*s+(2*s)*(3*s);return{area:tot,perim:null,formula:`<b>Área T</b> = barra superior + rectángulo central = ${tot} UNIT²`}}
+  if(shape==='escalon'){const tot=4*s*2*s+3*s*2*s+2*s*2*s;return{area:tot,perim:null,formula:`<b>Área escalón</b> = parte1 + parte2 + parte3 = ${tot} UNIT²`}}
+  return{area:0,perim:0,formula:''};
+}
+
+function drawComplexShape(ctx,W,H,shape,a,b,unit,decomp){
+  const u=18;
+  ctx.textAlign='center';
+  if(shape==='L'){
+    const ox=80,oy=20;
+    const R1={x:ox,y:oy,w:5*u,h:3*u};
+    const R2={x:ox+3*u,y:oy,w:2*u,h:2*u};
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(R1.x,R1.y,R1.w,R1.h);ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(R1.x,R1.y,R1.w,R1.h);
+    if(decomp){ctx.fillStyle=COLORS.tealL+'cc';ctx.fillRect(R2.x,R2.y,R2.w,R2.h);ctx.strokeStyle=COLORS.teal;ctx.lineWidth=1.5;ctx.setLineDash([4,3]);ctx.strokeRect(R2.x,R2.y,R2.w,R2.h);ctx.setLineDash([]);ctx.fillStyle=COLORS.teal;ctx.fillText('−',R2.x+R2.w/2,R2.y+R2.h/2+4);}
+    ctx.fillStyle=theme.txt;ctx.fillText('Figura en L',ox+R1.w/2,oy+R1.h+18);
+    if(decomp){ctx.fillStyle=theme.txtS;ctx.fillText('Grande: 5×3',ox+R1.w/2,oy+R1.h+32);ctx.fillText('−esquina: 2×2',ox+R1.w/2,oy+R1.h+44);}
+  } else if(shape==='T'){
+    const ox=60,oy=15;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy,6*u,2*u);ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy,6*u,2*u);
+    ctx.fillStyle=COLORS.tealL;ctx.fillRect(ox+2*u,oy+2*u,2*u,3*u);ctx.strokeStyle=COLORS.teal;ctx.strokeRect(ox+2*u,oy+2*u,2*u,3*u);
+    ctx.fillStyle=theme.txt;ctx.fillText('Figura en T',ox+3*u,oy+6*u+14);
+    if(decomp){ctx.fillStyle=COLORS.purple;ctx.fillText('barra',ox+3*u,oy+u+4);ctx.fillStyle=COLORS.teal;ctx.fillText('columna',ox+3*u,oy+2*u+u*1.5+4);}
+  } else if(shape==='escalon'){
+    const ox=60,oy=20;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy+4*u,4*u,2*u);ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy+4*u,4*u,2*u);
+    ctx.fillStyle=COLORS.tealL;ctx.fillRect(ox,oy+2*u,3*u,2*u);ctx.strokeStyle=COLORS.teal;ctx.strokeRect(ox,oy+2*u,3*u,2*u);
+    ctx.fillStyle=COLORS.coralL;ctx.fillRect(ox,oy,2*u,2*u);ctx.strokeStyle=COLORS.coral;ctx.strokeRect(ox,oy,2*u,2*u);
+    ctx.fillStyle=theme.txt;ctx.fillText('Escalón',ox+4*u+20,oy+4*u+u);
+    if(decomp){ctx.fillStyle=COLORS.purple;ctx.fillText('4×2',ox+2*u,oy+5*u+4);ctx.fillStyle=COLORS.teal;ctx.fillText('3×2',ox+1.5*u,oy+3*u+4);ctx.fillStyle=COLORS.coral;ctx.fillText('2×2',ox+u,oy+u+4);}
+  }
+}
+
+function round2(v){return Math.round(v*100)/100}
+
+function renderAlgebraStats() {
+  const pEl = el.scorePuzzle;
+  const dEl = el.scoreDifcuad;
+  if (pEl) pEl.textContent = `Puzzles: ${algebraStats.puzzle}`;
+  if (dEl) dEl.textContent = `Diferencias: ${algebraStats.difcuad}`;
+}
+
+function startAlgLoop() {
+  if (algAnimId) cancelAnimationFrame(algAnimId);
+  const loop = () => {
+    if (algMode !== 'binomio2' && algMode !== 'difcuad') return;
+    if (algP < algTargetP) {
+      algP += 0.012; // Velocidad suave
+      if (algP > algTargetP) algP = algTargetP;
+      drawAlg();
+      algAnimId = requestAnimationFrame(loop);
+    } else {
+      algAnimId = null;
+      drawAlg(); // Render final del paso
+    }
+  };
+  algAnimId = requestAnimationFrame(loop);
+}
+
+function triggerAlgAnim() {
+  algP = 0;
+  algTargetP = 1;
+  targetThresholdIdx = -1;
+  startAlgLoop();
+}
+
+function triggerStepByStep() {
+  const thresholds = ALG_THRESHOLDS[algMode];
+  if (!thresholds) return;
+  
+  // Si terminó la animación o no estábamos en modo paso a paso, empezamos de cero
+  if (targetThresholdIdx === -1 || algP >= 0.99) {
+    algP = 0;
+    targetThresholdIdx = 0;
+  } else {
+    // Avanzamos al siguiente hito
+    targetThresholdIdx++;
+    if (targetThresholdIdx >= thresholds.length) {
+      algP = 0;
+      targetThresholdIdx = 0;
+    }
+  }
+  
+  algTargetP = thresholds[targetThresholdIdx];
+  startAlgLoop();
+}
+
+function triggerDifChallenge() {
+  puzzleState.isSolved = false;
+  puzzleState.awaitingFormula = true;
+  puzzleState.challengeActive = true;
+  algP = 0;
+  algTargetP = 0.6; // Se detiene justo en el corte
+  startAlgLoop();
+}
+
+function checkDifFormula() {
+  const input = parseFloat(document.getElementById('dif-formula-input').value);
+  const a = parseFloat(el.algA.value), b = parseFloat(el.algB.value);
+  const correcta = b * (a - b);
+
+  if (Math.abs(input - correcta) < 0.1) {
+    puzzleState.awaitingFormula = false;
+    algTargetP = 1.0; // Continúa la animación
+    startAlgLoop();
+  } else {
+    document.getElementById('dif-formula-feedback').innerHTML = `<span style="color:#A32D2D">Incorrecto. Mirá la pieza verde: su base es ${b} y su altura es (a-b) → (${a}-${b}).</span>`;
+  }
+}
+
+function algInput() {
+  if (algMode === 'binomio2' || algMode === 'difcuad') triggerAlgAnim();
+  else {
+    if (algAnimId) cancelAnimationFrame(algAnimId);
+    algAnimId = null; algP = 1; drawAlg();
+  }
+}
+
+function setJuego(mode) {
+  puzzleState.juegoMode = mode;
+  if (mode === 'puzzle') initPuzzle('facil');
+}
+
+function initPuzzle(diff) {
+  if (puzzleState.timerId) clearInterval(puzzleState.timerId);
+  puzzleState.isSolved = false;
+  puzzleState.awaitingFormula = false;
+  puzzleState.challengeActive = true;
+  const params = { facil: {a:3, b:2, pu:30}, medio: {a:5, b:3, pu:20}, dificil: {a:7, b:4, pu:16} };
+  const p = params[diff];
+  puzzleState.a = p.a; puzzleState.b = p.b; puzzleState.pu = p.pu;
+  
+  const au = p.a * p.pu, bu = p.b * p.pu;
+  puzzleState.pieces = [
+    { id: 'a2',  w: au, h: au, x: 280, y: 30,  color: COLORS.purple, colorL: COLORS.purpleL, label: 'a²', targetX: 0, targetY: 0 },
+    { id: 'ab1', w: bu, h: au, x: 300, y: 150, color: COLORS.teal,   colorL: COLORS.tealL,   label: 'ab', targetX: au, targetY: 0 },
+    { id: 'ab2', w: au, h: bu, x: 50,  y: 220, color: COLORS.teal,   colorL: COLORS.tealL,   label: 'ab', targetX: 0,  targetY: au },
+    { id: 'b2',  w: bu, h: bu, x: 220, y: 220, color: COLORS.amber,  colorL: COLORS.amberL,  label: 'b²', targetX: au, targetY: au }
+  ];
+  
+  puzzleState.pieces.forEach(piece => {
+    piece.x += Math.random() * 60 - 30; piece.y += Math.random() * 40 - 20;
+    piece.isSnapped = false;
+  });
+
+  document.querySelectorAll('#juegos-puzzle-levels .nav-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('btn-pj-' + diff) || document.getElementById('btn-p-' + diff);
+  if (btn) btn.classList.add('active');
+
+  puzzleState.startTime = Date.now();
+  puzzleState.timerId = setInterval(updatePuzzleTimer, 1000);
+  updatePuzzleTimer();
+  drawJuego();
+}
+
+function updatePuzzleTimer() {
+  if (puzzleState.isSolved || puzzleState.awaitingFormula) return;
+  const sec = Math.floor((Date.now() - puzzleState.startTime) / 1000);
+  const min = Math.floor(sec / 60);
+  const s = sec % 60;
+  const timeStr = `${min}:${s.toString().padStart(2, '0')}`;
+  const snappedCount = puzzleState.pieces.filter(p => p.isSnapped).length;
+  if (snappedCount < 4) {
+    el.juegosResult.innerHTML = `Tiempo: <b style="color:var(--color-text-primary)">${timeStr}</b> · Arrastrá las piezas para armar <b>(a+b)²</b> (${snappedCount}/4)`;
+  }
+}
+
+let activePiece = null, dragOffset = { x: 0, y: 0 }, isDragging = false;
+
+function setupPuzzleEvents() {
+  const c = el.juegosCanvas;
+  const start = (e) => {
+    if (puzzleState.isSolved) return;
+    const rect = c.getBoundingClientRect();
+    const mx = (e.clientX || e.touches[0].clientX) - rect.left;
+    const my = (e.clientY || e.touches[0].clientY) - rect.top;
+    
+    for (let i = puzzleState.pieces.length - 1; i >= 0; i--) {
+      const p = puzzleState.pieces[i];
+      if (mx >= p.x && mx <= p.x + p.w && my >= p.y && my <= p.y + p.h) {
+        activePiece = p; isDragging = true;
+        dragOffset.x = mx - p.x; dragOffset.y = my - p.y;
+        puzzleState.pieces.splice(i, 1); puzzleState.pieces.push(p);
+        break;
+      }
+    }
+  };
+  const move = (e) => {
+    if (!isDragging || !activePiece) return;
+    const rect = c.getBoundingClientRect();
+    const mx = (e.clientX || e.touches[0].clientX) - rect.left;
+    const my = (e.clientY || e.touches[0].clientY) - rect.top;
+    activePiece.x = mx - dragOffset.x; activePiece.y = my - dragOffset.y;
+    activePiece.isSnapped = false;
+    drawJuego();
+  };
+  const end = () => {
+    if (!isDragging || !activePiece) return;
+    isDragging = false;
+    const tx = puzzleState.targetOrigin.x + activePiece.targetX;
+    const ty = puzzleState.targetOrigin.y + activePiece.targetY;
+    if (Math.sqrt((activePiece.x - tx)**2 + (activePiece.y - ty)**2) < 20) {
+      activePiece.x = tx; activePiece.y = ty; activePiece.isSnapped = true;
+    }
+    activePiece = null;
+    checkPuzzleResult();
+    drawJuego();
+  };
+  c.onmousedown = start; window.onmousemove = move; window.onmouseup = end;
+  c.ontouchstart = (e) => { e.preventDefault(); start(e); };
+  c.ontouchmove = (e) => { e.preventDefault(); move(e); };
+  c.ontouchend = end;
+}
+
+function checkPuzzleResult() {
+  const snappedCount = puzzleState.pieces.filter(p => p.isSnapped).length;
+  if (snappedCount === 4 && !puzzleState.awaitingFormula && !puzzleState.isSolved) {
+    if (puzzleState.timerId) clearInterval(puzzleState.timerId);
+    puzzleState.timeTaken = Math.floor((Date.now() - puzzleState.startTime) / 1000);
+    puzzleState.awaitingFormula = true;
+    
+    const a = puzzleState.a, b = puzzleState.b;
+    el.juegosResult.innerHTML = `
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <div style="color:#3B6D11; font-weight:600">¡Piezas colocadas en ${formatPuzzleTime(puzzleState.timeTaken)}!</div>
+        <div style="font-size:13px"><b>Modo Desafío:</b> Ingresá el valor del área total para completar:</div>
+        <div class="row" style="margin-top:4px">
+           <span style="font-family:serif; font-style:italic">(${a} + ${b})² = </span>
+           <input type="number" id="puzzle-formula-input" class="check-input" style="flex:none; width:100px" placeholder="?" />
+           <button class="check-btn" onclick="checkPuzzleFormula()">Verificar</button>
+        </div>
+        <div id="puzzle-formula-feedback" style="font-size:12px; color:var(--color-text-secondary)">Pista: Sumá a² (${a*a}), los dos ab (${2*a*b}) y b² (${b*b}).</div>
+      </div>
+    `;
+  } else if (snappedCount > 0) {
+    updatePuzzleTimer();
+  }
+}
+
+function formatPuzzleTime(sec) {
+  const min = Math.floor(sec / 60);
+  const s = sec % 60;
+  return min > 0 ? `${min}m ${s}s` : `${s}s`;
+}
+
+function checkPuzzleFormula() {
+  const input = parseFloat(document.getElementById('puzzle-formula-input').value);
+  const a = puzzleState.a, b = puzzleState.b;
+  const correcta = (a + b) ** 2;
+
+  if (input === correcta) {
+    puzzleState.isSolved = true;
+    puzzleState.awaitingFormula = false;
+    algebraStats.puzzle++;
+    saveProgress();
+    renderAlgebraStats();
+    el.juegosResult.innerHTML = `
+      <div class="success-box" style="margin:0">
+        <b>¡Desafío completado!</b> 🎉<br>
+        Tiempo: ${formatPuzzleTime(puzzleState.timeTaken)}<br>
+        Fórmula: (${a}+${b})² = ${a*a} + ${2*a*b} + ${b*b} = <b>${correcta}</b>
+      </div>
+    `;
+    confetti({ particleCount: 150, spread: 70, origin: { y: 0.7 }, colors: ['#7F77DD', '#1D9E75', '#D85A30'] });
+  } else {
+    const feedback = document.getElementById('puzzle-formula-feedback');
+    feedback.innerHTML = `<span style="color:#A32D2D">Incorrecto. Sumá las áreas de los bloques: ${a*a} + ${a*b} + ${a*b} + ${b*b}</span>`;
+  }
+}
+
+function setAlg(mode){
+  if (puzzleState.timerId) clearInterval(puzzleState.timerId);
+  algMode=mode;
+  puzzleState.challengeActive = false;
+  document.querySelectorAll('.alg-card').forEach(c=>c.classList.remove('active'));
+  if(event) event.target.closest('.alg-card').classList.add('active');
+  
+  const normal = document.getElementById('alg-normal-controls');
+  const btnDif = document.getElementById('btn-dif-challenge');
+  
+  normal.style.display = 'flex';
+  btnDif.style.display = (mode === 'difcuad') ? 'block' : 'none';
+  algInput();
+}
+
+function drawJuego() {
+  if(!theme.bg) updateThemeCache();
+  const ctx = el.juegosCanvas.getContext('2d');
+  const W=460,H=300;
+  ctx.fillStyle=theme.bg;ctx.fillRect(0,0,W,H);
+  
+  if (puzzleState.juegoMode === 'puzzle') {
+    const {pu, targetOrigin: to, a, b} = puzzleState;
+    const side = (a + b) * pu;
+    ctx.setLineDash([5, 5]); ctx.strokeStyle = theme.txtS + '44';
+    ctx.strokeRect(to.x, to.y, side, side); ctx.setLineDash([]);
+    ctx.fillStyle = theme.txtS + '08'; ctx.fillRect(to.x, to.y, side, side);
+    ctx.fillStyle = theme.txtS + '44'; ctx.textAlign = 'center';
+    ctx.fillText("Soltá las piezas acá", to.x + side/2, to.y + side/2);
+
+    puzzleState.pieces.forEach(piece => {
+      ctx.save();
+      if (activePiece === piece) { ctx.shadowBlur = 15; ctx.shadowColor = "rgba(0,0,0,0.4)"; }
+      ctx.fillStyle = piece.colorL; ctx.fillRect(piece.x, piece.y, piece.w, piece.h);
+      ctx.strokeStyle = piece.color; ctx.lineWidth = piece.isSnapped ? 3 : 1.5;
+      ctx.strokeRect(piece.x, piece.y, piece.w, piece.h);
+      ctx.fillStyle = "#1A2744"; ctx.font = "bold 12px " + theme.font; ctx.textAlign = 'center';
+      ctx.fillText(piece.label, piece.x + piece.w/2, piece.y + piece.h/2 + 5);
+      if (piece.isSnapped) {
+        ctx.fillStyle = piece.color; ctx.font = "10px " + theme.font;
+        if (piece.id === 'a2') ctx.fillText(`a=${a}`, piece.x + piece.w/2, piece.y - 5);
+        if (piece.id === 'b2') ctx.fillText(`b=${b}`, piece.x + piece.w/2, piece.y + piece.h + 12);
+      }
+      ctx.restore();
+    });
+  } else if (puzzleState.juegoMode === 'triangulo') {
+    const v = puzzleState.vertices, pu = puzzleState.pu;
+    const area = 0.5 * Math.abs(v[0].x * (v[1].y - v[2].y) + v[1].x * (v[2].y - v[0].y) + v[2].x * (v[0].y - v[1].y)) / (pu * pu);
+    const isNear = Math.abs(area - puzzleState.targetArea) < 0.5;
+
+    ctx.strokeStyle = theme.txtS + '11'; ctx.lineWidth = 0.5;
+    for(let x=0; x<=W; x+=pu) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let y=0; y<=H; y+=pu) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    
+    ctx.beginPath(); ctx.moveTo(v[0].x, v[0].y); ctx.lineTo(v[1].x, v[1].y); ctx.lineTo(v[2].x, v[2].y); ctx.closePath();
+    ctx.fillStyle = isNear ? 'rgba(201, 168, 76, 0.6)' : COLORS.tealL + 'aa'; ctx.fill();
+    ctx.strokeStyle = isNear ? '#C9A84C' : COLORS.teal; ctx.lineWidth = 2; ctx.stroke();
+    
+    const dist = (p1, p2) => Math.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2);
+    v.forEach(pt => {
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, 7, 0, Math.PI*2);
+      ctx.fillStyle = COLORS.teal; ctx.fill();
+      ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+    });
+
+    const cx = (v[0].x + v[1].x + v[2].x) / 3, cy = (v[0].y + v[1].y + v[2].y) / 3;
+    ctx.fillStyle = "#1A2744"; ctx.font = "bold 15px " + theme.font; ctx.textAlign = "center";
+    ctx.fillText(area.toFixed(1) + " u²", cx, cy + 5);
+  }
+}
+
+function drawAlg(){
+  if(!theme.bg) updateThemeCache();
+  const a=parseFloat(el.algA.value)||1;
+  const b=parseFloat(el.algB.value)||1;
+  const ctx=el.algCanvas.getContext('2d');
+  const W=460,H=300;
+  ctx.fillStyle=theme.bg;ctx.fillRect(0,0,W,H);
+  ctx.font='12px '+theme.font;
+  
+  const p = algP;
+
+  const drawBlock = (x, y, w, h, fill, stroke, text, progress, tx, ty, dashed=false) => {
+    if (progress <= 0) return;
+    ctx.save();
+    ctx.globalAlpha = progress;
+    ctx.fillStyle = fill; ctx.fillRect(x, y, w, h);
+    if (dashed) { ctx.setLineDash([5,3]); ctx.lineWidth = 1.5; } else { ctx.lineWidth = 2; }
+    ctx.strokeStyle = stroke; ctx.strokeRect(x, y, w, h);
+    ctx.fillStyle = "#1A2744"; ctx.textAlign = 'center'; // Color oscuro para contraste
+    if (text) ctx.fillText(text, tx, ty);
+    ctx.restore();
+  };
+
+  if(algMode==='binomio2'){
+    const pu=Math.min(22,Math.floor(160/Math.max(a,b)));
+    const ox=30,oy=30,au=a*pu,bu=b*pu;
+
+    drawBlock(ox, oy, au, au, COLORS.purpleL, COLORS.purple, 'a²', Math.min(1, p/0.4), ox+au/2, oy+au/2+5);
+    const p_ab = Math.max(0, Math.min(1, (p-0.4)/0.4));
+    drawBlock(ox+au, oy, bu, au, COLORS.tealL, COLORS.teal, 'ab', p_ab, ox+au+bu/2, oy+au/2+5);
+    drawBlock(ox, oy+au, au, bu, COLORS.tealL, COLORS.teal, 'ab', p_ab, ox+au/2, oy+au+bu/2+5);
+    drawBlock(ox+au, oy+au, bu, bu, COLORS.amberL, COLORS.amber, 'b²', Math.max(0, Math.min(1, (p-0.8)/0.2)), ox+au+bu/2, oy+au+bu/2+5);
+
+    if (p < 1) {
+      let msg = p < 0.4 ? "Primero calculamos el cuadrado del primer término: <b>a²</b>" : 
+                p < 0.8 ? "Sumamos el doble producto del primero por el segundo: <b>2ab</b>" : 
+                "Finalmente, sumamos el cuadrado del segundo término: <b>b²</b>";
+      el.algResult.innerHTML = `<span style="color:var(--color-text-secondary)">${msg}</span>`;
+    } else {
+      el.algResult.innerHTML = `(${a}+${b})² = ${a}²+2×${a}×${b}+${b}² = ${a*a}+${2*a*b}+${b*b} = <b>${(a+b)*(a+b)}</b>`;
+    }
+  } else if(algMode==='difcuad'){
+    const pu=Math.min(22,Math.floor(160/Math.max(a)));
+    const ox=30,oy=20,au=a*pu;
+    
+    drawBlock(ox, oy, au, au, COLORS.purpleL, COLORS.purple, 'a²', Math.min(1, p/0.5), ox+au/2, oy+au+16);
+    if(b<a){
+      const bu=b*pu;
+      const p_b = Math.max(0, Math.min(1, (p-0.5)/0.5));
+      drawBlock(ox, oy, bu, bu, '#ffffff', COLORS.coral, '−b²', p_b, ox+bu/2, oy+bu/2+4, true);
+    }
+
+    if (p < 1) {
+      let msg = p < 0.5 ? "Partimos de un área total de <b>a²</b>" : 
+                "Restamos el área del cuadrado menor: <b>a² − b²</b>";
+      el.algResult.innerHTML = `<span style="color:var(--color-text-secondary)">${msg}</span>`;
+    } else {
+      el.algResult.innerHTML = `a²−b² = (a−b)(a+b) → ${a}²−${b}² = (${a}−${b})(${a}+${b}) = <b>${a*a-b*b}</b>`;
+    }
+  } else if(algMode==='binomio3'){
+    const v=a+b;
+    const res=`(${a}+${b})³ = ${a}³+3×${a}²×${b}+3×${a}×${b}²+${b}³<br>= ${Math.pow(a,3)}+${3*a*a*b}+${3*a*b*b}+${Math.pow(b,3)} = <b>${Math.pow(v,3)}</b>`;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(30,30,a*18,a*18);ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(30,30,a*18,a*18);
+    ctx.fillStyle=COLORS.tealL;ctx.fillRect(30+a*18,30,b*18,a*18);ctx.strokeStyle=COLORS.teal;ctx.strokeRect(30+a*18,30,b*18,a*18);
+    ctx.fillStyle=theme.txt;ctx.textAlign='center';
+    ctx.fillText('a³→cubo',30+a*9,30+a*9+4);
+    ctx.fillText('(proyección)',30+a*18+b*9,30+a*9+4);
+    ctx.fillText(`(${a}+${b})³ = ${Math.pow(v,3)}`,W/2,200);
+    el.algResult.innerHTML=res;
+  } else if(algMode==='potencia'){
+    ctx.fillStyle=theme.txt;ctx.font='14px '+theme.font;ctx.textAlign='center';
+    ctx.fillText(`a = ${a}`,W/2,60);
+    for(let n=1;n<=5;n++){
+      const val=Math.pow(a,n);
+      const bw=Math.min(val*8,W-80);
+      ctx.fillStyle=['#EEEDFE','#E1F5EE','#FAEEDA','#FAECE7','#EAF3DE'][n-1];
+      ctx.fillRect((W-bw)/2,60+n*36,bw,26);
+      ctx.strokeStyle=[COLORS.purple,COLORS.teal,COLORS.amber,COLORS.coral,'#639922'][n-1];ctx.lineWidth=1.5;ctx.strokeRect((W-bw)/2,60+n*36,bw,26);
+      ctx.fillStyle=theme.txt;ctx.fillText(`a^${n} = ${val}   /  ${n}√${val} = ${a}`,(W-bw)/2+bw/2,60+n*36+17);
+    }
+    el.algResult.innerHTML=`<b>Potencia y raíz:</b> aⁿ y ⁿ√a son operaciones inversas. ${a}² = ${a*a}, √${a*a} = ${a}.`;
+  }
+}
+
+function renderTrophies() {
+  const row = document.getElementById('trophy-row');
+  if (!row) return;
+  const count = solvedProblems.length;
+  const total = PROBLEMAS.length;
+
+  // Calculamos metas dinámicas basadas en el total de problemas actuales
+  const milestones = [
+    { count: Math.max(1, Math.floor(total * 0.2)), ...TROPHY_ICONS[0] },
+    { count: Math.max(2, Math.floor(total * 0.5)), ...TROPHY_ICONS[1] },
+    { count: total, ...TROPHY_ICONS[2] }
+  ];
+
+  row.innerHTML = milestones.map(m => {
+    const achieved = count >= m.count;
+    return `
+      <div class="trophy-item" style="opacity: ${achieved ? 1 : 0.2}; transform: ${achieved ? 'scale(1.05)' : 'scale(0.95)'}; filter: ${achieved ? 'none' : 'grayscale(1)'}">
+        <div class="trophy-icon">${m.icon}</div>
+        <div class="trophy-label" style="${achieved ? 'color:var(--color-text-primary)' : ''}">${m.label}</div>
+        <div style="font-size:9px; color:var(--color-text-secondary); margin-top:2px">${m.count} resueltos</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderProblems(){
+  const list=document.getElementById('problems-list');
+  let html = PROBLEMAS.map(p => {
+    const isSolved = solvedProblems.includes(p.id);
+    return `
+    <div class="problem-card${currentProblem&&currentProblem.id===p.id?' selected':''}" onclick="loadProblem(${p.id})">
+      <div style="display:flex;justify-content:space-between;align-items:start">
+        <div class="badge ${p.nivel}">${p.nivel}</div>
+        ${isSolved ? '<span style="color:#3B6D11;font-size:11px;font-weight:600">✅ Resuelto</span>' : ''}
+      </div>
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary)">${p.titulo}</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-top:3px">${p.enunciado}</div>
+    </div>
+  `}).join('');
+
+  if (solvedProblems.length > 0) {
+    html += `<button class="hint-btn" style="margin-top:12px;width:100%;border-style:dashed" onclick="resetProgress()">Borrar progreso guardado</button>`;
+  }
+
+  list.innerHTML = html;
+}
+
+function loadProblem(id){
+  currentProblem=PROBLEMAS.find(p=>p.id===id);
+  intentos=0;
+  document.getElementById('pw-feedback').innerHTML='';
+  document.getElementById('pw-pista').style.display='none';
+  document.getElementById('pw-respuesta').value='';
+  document.getElementById('pw-title').textContent=currentProblem.titulo;
+  document.getElementById('pw-badge').innerHTML=`<span class="badge ${currentProblem.nivel}">${currentProblem.nivel}</span>`;
+  document.getElementById('pw-enunciado').textContent=currentProblem.enunciado;
+  document.getElementById('problem-workspace').style.display='block';
+  renderProblems();
+  drawProblemCanvas();
+}
+
+function drawProblemCanvas(){
+  const p=currentProblem;if(!p)return;
+  if(!theme.bg) updateThemeCache();
+  const canvas=document.getElementById('pw-canvas');
+  const ctx=canvas.getContext('2d');
+  const W=460,H=240;
+  ctx.fillStyle=theme.bg;ctx.fillRect(0,0,W,H);
+  const c=p.config;
+  let area=0;
+  if(c.modo==='rectangulo'||c.modo==='perimetro'){
+    const a=c.a,b=c.b;
+    const pw=Math.min(W-100,a*28),ph=Math.min(H-60,b*28);
+    const ox=(W-pw)/2,oy=(H-ph)/2;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy,pw,ph);
+    ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy,pw,ph);
+    ctx.fillStyle=theme.txt;ctx.font='13px '+theme.font;ctx.textAlign='center';
+    ctx.fillText(`${a} m`,ox+pw/2,oy-8);
+    ctx.save();ctx.translate(ox-14,oy+ph/2);ctx.rotate(-Math.PI/2);ctx.fillText(`${b} m`,0,0);ctx.restore();
+    area=c.modo==='perimetro'?2*(a+b):a*b;
+    document.getElementById('pw-area').textContent=c.modo==='perimetro'?round2(area)+' m (perímetro)':round2(area)+' m²';
+  } else if(c.modo==='triangulo'){
+    const a=c.a,b=c.b;
+    const bw=Math.min(W-100,a*26),bh=Math.min(H-60,b*26);
+    const ox=(W-bw)/2,oy=(H-bh)/2;
+    ctx.beginPath();ctx.moveTo(ox,oy+bh);ctx.lineTo(ox+bw,oy+bh);ctx.lineTo(ox,oy);ctx.closePath();
+    ctx.fillStyle=COLORS.tealL;ctx.fill();ctx.strokeStyle=COLORS.teal;ctx.lineWidth=2;ctx.stroke();
+    area=(a*b)/2;
+    document.getElementById('pw-area').textContent=round2(area)+' m²';
+    ctx.fillStyle=theme.txt;ctx.font='13px '+theme.font;ctx.textAlign='center';
+    ctx.fillText(`base = ${a} m`,ox+bw/2,oy+bh+18);
+  } else if(c.modo==='binomio'){
+    const a=c.a,b=c.b;const pu=18;
+    const ox=40,oy=30,au=a*pu,bu=b*pu;
+    ctx.fillStyle=COLORS.purpleL;ctx.fillRect(ox,oy,au,au);ctx.strokeStyle=COLORS.purple;ctx.lineWidth=2;ctx.strokeRect(ox,oy,au,au);
+    ctx.fillStyle=COLORS.tealL;ctx.fillRect(ox+au,oy,bu,au);ctx.strokeStyle=COLORS.teal;ctx.strokeRect(ox+au,oy,bu,au);
+    ctx.fillStyle=COLORS.tealL;ctx.fillRect(ox,oy+au,au,bu);ctx.strokeStyle=COLORS.teal;ctx.strokeRect(ox,oy+au,au,bu);
+    ctx.fillStyle=COLORS.amberL;ctx.fillRect(ox+au,oy+au,bu,bu);ctx.strokeStyle=COLORS.amber;ctx.strokeRect(ox+au,oy+au,bu,bu);
+    ctx.fillStyle=theme.txt;ctx.font='11px '+theme.font;ctx.textAlign='center';
+    ctx.fillText('a²',ox+au/2,oy+au/2+4);ctx.fillText('ab',ox+au+bu/2,oy+au/2+4);ctx.fillText('ab',ox+au/2,oy+au+bu/2+4);ctx.fillText('b²',ox+au+bu/2,oy+au+bu/2+4);
+    area=(a+b)*(a+b);
+    document.getElementById('pw-area').textContent=`(${a}+${b})² = ${area}`;
+  } else if(c.modo==='poligono'){
+    drawComplexShape(ctx,W,H,c.tipo,1,1,'m',true);
+    const r=getComplexArea(c.tipo,1,1);
+    document.getElementById('pw-area').textContent=round2(r.area)+' u²';
+    area=r.area;
+  }
+  currentProblem._area=area;
+}
+
+function getCorrectAnswer(p){
+  const c=p.config;
+  if(p.id === 1) return (c.a * c.b) / 10; // Litros de pintura
+  if(p.id === 2) return (c.a * c.b) / (0.3 * 0.3); // Cantidad de baldosas
+  if(p.id === 3) return (c.a * c.b) / 2; // Cantidad de chapas
+  if(c.modo==='rectangulo') return c.a*c.b; 
+  if(c.modo==='perimetro') return 2*(c.a+c.b);
+  if(c.modo==='triangulo') return (c.a*c.b)/2;
+  if(c.modo==='binomio') return (c.a+c.b)*(c.a+c.b);
+  if(c.modo==='poligono') return getComplexArea(c.tipo,1,1).area; 
+  return null;
+}
+
+const PISTAS={
+  1:['¿Qué figura es la pared?','¿Cómo calculás el área de un rectángulo?','Área = base × altura. ¿Cuáles son los lados?'],
+  2:['¿Qué necesitás calcular primero: el área del piso o la cantidad de baldosas?','El piso es un rectángulo. ¿Qué área tiene?','Área piso = 2.4 × 1.8. Después dividís por el área de cada baldosa.'],
+  3:['¿Cuántos m² tiene el techo?','Si cada chapa cubre 2 m², ¿cuántas chapas necesitás?','Número de chapas = Área total ÷ área por chapa'],
+  4:['Este problema habla de "alambrar" el terreno. ¿Qué estás midiendo?','El alambre recorre el borde del terreno. ¿Cómo se llama eso?','Perímetro = 2(a+b). ¿Podés aplicarlo?'],
+  5:['¿Cuál es la fórmula del área de un triángulo?','Área = (base × altura) / 2','Reemplazá: base=8, altura=5'],
+  6:['¿Qué forma tiene la casa?','Área = lado × lado','8 × 5 = ?'],
+  7:['¿Cómo la dividirías en partes más simples?','Probá separar la L en dos rectángulos','Área total = rectángulo grande − esquina'],
+  8:['¿Cuántas partes tiene la T?','Una barra horizontal y un rectángulo central','Sumá las áreas de cada parte'],
+  9:['El escalón tiene partes como "escaleras"','¿Cuántos rectangulitos ves?','Sumá todas las partes: 4u² + 6u² + 2u²'],
+  10:['¿Qué significa (a+b)²?','Es el área de un cuadrado de lado (a+b)','El cuadrado tiene 4 partes: a², ab, ab y b²']
+};
+
+function mostrarPista(){
+  const p=currentProblem;if(!p)return;
+  const pistas=PISTAS[p.id]||['Revisá la figura y pensá en la fórmula correspondiente.'];
+  const idx=Math.min(intentos,pistas.length-1);
+  const box=document.getElementById('pw-pista');
+  box.style.display='block';
+  box.className='hint-box';
+  box.innerHTML='<b>Pista:</b> '+pistas[idx];
+}
+
+function verificarRespuesta(){
+  const p=currentProblem;if(!p)return;
+  const resp=parseFloat(document.getElementById('pw-respuesta').value);
+  if(isNaN(resp)){document.getElementById('pw-feedback').innerHTML='<div class="hint-box">Ingresá un número.</div>';return;}
+  const correcta=getCorrectAnswer(p);
+  intentos++;
+  const fb=document.getElementById('pw-feedback');
+  if(Math.abs(resp-correcta)<0.1){
+    fb.innerHTML=`<div class="success-box"><b>¡Excelente!</b> ¡La respuesta es correcta! El resultado es ${round2(correcta)}.</div>`;
+    if(!solvedProblems.includes(p.id)){
+      solvedProblems.push(p.id);
+      saveProgress();
+      renderProblems();
+      renderTrophies();
+
+      // Efecto de confeti
+      if (solvedProblems.length === PROBLEMAS.length) {
+        // Celebración de ORO: Lluvia por ambos lados
+        const duration = 4 * 1000;
+        const end = Date.now() + duration;
+        (function frame() {
+          confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#7F77DD', '#BA7517'] });
+          confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#7F77DD', '#BA7517'] });
+          if (Date.now() < end) requestAnimationFrame(frame);
+        }());
+      } else {
+        // Explosión normal por problema resuelto
+        confetti({ particleCount: 100, spread: 70, origin: { y: 0.7 }, colors: ['#7F77DD', '#1D9E75', '#D85A30'] });
+      }
+    }
+  } else {
+    const GUIAS={
+      1:['¿La pared es un rectángulo o un triángulo?','El área de un rectángulo es base × altura. ¿Multiplicaste los dos lados?','Revisá: 4 × 2,5 = ?'],
+      2:['¿Convertiste todas las unidades a la misma?','30 cm = 0,3 m. ¿Cuánto mide cada baldosa en m²?','Dividí el área del piso (2,4×1,8) por el área de una baldosa (0,09 m²)'],
+      default:['¿Qué fórmula usaste?','Revisá los valores que ingresaste.','Usá la pista para guiarte paso a paso.']
+    };
+    const guia=(GUIAS[p.id]||GUIAS.default)[Math.min(intentos-1,2)];
+    fb.innerHTML=`<div class="hint-box"><b>No es exactamente eso.</b> ${guia}</div>`;
+  }
+}
+
+function resetProgress() {
+  if (!confirm('¿Estás seguro de que quieres borrar todo tu progreso?')) return;
+  solvedProblems = [];
+  saveProgress();
+  renderProblems();
+  renderTrophies();
+}
+
+function convertArea() {
+  const val = parseFloat(el.tVal.value) || 0;
+  const from = el.tFrom.value;
+  const to = el.tTo.value;
+  const result = (val / CONV_AREA[from]) * CONV_AREA[to];
+  const formatted = result.toLocaleString('es-AR', { maximumFractionDigits: 6 });
+  el.tResult.textContent = formatted + ' ' + to + '²';
+}
+
+function renderPowersTable() {
+  const tbody = document.getElementById('t-powers-body');
+  if (!tbody || tbody.children.length > 0) return;
+  let html = '';
+  for (let n = 1; n <= 12; n++) {
+    html += `<tr style="border-bottom: 0.5px solid var(--color-border-tertiary);">
+      <td style="padding: 8px; font-weight: 600; color: var(--color-text-secondary); text-align: left;">${n}</td>
+      <td style="padding: 8px; text-align: center;">${n * n}</td>
+      <td style="padding: 8px; text-align: center;">${n * n * n}</td>
+      <td style="padding: 8px; text-align: center;">${Math.sqrt(n).toFixed(2)}</td>
+      <td style="padding: 8px; text-align: center;">${Math.cbrt(n).toFixed(2)}</td>
+    </tr>`;
+  }
+  tbody.innerHTML = html;
+}
+
+loadProgress();
+drawGeo();
+setupPuzzleEvents();
+</script>
