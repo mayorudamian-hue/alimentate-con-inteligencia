@@ -1,3 +1,4 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/scripts/validate-comidas.mjs b/scripts/validate-comidas.mjs
 new file mode 100644
 index 0000000000000000000000000000000000000000..f81e07a438ce3bff63b073aafaa942db3a50015d
@@ -29,3 +30,6 @@ index 0000000000000000000000000000000000000000..f81e07a438ce3bff63b073aafaa942db
 +  console.error(`❌ No se pudo validar comidas.json: ${error.message}`);
 +  process.exit(1);
 +}
+ 
+EOF
+)

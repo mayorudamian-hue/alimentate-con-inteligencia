@@ -1,3 +1,4 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/js/state.js b/js/state.js
 new file mode 100644
 index 0000000000000000000000000000000000000000..cb412286bbe77d4d3f8f459f99b3383914e2ede5
@@ -88,3 +89,6 @@ index 0000000000000000000000000000000000000000..cb412286bbe77d4d3f8f459f99b33839
 +export function saveState(storageKey, state) {
 +  localStorage.setItem(storageKey, JSON.stringify(state));
 +}
+ 
+EOF
+)

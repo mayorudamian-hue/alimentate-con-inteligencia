@@ -1,5 +1,6 @@
-﻿diff --git a/index.html b/index.html
-index 50da6f91032858dcce04d367614c74a4b55cca53..8f42b37f55e2a5dcbf3d90409ff2c9214621dfc9 100644
+﻿ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index 50da6f91032858dcce04d367614c74a4b55cca53..25f192bcf42f986e85e7469ca186b844379ae0b5 100644
 --- a/index.html
 +++ b/index.html
 @@ -1789,58 +1789,58 @@
@@ -525,7 +526,7 @@ index 50da6f91032858dcce04d367614c74a4b55cca53..8f42b37f55e2a5dcbf3d90409ff2c921
 -      plan[day.id] = fallback[day.id];
 -      return;
 -    }
-+<script type="module" src="js/app.js"></script>
++<script src="js/app.bundle.js"></script>
  
 -    MEAL_TYPES.forEach(({ id }) => {
 -      const entry = plan[day.id][id];
@@ -3365,3 +3366,6 @@ index 50da6f91032858dcce04d367614c74a4b55cca53..8f42b37f55e2a5dcbf3d90409ff2c921
 -</script>
  </body>
  </html>
+ 
+EOF
+)

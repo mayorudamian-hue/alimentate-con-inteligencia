@@ -1,3 +1,4 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/js/data.js b/js/data.js
 new file mode 100644
 index 0000000000000000000000000000000000000000..a8be91a23ac3a5119975365d275d1df187920e20
@@ -286,3 +287,6 @@ index 0000000000000000000000000000000000000000..a8be91a23ac3a5119975365d275d1df1
 +
 +  return errors;
 +}
+ 
+EOF
+)

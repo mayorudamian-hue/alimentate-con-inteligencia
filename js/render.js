@@ -1,3 +1,4 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/js/render.js b/js/render.js
 new file mode 100644
 index 0000000000000000000000000000000000000000..1393c281fffde32c16ad53b649da7a52893a9b8c
@@ -56,3 +57,6 @@ index 0000000000000000000000000000000000000000..1393c281fffde32c16ad53b649da7a52
 +  document.addEventListener("keydown", onKeyDown);
 +  return closeModal;
 +}
+ 
+EOF
+)
