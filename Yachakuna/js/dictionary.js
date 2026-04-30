@@ -177,6 +177,20 @@ const DICTIONARY = {
         }
         return null;
     },
+
+    getEntryImage(entry) {
+        if (!entry || typeof entry !== 'object') return '';
+        const candidates = [
+            entry.image,
+            entry.img,
+            entry.imageUrl,
+            entry.imageURL,
+            entry.image_url,
+            entry.imagen
+        ];
+        const image = candidates.find(v => typeof v === 'string' && v.trim() !== '');
+        return image ? image.trim() : '';
+    },
     
     getFallbackIcon(word, tags) {
         if (window.STATE && window.STATE.customEmojis && word) {
@@ -578,11 +592,25 @@ const DICTIONARY = {
         
         // Imagen en el reverso con la misma lógica que el Diccionario
         const imgContainer = document.getElementById('srs-img-container');
-        const imgUrl = this.IMAGE_MAPPING[this.normalizeText(this.currentCard.verb)] || this.currentCard.image;
+        const imgUrl = this.IMAGE_MAPPING[this.normalizeText(this.currentCard.verb)] || this.getEntryImage(this.currentCard);
         const fallbackIcon = this.getFallbackIcon(this.currentCard.verb, this.currentCard.tags);
-        
+
+        if (!imgContainer) return;
+        imgContainer.innerHTML = '';
+
         if (imgUrl) {
-            imgContainer.innerHTML = `<img src="${imgUrl}" style="max-width:120px; max-height:120px; border-radius:12px; border:2px solid var(--border); box-shadow: var(--duo-shadow-border);" onerror="this.parentElement.innerHTML='<div style=font-size:60px;>${fallbackIcon}</div>'">`;
+            const imgEl = document.createElement('img');
+            imgEl.src = imgUrl;
+            imgEl.style.maxWidth = '120px';
+            imgEl.style.maxHeight = '120px';
+            imgEl.style.borderRadius = '12px';
+            imgEl.style.border = '2px solid var(--border)';
+            imgEl.style.boxShadow = 'var(--duo-shadow-border)';
+            imgEl.alt = this.currentCard.verb || 'Ilustracion de vocabulario';
+            imgEl.addEventListener('error', () => {
+                imgContainer.innerHTML = `<div style="font-size: 60px;">${fallbackIcon}</div>`;
+            });
+            imgContainer.appendChild(imgEl);
         } else {
             imgContainer.innerHTML = `<div style="font-size: 60px;">${fallbackIcon}</div>`;
         }
