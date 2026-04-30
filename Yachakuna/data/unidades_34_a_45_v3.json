@@ -1,0 +1,1408 @@
+[
+  {
+    "verb": "Puka",
+    "translation": "Rojo",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Yana",
+    "translation": "Negro",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Yuraj",
+    "translation": "Blanco",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Qʼomer",
+    "translation": "Verde",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Azul",
+    "translation": "Azul",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Kulli",
+    "translation": "Púrpura / Morado",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Qʼellu",
+    "translation": "Amarillo",
+    "unit": "34. Colores",
+    "tags": [
+      "Adjetivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay waseqa yuraj.",
+    "translation": "Esa casa es blanca.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay phuyuqa yana.",
+    "translation": "Esa nube es negra.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay manzanaqa q'ellu.",
+    "translation": "Esa manzana es amarilla/dorada.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3
+  },
+  {
+    "verb": "Chay pachaqa azul.",
+    "translation": "Esa ropa es azul.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay autoqa qʼomer.",
+    "translation": "Ese auto es verde.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay peloqa qʼellu.",
+    "translation": "Ese pelo es amarillo / rubio.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay pachaqa kulli.",
+    "translation": "Esa ropa es púrpura / morada.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3
+  },
+  {
+    "verb": "Chay alqoqa yuraj.",
+    "translation": "Ese perro es blanco.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Chay perqaqa puka.",
+    "translation": "Esa pared es roja.",
+    "unit": "34. Colores",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Qʼomer pampaspi",
+    "translation": "En los campos verdes",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [
+      {
+        "text": "Qʼomer pampaspi purini.",
+        "trans": "Camino por los campos verdes."
+      }
+    ],
+    "pinned": false
+  },
+  {
+    "verb": "Yuraj caballopi",
+    "translation": "En el caballo blanco",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [
+      {
+        "text": "Yuraj caballopi rishani.",
+        "trans": "Estoy yendo en el caballo blanco."
+      }
+    ],
+    "pinned": false
+  },
+  {
+    "verb": "Yuraj pʼachawan",
+    "translation": "Con ropa blanca",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [
+      {
+        "text": "Yuraj pʼachawan p'achallikushani.",
+        "trans": "Me estoy vistiendo con ropa blanca."
+      }
+    ],
+    "pinned": false
+  },
+  {
+    "verb": "Yuraj ritʼi jina",
+    "translation": "Como nieve blanca",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [
+      {
+        "text": "Yuraj ritʼi jina kanqa.",
+        "trans": "Será como nieve blanca."
+      }
+    ],
+    "pinned": false
+  },
+  {
+    "verb": "Puka mar",
+    "translation": "Mar rojo",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Puka color",
+    "translation": "Color rojo",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Yana phuyus",
+    "translation": "Nubes negras",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Yana cabra",
+    "translation": "Cabra negra",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Kulli hilo",
+    "translation": "Hilo púrpura",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Azul hilo",
+    "translation": "Hilo azul",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Qʼellu aceite",
+    "translation": "Aceite dorado / amarillo",
+    "unit": "35. El adjetivo va antes del sustantivo",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false
+  },
+  {
+    "verb": "Unu",
+    "translation": "Agua",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Nina",
+    "translation": "Fuego",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Allpa",
+    "translation": "Tierra",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Killa",
+    "translation": "Luna",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Chʼaska",
+    "translation": "Estrella",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Pʼunchay",
+    "translation": "Día",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Tuta",
+    "translation": "Noche",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Rumi",
+    "translation": "Piedra",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Sachʼa",
+    "translation": "Árbol",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Sisa",
+    "translation": "Flor",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Pʼanqa",
+    "translation": "Hoja",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Muhu",
+    "translation": "Semilla",
+    "unit": "36. Sustantivos esenciales (Parte 1)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Unuta upyay.",
+    "translation": "Bebe agua.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "36. Sustantivos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Ninata ama tʼinkiychu.",
+    "translation": "No toques el fuego.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "36. Sustantivos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Killa suyupi purishan.",
+    "translation": "Camina en el territorio de la luna.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3,
+    "unit": "36. Sustantivos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Uywa",
+    "translation": "Animal",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Pʼisqo",
+    "translation": "Pájaro",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Challwa",
+    "translation": "Pez",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Allqu",
+    "translation": "Perro",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Machaqway",
+    "translation": "Serpiente",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3
+  },
+  {
+    "verb": "Yawar",
+    "translation": "Sangre",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Tullu",
+    "translation": "Hueso",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Uma",
+    "translation": "Cabeza",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Ñawi",
+    "translation": "Ojo",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Rinri",
+    "translation": "Oreja / Oído",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Senqa",
+    "translation": "Nariz",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Simi",
+    "translation": "Boca",
+    "unit": "37. Sustantivos esenciales (Parte 2)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Sachʼa pʼanqan qʼomer.",
+    "translation": "La hoja del árbol es verde.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "37. Sustantivos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Allqu sisakunata mikhushan.",
+    "translation": "El perro está comiendo flores.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3,
+    "unit": "37. Sustantivos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Pʼisqo phawin.",
+    "translation": "El pájaro vuela.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "37. Sustantivos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Maki",
+    "translation": "Mano",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Chaki",
+    "translation": "Pie",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Sonqo",
+    "translation": "Corazón",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Mama",
+    "translation": "Madre",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Tayta",
+    "translation": "Padre",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Wawa",
+    "translation": "Hijo / Niño",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Qhari",
+    "translation": "Hombre",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Runa",
+    "translation": "Persona / Gente",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Suti",
+    "translation": "Nombre",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Mikhuna",
+    "translation": "Comida",
+    "unit": "38. Sustantivos esenciales (Parte 3)",
+    "tags": [
+      "Sustantivo"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Sonqoy munakuyki.",
+    "translation": "Mi corazón te ama.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "38. Sustantivos esenciales (Parte 3)"
+  },
+  {
+    "verb": "Maki makiwan puririsun.",
+    "translation": "Caminemos tomados de la mano.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 3,
+    "unit": "38. Sustantivos esenciales (Parte 3)"
+  },
+  {
+    "verb": "Mamay mikhunata waykʼun.",
+    "translation": "Mi madre cocina la comida.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "38. Sustantivos esenciales (Parte 3)"
+  },
+  {
+    "verb": "Kay",
+    "translation": "Ser / Estar",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Allin runam kani.",
+        "trans": "Soy una buena persona."
+      },
+      {
+        "text": "Allin runam karqani.",
+        "trans": "Fui una buena persona."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Tiyay",
+    "translation": "Haber / Existir / Sentarse",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Wasipi tiyani.",
+        "trans": "Estoy en la casa."
+      },
+      {
+        "text": "Wasipi tiyarqani.",
+        "trans": "Estuve en la casa."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Hamuy",
+    "translation": "Venir",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Kaypi hamuy.",
+        "trans": "Ven aquí."
+      },
+      {
+        "text": "Wasiyman hamorqani.",
+        "trans": "Vine a la casa."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Rikuy",
+    "translation": "Ver",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Ñawiiywan rikuni.",
+        "trans": "Veo con mis ojos."
+      },
+      {
+        "text": "Ñawiiywan rikorqani.",
+        "trans": "Vi con mis ojos."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Upyay",
+    "translation": "Beber / Tomar",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Yakuta upyani.",
+        "trans": "Bebo agua."
+      },
+      {
+        "text": "Yakuta upyarqani.",
+        "trans": "Bebí agua."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Wañuy",
+    "translation": "Morir",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Sachʼaqa wañurqan.",
+        "trans": "El árbol murió."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Paqarimuy",
+    "translation": "Nacer",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Cochabambapi paqarimorqani.",
+        "trans": "Nací en Cochabamba."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Kichariy",
+    "translation": "Abrir",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Punkuta kicharini.",
+        "trans": "Abro la puerta."
+      },
+      {
+        "text": "Punkuta kicharerqani.",
+        "trans": "Abrí la puerta."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Wisqʼay",
+    "translation": "Cerrar",
+    "unit": "39. Verbos esenciales (Parte 1)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Punkuta wisqʼani.",
+        "trans": "Cierro la puerta."
+      },
+      {
+        "text": "Punkuta wisqʼarqani.",
+        "trans": "Cerré la puerta."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Allin runam kani.",
+    "translation": "Soy una buena persona.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "39. Verbos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Yakuta upyani.",
+    "translation": "Bebo agua.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "39. Verbos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Kaypi hamuy.",
+    "translation": "Ven aquí.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "39. Verbos esenciales (Parte 1)"
+  },
+  {
+    "verb": "Phaway",
+    "translation": "Correr",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Wawaqa phawin.",
+        "trans": "El niño corre."
+      },
+      {
+        "text": "Wawaqa phawarqan.",
+        "trans": "El niño corrió."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Urmay",
+    "translation": "Caer",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Ñanmanta urmarqani.",
+        "trans": "Me caí del camino."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Sayariy",
+    "translation": "Levantarse / Pararse",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Sayariy, ripuna kanchis.",
+        "trans": "Levántate, tenemos que irnos."
+      },
+      {
+        "text": "Paqarisqanmanta sayarerqani.",
+        "trans": "Me levanté desde el amanecer."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Tiyariy",
+    "translation": "Sentarse",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Kaypi tiyariy.",
+        "trans": "Siéntate aquí."
+      },
+      {
+        "text": "Kaypi tiyarerqani.",
+        "trans": "Me senté aquí."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Apay",
+    "translation": "Llevar / Cargar",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Mikhunata apani.",
+        "trans": "Llevo la comida."
+      },
+      {
+        "text": "Mikhunata aparqani.",
+        "trans": "Llevé la comida."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Wichariy",
+    "translation": "Subir",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Orqoman wicharini.",
+        "trans": "Subo al cerro."
+      },
+      {
+        "text": "Orqoman wicharerqani.",
+        "trans": "Subí al cerro."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Uraykuy",
+    "translation": "Bajar",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Orqomanta uraikuni.",
+        "trans": "Bajo del cerro."
+      },
+      {
+        "text": "Orqomanta uraikorqani.",
+        "trans": "Bajé del cerro."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Mañay",
+    "translation": "Pedir / Rogar",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Yakuta mañani.",
+        "trans": "Pido agua."
+      },
+      {
+        "text": "Yakuta mañarqani.",
+        "trans": "Pedí agua."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Maskay",
+    "translation": "Buscar",
+    "unit": "40. Verbos esenciales (Parte 2)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Imatam maskanki?",
+        "trans": "¿Qué estás buscando?"
+      },
+      {
+        "text": "Chhikantataj maskarqani.",
+        "trans": "Busqué por todas partes."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Punkuta kichariy.",
+    "translation": "Abre la puerta.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "40. Verbos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Wawaqa phawin.",
+    "translation": "El niño corre.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "40. Verbos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Sayariy, ripuna kanchis.",
+    "translation": "Levántate, tenemos que irnos.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "40. Verbos esenciales (Parte 2)"
+  },
+  {
+    "verb": "Waykʼuy",
+    "translation": "Cocinar",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Mikhunata waykʼuni.",
+        "trans": "Cocino la comida."
+      },
+      {
+        "text": "Mikhunata waykʼorqani.",
+        "trans": "Cociné la comida."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Rimay",
+    "translation": "Hablar / Decir",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Qhichwapichu rimanki?",
+        "trans": "¿Hablas en quechua?"
+      },
+      {
+        "text": "Qhichwapi rimarqani.",
+        "trans": "Hablé en quechua."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Quy",
+    "translation": "Dar / Entregar",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Yakuta quway.",
+        "trans": "Dame agua."
+      },
+      {
+        "text": "Yakuta quwarqani.",
+        "trans": "Te di agua."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Rantiy",
+    "translation": "Comprar",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Qhatupi rantini.",
+        "trans": "Compro en el mercado."
+      },
+      {
+        "text": "Qhatupi ranterqani.",
+        "trans": "Compré en el mercado."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Qhatuy",
+    "translation": "Vender",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Mikhunata qhatuni.",
+        "trans": "Vendo comida."
+      },
+      {
+        "text": "Mikhunata qhatorqani.",
+        "trans": "Vendí comida."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Asiy",
+    "translation": "Reír",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Wawaqa asin.",
+        "trans": "El niño ríe."
+      },
+      {
+        "text": "Wawaqa aserqan.",
+        "trans": "El niño rió."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 1
+  },
+  {
+    "verb": "Munakuy",
+    "translation": "Amar (recíproco)",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Taytamamanchikta munakunchis.",
+        "trans": "Amamos a nuestros padres."
+      },
+      {
+        "text": "Taytamamanchikta munakorqanchis.",
+        "trans": "Amamos a nuestros padres (pasado)."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Qʼepiy",
+    "translation": "Cargar en la espalda",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Wawata qʼepini.",
+        "trans": "Cargo al niño en la espalda."
+      },
+      {
+        "text": "Wawata qʼeperqani.",
+        "trans": "Cargué al niño en la espalda."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Llikʼiy",
+    "translation": "Rasgar / Romper",
+    "unit": "41. Verbos esenciales (Parte 3)",
+    "tags": [
+      "Verbo"
+    ],
+    "sentences": [
+      {
+        "text": "Pʼachayta llikʼini.",
+        "trans": "Rasgo mi ropa."
+      },
+      {
+        "text": "Pʼachayta llikʼerqani.",
+        "trans": "Rasgué mi ropa."
+      }
+    ],
+    "pinned": false,
+    "difficulty": 2
+  },
+  {
+    "verb": "Imaynatas kashanki?",
+    "translation": "¿Cómo estás?",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "41. Verbos esenciales (Parte 3)"
+  },
+  {
+    "verb": "Yakuta quway.",
+    "translation": "Dame agua.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 1,
+    "unit": "41. Verbos esenciales (Parte 3)"
+  },
+  {
+    "verb": "Pʼachayta llikʼirqanki.",
+    "translation": "Rasgaste mi ropa.",
+    "tags": [
+      "Frase"
+    ],
+    "sentences": [],
+    "pinned": false,
+    "difficulty": 2,
+    "unit": "41. Verbos esenciales (Parte 3)"
+  }
+]

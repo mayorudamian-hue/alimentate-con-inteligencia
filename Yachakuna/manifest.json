@@ -1,0 +1,22 @@
+{
+  "name": "Yachakuna — Aprende Quechua",
+  "short_name": "Yachakuna",
+  "description": "Herramienta digital para aprender quechua boliviano desde cero.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdf6e8",
+  "theme_color": "#C8102E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icons/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

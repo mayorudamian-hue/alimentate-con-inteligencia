@@ -1,0 +1,762 @@
+[
+  {
+    "id": "yachakoj-wayna-parte-1",
+    "section": 2,
+    "part": 1,
+    "title": "El yachakoj wayna — Parte 1",
+    "subtitle": "El primer día",
+    "icon": "📚",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgitoqa uj wayna. Payqa qhechuata yachakuyta munasqa.",
+        "e": "Jorgito es un joven. Él quería aprender quechua."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay, cursoman risaj nispa wasiymanta llojsin.",
+        "e": "Un día, diciendo 'voy a ir al curso', sale de su casa."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa kusisqa, ichapis manchachisqa ima.",
+        "e": "Él está feliz, pero también un poco asustado."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Cursopi chayamun. Jatun wasi. Ashkha yachakojkuna kashanku.",
+        "e": "Llega al curso. Una casa grande. Hay muchos alumnos."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj warmi qayllaykun: — ¡Imaynalla! Noqa Marta sutikuni.",
+        "e": "Una chica se acerca: — ¡Hola! Yo me llamo Marta."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Imaynalla! Noqa Jorgito sutikuni. Kusikuni rejsisuspa.",
+        "e": "Jorgito: — ¡Hola! Yo me llamo Jorgito. Encantado de conocerte."
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¿Qanpis quechuata yachakuyta munankichu, Jorgito?",
+        "e": "Marta: — ¿Vos también querés aprender quechua, Jorgito?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Arí! Sinchita yachakuyta munani.",
+        "e": "Jorgito: — ¡Sí! Quiero aprender mucho."
+      },
+      {
+        "type": "question",
+        "title": "¿Imayná kashan Jorgito cursoman chayaspa?",
+        "text": "¿Cómo está Jorgito al llegar al curso?",
+        "options": [
+          "Kusisqa ichapis manchachisqa (Feliz y un poco asustado)",
+          "Llakisqa (Triste)",
+          "Sayk'usqa (Cansado)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-2",
+    "section": 2,
+    "part": 2,
+    "title": "El yachakoj wayna — Parte 2",
+    "subtitle": "El profesor",
+    "icon": "👨‍🏫",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Yachachejqa yaykumun. Payqa don Roberto.",
+        "e": "El profesor entra. Él es don Roberto."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Allillanchu, yachakojkuna! ¿Imaynalla kankichej?",
+        "e": "Don Roberto: — ¡Hola, alumnos! ¿Cómo están?"
+      },
+      {
+        "type": "text",
+        "speaker": "yachakojkuna",
+        "q": "Yachakojkuna: — ¡Walejlla, yachachej!",
+        "e": "Alumnos: — ¡Bien nomás, profesor!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — Quechuaqa sumaj. ¿Yachakuyta munankichejchu?",
+        "e": "Don Roberto: — El quechua es hermoso. ¿Quieren aprender?"
+      },
+      {
+        "type": "text",
+        "speaker": "tukuy",
+        "q": "Tukuy: — ¡Arí, yachachej! ¡Yachakuyta munayku!",
+        "e": "Todos: — ¡Sí, profesor! ¡Queremos aprender!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Sumaj! Sichus sapa p'unchay jamunkichej chayqa, usqhallata yachakunkichej.",
+        "e": "Don Roberto: — ¡Muy bien! Si vienen todos los días, aprenderán rápido."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito yuyarin: 'Sapa p'unchay jamusaj. Mana pantasajchu.'",
+        "e": "Jorgito piensa: 'Voy a venir todos los días. No me voy a equivocar.'"
+      },
+      {
+        "type": "question",
+        "title": "¿Imatá nin don Roberto yachakojkunaman?",
+        "text": "¿Qué les dice don Roberto a los alumnos?",
+        "options": [
+          "Sichus sapa p'unchay jamunkichej chayqa, usqhayllata yachakunkichej (Si vienen todos los días aprenderán rápido)",
+          "Mana yachachisajchu (No voy a enseñar)",
+          "Qhechuaqa mana facilchu (El quechua no es fácil)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-3",
+    "section": 2,
+    "part": 3,
+    "title": "El yachakoj wayna — Parte 3",
+    "subtitle": "La primera lección",
+    "icon": "✏️",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj kaj lecciónpi, don Roberto tapun: — ¿Ima sutiykichej?",
+        "e": "En la primera lección, don Roberto pregunta: — ¿Cómo se llaman?"
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — Noqa Marta sutikuni. Moreno llajtamanta kani.",
+        "e": "Marta: — Yo me llamo Marta. Soy de la ciudad de Moreno."
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — Noqa Carlos. Noqapis Moreno llajtamanta kani.",
+        "e": "Carlos: — Yo soy Carlos. Yo también soy de la ciudad de Moreno."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Noqa Jorgito sutikuni. Pilar llajtamanta kani.",
+        "e": "Jorgito: — Yo me llamo Jorgito. Soy de la ciudad de Pilar."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Sumaj! ¿Imapí cursoman jamunkichej?",
+        "e": "Don Roberto: — ¡Muy bien! ¿En qué vienen al curso?"
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — Noqa colectivopi jamuni.",
+        "e": "Marta: — Yo vengo en colectivo."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Noqa chakipi jamuni. Wasiy karu kashan.",
+        "e": "Jorgito: — Yo vengo a pie. Mi casa está lejos."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Kallpachakuy, Jorgito! Allinta ruwanki.",
+        "e": "Don Roberto: — ¡Esforzate, Jorgito! Lo hacés muy bien."
+      },
+      {
+        "type": "question",
+        "title": "¿Maymantataj Jorgito?",
+        "text": "¿De dónde es Jorgito?",
+        "options": [
+          "Orqo llajtamanta",
+          "Pilar llajtamanta",
+          "Moreno llajtamanta"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-4",
+    "section": 2,
+    "part": 4,
+    "title": "El yachakoj wayna — Parte 4",
+    "subtitle": "La dificultad",
+    "icon": "😰",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Kinsa p'unchay pasajtin, Jorgitoqa sayk'usqa kasqa.",
+        "e": "Cuando pasaron tres días. Jorgito estaba cansado."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa llakisqa kaspa, nerqa: 'Quechuaqa mana facilchu. Mana entiendenichu.'nispa",
+        "e": "Él estando triste dijo: 'El quechua no es fácil. No entiendo.'"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Cursopi, Jorgito pantarqa. Chaymantataj yachachejqa payta taporqa.",
+        "e": "En el curso, Jorgito se equivocó. Después de eso, el profesor le preguntó."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — Jorgito, ¿imayná kakushanki?",
+        "e": "Don Roberto: — Jorgito, ¿cómo te encuentras?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Llakisqa kashani, yachachejníy. Mana parlayta atinichu.",
+        "e": "Jorgito: — Estoy triste, profesor. No puedo hablar."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Ama llakikuychu! Tukuy pantanchej qallarispa.",
+        "e": "Don Roberto: — ¡No te pongas triste! Todos nos equivocamos al empezar."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — Qan kallpachakushanki. Yachakuyta atinki.",
+        "e": "Don Roberto: — Vos te estás esforzando. Podrás aprender."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito uyarin. Pisimanta pisi kusikun.",
+        "e": "Jorgito escucha. De a poco se alegra."
+      },
+      {
+        "type": "question",
+        "title": "¿Imaraykuchus llakisqa kashan Jorgito?",
+        "text": "¿Por qué está triste Jorgito?",
+        "options": [
+          "Wasiman kutimusqanrayku",
+          "Sayk'usqa kasqanrayku",
+          "Mana parlayta atisqanrayku"
+        ],
+        "correct": 2,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-5",
+    "section": 2,
+    "part": 5,
+    "title": "El yachakoj wayna — Parte 5",
+    "subtitle": "Los compañeros",
+    "icon": "👫",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chaymanta, Marta Carlostawan Jorgitoman qayllaykunku.",
+        "e": "Después, Marta y Carlos se acercan a Jorgito."
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¡Ama llakikuychu, Jorgito! Noqaykupis pantarqayku qallarispa.",
+        "e": "Marta: — ¡No te pongas triste, Jorgito! Nosotros también nos equivocamos al empezar."
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — Noqa kinsa watasta yachakushani. Kunanqa parlayta atikuni.",
+        "e": "Carlos: — Yo llevo tres años aprendiendo. Ahora puedo hablar."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — ¿Kinsa watasta? ¡Unay tiempo!",
+        "e": "Jorgito: — ¿Tres años? ¡Mucho tiempo!"
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — Mana. Usqhayllata pasarqa. Sapa p'unchay yachakuspa, usqhayllata yachakunki.",
+        "e": "Marta: — No. Pasó rápido. Aprendiendo todos los días, aprenderás rápido."
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — ¿Mashkha watasniyoj kanki, Jorgito?",
+        "e": "Carlos: — ¿Cuántos años tenés, Jorgito?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Noqa iskay chunka kinsayoj watasniyoj kani.",
+        "e": "Jorgito: — Yo tengo 23 años."
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¡Wayna kanki! Ashka tiempoyoj kanki yachakunaykipaj.",
+        "e": "Marta: — ¡Sos joven! Tenés mucho tiempo para aprender."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito sonqonpi kusikun.",
+        "e": "Jorgito se alegra en su corazón."
+      },
+      {
+        "type": "question",
+        "title": "¿Mashkha watasniyoj kashan Carlos qhechuata yachakuspa?",
+        "text": "¿Cuánto tiempo lleva Carlos aprendiendo quechua?",
+        "options": [
+          "Uj wata",
+          "Iskay watas",
+          "Kinsa watas"
+        ],
+        "correct": 2,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-6",
+    "section": 2,
+    "part": 6,
+    "title": "El yachakoj wayna — Parte 6",
+    "subtitle": "El esfuerzo",
+    "icon": "💪",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chaymanta, Jorgito sapa p'unchay cursoman rerqa.",
+        "e": "Después de eso, Jorgito fue al curso todos los días."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Sichus paramushan chayqa, chakipi rerqa. Sichus chirimushan chayqa, chakipi rerqa.",
+        "e": "Cuando estaba lloviendo, fue a pie. Cuando estaba frío, fue a pie."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa yuyaj: 'Ama saqenichu. Sapa p'unchay risaj.'",
+        "e": "Él pensaba: 'No voy a abandonar. Iré todos los días.'"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay, don Roberto taporqa: — ¿Imapí cursoman jamunki, Jorgito?",
+        "e": "Un día, don Roberto preguntó: — ¿En qué venís al curso, Jorgito?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Chakipi jamuni, yachachejníy. Wasiy karu kashan.",
+        "e": "Jorgito: — Vengo a pie, profesor. Mi casa está lejos."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¿Autopichu colectivopíchu jamuyta atinki?",
+        "e": "Don Roberto: — ¿Podés venir en auto o en colectivo?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Mana qolqe kanchu. Chakillapi tukuy ladoman rini.",
+        "e": "Jorgito: — No hay dinero. Voy solo a pie a todos lados."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto sonqonpi llakikun. Payqa Jorgitota mayta valoran.",
+        "e": "Don Roberto se entristece en su corazón. Él valora a Jorgito."
+      },
+      {
+        "type": "question",
+        "title": "¿Imaraykutaj chakipi rin Jorgito?",
+        "text": "¿Por qué Jorgito va a pie?",
+        "options": [
+          "Karu kashan",
+          "Mana qolqe kanchu",
+          "Puriyta munan"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-7",
+    "section": 2,
+    "part": 7,
+    "title": "El yachakoj wayna — Parte 7",
+    "subtitle": "El progreso",
+    "icon": "🌱",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Tawa chunka p'unchay pasajtin, Jorgito astawanraj yachakun.",
+        "e": "Cuando pasaron cuarenta días. Jorgito aprende aún más."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Kunanqa wakin palabrasta parlayta atin.",
+        "e": "Ahora puede hablar algunas palabras."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay, Marta taporqa: — ¿Imaynalla kashanki, Jorgito?",
+        "e": "Un día, Marta preguntó: — ¿Cómo estás, Jorgito?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — ¡Kusisqa kashani! Kunan wakin palabrasta parlayta atini.",
+        "e": "Jorgito: — ¡Estoy feliz! Ahora puedo hablar algunas palabras."
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¡Sumaj! ¿Astawan yachakunkichu?",
+        "e": "Marta: — ¡Qué bueno! ¿Aprendiste más?"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito quechuapi kutichin: — Arí, gracias! Sapa día astawan yachakuni",
+        "e": "Jorgito responde en quechua: — Arí, gracias! Cada día aprendo más"
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¡Sapa kuti aswan allinta parlanki!",
+        "e": "Marta: — ¡Hablás mejor cada vez!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito sonqonpi kusikun.",
+        "e": "Jorgito se alegra en su corazón."
+      },
+      {
+        "type": "question",
+        "title": "¿Imayná kashan Jorgito tiempo pasajtin?",
+        "text": "¿Cómo está Jorgito al pasar el tiempo?",
+        "options": [
+          "Llakisqa",
+          "Kusisqa",
+          "Sayk'usqa"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "question",
+        "title": "¿Maskha tiempotaj pasarqa Jorgito astawanraj yachakunanpaj?",
+        "text": "¿Cuánto tiempo pasó para que jorgito aprendiera aún más?",
+        "options": [
+          "Tawa chunka días",
+          "iskay chunka días",
+          "Kinsa chunka días"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-8",
+    "section": 2,
+    "part": 8,
+    "title": "El yachakoj wayna — Parte 8",
+    "subtitle": "La lluvia y la promesa",
+    "icon": "🌧️",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay, sinch'ita paramushan, wayramushan ima.",
+        "e": "Un día, llueve mucho, y hace viento."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Wakin yachakojkuna mana jamushankuchu. Paykunaqa wasinkupi kashanku.",
+        "e": "Algunos alumnos no vienen. Ellos están en sus casas."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Pero Jorgito, paychá chayamonqa. Joq'ochasqa kajtinpis, pay jamonqa.",
+        "e": "Pero Jorgito, el seguro llegará. Aunque nieve, el vendrá."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — ¡Jorgito! ¿Chakipi jamunkichu kay sinch'i parawan?",
+        "e": "Don Roberto: — ¡Jorgito! ¿Has venido a pie con esta gran lluvia?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Arí, yachachejníy. Mana saqesajchu nispa jamorqani.",
+        "e": "Jorgito: — Sí, profesor. Vine diciendo que no voy a abandonar."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto mayta kusikun.",
+        "e": "Don Roberto se alegra mucho."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto: — Qan, Jorgito, sumaj yachakoj kanki. Yachachejniyki kusikun.",
+        "e": "Don Roberto: — Vos, Jorgito, sos un gran alumno. Tu profesor se alegra."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — ¡Noqapis kusikuni, yachachejníy! Parlayta yachachiwanki.",
+        "e": "Jorgito: — ¡Yo también estoy feliz, profesor! Me enseñás a hablar."
+      },
+      {
+        "type": "question",
+        "title": "¿Imarayku jamorqa Jorgito parawan?",
+        "text": "¿Por qué vino Jorgito bajo la lluvia?",
+        "options": [
+          "Colectivopi jamusqanrayku",
+          "Mana saqeyta munasqanrayku",
+          "Paramushasqanrayku"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-9",
+    "section": 2,
+    "part": 9,
+    "title": "El yachakoj wayna — Parte 9",
+    "subtitle": "La conversación",
+    "icon": "💬",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Sojta killapi, Jorgito ashkhata yachakorqa.",
+        "e": "En seis meses, Jorgito aprendió mucho."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay, Carlos payta taporqa qhechuapi:",
+        "e": "Un día, Carlos le preguntó en quechua:"
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — ¿Imaynalla kashanki, Jorgito? ¿Quechuata parlayta atinkichu?",
+        "e": "Carlos: — ¿Cómo estás, Jorgito? ¿Podés hablar quechua?"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito qhechuapi kutichin: — Walejlla kashani. Kunanqa parlayta atikuni.",
+        "e": "Jorgito responde en quechua: — Estoy bien. Ahora puedo hablar."
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — ¡Sumaj! ¿Maymanta jamunki?",
+        "e": "Carlos: — ¡Qué hermoso! ¿De dónde vienes?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Orqo llajtamanta kani. Chakipi cursoman jamuni.",
+        "e": "Jorgito: — Soy del pueblo del cerro. Vengo a pie al curso."
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — ¿Mashkha watasniyoj kanki?",
+        "e": "Carlos: — ¿Cuántos años tenés?"
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Iskay chunka kinsayoj watasniyoj kani. ¿Qanrí?",
+        "e": "Jorgito: — Tengo 23 años. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — Noqa iskay chunka pichqayoj watasniyoj kani.",
+        "e": "Carlos: — Yo tengo 25 años."
+      },
+      {
+        "type": "question",
+        "title": "¿Mashkha tiempotaj parlayta yachakorqa Jorgito?",
+        "text": "¿En cuántos meses aprendió Jorgito a hablar?",
+        "options": [
+          "Kinsa killapi (En tres meses)",
+          "Sojta killapi (En seis meses)",
+          "Uj killapi (En un mes)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "yachakoj-wayna-parte-10",
+    "section": 2,
+    "part": 10,
+    "title": "El yachakoj wayna — Parte 10",
+    "subtitle": "El futuro",
+    "icon": "⭐",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": "yachakoj-wayna-parte-10-badge",
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Tukuynin leccionesta junt'akorqa.",
+        "e": "Todas las lecciones se completaron."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto yachakojkunaman nin:",
+        "e": "Don Roberto les dice a los alumnos:"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "— ¡Sumajta ruwankichej! Sapa p'unchay yachakusqaykichejrayku, ashkata yachankichej.",
+        "e": "— ¡Lo hicieron muy bien! Por haber aprendido todos los días, saben mucho."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Don Roberto Jorgitoman qhawan: — Qanqa, Jorgito, astawan kallpachakunki yachakunaykipaj.",
+        "e": "Don Roberto mira a Jorgito: — Vos, Jorgito, te esforzaste más por aprender."
+      },
+      {
+        "type": "text",
+        "speaker": "jorgito",
+        "q": "Jorgito: — Yachachejníy, qan sapa día yachachiwanki. Noqa yachakusaj.",
+        "e": "Jorgito: — Profesor, vos cada dia me enseñas. Yo aprenderé."
+      },
+      {
+        "type": "text",
+        "speaker": "marta",
+        "q": "Marta: — ¡Q'aya noqanchej tukuyta qhechuata parlarisunchej!",
+        "e": "Marta: — ¡Mañana nosotros a todos hablaremos quechua!"
+      },
+      {
+        "type": "text",
+        "speaker": "carlos",
+        "q": "Carlos: — ¡Arí! ¡Ichá kinsa watapi Jorgito aswan allinta parlanqa!",
+        "e": "Carlos: — ¡Sí! ¡Tal vez en tres años Jorgito hablará aún mejor!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Jorgito sonqonpi kusikun. Ñawisninpi kusiy tiyan.",
+        "e": "Jorgito se alegra en su corazón. En sus ojos hay alegría."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa yuyarin: 'Mana saqenichu. Sapa p'unchay yachakusaj. Uj p'unchay quechuata parlayta atisaj.'",
+        "e": "Él piensa: 'No voy a abandonar. Aprenderé todos los días. Algún día podré hablar quechua.'"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chayqa sumaj meta — ¡Ama saqeychu!",
+        "e": "Esa es una excelente meta — ¡no abandones!"
+      },
+      {
+        "type": "question",
+        "title": "¿Imatá yuyarin Jorgito tukukuypi?",
+        "text": "¿Qué piensa Jorgito al final?",
+        "options": [
+          "Yachaniña, manaña yachakusajchu (Ya sé, no voy a aprender)",
+          "Mana saqesajchu, sapa p'unchay yachakusaj (No voy a abandonar, aprenderé todos los días)",
+          "Wasiman kutisaj, manaña cursoman risajchu (Voy a volver a casa, ya no iré al curso)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  }
+]

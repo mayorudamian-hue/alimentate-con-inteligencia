@@ -1,0 +1,213 @@
+/* css/stories.css */
+
+.story-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: var(--duo-shadow-border);
+}
+
+.story-card:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.story-card.locked {
+    opacity: 0.6;
+    filter: grayscale(1);
+    cursor: not-allowed;
+    background: #f0f0f0;
+}
+.story-card.locked:active {
+    transform: none;
+}
+
+.story-card.completed {
+    border-color: var(--bolivia-green);
+}
+.story-card.completed::after {
+    content: '👑';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.story-icon {
+    font-size: 40px;
+    background: var(--cream);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.story-info h3 {
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.story-info p {
+    font-size: 14px;
+    color: #8a7c64;
+    font-weight: 700;
+}
+
+.story-level {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: var(--blue-light);
+    color: var(--blue);
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/* Reproductor de Historias (Pantalla Completa) */
+.story-player {
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.story-player.active {
+    transform: translateY(0);
+}
+
+.story-player-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+}
+
+.story-progress-bar {
+    flex: 1;
+    height: 12px;
+    background: var(--cream);
+    border-radius: 6px;
+    margin: 0 16px;
+    overflow: hidden;
+}
+
+.story-progress-fill {
+    height: 100%;
+    background: var(--bolivia-yellow);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.story-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Burbujas de chat */
+.story-bubble {
+    background: white;
+    border: 2px solid var(--border);
+    padding: 16px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    max-width: 85%;
+    cursor: pointer;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    position: relative;
+    box-shadow: 0 4px 0 var(--shadow);
+}
+
+.story-bubble.question-bubble {
+    align-self: stretch;
+    max-width: 100%;
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
+    border-radius: 20px;
+}
+
+/* Alineación por personaje */
+.story-bubble.speaker-narrator {
+    align-self: center;
+    background: var(--cream);
+    border-style: dashed;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    max-width: 90%;
+}
+
+.story-bubble.speaker-left {
+    align-self: flex-start;
+    border-radius: 20px 20px 20px 4px;
+}
+
+.story-bubble.speaker-right {
+    align-self: flex-end;
+    border-radius: 20px 20px 4px 20px;
+    background: #f0f7ff;
+    border-color: var(--blue-mid);
+}
+
+.story-speaker-label {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #8a7c64;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.speaker-right .story-speaker-label {
+    text-align: right;
+    color: var(--blue);
+}
+
+.story-translation {
+    font-size: 14px;
+    color: #8a7c64;
+    font-weight: 600;
+    margin-top: 8px;
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+    display: none;
+}
+
+.story-bubble.translated .story-translation {
+    display: block;
+}
+
+.story-speaker-icon {
+    display: none; /* Reemplazado por labels */
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.story-footer {
+    padding: 16px;
+    border-top: 2px solid var(--border);
+}

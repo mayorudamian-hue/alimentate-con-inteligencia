@@ -1,0 +1,667 @@
+/* ============================================================
+   ruway.css  — Estilos SCOPED para la sección Ruway
+   Solo afecta a #tab-ruway y sus descendientes.
+   NO contiene reglas globales (body, *, :root, header).
+   ============================================================ */
+
+/* ── Contenedor principal ── */
+#tab-ruway .app {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px 16px 32px;
+}
+
+/* ── Header interno de Ruway ── */
+#tab-ruway .ruway-header {
+    padding: 16px 0 14px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+}
+#tab-ruway .ruway-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--ink);
+    margin: 0 0 4px;
+}
+#tab-ruway .ruway-header p {
+    font-size: 14px;
+    color: #7a6a50;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ── Bloque pedagógico ── */
+#tab-ruway .ruway-block {
+    margin-bottom: 32px;
+}
+#tab-ruway .block-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+#tab-ruway .block-title small {
+    font-size: 13px;
+    font-weight: 500;
+    color: #9a8870;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ── Cards — heredan el .card de components.css y añaden variaciones ── */
+#tab-ruway .card {
+    padding: 18px;
+    border-radius: 20px;
+}
+#tab-ruway .card.pos-card   { border-color: #a8dfa8; background: #f4fff4; }
+#tab-ruway .card.mood-card  { border-color: #b8d4f5; background: #eef6ff; }
+#tab-ruway .card.verb-card  { border-color: #a8cff5; background: #eaf3ff; }
+#tab-ruway .card.suffix-card { border-color: #c9a8f5; background: #faf4ff; }
+#tab-ruway .card.yanapa-card { border-color: #f0b47a; background: #fff7ef; }
+
+/* ── Caja de resultado (muestra la oración generada) ── */
+#tab-ruway .gb-result {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+}
+#tab-ruway .result-label {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: #9a8870;
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+#tab-ruway .result-label:first-child {
+    margin-top: 0;
+}
+#tab-ruway .result-q {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 2px;
+}
+#tab-ruway .result-q.highlight { color: var(--bolivia-green); }
+#tab-ruway .result-es {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6a5c44;
+    margin-bottom: 2px;
+}
+#tab-ruway .result-es-sub {
+    font-size: 13px;
+    color: #9a8870;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* ── Grupo de control (label + fichas) ── */
+#tab-ruway .control-group {
+    margin-bottom: 16px;
+}
+#tab-ruway .control-group:last-child { margin-bottom: 0; }
+
+/* ── Etiqueta de sección de fichas ── */
+#tab-ruway .gb-dropzone-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #7a6a50;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ── Carril horizontal de chips ── */
+#tab-ruway .gb-scroll-lane {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 8px 15px 15px; /* Espacio extra para sombras y visibilidad */
+    margin: 0 -15px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* Máscara de degradado para indicar scroll */
+    mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+}
+#tab-ruway .gb-scroll-lane::-webkit-scrollbar { display: none; }
+
+/* ── Chips (fichas seleccionables) ── */
+#tab-ruway .gb-chip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 12px;
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.12s;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+#tab-ruway .gb-chip small {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9a8870;
+    display: block;
+}
+#tab-ruway .gb-chip:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+#tab-ruway .gb-chip.selected,
+#tab-ruway .gb-chip.active {
+    background: var(--ink);
+    color: var(--bolivia-yellow);
+    border-color: var(--ink);
+    border-bottom-color: #000;
+}
+#tab-ruway .gb-chip.selected small,
+#tab-ruway .gb-chip.active small {
+    color: var(--border);
+}
+#tab-ruway .gb-chip:active {
+    transform: translateY(2px);
+    border-bottom-width: 1px;
+}
+
+/* ── Wrap de chips (flujo de líneas) ── */
+#tab-ruway .gb-chip-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 8px 15px 15px;
+    margin: 0 -15px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+}
+#tab-ruway .gb-chip-wrap::-webkit-scrollbar { display: none; }
+
+/* ── Botones de lugar / persona (pos-noun-btn) ── */
+#tab-ruway .pos-noun-btn {
+    padding: 8px 14px;
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: all 0.12s;
+}
+#tab-ruway .pos-noun-btn small {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9a8870;
+}
+#tab-ruway .pos-noun-btn:hover { border-color: var(--bolivia-green); color: var(--bolivia-green-dark); }
+#tab-ruway .pos-noun-btn.active {
+    background: var(--bolivia-green);
+    color: white;
+    border-color: var(--bolivia-green-dark);
+    border-bottom-color: var(--bolivia-green-dark);
+}
+#tab-ruway .pos-noun-btn.active small { color: rgba(255,255,255,0.8); }
+#tab-ruway .pos-noun-btn:active { transform: translateY(2px); border-bottom-width: 1px; }
+
+/* ── Grid de personas (pos-grid, vb-grid) ── */
+#tab-ruway .grid-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 8px 15px 15px;
+    margin: 0 -15px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+}
+#tab-ruway .grid-controls::-webkit-scrollbar { display: none; }
+
+/* ── Botones de verbo ── */
+#tab-ruway .vb-verb-btn {
+    padding: 7px 12px;
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    transition: all 0.12s;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+#tab-ruway .vb-verb-btn small {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9a8870;
+}
+#tab-ruway .vb-verb-btn:hover { border-color: var(--blue); color: var(--blue); }
+#tab-ruway .vb-verb-btn.active {
+    background: var(--blue, #1a5fa8);
+    color: white;
+    border-color: #1248a0;
+    border-bottom-color: #1248a0;
+}
+#tab-ruway .vb-verb-btn.active small { color: rgba(255,255,255,0.75); }
+#tab-ruway .vb-verb-btn:active { transform: translateY(2px); border-bottom-width: 1px; }
+
+/* ── Botones toggle (Plural, Negación, Tiempo...) ── */
+#tab-ruway .gb-toggles {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    padding: 8px 15px 15px;
+    margin: 0 -15px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+}
+#tab-ruway .gb-toggles::-webkit-scrollbar { display: none; }
+#tab-ruway .gb-toggles.compact { margin-top: 8px; margin-bottom: 0; }
+
+#tab-ruway .gb-toggle {
+    padding: 7px 14px;
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #6a5c44;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.12s;
+    white-space: nowrap;
+}
+#tab-ruway .gb-toggle:hover { border-color: var(--gold); color: var(--gold-dark); }
+#tab-ruway .gb-toggle.active {
+    background: var(--ink);
+    color: var(--bolivia-yellow);
+    border-color: var(--ink);
+    border-bottom-color: #000;
+}
+#tab-ruway .gb-toggle:active { transform: translateY(2px); border-bottom-width: 1px; }
+
+#tab-ruway .gb-toggle.reset {
+    color: var(--bolivia-red, #C8102E);
+    border-color: #f5d0d0;
+}
+#tab-ruway .gb-toggle.reset:hover {
+    background: #fff5f5;
+    border-color: var(--bolivia-red, #C8102E);
+}
+#tab-ruway .gb-toggle.action {
+    background: var(--ink);
+    color: var(--bolivia-yellow, #F4C115);
+    border-color: var(--ink);
+    border-bottom-color: #000;
+}
+#tab-ruway .gb-toggle.action:hover {
+    background: #2a2010;
+}
+
+/* -- Feedback de Validación -- */
+.ruway-feedback {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 13px;
+    text-align: center;
+    display: none;
+    transition: opacity 0.5s ease;
+    border: 2px solid transparent;
+}
+.ruway-feedback.correct { background: #d7ffda; color: #1b5e20; border-color: #4caf50; }
+.ruway-feedback.wrong { background: #ffdde0; color: #b71c1c; border-color: #f44336; }
+.ruway-feedback.info { background: #e3f2fd; color: #0d47a1; border-color: #2196f3; }
+
+/* -- Lista de Objetivos -- */
+.target-list-container {
+    margin-top: 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 14px;
+    border: 2px solid var(--border);
+}
+.target-header {
+    font-size: 11px;
+    font-weight: 900;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.target-grid {
+    display: grid;
+    gap: 8px;
+}
+.target-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    background: var(--paper);
+    opacity: 0.7;
+}
+.target-item.done {
+    background: #f1f8e9;
+    opacity: 1;
+    border: 1px solid #c5e1a5;
+}
+
+/* ── Panel de ejemplo aleatorio ── */
+#tab-ruway .gb-exercise-panel {
+    background: var(--cream, #f5ead0);
+    border: 2px dashed var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-top: 14px;
+}
+#tab-ruway .ex-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--gold-dark, #8a5800);
+    margin-bottom: 6px;
+}
+#tab-ruway .example-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* ── Sufijos (bloque de ubicación) ── */
+#tab-ruway .section-desc {
+    font-size: 13px;
+    color: #7a6a50;
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+#tab-ruway .sufijo-sentences {
+    margin-bottom: 10px;
+}
+#tab-ruway .sufijo-sentence {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.6;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+#tab-ruway .sufijo-input {
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--cream, #f5ead0);
+    outline: none;
+    width: 110px;
+    transition: border-color 0.15s;
+}
+#tab-ruway .sufijo-input:focus { border-color: var(--gold); }
+#tab-ruway .sufijo-drop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 4px 10px;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #9a8870;
+    background: var(--cream, #f5ead0);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+#tab-ruway .sufijo-drop.filled {
+    border-style: solid;
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    background: #fff8e8;
+}
+#tab-ruway .sufijo-drop.correct {
+    border-color: var(--bolivia-green, #007A33);
+    color: var(--bolivia-green, #007A33);
+    background: #eefaf0;
+}
+#tab-ruway .sufijo-drop.wrong {
+    border-color: var(--bolivia-red, #C8102E);
+    color: var(--bolivia-red, #C8102E);
+    background: #fff0f0;
+}
+#tab-ruway .sufijo-draggable {
+    cursor: grab;
+    border-style: solid;
+    border-color: #c9a8f5;
+    color: #6b3fa0;
+    background: white;
+}
+#tab-ruway .sufijo-draggable:active { cursor: grabbing; }
+#tab-ruway #sufijo-feedback {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 12px;
+    min-height: 0;
+}
+#tab-ruway #sufijo-feedback.ok  { background: #eefaf0; color: var(--bolivia-green-dark, #005F27); border: 1.5px solid #9ad0a3; }
+#tab-ruway #sufijo-feedback.err { background: #fff0f0; color: #8b2016; border: 1.5px solid #e0a0a0; }
+
+/* ── Yanapa ── */
+#tab-ruway .yanapa-meta {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #fff8e8;
+    border: 1.5px solid #f0d080;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #6a4a00;
+    line-height: 1.5;
+}
+#tab-ruway .yanapa-target-chip.active,
+#tab-ruway .yanapa-actor-chip.active {
+    background: var(--ink);
+    color: var(--bolivia-yellow, #F4C115);
+    border-color: var(--ink);
+    border-bottom-color: #000;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    #tab-ruway .grid-controls {
+        display: flex;
+    }
+    #tab-ruway .result-q { font-size: 19px; }
+    #tab-ruway .block-title { font-size: 17px; }
+    #tab-ruway .gb-chip { font-size: 13px; }
+    #tab-ruway .gb-toggle { font-size: 12px; padding: 6px 11px; }
+}
+
+/* ── Botones de persona — generados dinámicamente por ruway.js ── */
+/* pos-person-btn: grid de posesivos */
+#tab-ruway .pos-person-btn {
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.12s;
+    width: auto;
+    min-width: 140px;
+    flex-shrink: 0;
+}
+#tab-ruway .pos-person-btn:hover { border-color: var(--bolivia-green); }
+#tab-ruway .pos-person-btn.active {
+    background: var(--bolivia-green);
+    border-color: var(--bolivia-green-dark);
+    border-bottom-color: var(--bolivia-green-dark);
+}
+#tab-ruway .pos-person-btn:active { transform: translateY(2px); border-bottom-width: 1px; }
+#tab-ruway .pos-person-btn .pos-q {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--ink);
+}
+#tab-ruway .pos-person-btn.active .pos-q { color: white; }
+#tab-ruway .pos-person-btn .pos-es {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9a8870;
+}
+#tab-ruway .pos-person-btn.active .pos-es { color: rgba(255,255,255,0.85); }
+
+/* vb-person-btn: grid de conjugación verbal */
+#tab-ruway .vb-person-btn {
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 3px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.12s;
+    width: auto;
+    min-width: 140px;
+    flex-shrink: 0;
+}
+#tab-ruway .vb-person-btn:hover { border-color: var(--blue, #1a5fa8); }
+#tab-ruway .vb-person-btn.active {
+    background: var(--blue, #1a5fa8);
+    border-color: #1248a0;
+    border-bottom-color: #1248a0;
+}
+#tab-ruway .vb-person-btn:active { transform: translateY(2px); border-bottom-width: 1px; }
+#tab-ruway .vb-person-btn .vb-q {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--ink);
+}
+#tab-ruway .vb-person-btn.active .vb-q { color: white; }
+#tab-ruway .vb-person-btn .vb-es {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9a8870;
+}
+#tab-ruway .vb-person-btn.active .vb-es { color: rgba(255,255,255,0.8); }
+
+/* ── Indicadores de Scroll (Flechas) ── */
+.scroll-hint-container {
+    position: relative;
+    width: 100%;
+}
+
+.scroll-hint-arrow {
+    position: absolute;
+    top: calc(50% - 4px);
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--blue);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-hint-arrow-right {
+    right: -5px;
+    animation: arrow-bounce-right 2s infinite;
+}
+
+.scroll-hint-arrow-left {
+    left: -5px;
+    animation: arrow-bounce-left 2s infinite;
+}
+
+@keyframes arrow-bounce-right {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(-50%) translateX(0); }
+    40% { transform: translateY(-50%) translateX(4px); }
+    60% { transform: translateY(-50%) translateX(2px); }
+}
+
+@keyframes arrow-bounce-left {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(-50%) translateX(0); }
+    40% { transform: translateY(-50%) translateX(-4px); }
+    60% { transform: translateY(-50%) translateX(-2px); }
+}

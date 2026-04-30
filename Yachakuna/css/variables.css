@@ -1,0 +1,78 @@
+/* css/variables.css */
+:root {
+    /* Paleta base - Modo Claro */
+    --background: #ffffff;
+    --paper: #ffffff;
+    --ink: #3c3c3c;
+    --ink-light: #777777;
+    --border: #e5e5e5;
+    --cream: #fff8e8;
+
+    /* Identidad Visual */
+    --blue: #1cb0f6;
+    --blue-rgb: 28, 176, 246;
+    --blue-light: #ddf4ff;
+    --blue-dark: #1899d6;
+
+    --bolivia-green: #007a33;
+    --bolivia-green-dark: #005f27;
+    --bolivia-red: #c8102e;
+    --bolivia-yellow: #f4c115;
+
+    --gold: #ffc800;
+    --gold-dark: #8a5800;
+
+    --bolivia-green-light: #eafff0;
+    --bolivia-red-light: #ffebeb;
+    --cream-border: #f0e0c0;
+    /* Sombras y Efectos */
+    --duo-shadow-border: 0 2px 0 var(--border);
+    --transition-speed: 0.3s;
+}
+
+/* Ajustes para Modo Oscuro */
+.dark-mode {
+    --background: #131f24;
+    --paper: #1b292f;
+    --ink: #f1f7fb;
+    --ink-light: #afafaf;
+    --border: #37464f;
+    --cream: #131f24;
+
+    --blue-light: #1b3a4b;
+    
+    --bolivia-green: #23ad5c; /* Verde más brillante para oscuridad */
+    --bolivia-green-dark: #1a8a44;
+    
+    --bolivia-red: #ff4b4b; /* Rojo con mejor contraste */
+    --bolivia-yellow: #ffd32c;
+    --bolivia-green-light: #2a4a3a; /* Darker green for dark mode */
+    --bolivia-red-light: #4a2a2a;   /* Darker red for dark mode */
+    --cream-border: #4a3a2a;        /* Darker cream border for dark mode */
+    --gold-dark: #cc9a00;
+}
+
+/* Aplicación global */
+body {
+    background-color: var(--background);
+    color: var(--ink);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Corrección de visibilidad para elementos específicos en Modo Oscuro */
+.header-text h1, 
+.header-text p {
+    color: #ffffff !important; /* El título siempre debe ser blanco sobre el fondo del encabezado */
+}
+
+/* Fondo de cielo nocturno para el encabezado en modo oscuro */
+.dark-mode .main-header {
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+}
+
+/* Asegura que los títulos y etiquetas de las unidades del camino sean legibles */
+.unit-header h3,
+.unit-header p,
+.node-label {
+    color: var(--ink);
+}

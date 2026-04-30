@@ -1,0 +1,957 @@
+﻿﻿[
+    {
+        "verb": "Noqayku",
+        "translation": "Nosotros (exclusivo)",
+        "tags": ["Pronombre"],
+        "unit": "1 Pronombres personales",
+        "sentences": {
+            "text": "Noqayku kayku",
+            "trans": "Sólo nosotros somos"
+        },
+        "pinned": false,
+        "ask": "Nosotros (exclusivo)",
+        "answer": "Noqayku"
+    },
+    {
+        "verb": "Noqanchej",
+        "translation": "Nosotros (inclusivo)",
+        "tags": ["Pronombre"],
+        "unit": "1 Pronombres personales",
+        "sentences": {
+            "text": "Noqanchej kanchej",
+            "trans": "Nosotros somos"
+        },
+        "pinned": false,
+        "ask": "Noqanchej",
+        "answer": "Nosotros (inclusivo)"
+    },
+    {
+        "verb": "Qan",
+        "translation": "Tú/vos",
+        "tags": ["Pronombre"],
+        "unit": "1 Pronombres personales",
+        "sentences": {
+            "text": "Qan kanki",
+            "trans": "Tu eres"
+        },
+        "pinned": false,
+        "ask": "Qan",
+        "answer": "Tú/vos"
+    },
+    {
+        "verb": "Qankuna",
+        "translation": "Ustedes",
+        "tags": ["Pronombre"],
+        "unit": "1 Pronombres personales",
+        "sentences": {
+            "text": "Qankuna kankichej",
+            "trans": "Ustedes son"
+        },
+        "pinned": false,
+        "ask": "Qankuna",
+        "answer": "Ustedes"
+    },
+    {
+        "verb": "Paykuna",
+        "translation": "Ellos/ellas",
+        "tags": ["Pronombre"],
+        "sentences": {
+            "text": "Paykuna kanku",
+            "trans": "Ellos son"
+        },
+        "pinned": false,
+        "unit": "1 Pronombres personales",
+        "ask": "Ellos/ellas",
+        "answer": "Paykuna"
+    },
+    {
+        "verb": "Noqa",
+        "translation": "Yo",
+        "tags": ["Pronombre"],
+        "sentences": {
+            "text": "Noqa kani",
+            "trans": "Yo soy"
+        },
+        "pinned": false,
+        "unit": "1 Pronombres personales",
+        "ask": "Noqa",
+        "answer": "Yo"
+    },
+    {
+        "verb": "Pay",
+        "translation": "Él/ella",
+        "tags": ["Pronombre"],
+        "sentences": {
+            "text": "Payqa Jehová",
+            "trans": "Él es Jehová"
+        },
+        "pinned": false,
+        "unit": "1 Pronombres personales",
+        "ask": "Él/ella",
+        "answer": "Pay"
+    },
+    {
+        "verb": "Tinkunakama",
+        "translation": "Nos vemos",
+        "tags": ["Frase", "Conversación"],
+        "unit": "2 Saludos",
+        "sentences": {
+            "text": "Tinkunakama don Juan",
+            "trans": "Nos vemos don Juan"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "¿Imayná kakushanki?",
+        "translation": "¿Cómo te encuentras?",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "unit": "2 Saludos",
+        "sentences": null,
+        "pinned": false,
+        "ask": "¿Imayná kakushanki?",
+        "answer": "¿Cómo te encuentras?"
+    },
+    {
+        "verb": "Allin p'unchay",
+        "translation": "Buenos días",
+        "tags": ["Frase", "Conversación", "Saludo"],
+        "unit": "2 Saludos",
+        "sentences": null,
+        "pinned": false,
+        "ask": "Buenos días",
+        "answer": "Allin p'unchay"
+    },
+    {
+        "verb": "¿Walejllachu?",
+        "translation": "¿Bien nomás?",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "unit": "2 Saludos",
+        "sentences": {
+            "text": "Walejlla kashani",
+            "trans": "Estoy bien nomás"
+        },
+        "pinned": false,
+        "ask": "¿Walejllachu?",
+        "answer": "¿Bien nomás?"
+    },
+    {
+        "verb": "¿Imaynalla kashanki?",
+        "translation": "¿Cómo estás?",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "unit": "2 Saludos",
+        "sentences": {
+            "text": "Allillan kashani",
+            "trans": "Estoy bien nomás"
+        },
+        "pinned": false,
+        "ask": "¿Imaynalla kashanki?",
+        "answer": "¿Cómo estás?"
+    },
+    {
+        "verb": "Imaynalla",
+        "translation": "Hola",
+        "tags": ["Frase", "Conversación", "Saludo"],
+        "unit": "2 Saludos",
+        "sentences": {
+            "text": "Imaynalla doña",
+            "trans": "Hola doña"
+        },
+        "pinned": false,
+        "ask": "Hola",
+        "answer": "Imaynalla"
+    },
+    {
+        "verb": "Rosa sutikuni. ¿Qanrí?",
+        "translation": "Me llamo Rosa. ¿Y tú?",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "¿Ima paykuna sutikunku?",
+            "trans": "¿Cómo se llaman ellos?"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "Ima pay sutikun?",
+        "translation": "¿Cómo se llama él?",
+        "tags": ["Frase", "Presentación", "Pregunta"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Pay Alberto sutikun",
+            "trans": "Él se llama Alberto"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "Alqoy Yana sutikun",
+        "translation": "Mi perro se llama Yana",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Misi sutikun",
+            "trans": "Se llama Misi"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa algoy",
+        "translation": "Ese es mi perro",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Chayqa mishiy",
+            "trans": "Ese es mi gato"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa wasiy",
+        "translation": "Esa es mi casa",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "¿Chayqa wasiykichu?",
+            "trans": "¿Esa es tu casa?"
+        },
+        "pinned": false
+    },
+    {
+        "verb": "Kusikuni rejsisuspa",
+        "translation": "Encantado de conocerte",
+        "tags": ["Frase", "Conversación"],
+        "unit": "3 Presentación",
+        "sentences": null,
+        "pinned": false,
+        "ask": "Kusikuni rejsisuspa",
+        "answer": "Encantado de conocerte"
+    },
+    {
+        "verb": "¿Pitaj pay?",
+        "translation": "¿Quién es él?",
+        "tags": ["Frase", "Presentación", "Pregunta"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Chayqa José",
+            "trans": "Ese es José"
+        },
+        "pinned": false,
+        "ask": "¿Quién es él?",
+        "answer": "¿Pitaj pay?"
+    },
+    {
+        "verb": "Payqa warmiy",
+        "translation": "Ella es mi esposa",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Payqa qosay",
+            "trans": "Él es mi esposo"
+        },
+        "pinned": false,
+        "ask": "Ella es mi esposa",
+        "answer": "Payqa warmiy"
+    },
+    {
+        "verb": "Payqa Pedro",
+        "translation": "Él es Pedro",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Payqa amigoy",
+            "trans": "Él es mi amigo"
+        },
+        "pinned": false,
+        "ask": "Payqa Pedro",
+        "answer": "Él es Pedro"
+    },
+    {
+        "verb": "Sutiy Gisela",
+        "translation": "Mi nombre es Gisela",
+        "tags": ["Frase", "Presentación"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "¿Qanrí?",
+            "trans": "¿Y vos?"
+        },
+        "pinned": false,
+        "ask": "Sutiy Gisela",
+        "answer": "Mi nombre es Gisela"
+    },
+    {
+        "verb": "¿Ima sutiyki?",
+        "translation": "¿Cuál es tu nombre?",
+        "tags": ["Frase", "Presentación", "Pregunta"],
+        "unit": "3 Presentación",
+        "sentences": {
+            "text": "Damián sutikuni",
+            "trans": "Me llamo Damián"
+        },
+        "pinned": false,
+        "ask": "¿Cuál es tu nombre?",
+        "answer": "¿Ima sutiyki?"
+    },
+    {
+        "verb": "Kusisqa",
+        "translation": "Feliz / Alegre",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Llakisqa",
+        "translation": "Triste",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Onqosqa",
+        "translation": "Enfermo",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Sayk'usqa",
+        "translation": "Cansado",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Phiñasqa",
+        "translation": "Enojado / Molesto",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Yarqhasqa",
+        "translation": "Hambriento",
+        "unit": "4. Sentimientos y Estados",
+        "tags": ["Adjetivo", "Estado"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Inti",
+        "translation": "Sol",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Naturaleza"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Para",
+        "translation": "Lluvia",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Naturaleza", "Clima"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chiri",
+        "translation": "Frío",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Clima"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Rupha",
+        "translation": "Calor / Quema",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Clima"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Orqo",
+        "translation": "Cerro / Montaña",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Naturaleza"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Mayu",
+        "translation": "Río",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Naturaleza"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Phuyu",
+        "translation": "Nube",
+        "unit": "5. Naturaleza y Clima",
+        "tags": ["Sustantivo", "Naturaleza", "Clima"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa mana alqochu",
+        "translation": "Ese no es un perro",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa mana orqochu",
+        "translation": "Esa no es una montaña",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa mana intichu",
+        "translation": "Ese no es el sol",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chayqa mana parachu",
+        "translation": "Eso no es lluvia",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa mana Josechu",
+        "translation": "Él no es José",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa mana kusisqachu",
+        "translation": "Él / ella no está feliz",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa mana llakisqachu",
+        "translation": "Él / ella no está triste",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa mana onqosqachu",
+        "translation": "Él / ella no está enfermo/a",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa mana phiñasqachu",
+        "translation": "Él / ella no está enojado/a",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Noqaqa mana sayk'usqachu kashani",
+        "translation": "Yo no estoy cansado/a",
+        "unit": "6. Negación",
+        "tags": ["Frase", "Negación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Imataj chaykuna?",
+        "translation": "¿Qué son esos?",
+        "unit": "7. Los Plurales",
+        "tags": ["Frase", "Plural", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa makis",
+        "translation": "Esas son manos",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa chakras",
+        "translation": "Esas son granjas",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa punkus",
+        "translation": "Esas son puertas",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa rumis",
+        "translation": "Esas son piedras",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa willaykuna",
+        "translation": "Esos son mensajes/noticias",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa atojkuna",
+        "translation": "Esos son zorros",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa yachachejkuna",
+        "translation": "Esos son maestros/profesores",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa alqos",
+        "translation": "Esos son perros",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chaykunaqa orqos",
+        "translation": "Esas son montañas",
+        "unit": "7. Los Plurales",
+        "tags": ["Sustantivo", "Plural"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Mayqentaj astawan gustasunki? ¿aychachu verdurachu?",
+        "translation": "¿Cuál te gusta más? ¿carne o verdura?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Pimantá astawan leeriy gustasunki? ¿Moisesmantachu Samuelmantachu?",
+        "translation": "¿De quién te gusta leer más? ¿de Moisés o de Samuel?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Pitaj astawan kallpayoj? ¿Davidchu Goliatchu?",
+        "translation": "¿Quién es más fuerte? ¿David o Goliat?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿wasichu chajrachu?",
+        "translation": "¿la casa o la chacra?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Pimantá astawan leeriy gustasunki? ¿Pedromantachu Juanmantachu?",
+        "translation": "¿De quién te gusta leer más? ¿de Pedro o de Juan?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿alqoschu atojkunachu?",
+        "translation": "¿los perros o los zorros?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Pitaj kusisqa kashan? ¿Mariachu Martachu?",
+        "translation": "¿Quién está feliz? ¿María o Marta?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Pimantá chay? ¿Germanmantachu Mariamantachu?",
+        "translation": "¿De quién es eso? ¿De German o de María?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Imatá munanki? ¿sopachu ensaladachu?",
+        "translation": "¿Qué quieres? ¿Sopa o ensalada?",
+        "unit": "8. Conjunción -chu",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Maymanta kanki?",
+        "translation": "¿De dónde eres?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Moreno llajtamanta kani.",
+        "translation": "Soy de la ciudad de Moreno.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Maymantá jamunki?",
+        "translation": "¿De dónde vienes?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Moreno llajtamanta jamuni.",
+        "translation": "Vengo de la ciudad de Moreno.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Mayman rishanki?",
+        "translation": "¿Adónde estás yendo?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Wasiyman rishani.",
+        "translation": "Estoy yendo a mi casa.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Mayman rinki?",
+        "translation": "¿Adónde irás?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Llajtaman risaj.",
+        "translation": "Iré a la ciudad.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Mercadoman risaj.",
+        "translation": "Iré al mercado.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Mayk'aj qan rinki?",
+        "translation": "¿Cuándo vas tú?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Noqaqa sapa p'unchay rini.",
+        "translation": "Yo voy cada día.",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Maymantá?",
+        "translation": "¿De dónde?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Sufijo", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Riy",
+        "translation": "Ir",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Verbo"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Mayk'aj?",
+        "translation": "¿Cuándo?",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Sufijo", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Sapa p'unchay",
+        "translation": "Todos los días / Cada día",
+        "unit": "9. Sufijos -man y -manta",
+        "tags": ["Frase", "Tiempo"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Imapí llajtaman rinki?",
+        "translation": "¿En qué vas a la ciudad?",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Chakipi rini.",
+        "translation": "Voy a pie.",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Autopichu mercadoman rishanki?",
+        "translation": "¿Estás yendo en auto al mercado?",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Mana, colectivopi rishani.",
+        "translation": "No, estoy yendo en colectivo.",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Conversación", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Payqa avionpi jamun.",
+        "translation": "Él/Ella viene en avión.",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Conversación", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Trenpi risaj.",
+        "translation": "Iré en tren.",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Bicicletapi sapa p'unchay rini.",
+        "translation": "Voy en bicicleta todos los días.",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Frase", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Imapí?",
+        "translation": "¿En qué?",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Sufijo", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Autopi",
+        "translation": "En auto",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Sustantivo", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Colectivopi",
+        "translation": "En colectivo",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Sustantivo", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Avionpi",
+        "translation": "En avión",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Sustantivo", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Trenpi",
+        "translation": "En tren",
+        "unit": "10. Medios de transporte (-pi)",
+        "tags": ["Sustantivo", "Transporte"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Kunanrí, mayman rishanki?",
+        "translation": "¿Y ahora adónde estás yendo?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "9 de Abril llajtaman rishani.",
+        "translation": "Estoy yendo a la ciudad de 9 de Abril.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Qhechua cursomanchu?",
+        "translation": "¿Vas al curso de quechua?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Piwan jamunki?",
+        "translation": "¿Con quién has venido?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Antoniowan, doña Mariawan, don Juliowan.",
+        "translation": "He venido con Antonio, doña María y don Julio.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Paykunawanchu?",
+        "translation": "¿Con ellos?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Ari, paykunawan jamuni.",
+        "translation": "Sí, he venido con ellos.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Imapi jamun don Ramón?",
+        "translation": "¿En qué ha venido don Ramón?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Autopichu trenpichu?",
+        "translation": "¿En auto o en tren?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Mana trenpichu jamun, autopi jamun.",
+        "translation": "No ha venido en tren; ha venido en auto.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "¿Jaqayqa Flores llajtachu?",
+        "translation": "¿Aquello es la ciudad de Flores?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación", "Pregunta"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Ari, jaqayqa Flores llajta.",
+        "translation": "Sí, aquél es el pueblo de Flores.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Jatun llajta, ¿icharí?",
+        "translation": "Es un pueblo grande, ¿verdad?",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    },
+    {
+        "verb": "Ari, a, jatun llajta.",
+        "translation": "Sí, pues, es un pueblo grande.",
+        "unit": "11. Sufijo -chu en pregunta",
+        "tags": ["Frase", "Conversación"],
+        "sentences": null,
+        "pinned": false
+    }
+]

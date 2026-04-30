@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yachakuna - Aprende Quechua</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/path.css">
+    <link rel="stylesheet" href="css/dictionary.css">
+    <link rel="stylesheet" href="css/stories.css">
+    <link rel="stylesheet" href="css/ruway.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+    <main id="app-content">
+        <!-- Tab 1: Camino de Aprendizaje -->
+        <section id="tab-path" class="view-section active">
+            <header class="main-header">
+                <canvas id="starsCanvas"></canvas>
+                <div class="header-content">
+                    <div class="logo-yachakuna">🏔️</div>
+                    <div class="header-text">
+                        <h1>Yachakuna</h1>
+                        <p>Aprende Quechua</p>
+                    </div>
+                    <div class="header-stats">
+                        <div class="stat-item" id="user-level-badge">
+                            <span class="stat-icon">⭐</span>
+                            <span id="user-level">1</span>
+                        </div>
+                        <div class="stat-item" id="user-xp-badge">
+                            <span class="stat-icon">✨</span>
+                            <span id="user-xp">0</span>
+                        </div>
+                        <div class="stat-item" id="study-timer-badge" title="Tiempo de estudio hoy">
+                            <span class="stat-icon">⏱️</span>
+                            <span id="study-time">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="path-container">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+
+        <!-- Tab 2: Diccionario / Vocabulario -->
+        <section id="tab-dictionary" class="view-section">
+            <div class="dictionary-header" style="padding: 16px; background: var(--paper); border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 10;">
+                <h2 style="margin-bottom: 12px; font-family: 'Fraunces', serif;">📚 Vocabulario <span id="dict-results-count" style="font-size: 0.6em; opacity: 0.6; vertical-align: middle;"></span></h2>
+                <div class="search-bar" style="display: flex; gap: 8px; margin-bottom: 12px;">
+                    <div style="position: relative; flex: 1; display: flex; align-items: center;">
+                        <input type="text" id="dict-search" placeholder="Ej: 'saludo', 'verbo', 'casa'..." style="width: 100%; padding: 12px 40px 12px 16px; border-radius: 12px; border: 2px solid var(--border); font-family: inherit; font-size: 15px; outline: none; background: var(--background); color: var(--ink);">
+                        <button id="clear-search-btn" aria-label="Limpiar búsqueda" style="display: none; position: absolute; right: 10px; background: transparent; border: none; font-size: 24px; cursor: pointer; color: var(--ink-light); line-height: 1;">&times;</button>
+                    </div>
+                    <button id="search-btn" class="gb-toggle action" aria-label="Buscar en vocabulario" style="margin: 0; padding: 0 20px; height: auto;">🔍</button>
+                    <button id="random-repasito-btn" class="gb-toggle" aria-label="Iniciar repasito aleatorio" style="margin: 0; padding: 0 12px; height: auto; background: var(--bolivia-yellow); border-color: var(--gold-dark); font-size: 20px;" title="Repasito aleatorio">🎲</button>
+                </div>
+                <div class="filter-chips" id="dict-filter-chips">
+                    <button class="chip active" data-filter="all">Todos</button>
+                    <button class="chip" data-filter="Conversación">Frases</button>
+                    <button class="chip" data-filter="Sustantivo">Sustantivos</button>
+                    <button class="chip" data-filter="Verbo">Verbos</button>
+                    <button class="chip" data-filter="Sufijo">Sufijos</button>
+                    <button class="chip" data-filter="Pronombre">Pronombres</button>
+                    <button class="chip" data-filter="Adjetivo">Adjetivos</button>
+                </div>
+            </div>
+            
+            <div id="dict-container" style="padding: 16px;">
+                <!-- Inyectado por dictionary.js -->
+            </div>
+        </section>
+
+        <!-- Tab 3: Historias -->
+        <section id="tab-stories" class="view-section">
+            <h2>📖 Leerinapaj</h2>
+            <div id="stories-container">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+
+        <!-- Tab 4: Ruway (Constructor) -->
+        <section id="tab-ruway" class="view-section">
+            <div id="ruway-app-root">
+                <div class="app">
+                    <header class="ruway-header">
+                        <h2>🛠️ Ruway</h2>
+                        <p>Construye tus propias oraciones combinando piezas gramaticales.</p>
+                    </header>
+
+                    <div id="tab-constructores" class="section active">
+
+                        <!-- ── BLOQUE 1: Demostrativos + Sustantivos (Identificación) ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">🧱 Identificación <small>— ¿Qué es esto?</small></h3>
+                            <div class="card demo-card">
+                                <div class="gb-result">
+                                    <div class="result-label">Español</div>
+                                    <p class="result-es" id="gb-output-es">Ese es un árbol.</p>
+                                    <div class="result-label">Quechua</div>
+                                    <p class="result-q" id="gb-output-q">chayqa uj sach'a.</p>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Cuál?</label>
+                                    <div class="gb-scroll-lane">
+                                        <span class="gb-chip" data-type="demo" data-value="kayqa" data-es-sing="este" data-es-pl="estos">kayqa <small>este</small></span>
+                                        <span class="gb-chip" data-type="demo" data-value="chayqa" data-es-sing="ese" data-es-pl="esos">chayqa <small>ese</small></span>
+                                        <span class="gb-chip" data-type="demo" data-value="jaqayqa" data-es-sing="aquel" data-es-pl="aquellos">jaqayqa <small>aquel</small></span>
+                                        <span class="gb-chip" data-type="demo" data-value="kaykunaqa" data-es-sing="este" data-es-pl="estos">kaykunaqa <small>estos</small></span>
+                                        <span class="gb-chip" data-type="demo" data-value="chaykunaqa" data-es-sing="ese" data-es-pl="esos">chaykunaqa <small>esos</small></span>
+                                        <span class="gb-chip" data-type="demo" data-value="jaqaykunaqa" data-es-sing="aquel" data-es-pl="aquellos">jaqaykunaqa <small>aquellos</small></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Qué cosa?</label>
+                                    <div class="gb-scroll-lane">
+                                        <span class="gb-chip" data-type="noun" data-value="sach'a" data-es="árbol" data-art-sing="un">sach'a <small>árbol</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="runa" data-es="persona" data-art-sing="una">runa <small>persona</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="wallpa" data-es="gallina" data-art-sing="una">wallpa <small>gallina</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="anka" data-es="águila" data-art-sing="un">anka <small>águila</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="atoj" data-es="zorro" data-art-sing="un">atoj <small>zorro</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="tapuy" data-es="pregunta" data-art-sing="una">tapuy <small>pregunta</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="michej" data-es="pastor" data-art-sing="un">michej <small>pastor</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="willay" data-es="noticia" data-art-sing="una">willay <small>noticia</small></span>
+                                        <span class="gb-chip" data-type="noun" data-value="yachachiy" data-es="enseñanza" data-art-sing="una">yachachiy <small>enseñanza</small></span>
+                                    </div>
+                                </div>
+
+                                <div class="gb-toggles">
+                                    <button type="button" id="gb1-tog-plural" class="gb-toggle" onclick="gb1Toggle('plural')">Plural</button>
+                                    <button type="button" id="gb1-tog-neg" class="gb-toggle" onclick="gb1Toggle('neg')">Negación</button>
+                                    <button type="button" id="gb1-tog-pregunta" class="gb-toggle" onclick="gb1Toggle('pregunta')">Pregunta</button>
+                                    <button type="button" class="gb-toggle action" onclick="validateRuway('gb1')">Validar</button>
+                                    <button type="button" class="gb-toggle reset" onclick="resetGrammarBuilder()">↺ Reiniciar</button>
+                                </div>
+                                <div id="gb1-feedback" class="ruway-feedback"></div>
+
+                                <!-- Lista de objetivos -->
+                                <div id="gb1-targets" class="target-list-container"></div>
+
+                                <div class="gb-exercise-panel">
+                                    <div class="ex-label">💡 Ejemplo Aleatorio</div>
+                                    <div id="gb1-example-text" class="example-text">Tocá "Nuevo ejemplo" para ver una combinación.</div>
+                                    <div class="gb-toggles compact">
+                                        <button type="button" class="gb-toggle action" onclick="newExample1()">Nuevo ejemplo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── BLOQUE 2: Posesivos ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">🏠 Posesión <small>— ¿De quién es?</small></h3>
+                            <div class="card pos-card">
+                                <div class="gb-result">
+                                    <div class="result-label">Pregunta</div>
+                                    <p class="result-q highlight">¿Mayman risun?</p>
+                                    <p class="result-es-sub">¿A dónde iremos?</p>
+                                    <div class="result-label">Respuesta</div>
+                                    <p class="result-q" id="pos-output-q">Wasiyman risun.</p>
+                                    <p class="result-es" id="pos-output-es">Iremos a mi casa.</p>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿A qué lugar?</label>
+                                    <div class="gb-chip-wrap">
+                                        <button type="button" class="pos-noun-btn active" onclick="posSetNoun('wasi','casa')">wasi <small>casa</small></button>
+                                        <button type="button" class="pos-noun-btn" onclick="posSetNoun('llajta','pueblo')">llajta <small>pueblo</small></button>
+                                        <button type="button" class="pos-noun-btn" onclick="posSetNoun('yachay wasi','escuela')">yachay wasi <small>escuela</small></button>
+                                        <button type="button" class="pos-noun-btn" onclick="posSetNoun('chacra','chacra')">chacra <small>chacra</small></button>
+                                        <button type="button" class="pos-noun-btn" onclick="posSetNoun('mercado','mercado')">mercado <small>mercado</small></button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿De quién?</label>
+                                    <div id="pos-grid" class="grid-controls">
+                                        <!-- renderizado por JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── BLOQUE 3: Estados (Descripción) ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">🗣️ Estados <small>— ¿Cómo estoy?</small></h3>
+                            <div class="card mood-card">
+                                <div class="gb-result">
+                                    <div class="result-label">Español</div>
+                                    <p class="result-es" id="gb2-output-es">Yo estoy enojado/a.</p>
+                                    <div class="result-label">Quechua</div>
+                                    <p class="result-q" id="gb2-output-q">noqaqa phiñasqa kashani.</p>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Quién?</label>
+                                    <div class="gb-scroll-lane">
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="noqaqa" data-es-subj="yo" data-es-cop="estoy" data-ka="kashani" data-is-plural="false">noqaqa <small>yo</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="qanqa" data-es-subj="tú" data-es-cop="estás" data-ka="kashanki" data-is-plural="false">qanqa <small>tú</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="payqa" data-es-subj="él/ella" data-es-cop="está" data-ka="" data-is-plural="false">payqa <small>él/ella</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="paykunaqa" data-es-subj="ellos/ellas" data-es-cop="están" data-ka="kashanku" data-is-plural="true">paykunaqa <small>ellos/as</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="qankunaqa" data-es-subj="ustedes" data-es-cop="están" data-ka="kashankichej" data-is-plural="true">qankunaqa <small>ustedes</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="noqanchejqa" data-es-subj="nosotros/as (todos)" data-es-cop="estamos" data-ka="kashanchej" data-is-plural="true">noqanchejqa <small>todos nos.</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="pron" data-value="noqaykoqa" data-es-subj="nosotros/as (solo)" data-es-cop="estamos" data-ka="kashayku" data-is-plural="true">noqaykoqa <small>solo nos.</small></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Cómo?</label>
+                                    <div class="gb-scroll-lane">
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="phiñasqa" data-es-sing="enojado/a" data-es-pl="enojados/as">phiñasqa <small>enojado/a</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="kusisqa" data-es-sing="contento/a" data-es-pl="contentos/as">kusisqa <small>contento/a</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="llakisqa" data-es-sing="triste" data-es-pl="tristes">llakisqa <small>triste</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="sayk'usqa" data-es-sing="cansado/a" data-es-pl="cansados/as">sayk'usqa <small>cansado/a</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="onqosqa" data-es-sing="enfermo/a" data-es-pl="enfermos/as">onqosqa <small>enfermo/a</small></span>
+                                        <span class="gb-chip gb2-chip" data-gb2-type="adj" data-value="yarqhasqa" data-es-sing="hambriento/a" data-es-pl="hambrientos/as">yarqhasqa <small>hambriento/a</small></span>
+                                    </div>
+                                </div>
+
+                                <div class="gb-toggles">
+                                    <button type="button" id="gb2-tog-neg" class="gb-toggle" onclick="gb2Toggle('neg')">Negación</button>
+                                    <button type="button" id="gb2-tog-pregunta" class="gb-toggle" onclick="gb2Toggle('pregunta')">Pregunta</button>
+                                    <button type="button" class="gb-toggle action" onclick="validateRuway('gb2')">Validar</button>
+                                    <button type="button" class="gb-toggle reset" onclick="resetGrammarBuilder2()">↺ Reiniciar</button>
+                                </div>
+                                <div id="gb2-feedback" class="ruway-feedback"></div>
+
+                                <!-- Lista de objetivos -->
+                                <div id="gb2-targets" class="target-list-container"></div>
+
+                                <div class="gb-exercise-panel">
+                                    <div class="ex-label">💡 Ejemplo Aleatorio</div>
+                                    <div id="gb2-example-text" class="example-text">Tocá "Nuevo ejemplo" para ver una combinación.</div>
+                                    <div class="gb-toggles compact">
+                                        <button type="button" class="gb-toggle action" onclick="newExample2()">Nuevo ejemplo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── BLOQUE 4: Acciones (Verbos) ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">🕐 Acciones <small>— Tiempos verbales</small></h3>
+                            <div class="card verb-card">
+                                <div class="gb-result">
+                                    <div class="result-label" id="vb-tiempo-label">Presente</div>
+                                    <p class="result-q" id="vb-output-q">Yachani.</p>
+                                    <p class="result-es" id="vb-output-es">Yo sé.</p>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Qué verbo?</label>
+                                    <div class="gb-scroll-lane">
+                                        <button type="button" class="vb-verb-btn active" onclick="vbSetVerb(0)">yachay <small>saber</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(1)">yachakuy <small>aprender</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(2)">riy <small>ir</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(3)">kutimuy <small>volver</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(4)">jap'iy <small>agarrar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(5)">llank'ay <small>trabajar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(6)">yanapay <small>ayudar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(7)">ruway <small>hacer</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(8)">qoy <small>dar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(9)">yuyay <small>pensar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(10)">leey <small>leer</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(11)">tantakuy <small>reunirse</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(12)">predicay <small>predicar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(13)">parlay <small>hablar</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(14)">qhaway <small>ver</small></button>
+                                        <button type="button" class="vb-verb-btn" onclick="vbSetVerb(15)">puriy <small>caminar</small></button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿En qué tiempo?</label>
+                                    <div class="gb-toggles">
+                                        <button type="button" id="vb-t-0" class="gb-toggle active" onclick="vbSetTiempo(0)">Presente</button>
+                                        <button type="button" id="vb-t-1" class="gb-toggle" onclick="vbSetTiempo(1)">Continuo</button>
+                                        <button type="button" id="vb-t-2" class="gb-toggle" onclick="vbSetTiempo(2)">Pasado</button>
+                                        <button type="button" id="vb-t-3" class="gb-toggle" onclick="vbSetTiempo(3)">Futuro</button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Quién?</label>
+                                    <div id="vb-grid" class="grid-controls">
+                                        <!-- renderizado por JS -->
+                                    </div>
+                                </div>
+
+                                <div class="gb-toggles">
+                                    <button type="button" id="vb-tog-neg" class="gb-toggle" onclick="vbToggle('neg')">Negación</button>
+                                    <button type="button" id="vb-tog-pregunta" class="gb-toggle" onclick="vbToggle('pregunta')">Pregunta</button>
+                                    <button type="button" class="gb-toggle action" onclick="validateRuway('vb')">Validar</button>
+                                    <button type="button" class="gb-toggle reset" onclick="vbReset()">↺ Reiniciar</button>
+                                </div>
+                                <div id="vb-feedback" class="ruway-feedback"></div>
+                                
+                                <!-- Lista de objetivos -->
+                                <div id="vb-targets" class="target-list-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- ── BLOQUE 5: Ubicación (Sufijos) ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">📍 Ubicación <small>— Sufijos de lugar</small></h3>
+                            <div class="card suffix-card">
+                                <p class="section-desc">Escribe una ciudad y arrastra el sufijo correcto.</p>
+                                <div class="sufijo-sentences" id="sufijo-sentences"></div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Cuándo?</label>
+                                    <div class="gb-toggles">
+                                        <button type="button" id="sf-adv-0" class="gb-toggle active" onclick="sfSetAdverb(0)">Pasado</button>
+                                        <button type="button" id="sf-adv-1" class="gb-toggle" onclick="sfSetAdverb(1)">Presente</button>
+                                        <button type="button" id="sf-adv-2" class="gb-toggle" onclick="sfSetAdverb(2)">Futuro</button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">Sufijos <small>(Arrastra o toca)</small></label>
+                                    <div class="gb-chip-wrap">
+                                        <span class="gb-chip sufijo-draggable" draggable="true" data-sufijo="-man" onclick="sfChipClick('-man')">-man <small>a / hacia</small></span>
+                                        <span class="gb-chip sufijo-draggable" draggable="true" data-sufijo="-pi" onclick="sfChipClick('-pi')">-pi <small>en</small></span>
+                                        <span class="gb-chip sufijo-draggable" draggable="true" data-sufijo="-manta" onclick="sfChipClick('-manta')">-manta <small>de / desde</small></span>
+                                    </div>
+                                </div>
+
+                                <div class="gb-toggles">
+                                    <button type="button" class="gb-toggle action" onclick="checkSufijos()">✔ Verificar</button>
+                                    <button type="button" class="gb-toggle reset" onclick="resetSufijos()">↺ Reiniciar</button>
+                                </div>
+                                <div id="sufijo-feedback"></div>
+                            </div>
+                        </div>
+
+                        <!-- ── BLOQUE 6: Interacción (Yanapay) ── -->
+                        <div class="ruway-block">
+                            <h3 class="block-title">🫱 Interacción <small>— ¿Quién ayuda a quién?</small></h3>
+                            <div class="card yanapa-card">
+                                <div class="gb-result">
+                                    <div class="result-label">Español</div>
+                                    <p class="result-es" id="yanapa-output-es">Él/ella me ayuda.</p>
+                                    <div class="result-label">Quechua</div>
+                                    <p class="result-q" id="yanapa-output-q">Yanapawan.</p>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Quién recibe la ayuda?</label>
+                                    <div class="gb-scroll-lane" id="yanapa-target-lane">
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="me">a mí <small>me ayuda</small></span>
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="usInclusive">a nosotros (incl)</span>
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="usExclusive">a nosotros (excl)</span>
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="youSing">a ti / vos</span>
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="youPl">a ustedes</span>
+                                        <span class="gb-chip yanapa-target-chip" data-yanapa-target="third">a él / ella</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="gb-dropzone-title">¿Quién realiza la acción?</label>
+                                    <div id="yanapa-actor-hint" style="font-size: 11px; color: var(--ink-light); margin-bottom: 8px; font-weight: 700; text-transform: uppercase;"></div>
+                                    <div class="gb-scroll-lane" id="yanapa-actor-lane"></div>
+                                </div>
+
+                                <div class="gb-toggles">
+                                    <button type="button" class="gb-toggle action" onclick="newYanapaExample()">Nuevo ejemplo</button>
+                                    <button type="button" class="gb-toggle reset" onclick="resetYanapaBuilder()">↺ Reiniciar</button>
+                                </div>
+
+                                <div class="yanapa-meta" id="yanapa-note"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- /app -->
+            </div>
+        </section>
+
+        <!-- Tab 5: Logros y Guía -->
+        <section id="tab-profile" class="view-section">
+            <div class="profile-header">
+                <h2>🏆 Mi Perfil</h2>
+                <div class="streak-badge">🔥 <span id="user-streak">0</span> días</div>
+            </div>
+            
+            <div id="profile-stats" class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="stats-total-xp">0</span>
+                    <span class="stat-label">XP Total</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stats-words-learned">0</span>
+                    <span class="stat-label">Palabras aprendidas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stats-time-total">0h</span>
+                    <span class="stat-label">Tiempo total</span>
+                </div>
+            </div>
+
+            <div class="profile-settings card" style="margin: 24px 0; padding: 20px; background: var(--paper); border-radius: 20px; box-shadow: var(--duo-shadow-border);">
+                <h3 style="margin-top: 0; font-family: 'Fraunces', serif;">⚙️ Configuración</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-weight: 700; color: var(--ink);">Efectos de sonido</span>
+                    <button id="toggle-sounds-btn" class="gb-toggle" style="margin: 0; width: auto; padding: 8px 16px; font-weight: 900;">
+                        Cargando...
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-weight: 700; color: var(--ink);">Apariencia</span>
+                    <button id="toggle-theme-btn" class="gb-toggle" style="margin: 0; width: auto; padding: 8px 16px; font-weight: 900;">
+                        Cargando...
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 12px;">
+                    <span style="font-weight: 700; color: var(--ink);">Contenido</span>
+                    <button id="refresh-data-btn" class="gb-toggle action" style="margin: 0; width: auto; padding: 8px 16px; font-weight: 900;">
+                        🔄 Actualizar
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px;">
+                    <span style="font-weight: 700; color: var(--ink);">Copia de Seguridad</span>
+                    <div style="display: flex; gap: 8px;">
+                        <button id="export-progress-btn" class="gb-toggle" style="flex: 1; margin: 0; padding: 8px; font-weight: 900; background: var(--blue-light); border-color: var(--blue); color: var(--blue-dark);">📥 Exportar</button>
+                        <button id="import-progress-btn" class="gb-toggle" style="flex: 1; margin: 0; padding: 8px; font-weight: 900; background: var(--paper); border-color: var(--border); color: var(--ink);">📤 Importar</button>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <h3>🏅 Insignias Desbloqueadas</h3>
+            <div id="badges-container" class="badges-row">
+                <!-- Aquí se inyectarán insignias como la de "atoj-alqo-parte-5-badge" -->
+            </div>
+
+            <h3>ℹ️ Guía de Uso</h3>
+            <div id="guide-container"></div>
+        </section>
+
+    </main>
+
+    <!-- Barra de Navegación Inferior -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-target="tab-path">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Camino</span>
+        </button>
+        <button class="nav-btn" data-target="tab-dictionary">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Vocab</span>
+        </button>
+        <button class="nav-btn" data-target="tab-stories">
+            <span class="nav-icon">📖</span>
+            <span class="nav-label">Cuentos</span>
+        </button>
+        <button class="nav-btn" data-target="tab-ruway">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-label">Ruway</span>
+        </button>
+        <button class="nav-btn" data-target="tab-profile">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-label">Perfil</span>
+        </button>
+    </nav>
+
+    <!-- Datos (cargados como JS para evitar bloqueos CORS locales) -->
+    <script src="data/unidades.js"></script>
+    <script src="data/historias.js"></script>
+    <script src="data/grammar_data.js"></script>
+
+    <!-- Lógica de la aplicación -->
+    <script src="js/state.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ruway.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/path.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/guide.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const isHttp = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+                if (!isHttp) return;
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('ServiceWorker registrado', reg.scope))
+                    .catch(err => console.log('ServiceWorker error', err));
+            });
+        }
+    </script>
+</body>
+</html>

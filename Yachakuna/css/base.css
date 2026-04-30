@@ -1,0 +1,447 @@
+/* css/base.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed), opacity var(--transition-speed);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    /* Mobile first */
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 70px; /* Space for bottom nav */
+}
+
+/* Control de visibilidad de secciones con desvanecimiento */
+.view-section {
+    display: none;
+    opacity: 0;
+}
+
+.view-section.active {
+    display: block;
+    opacity: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+}
+
+/* Estilos para Chips de Filtro */
+.filter-chips {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.filter-chips::-webkit-scrollbar { display: none; }
+.chip {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+    background: var(--paper);
+    color: var(--ink-light);
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.chip.active {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue-dark);
+}
+
+a {
+    color: var(--bolivia-red);
+    text-decoration: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+.chip:focus-visible,
+.gb-toggle:focus-visible,
+.nav-btn:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
+/* Estilos para etiquetas dentro de las tarjetas */
+.word-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+.word-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.word-tag:hover {
+    opacity: 0.8;
+}
+
+.learned-check {
+    font-size: 0.6em;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* --- Estilos para el Modo Pares (Tupachiy) --- */
+.pairs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.pair-card {
+    min-height: 60px;
+    padding: 10px;
+    background: var(--paper);
+    border: 2px solid var(--border);
+    border-bottom: 4px solid var(--border);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    user-select: none;
+}
+
+.pair-card.selected {
+    border-color: var(--blue);
+    background: var(--blue-light);
+    transform: translateY(2px);
+    border-bottom-width: 2px;
+}
+
+.pair-card.pairs-correct { border-color: var(--bolivia-green); background: var(--bolivia-green-light); opacity: 0; pointer-events: none; }
+.pair-card.pairs-wrong { border-color: var(--bolivia-red); background: var(--bolivia-red-light); }
+
+/* Resaltado de búsqueda */
+mark {
+    background-color: rgba(28, 176, 246, 0.25); /* Azul Duolingo con transparencia */
+    color: inherit;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+/* Temporizador de Pares */
+.pairs-timer-container {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+    background: var(--blue-light);
+    padding: 8px;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Animación de sacudida para búsquedas sin éxito */
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    border-color: var(--bolivia-red) !important;
+}
+
+/* Animación de giro para el dado de Repasito */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Selector de Emojis Visual */
+.emoji-picker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 6000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.emoji-picker-window {
+    background: var(--paper);
+    padding: 20px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 2px solid var(--border);
+}
+
+.emoji-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.emoji-grid-item {
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.1s;
+}
+
+.emoji-grid-item:hover {
+    background: var(--blue-light);
+}
+
+/* Animación de la Llama Combo */
+.llama-combo-container {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    animation: llama-pop-in 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+.llama-combo-container.out {
+    animation: llama-pop-out 0.5s ease-in forwards;
+}
+
+.llama-combo-bubble {
+    background: var(--paper);
+    border: 3px solid var(--blue);
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-weight: 900;
+    color: var(--blue-dark);
+    margin-bottom: 15px;
+    box-shadow: var(--duo-shadow-border);
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    max-width: 180px;
+}
+
+.llama-combo-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: 30px;
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: var(--blue) transparent;
+}
+
+.llama-combo-img {
+    width: 90px;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
+    animation: llama-jump 0.6s ease-in-out infinite;
+}
+
+@keyframes llama-jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Lluvia de Confeti */
+.confetti {
+    position: fixed;
+    z-index: 11000;
+    top: -20px;
+    pointer-events: none;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes llama-pop-in { from { transform: translateX(200px) rotate(10deg); opacity: 0; } to { transform: translateX(0) rotate(0deg); opacity: 1; } }
+@keyframes llama-pop-out { to { transform: translateX(200px) rotate(-10deg); opacity: 0; } }
+
+/* Efectos sutiles de racha en la pantalla de ejercicios */
+.ex-overlay {
+    transition: background-color 0.8s ease;
+}
+
+.ex-overlay.streak-5 {
+    background-color: #fffdf0 !important; /* Tono crema/dorado muy suave */
+}
+
+.ex-overlay.streak-10 {
+    background-color: #f0faff !important; /* Tono azulado/cristalino muy suave */
+}
+
+/* Pantalla de Resumen Final */
+.summary-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 24px;
+    background: white;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.summary-content {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+.summary-header {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.summary-congrats {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.summary-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.summary-stat-card {
+    flex: 1;
+    background: white;
+    border: 2px solid var(--border);
+    border-bottom: 5px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.summary-stat-card.perfect {
+    background: #fff9eb;
+    border-color: var(--bolivia-yellow);
+    border-bottom-color: var(--gold-dark);
+}
+
+.summary-stat-card .stat-icon { font-size: 2rem; margin-bottom: 5px; }
+.summary-stat-card .stat-value { font-size: 1.4rem; font-weight: 900; color: var(--ink); }
+.summary-stat-card.perfect .stat-value { color: var(--gold-dark); }
+.summary-stat-card .stat-label { font-size: 11px; font-weight: 800; color: var(--ink-light); }
+
+.summary-btn {
+    transition: transform 0.1s ease;
+}
+.summary-btn:active { transform: scale(0.96); }
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Notificación de Insignia */
+.badge-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120%);
+    background: var(--paper);
+    border: 3px solid var(--gold);
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 10000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.badge-notification.active {
+    transform: translateX(-50%) translateY(0);
+}
+.badge-icon-anim {
+    font-size: 42px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+.badge-info h4 { margin: 0; color: var(--gold-dark); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.badge-info p { margin: 0; font-weight: 900; color: var(--ink); font-size: 16px; }
+
+/* Estilos para lista de insignias en Perfil */
+.badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+.badge-item {
+    width: 60px; height: 60px;
+    background: var(--cream);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 0 var(--gold-dark);
+    animation: popIn 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

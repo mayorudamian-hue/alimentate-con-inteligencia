@@ -1,0 +1,822 @@
+[
+  {
+    "id": "carmen-maria-parte-1",
+    "section": 3,
+    "part": 1,
+    "title": "Carmen y María — Parte 1",
+    "subtitle": "En el colectivo",
+    "icon": "🚌",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj paqarin, Carmen colectivopi tiyaykun.",
+        "e": "Una mañana, Carmen se sienta en el colectivo."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Paypa qayllanpi uj warmi tiyashan. Payqa María.",
+        "e": "Cerca de ella hay una señora sentada. Ella es María."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Imaynalla! ¿Walejllachu?",
+        "e": "Carmen: — ¡Hola! ¿Bien nomás?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí, walejlla. ¿Qanrí?",
+        "e": "María: — Sí, bien nomás. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Walejllapis. Noqa Carmen sutikuni. ¿Qanrí, ima sutiyki?",
+        "e": "Carmen: — Bien también. Yo me llamo Carmen. ¿Y vos, cómo te llamás?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Noqa María sutikuni. Kusikuni rejsisuspa.",
+        "e": "María: — Yo me llamo María. Encantada de conocerte."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Noqapis. ¿Maymantá kanki?",
+        "e": "Carmen: — Yo también. ¿De dónde sos?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Kay llajtamanta kani. Wasiy karullapi kashan.",
+        "e": "María: — Soy de este pueblo. Mi casa está un poco lejos."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¿Quechuata parlankichu?",
+        "e": "Carmen: — ¿Hablás quechua?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Ari, tumpata. Mamayta uyarispa yachakuni.",
+        "e": "María: — Sí, un poco. Aprendo escuchando a mi mamá."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Sumaj! Noqapis quechuata yachakushani, runaswan Bibliamanta parlarinaypaj.",
+        "e": "Carmen: — ¡Qué hermoso! Yo también estoy aprendiendo quechua, para hablar con las personas de la Biblia."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Ah, cheqamanta! Sumaj.",
+        "e": "María: — ¡Ah, de verdad! Qué bueno."
+      },
+      {
+        "type": "question",
+        "title": "¿Imarayku Carmen quechuata yachakushan?",
+        "text": "¿Por qué está aprendiendo quechua Carmen?",
+        "options": [
+          "Runaswan Bibliamanta parlarinanpaj (Para hablar con las personas de la Biblia)",
+          "Cursopi yachakuyta munasqanrayku (Porque quiere aprender en el curso)",
+          "Colectivopi parlarinanpaj (Para hablar en el colectivo)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-2",
+    "section": 3,
+    "part": 2,
+    "title": "Carmen y María — Parte 2",
+    "subtitle": "Quedan en encontrarse",
+    "icon": "🤝",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen Mariata tapun: — ¿Imaynataj familiaykiri?",
+        "e": "Carmen le pregunta a María: — ¿Cómo está tu familia?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Allillan kashanku. Wawasniy kusisqa kashanku.",
+        "e": "María: — Están bien nomás. Mis hijos están felices."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — María, uj tapuyta ruwarisqayki. ¿Imataj kunan tiempopi astawan llakichishasunki?",
+        "e": "Carmen: — María, te haré una pregunta. ¿Qué le hace angustiar más en este tiempo?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — emm, sapa p'unchay familiaymanta llakikuni.",
+        "e": "María: — emm, todos los días me preocupo por mi familia."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Entiendeyki doña. Noqamanpis ajina pasawan. Pero Biblia mayta yanapawan. ¿Imayrakuchus yachayta munawajchu?",
+        "e": "Carmen: — Le entiendo doña. A mí también me pasa. Pero la Biblia me ayuda mucho. ¿Quisiera saber por qué?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí, munayman.",
+        "e": "María: — Sí, con gusto."
+      },
+      {
+        "type": "question",
+        "title": "¿María Bibliamanta yachayta munanman?",
+        "text": "¿María quisiera saber de la Biblia?",
+        "options": [
+          "Ichá",
+          "Arí",
+          "Mana"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-3",
+    "section": 3,
+    "part": 3,
+    "title": "Carmen y María — Parte 3",
+    "subtitle": "El video por celular",
+    "icon": "📱",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Viernes p'unchay manaraj chayamunchu. Carmen celularnejta Maríata uj mensajeta qhelqan.",
+        "e": "Todavía no llegó el viernes. Carmen escribe mediante su celular un mensaje a María."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Imaynalla María. Uj sumaj videitota apachimuyki. Rikuriy.",
+        "e": "Carmen: — Hola María. Te envío un videito hermoso. Miralo."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María videitota qhawan. Payqa mayta kusikun.",
+        "e": "María mira el videito. Ella se alegra mucho."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Sumaj videito! ¿Sut'inchawankimanchu?",
+        "e": "María: — ¡Qué lindo videito! ¿Me lo puedes aclarar?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Familiamanta parlashan. Dios familiasta yanapayta munan.",
+        "e": "Carmen: — Está hablando de la familia. Dios quiere ayudar a las familias."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¿Cheqamantachu?",
+        "e": "María: — ¿De verdad?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí. Chaymanta viernes astawan parlarisunchej.",
+        "e": "Carmen: — Sí. De eso el viernes conversaremos más."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Sumaj! Suyasqayki.",
+        "e": "María: — ¡Qué bueno! Te esperaré."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj parlashan videito?",
+        "text": "¿De qué está hablando el videito?",
+        "options": [
+          "Familiamanta",
+          "Colectivomanta",
+          "Quechuamanta"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-4",
+    "section": 3,
+    "part": 4,
+    "title": "Carmen y María — Parte 4",
+    "subtitle": "En la casa de María",
+    "icon": "🏠",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Viernes p'unchay chayamun. Carmen Maríaj wasinman chayan.",
+        "e": "Llega el viernes. Carmen llega a la casa de María."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María punkuta kichan: — ¡Imaynalla Carmen! ¡Pasaykamuy!",
+        "e": "María abre la puerta: — ¡Hola Carmen! ¡Pasá!"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Imaynalla María! Sumaj wasiyki.",
+        "e": "Carmen: — ¡Hola María! Qué linda tu casa."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Wawasnin paykunata qhawanku, manchachikuspa pakakunku.",
+        "e": "Sus hijos las miran, asustados se esconden."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen asikun: — ¡Sumaj wawas! ¿Ima sutiykichej?",
+        "e": "Carmen se ríe: — ¡Qué lindos tus hijos! ¿Cómo se llaman?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Kayqa Lucía, kayqa Tomás, kayqa Sofía.",
+        "e": "María: — Esta es Lucía, este es Tomás, esta es la bebé Sofía."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Tukuy sumaj! Familiayki kusisqa kananpaj, ¿imatá yanapanman?",
+        "e": "Carmen: — ¡Todos son hermosos! Para que tu familia sea feliz, ¿qué podría ayudar?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Mana yachanichu. Paykunarayku anchata llank'ani.",
+        "e": "María: — No sé. Trabajo mucho por ellos."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Bibliamanta yachakoyqa yanapawanchej. Diosqa munan familianchejwan kusisqa kausakunanchejta.",
+        "e": "Carmen: — Aprender de la Biblia nos ayuda. Dios quiere que vivamos felices con nuestra familia."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¿Cheqamantachu? Noqa Bibliapi creeni, jinapis mana leeyta yachanichu.",
+        "e": "María: — ¿De verdad? Yo creo en la Biblia, pero no la suelo leer."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatá nin Carmen familianwan kusisqa kananpaj?",
+        "text": "¿Qué dice Carmen para ser feliz con su familia?",
+        "options": [
+          "Ashkha qolqeyoj",
+          "Bibliamanta yachakuy",
+          "Anchata llank'ay"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-5",
+    "section": 3,
+    "part": 5,
+    "title": "Carmen y María — Parte 5",
+    "subtitle": "La revista y la despedida",
+    "icon": "📖",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen carteranmanta uj revistata orqhon.",
+        "e": "Carmen saca de su cartera una revista."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Kay revistapi familiamanta parlakushan. Leerinaykipaj saqerisqayki, ¿ya?",
+        "e": "Carmen: — En esta revista se está hablando de la familia. Te la dejo para que leas, ¿ya?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Pachis! Leerisaj.",
+        "e": "María: — ¡Gracias! La voy a leer."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Uj textitota leeripuyta munani. ¿Uyariwajchu?",
+        "e": "Carmen: — Quisiera leerle un textito. ¿Me escucharía?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí, uyarini.",
+        "e": "María: — Sí, te escucho."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen Bibliata orqhospa nin: — Leerina kay Salmos nisqanta.",
+        "e": "Carmen sacando su Biblia dice: — Leamos lo que dice Salmos."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen leeripun. María uyarin. Sonqonman chayan.",
+        "e": "Carmen se lo lee. María escucha. Le llega a su corazón."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — May sumaj texto.",
+        "e": "María: — Qué hermoso texto."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí, Biblia mayta yanapawanchej. Waj p'unchay kutimuspa, chaymanta parlarisunman.",
+        "e": "Carmen: — Sí, la Biblia nos ayuda mucho. Cuando vuelva otro día, podemos hablar de eso."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Sumaj! Suyasqayki.",
+        "e": "María: — ¡Qué bueno! La espero."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Waj kutikama, María.",
+        "e": "Carmen: — Hasta otro momento, María."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj Carmen saqen Mariaman?",
+        "text": "¿Qué le deja Carmen a María?",
+        "options": [
+          "Uj revistata",
+          "Uj tarjetitata",
+          "Uj videitota"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-6",
+    "section": 3,
+    "part": 6,
+    "title": "Carmen y María — Parte 6",
+    "subtitle": "El segundo encuentro",
+    "icon": "☀️",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Waj p'unchay Carmen kutimun. Allin paqarin.",
+        "e": "Otro día vuelve Carmen. Linda mañana."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María punkuta kichan: — ¡Carmen! ¡Suyashani!",
+        "e": "María abre la puerta: — ¡Carmen! ¡Te estaba esperando!"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Imaynalla, María. ¿Imaynalla kakushanki?",
+        "e": "Carmen: — Hola, María. ¿Cómo te estás encontrando?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Walejlla kashani. Kunan paqarin inti llipirishan.",
+        "e": "María: — Estoy bien nomás. Esta mañana brilla el sol."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí, sumaj p'unchay.",
+        "e": "Carmen: — Sí, lindo día."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Revistata leerqaniña",
+        "e": "María: — Ya leí la revista"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen asikun: — ¡May sumaj leerisqaykimanta!",
+        "e": "Carmen se ríe: — ¡Qué bueno que la pudiste leer!"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí, leerqaniña. Kay revistapi familiamanta ashkhata parlakushan.",
+        "e": "María: — Sí, ya la leí. En esta revista se está hablando mucho de la familia."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¿Mayqen partetaj astawan gustasunki?",
+        "e": "Carmen: — ¿Cuál parte te gustó más?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Diosqa Familiawan kusisqa kausakunanchejta munan.",
+        "e": "María: — Dios quiere que vivamos felices con la familia."
+      },
+      {
+        "type": "question",
+        "title": "María ¿revistata leerqaña?",
+        "text": "¿Ya leyó la revista María?",
+        "options": [
+          "Arí",
+          "Ichá",
+          "Mana"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-7",
+    "section": 3,
+    "part": 7,
+    "title": "Carmen y María — Parte 7",
+    "subtitle": "Hablando de la familia",
+    "icon": "👨‍👩‍👧‍👦",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — María, ¿Familiaykiwan kusisqa kausakunaykipaj, imatá ruwawaj?",
+        "e": "Carmen: — María, ¿qué podrías hacer para vivir feliz con tu familia?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Mana yachanichu. Wakenqa ninku qolqewan kusisqa kasqankuta.",
+        "e": "María: — No sé. Algunos dicen que son felices con el dinero."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Ashkhas runas ajinallata yuyanku. Jinapis Biblia yachachin waj imatapis.",
+        "e": "Carmen: — Muchas personas piensan así nomás. Pero la Biblia enseña otra cosa."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¿Imatá Biblia yachachin?",
+        "e": "María: — ¿Qué enseña la Biblia?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Sapa día Diospa palabranta uyarispaqa familiawan kusisqa kasunchej.",
+        "e": "Carmen: — Escuchando todos los días la palabra de Dios seremos felices con la familia."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen Biblianta kichan: — Uj Bibliamanta textota leeriyta munani. ¿Atiwajchu?",
+        "e": "Carmen abre su Biblia: — Quisiera leerte un texto de la Biblia. ¿Podés?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí, uyarini.",
+        "e": "María: — Sí, te escucho."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen leeripun. Chaymanta tapun: — Kaypi, ¿imatá Diosmanta nishawanchej?",
+        "e": "Carmen se lo lee. Luego pregunta: — Aquí, ¿qué nos está diciendo de Dios?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Dios anchata munakuwanchej... ¿icharí?",
+        "e": "María: — Que Dios nos quiere mucho a nosotros. ¿Verdad?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Cheqapuni! Leesqanchejman jina, Dios tukuyninchejta munakuwanchej, yanapawanchejtaj.",
+        "e": "Carmen: — ¡Exactamente! Como leímos, Dios nos quiere a todos y nos ayuda."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj Biblia yachachin Diosmanta?",
+        "text": "¿Qué enseña la Biblia sobre Dios?",
+        "options": [
+          "Pay mana munakuwanchejchu",
+          "Pay pisillata munakuwanchej",
+          "Pay anchata munakuwanchej"
+        ],
+        "correct": 2,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-8",
+    "section": 3,
+    "part": 8,
+    "title": "Carmen y María — Parte 8",
+    "subtitle": "Otro video: el futuro",
+    "icon": "🌟",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Waj p'unchay Carmen celularninpi Maríata qhelqan.",
+        "e": "Otro día, Carmen escribe en su celular a María."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Imaynalla María. Rikuriy kay videitota. Ajinata sutikun: 'Allin kausay qhepaman'.",
+        "e": "Carmen: — Hola María. Mirá este videito. Se llama así: 'Paz en el futuro'."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María videitota qhawan. Sonqonman chayan.",
+        "e": "María mira el videito. Llega a su corazón."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Sumaj videito! ¿Maykʼajllapis ajina kanqachu?",
+        "e": "María: — ¡Qué lindo videito! ¿Alguna vez será así?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí. Biblia chayta prometewanchej. Niña sajra runas kajtin, niña makanakuykuna, ni guerraspis kanqachu.",
+        "e": "Carmen: — Sí. La Biblia nos promete eso. Cuando ya no haya personas malas, ya no habrá peleas ni guerras."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¿Cheqamantachu? ¿Mayk'aj kanqa chay?",
+        "e": "María: — ¿De verdad? ¿Cuándo será eso?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Waj p'unchay kutimuspa chay tapuyman kutichisusqayki. Chaymanta qhepanpi parlarisunman.",
+        "e": "Carmen: — Cuando vuelva otro día te responderé esa pregunta. En la próxima podemos hablar de eso."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Sumaj!",
+        "e": "María: — ¡Qué bueno!"
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj prometewanchej Biblia?",
+        "text": "¿Qué nos promete la Biblia?",
+        "options": [
+          "Niña sajra runas kajtin, ni makanakuykuna, ni guerraspis kanqachu",
+          "Sapa p'unchay paramonqa",
+          "Ni jayk'aj allin kausayta atikonqachu"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-9",
+    "section": 3,
+    "part": 9,
+    "title": "Carmen y María — Parte 9",
+    "subtitle": "¿Qué pasará en el futuro?",
+    "icon": "🌈",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen kutimun. María kusisqa punkuta kichan.",
+        "e": "Carmen vuelve. María abre la puerta contenta."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Kusikuni watejmanta rikususpa Carmen!",
+        "e": "María: — ¡Me alegro de verte de nuevo!"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Kusikuni kaypi kutimusqaymanta. Qaninpa uj tapuyta saqenchej kutichinanchejpaj",
+        "e": "Carmen: — Me alegra haber vuelto. La otra vez dejamos una pregunta para responder"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — Arí! ¿Mayk'aj kanqa chay allin kausay?",
+        "e": "María: — ¡Sí! ¿Cuándo será esa buena vida?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¿Yacharqankichu tumpamantawan tukuypis sanitos kananchejta?",
+        "e": "Carmen: — ¿Sabía que muy pronto todos estaremos bien de salud?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Mana! ¿Cheqamantachu? ¿Wañusqaspis kausarimuytachu atinkuman?",
+        "e": "María: — ¡No! ¿De verdad? ¿Los muertos también podrían resucitar?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí, Biblia chayta niwanchej. Chaypajqa Bibliamanta leerisunman.",
+        "e": "Carmen: — Sí, la Biblia nos dice eso. Para eso podemos leerlo de la Biblia."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¿Munawajchu wiñaypaj kusisqa kausakuyta familiaykiwan?",
+        "e": "Carmen: — ¿Quisiera vivir para siempre feliz con su familia?"
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¡Arí! Chayta sapa tutay mañakuni.",
+        "e": "María: — ¡Sí! Eso es lo que pido cada noche."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Orakusqanchejta Dios uyariwanchej. Pay yanapawanchej.",
+        "e": "Carmen: — Lo que oramos, Dios nos escucha. Él nos ayuda."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj Carmen tapun Mariaman?",
+        "text": "¿Qué le pregunta Carmen a María?",
+        "options": [
+          "¿Colectivopi riwajchu?",
+          "¿Quechuata parlankichu?",
+          "¿Munawajchu wiñaypaj kusisqa kausakuyta?"
+        ],
+        "correct": 2,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "carmen-maria-parte-10",
+    "section": 3,
+    "part": 10,
+    "title": "Carmen y María — Parte 10",
+    "subtitle": "Un nuevo comienzo",
+    "icon": "⭐",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": "carmen-maria-parte-10-badge",
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Carmen Biblianmanta leeripun.",
+        "e": "Carmen lee de la Biblia."
+      },
+      {
+        "type": "text",
+        "speaker": "maría",
+        "q": "María: — ¿Maykʼajllapis sajra imasta chinkanqachu?",
+        "e": "María: — ¿Desaparecerán alguna vez las cosas malas?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Arí. ¿Pitaj chay imasta chinkachenqa?",
+        "e": "Carmen: — Sí. ¿Y quién hará desaparecer esas cosas?"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María yuyarin: — ¿Dioschu?",
+        "e": "María piensa: — ¿Dios?"
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Ajinapuni! Leerinchej jina, Diospa Gobiernonqa sajra imasta chinkachenqa.",
+        "e": "Carmen: — ¡Exactamente! Como leímos, el Gobierno de Dios hará desaparecer esas cosas."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Niña makanakuykuna, ni guerraspis kanqachu. Tukuypis sanitos kananchejta Biblia prometewanchej.",
+        "e": "Carmen: — Ya no habrá peleas ni guerras. La Biblia promete que todos estaremos sanos."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María t'ukurin. — Noqa chay kausayta munani. Bibliamanta astawan yachakuyta munani.",
+        "e": "María medita. — Yo quiero esa vida. Quiero aprender más de la Biblia."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — ¡Sumaj! Internetman yaykuspa, ashkha yachachiykunata, videosta ima tukuypaj tarinki.",
+        "e": "Carmen: — ¡Muy bien! Entrando en Internet, vas a encontrar muchas enseñanzas y videos para todos."
+      },
+      {
+        "type": "text",
+        "speaker": "carmen",
+        "q": "Carmen: — Kay tarjetitata saqerisqayki. Chaypi tukuy chayta tarinki.",
+        "e": "Carmen: — Te dejo esta tarjetita. Ahí encontrarás todo."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "María tarjetitata japʼin. Payqa kusisqa kashan. ¡Uj mosoj qallariy!",
+        "e": "María recibe la tarjetita. Ella está feliz. ¡Un nuevo comienzo!"
+      },
+      {
+        "type": "question",
+        "title": "¿Imatataj munan María tukukuypi?",
+        "text": "¿Qué quiere María al final?",
+        "options": [
+          "Bibliamanta astawan yachakuyta",
+          "Colectivopi riyta",
+          "Quechuata manaña parlariyta"
+        ],
+        "correct": 0,
+        "explanation": ""
+      }
+    ]
+  }
+]

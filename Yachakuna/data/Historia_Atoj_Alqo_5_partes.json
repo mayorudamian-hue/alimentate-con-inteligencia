@@ -1,0 +1,423 @@
+[
+  {
+    "id": "atoj-alqo-parte-1",
+    "section": 1,
+    "part": 1,
+    "title": "Atojwan Alqowan — Parte 1",
+    "subtitle": "El zorro en la chacra",
+    "icon": "🦊",
+    "level": "Básico",
+    "xp": 15,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Uj p'unchay...",
+        "e": "Un día..."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Atojqa chajrapi kashan.",
+        "e": "El zorro está en la chacra."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa kusisqa kashan.",
+        "e": "Él está feliz."
+      },
+      {
+        "type": "question",
+        "title": "¿Pitaj chajrapi kashan?",
+        "text": "¿Quién está en la chacra?",
+        "options": [
+          "Atoj (el zorro)",
+          "Alqo (el perro)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chajraqa sumaj. Inti kashan.",
+        "e": "La chacra es hermosa. Hay sol."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Mana parachu. Mana phuyuchu.",
+        "e": "No hay lluvia. No hay nubes."
+      },
+      {
+        "type": "question",
+        "title": "¿Imaynatataj p'unchay kashan?",
+        "text": "¿Cómo está el día?",
+        "options": [
+          "Paramushan (Está lloviendo)",
+          "Inti kashan (Hay sol)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — ¡Sumaj p'unchay!",
+        "e": "El zorro dice: — ¡Qué lindo día!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Payqa sapa p'unchay chajraman rin.",
+        "e": "Él va a la chacra todos los días."
+      },
+      {
+        "type": "question",
+        "title": "¿Imayná atoj kashan?",
+        "text": "¿Cómo está el zorro?",
+        "options": [
+          "Llakisqa (Triste)",
+          "Kusisqa (Feliz)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  {
+    "id": "atoj-alqo-parte-2",
+    "section": 1,
+    "part": 2,
+    "title": "Atojwan Alqowan — Parte 2",
+    "subtitle": "Un encuentro en el camino",
+    "icon": "🌧️",
+    "level": "Básico",
+    "xp": 15,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Ñanpi, uj alqo kashan.",
+        "e": "En el camino, hay un perro."
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — ¡Imaynalla!",
+        "e": "El perro dice: — ¡Hola!"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Imaynalla! ¿Ima sutiyki?",
+        "e": "El zorro dice: — ¡Hola! ¿Cómo te llamás?"
+      },
+      {
+        "type": "question",
+        "title": "¿Pitaj ñanpi kashan?",
+        "text": "¿Quién está en el camino?",
+        "options": [
+          "Atoj (el zorro)",
+          "Alqo (el perro)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Sutiy Runtu. ¿Qanrí?",
+        "e": "El perro dice: — Mi nombre es Runtu. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Noqa Puma sutikuni. Kusikuni rejsisuspa.",
+        "e": "El zorro dice: — Yo me llamo Puma. Encantado de conocerte."
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Noqapis. ¿Maymanta kanki?",
+        "e": "El perro dice: — Yo también. ¿De dónde sos?"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Orqo llajtamanta kani. ¿Qanrí?",
+        "e": "El zorro dice: — Soy del pueblo del cerro. ¿Y vos?"
+      },
+      {
+        "type": "question",
+        "title": "¿Maymantataj atoj?",
+        "text": "¿De dónde es el zorro?",
+        "options": [
+          "Orqo llajtamanta (Del pueblo del cerro)",
+          "Mayu llajtamanta (Del pueblo del río)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Noqa mayu llajtamanta kani. ¡Kusikuni rejsisuspa!",
+        "e": "El perro dice: — Yo soy del pueblo del río. ¡Estoy feliz de conocerte!"
+      }
+    ]
+  },
+  {
+    "id": "atoj-alqo-parte-3",
+    "section": 1,
+    "part": 3,
+    "title": "Atojwan Alqowan — Parte 3",
+    "subtitle": "La chacra de los dos",
+    "icon": "🐕",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — ¿Mayman rishanki, Runtu?",
+        "e": "El zorro dice: — ¿Adónde estás yendo, Runtu?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Chajraman rishani. ¿Qanrí?",
+        "e": "El perro dice: — Estoy yendo a la chacra. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Noqapis chajraman rishani. ¿Wasichu chajrachu astawan gustasunki?",
+        "e": "El zorro dice: — Yo también voy a la chacra. ¿Te gusta más la casa o la chacra?"
+      },
+      {
+        "type": "question",
+        "title": "¿Mayman rinku iskayninku?",
+        "text": "¿Adónde van los dos?",
+        "options": [
+          "Chajraman (A la chacra)",
+          "Wasiyman (A la casa)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Chajra mayta gustawan! Chajraqa sumaj.",
+        "e": "El perro dice: — ¡Me encanta la chacra! La chacra es hermosa."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chajrapi ashkha runas tiyan. Wakinninku yachachejkuna kanku.",
+        "e": "En la chacra hay muchas personas. Algunos de ellos son maestros."
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — ¿Pitaj paykuna kanku?",
+        "e": "El zorro dice: — ¿Quiénes son ellos?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Paykunaqa yachachejkuna kanku. Paykunaqa mana atojkunachu kanku.",
+        "e": "El perro dice: — Ellos son maestros. Ellos no son zorros."
+      },
+      {
+        "type": "question",
+        "title": "¿Pitaj paykuna kanku?",
+        "text": "¿Quiénes son ellos?",
+        "options": [
+          "Atojkuna (Zorros)",
+          "Yachachejkuna (Maestros)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Atojqa mana phiñasqachu. Payqa kusisqa kashan yachachejkunawan.",
+        "e": "El zorro no está enojado. Él está feliz con los maestros."
+      }
+    ]
+  },
+  {
+    "id": "atoj-alqo-parte-4",
+    "section": 1,
+    "part": 4,
+    "title": "Atojwan Alqowan — Parte 4",
+    "subtitle": "El viaje juntos",
+    "icon": "🛤️",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": null,
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chaymantataj, atojqa tapun: — ¿Imapí llajtaman rinki?",
+        "e": "Después, el zorro pregunta: — ¿En qué vas a la ciudad?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Chakipi rini. Mana autoyojchu kani. ¿Qanrí?",
+        "e": "El perro dice: — Voy a pie. No tengo auto. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Noqapis chakipi rini. ¿Autopichu colectivopichu astawan gustasunki?",
+        "e": "El zorro dice: — Yo también voy a pie. ¿Te gusta más en auto o en colectivo?"
+      },
+      {
+        "type": "question",
+        "title": "¿Imapí rinku llajtaman?",
+        "text": "¿En qué van los dos a la ciudad?",
+        "options": [
+          "Chakipi (A pie)",
+          "Autopi (En auto)"
+        ],
+        "correct": 0,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Colectivopi gustawan! Jinapis mana colectivoyoj kanchej.",
+        "e": "El perro dice: — ¡Me gusta el colectivo! Pero no tenemos colectivo."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Ñanpi parlanku. Atojqa tapun: — ¿Maymantataj jamushanki kunan?",
+        "e": "En el camino conversan. El zorro pregunta: — ¿De dónde venís ahora?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — Mayu llajtamanta jamushani. Sapa p'unchay chajraman rini.",
+        "e": "El perro dice: — Vengo del pueblo del río. Todos los días voy a la chacra."
+      },
+      {
+        "type": "question",
+        "title": "¿Maymanta jamun alqo?",
+        "text": "¿De dónde viene el perro?",
+        "options": [
+          "Orqo llajtamanta (Del pueblo del cerro)",
+          "Mayu llajtamanta (Del pueblo del río)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — Noqapis sapa p'unchay chajraman rini. ¡Noqanchej llank'ajkuna kanchej!",
+        "e": "El zorro dice: — ¡Yo también voy a la chacra todos los días. ¡Nosotros somos trabajadores!"
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Iskayninku kusisqa kanku. Chajraman khuskha rinku.",
+        "e": "Los dos están felices. Van juntos a la chacra."
+      }
+    ]
+  },
+  {
+    "id": "atoj-alqo-parte-5",
+    "section": 1,
+    "part": 5,
+    "title": "Atojwan Alqowan — Parte 5",
+    "subtitle": "Amigos para siempre",
+    "icon": "🌟",
+    "level": "Intermedio",
+    "xp": 20,
+    "badge_id": "atoj-alqo-parte-5-badge",
+    "scenes": [
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chajraman chayankuña. Atojqa tapun: — ¿Qhechuata yachakuyta munankichu?",
+        "e": "Ya llegan a la chacra. El zorro pregunta: — ¿Querés aprender quechua?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — ¡Ari! Quechuata yachakuyta munani. ¿Qanrí?",
+        "e": "El perro dice: — ¡Sí! Quiero aprender quechua. ¿Y vos?"
+      },
+      {
+        "type": "text",
+        "speaker": "atojqa",
+        "q": "Atojqa: — ¡Noqapis! Sapa p'unchay yachakusaj.",
+        "e": "El zorro dice: — ¡Yo también! Aprenderé todos los días."
+      },
+      {
+        "type": "question",
+        "title": "¿Imatá munanku iskayninku?",
+        "text": "¿Qué quieren los dos?",
+        "options": [
+          "Llajtaman riy (Ir a la ciudad)",
+          "Quechuata yachakuy (Aprender quechua)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Chaymantataj, atojqa nin: — ¿Piwan jamunki cursoman?",
+        "e": "Después, el zorro dice: — ¿Con quién vas al curso?"
+      },
+      {
+        "type": "text",
+        "speaker": "alqoqa",
+        "q": "Alqoqa: — ¡Qanwan risaj! Qanqa amigoy kanki.",
+        "e": "El perro dice: — ¡Iré con vos! Vos sos mi amigo."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Atojqa kusisqa kashan. Mana llakisqachu, mana sayk'usqachu.",
+        "e": "El zorro está feliz. No está triste, no está cansado."
+      },
+      {
+        "type": "question",
+        "title": "¿Imayná kashan atoj tukukuypi?",
+        "text": "¿Cómo está el zorro al final?",
+        "options": [
+          "Sayk'usqa (Cansado)",
+          "Kusisqa (Feliz)",
+          "Llakisqa (Triste)"
+        ],
+        "correct": 1,
+        "explanation": ""
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Atojwan alqowan — amigos kanku. Sapa p'unchay parlanku, sapa p'unchay yachakunku.",
+        "e": "El zorro y el perro — son amigos. Todos los días conversan, todos los días aprenden."
+      },
+      {
+        "type": "text",
+        "speaker": "narrator",
+        "q": "Tukukuy. ¡Sumaj cuento!",
+        "e": "Fin. ¡Qué lindo cuento!"
+      }
+    ]
+  }
+]

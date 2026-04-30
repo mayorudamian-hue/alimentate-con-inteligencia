@@ -1,0 +1,369 @@
+/* css/dictionary.css */
+/* Estilos específicos para la pestaña de Biblioteca/Diccionario */
+
+.dict-controls {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.global-search {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    background: white;
+    outline: none;
+    box-shadow: inset 0 2px 4px var(--shadow);
+}
+
+.global-search:focus {
+    border-color: var(--bolivia-green);
+}
+
+.btn-icon {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: var(--duo-shadow-border);
+    transition: all 0.1s;
+}
+
+.btn-icon:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+.unit-group {
+    margin-bottom: 12px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.unit-header {
+    background: var(--cream);
+    padding: 14px 16px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.unit-content {
+    display: none;
+    padding: 12px;
+}
+
+.unit-group.expanded .unit-content {
+    display: block;
+}
+
+.word-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.word-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--cream);
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: var(--duo-shadow-border);
+}
+
+.word-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.word-item:last-child {
+    border-bottom: none;
+}
+
+.word-text {
+    flex: 1;
+}
+
+.word-q {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--bolivia-green-dark);
+}
+
+.word-es {
+    font-size: 14px;
+    color: #6a5c44;
+    font-weight: 600;
+}
+
+.word-example {
+    font-size: 13px;
+    color: #8a7c64;
+    font-style: italic;
+    margin-top: 4px;
+    background: var(--paper);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border-left: 3px solid var(--bolivia-yellow);
+}
+
+.word-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.word-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s;
+}
+
+.word-btn:hover {
+    transform: scale(1.1);
+}
+
+.word-btn.pinned {
+    color: var(--bolivia-yellow-dark);
+    text-shadow: 0 0 4px var(--bolivia-yellow);
+}
+
+/* SRS Flashcard UI */
+.srs-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26,18,8,0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.srs-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.flashcard-container {
+    width: 100%;
+    max-width: 400px;
+    height: 450px;
+    perspective: 1000px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--paper);
+    border: 3px solid var(--bolivia-green);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    border-color: var(--bolivia-red);
+}
+
+.fc-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #6a5c44;
+    background: var(--cream);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.fc-ask {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 24px;
+}
+
+.fc-answer {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--bolivia-green-dark);
+    margin-bottom: 12px;
+}
+
+.fc-hint {
+    font-size: 14px;
+    color: #8a7c64;
+    margin-top: auto;
+    font-weight: 700;
+}
+
+.fc-actions {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.flashcard.flipped ~ .fc-actions {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.srs-btn {
+    flex: 1;
+    border: none;
+    padding: 12px 4px;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+}
+.srs-btn:active { transform: translateY(4px); box-shadow: none; }
+.srs-btn.btn-again { background: var(--bolivia-red); }
+.srs-btn.btn-hard { background: var(--gold-dark); }
+.srs-btn.btn-good { background: var(--bolivia-green); }
+.srs-btn.btn-easy { background: var(--blue); }
+
+.srs-btn small {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.close-srs {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Anki Dashboard */
+.srs-dashboard {
+    background: white;
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    box-shadow: var(--duo-shadow-border);
+}
+
+.srs-dashboard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 0 var(--border);
+}
+
+.srs-dashboard.empty {
+    cursor: default;
+    background: var(--paper);
+    border-style: dashed;
+    box-shadow: none;
+    transform: none;
+}
+
+.srs-dashboard h2 {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    color: var(--ink);
+}
+
+.srs-dashboard p {
+    margin: 0;
+    font-weight: 700;
+    color: #6a5c44;
+}
+
+.srs-badge {
+    background: var(--blue);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.srs-dashboard.empty .srs-badge {
+    background: #ccc;
+}
+

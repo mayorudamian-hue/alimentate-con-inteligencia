@@ -1,0 +1,53 @@
+/* css/components.css */
+/* Botones estilo Duolingo */
+.btn-primary {
+    background: var(--bolivia-green);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--duo-shadow-green);
+    cursor: pointer;
+    transition: all 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.btn-primary:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--ink);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 14px 24px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--duo-shadow-border);
+    cursor: pointer;
+    transition: all 0.1s;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn-secondary:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+/* Tarjetas */
+.card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
